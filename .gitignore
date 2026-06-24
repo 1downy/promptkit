@@ -35,3 +35,7 @@ next-env.d.ts
 # opencode
 .omo/
 .opencode/
+
+# tooling
+.codegraph/
+dev.log
