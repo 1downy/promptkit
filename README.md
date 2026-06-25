@@ -75,6 +75,21 @@ Models span western, Chinese, and open-weight ecosystems — including Llama, Ge
 
 ---
 
+## Arena Rankings
+
+Each model's detail view shows its LMSYS Chatbot Arena ranking — Elo score, rank, vote count, and confidence interval.
+
+| Arena | Coverage |
+|-------|----------|
+| **Chatbot** (Text) | 100+ text models from the main Chatbot Arena leaderboard |
+| **Text-to-Image** | Image generation models from the Vision Arena |
+| **Text-to-Video** | Video generation models from the Video Arena |
+| **Image-to-Video** | 42 image-to-video models, including Dreamina, Veo, Grok, Kling, and more |
+
+When a model has both Text-to-Video and Image-to-Video rankings, both cards are shown side by side in the detail view.
+
+---
+
 ## Source Quality
 
 Each prompt is tagged with a confidence level based on available documentation:
