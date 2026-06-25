@@ -1402,7 +1402,10 @@ export default function Home() {
         <Header />
 
         <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 py-6" role="main">
-          {activeView === 'browse' && <BrowseView />}
+          {/* Keep BrowseView mounted but hidden to avoid remounting 380+ EntryCards on navigation — freeze fix */}
+          <div className={cn(activeView !== 'browse' && 'hidden')}>
+            <BrowseView />
+          </div>
           {activeView === 'detail' && <DetailView />}
           {activeView === 'compare' && <CompareView />}
           {activeView === 'bookmarks' && <BookmarksView />}
