@@ -41,7 +41,7 @@ import { PIXART_ALPHA } from './pixart-alpha';
 import { CAGLIOSTROLAB } from './cagliostrolab';
 import { TONGYI_MAI_ALIBABA } from './tongyi-mai-alibaba';
 import { GOOGLE_DEEPMIND } from './google-deepmind';
-import { SHENGSHU_AI } from './shengshu-ai';
+import { VIDU } from './shengshu-ai';
 import { LIGHTRICKS } from './lightricks';
 import { GENMO } from './genmo';
 import { OPENGVLAB } from './opengvlab';
@@ -91,7 +91,7 @@ export const ALL_PROVIDER_ENTRIES: SystemPromptEntry[] = [
   ...CAGLIOSTROLAB,
   ...TONGYI_MAI_ALIBABA,
   ...GOOGLE_DEEPMIND,
-  ...SHENGSHU_AI,
+  ...VIDU,
   ...LIGHTRICKS,
   ...GENMO,
   ...OPENGVLAB,
