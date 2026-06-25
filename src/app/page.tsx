@@ -62,7 +62,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-// ==================== CONSTANTS ====================
+
 
 const CATEGORY_CONFIG: Record<ModelCategory, { label: string; icon: React.ReactNode }> = {
   text:      { label: 'Text',      icon: <Type className="h-3.5 w-3.5" /> },
@@ -88,7 +88,7 @@ const ECOSYSTEMS: { value: string; label: string }[] = [
   { value: 'open-weight', label: 'Open Weight' },
 ];
 
-// ==================== CHAT PLATFORMS ====================
+
 
 interface ChatPlatform {
   id: string;
@@ -119,9 +119,9 @@ const SOURCE_ICONS: Record<SourceRef['type'], React.ReactNode> = {
   guide: <BookOpen className="h-3.5 w-3.5" />,
   'api-reference': <FileText className="h-3.5 w-3.5" />,
   news: <Globe className="h-3.5 w-3.5" />,
+  analysis: <FileText className="h-3.5 w-3.5" />,
 };
 
-// ==================== SOURCE QUALITY BADGE ====================
 
 function SourceQualityBadge({ entry, size = 'sm' }: { entry: SystemPromptEntry; size?: 'sm' | 'lg' }) {
   const quality = getEntryQuality(entry);
@@ -154,7 +154,6 @@ function SourceQualityBadge({ entry, size = 'sm' }: { entry: SystemPromptEntry; 
   );
 }
 
-// ==================== DEBOUNCE HOOK ====================
 
 function useDebounce<T>(value: T, delay: number): T {
   const [debouncedValue, setDebouncedValue] = useState(value);
@@ -165,7 +164,6 @@ function useDebounce<T>(value: T, delay: number): T {
   return debouncedValue;
 }
 
-// ==================== COPY BUTTON ====================
 
 function CopyButton({ text, label = 'Copy', className }: { text: string; label?: string; className?: string }) {
   const [copied, setCopied] = useState(false);
@@ -191,7 +189,6 @@ function CopyButton({ text, label = 'Copy', className }: { text: string; label?:
   );
 }
 
-// ==================== SCHEMA.ORG JSON-LD ====================
 
 function JsonLd() {
   const schema = {
@@ -221,7 +218,6 @@ function JsonLd() {
   );
 }
 
-// ==================== HEADER ====================
 
 function Header() {
   const { searchOpen, setSearchOpen, compareIds, setActiveView, activeView } = useAppStore();
@@ -303,7 +299,6 @@ function Header() {
   );
 }
 
-// ==================== BROWSE VIEW ====================
 
 function BrowseView() {
   const {
@@ -567,7 +562,6 @@ function BrowseView() {
   );
 }
 
-// ==================== ENTRY CARD (React.memo) ====================
 
 const EntryCard = React.memo(function EntryCard({ entry, query }: { entry: SystemPromptEntry; query?: string }) {
   const { setSelectedEntryId, setProviderFilter, compareIds, addCompare, removeCompare, isBookmarked, addBookmark, removeBookmark } = useAppStore();
@@ -676,7 +670,6 @@ const EntryCard = React.memo(function EntryCard({ entry, query }: { entry: Syste
   );
 });
 
-// ==================== OPEN IN DROPDOWN ====================
 
 function OpenInDropdown({ entry }: { entry: SystemPromptEntry }) {
   const defaultPlatform = getChatPlatform(entry.provider);
@@ -714,7 +707,6 @@ function OpenInDropdown({ entry }: { entry: SystemPromptEntry }) {
   );
 }
 
-// ==================== DETAIL VIEW ====================
 
 function DetailView() {
   const { selectedEntryId, setSelectedEntryId, showShortVersion, setShowShortVersion, isBookmarked, addBookmark, removeBookmark, compareIds, addCompare } = useAppStore();
@@ -940,7 +932,6 @@ function DetailView() {
   );
 }
 
-// ==================== COMPARE VIEW ====================
 
 function CompareView() {
   const { compareIds, removeCompare, clearCompare, setActiveView } = useAppStore();
@@ -1161,7 +1152,6 @@ function CompareView() {
   );
 }
 
-// ==================== BOOKMARKS VIEW ====================
 
 function BookmarksView() {
   const { bookmarks, removeBookmark } = useAppStore();
@@ -1218,7 +1208,6 @@ function BookmarksView() {
   );
 }
 
-// ==================== SEARCH DIALOG ====================
 
 function SearchDialog() {
   const { searchOpen, setSearchOpen, setSelectedEntryId, setCategoryFilter, setActiveView } = useAppStore();
@@ -1281,7 +1270,6 @@ function SearchDialog() {
   );
 }
 
-// ==================== KEYBOARD SHORTCUTS ====================
 
 function useKeyboardShortcuts() {
   const { setSearchOpen } = useAppStore();
@@ -1297,7 +1285,6 @@ function useKeyboardShortcuts() {
   }, [setSearchOpen]);
 }
 
-// ==================== MAIN PAGE ====================
 
 export default function Home() {
   const { activeView } = useAppStore();
