@@ -2,8 +2,6 @@ import type { SystemPromptEntry } from '../types';
 
 export const BLACK_FOREST_LABS: SystemPromptEntry[] = [
 
-  // FLUX.2 FAMILY — Next-generation models (2026)
-
   {
     id: 'sp-flux-2-max',
     modelName: 'FLUX.2 [max]',
@@ -347,8 +345,6 @@ Generate ONLY the natural language prompt text.`,
     version: 'flux-2-dev',
   },
 
-  // FLUX.1 FAMILY — Legacy models
-
   {
     id: 'sp-flux-11-pro-ultra',
     modelName: 'FLUX 1.1 [pro] Ultra',
@@ -594,8 +590,6 @@ Generate ONLY the natural language prompt text.`,
     lastVerified: '2026-06',
     version: 'flux-schnell',
   },
-
-  // FLUX KONTEXT FAMILY — Editing models (legacy)
 
   {
     id: 'sp-flux-kontext-max',
