@@ -196,7 +196,7 @@ function JsonLd() {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'PromptKit',
-    description: 'The best system prompts for every AI model. Copy the expert system prompt for your target model, paste it into ChatGPT or Claude, and get optimized prompts. Based on official docs, whitepapers, and guides.',
+    description: 'Expert-crafted system prompts for 380+ AI models across 45+ providers. Copy the system prompt for your target model, paste it into ChatGPT or Claude, and get optimized prompts. Based on official docs, whitepapers, and guides.',
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'Web',
     offers: {
@@ -344,8 +344,10 @@ function BrowseView() {
     }
     if (debouncedSearch) {
       const searched = searchEntries(debouncedSearch);
-      const searchedSet = new Set(searched);
-      result = result.filter(e => searchedSet.has(e));
+      const searchedOrder = new Map(searched.map((e, i) => [e.id, i]));
+      result = result.filter(e => searchedOrder.has(e.id));
+      // Keep relevance order from search; don't re-sort
+      return result.sort((a, b) => (searchedOrder.get(a.id) ?? 0) - (searchedOrder.get(b.id) ?? 0));
     }
     return sortEntries(result, sortBy, sortOrder);
   }, [debouncedSearch, categoryFilter, ecosystemFilter, providerFilter, sourceQualityFilter, sortBy, sortOrder]);
@@ -382,8 +384,8 @@ function BrowseView() {
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
             Copy the expert-crafted system prompt for your target model. Paste it into ChatGPT, Claude, or any chatbot. Then ask it to generate prompts following those rules.
           </p>
-          <div className="flex items-center justify-center gap-4 mt-4 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1"><Zap className="h-3 w-3 text-amber-500" /> Copy system prompt</span>
+          <div className="flex items-center justify-center gap-4 mt-3 text-xs text-muted-foreground">
+            <span className="flex items-center gap-1"><Zap className="h-3 w-3 text-amber-500" /> 380+ models</span>
             <span className="flex items-center gap-1"><ArrowLeft className="h-3 w-3 rotate-180" /> Paste in your chatbot</span>
             <span className="flex items-center gap-1"><Sparkles className="h-3 w-3 text-amber-500" /> Get optimized prompts</span>
           </div>

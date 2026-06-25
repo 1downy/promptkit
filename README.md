@@ -5,7 +5,7 @@
 <h1 align="center">PromptKit</h1>
 
 <p align="center">
-  <strong>Expert-crafted system prompts for 200+ AI models.</strong>
+  <strong>Expert-crafted system prompts for 380+ AI models.</strong>
   <br>
   Based on official docs, model cards, and whitepapers — never guess how to prompt again.
 </p>
@@ -15,8 +15,8 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/models-202-blue" alt="200+ Models">
-  <img src="https://img.shields.io/badge/providers-50%2B-amber" alt="50+ Providers">
+  <img src="https://img.shields.io/badge/models-380%2B-blue" alt="380+ Models">
+  <img src="https://img.shields.io/badge/providers-45%2B-amber" alt="45+ Providers">
   <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License">
 </p>
 
@@ -42,22 +42,24 @@ That's it. No sign-up, no API key, no cost.
 
 | Category | Models | Providers |
 |----------|--------|-----------|
-| **Text** | 82 | OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, xAI, Alibaba, Zhipu, ByteDance, Tencent, Moonshot, MiniMax, 01.AI, Xiaomi, Inception Labs, NVIDIA |
-| **Image** | 63 | Midjourney, Black Forest Labs, Stability AI, Adobe, Ideogram, Recraft, OpenAI, Google, Kuaishou, CagliostroLab, PixArt, CogView |
-| **Video** | 32 | Sora, Kling, Runway, Pika, Luma, Genmo, Lightricks, Hunyuan, Vidu, MARS, CogVideoX |
-| **Code** | 10 | Claude Sonnet (Code), GPT-5 (Code), GPT-5.4 Codex, DeepSeek Coder, Codestral, Devstral |
-| **Vision** | 6 | Claude Vision, GPT-4o Vision, Gemini Vision, Qwen-VL, GPT-5 Vision, Gemini 3 Vision |
-| **3D** | 5 | Tripo, Meshy, Stability AI (SV3D), TencentARC (InstantMesh) |
-| **Character** | 4 | Community roleplay models |
+| **Text** | 137 | OpenAI, Anthropic, Google, Meta, DeepSeek, Mistral, Cohere, xAI, Alibaba, Zhipu, ByteDance, Tencent, Moonshot, MiniMax, 01.AI, Xiaomi, Inception Labs, NVIDIA, StepFun, Kuaishou, Baidu, Adobe, Google DeepMind |
+| **Image** | 107 | Midjourney, Black Forest Labs, Stability AI, Adobe, Ideogram, Recraft, Reve AI, OpenAI, Google, Kuaishou, CagliostroLab, PixArt, ByteDance, Tencent, Alibaba, Sourceful, Runway, Community, xAI, Zhipu, Baidu |
+| **Video** | 54 | Sora, Kling, Runway, Pika, Luma, Genmo, Lightricks, Shengshu AI, MiniMax, StepFun, ByteDance, Google DeepMind, Alibaba, xAI, Adobe |
+| **Audio** | 22 | OpenAI, Google DeepMind, Stability AI, MiniMax, NVIDIA, StepFun, xAI, Xiaomi, Alibaba, Microsoft |
+| **Vision** | 37 | GPT-4o, Claude, Gemini, Qwen, InternVL, Meta Llama, Mistral, NVIDIA, OpenGVLab, StepFun, Baidu |
+| **Code** | 13 | Claude, GPT, DeepSeek Coder, Codestral, Yi-Coder, KwaiCoder, Mercury Coder |
+| **3D** | 15 | Tripo, Meshy, Stability AI, Tencent, TencentARC, Microsoft (TRELLIS) |
+| **Character** | 8 | StoryDiffusion, PhotoMaker, IP-Adapter-FaceID |
+| **World** | 2 | Google DeepMind (Genie 2), Tripo (W1.0) |
 
-**100+ additional models** across all categories — including open-weight (Llama, Gemma, Flux Dev, DeepSeek V4) and Chinese ecosystem (GLM-5, Qwen3.7, Doubao, Hunyuan, Kimi K2, Yi-Lightning, Step-2, MiLM2).
+Models span western, Chinese, and open-weight ecosystems — including Llama, Gemma, Flux, DeepSeek, GLM-5, Qwen3.7, Doubao, Hunyuan, Kimi K2, Yi-Lightning, Step-2, MiLM2, and more.
 
 ---
 
 ## Why PromptKit?
 
 - **Based on official documentation** — each prompt is derived from model cards, API references, whitepapers, and official guides. No guesswork.
-- **50+ providers** — western, Chinese, and open-weight ecosystems covered
+- **45+ providers** — western, Chinese, and open-weight ecosystems covered
 - **Always current** — updated as models release
 - **Free** — no account, no API key, no bullshit
 

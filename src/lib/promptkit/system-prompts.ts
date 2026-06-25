@@ -42,6 +42,55 @@ export function getUniqueProviders(): string[] {
   return Array.from(set).sort();
 }
 
+/**
+ * Levenshtein edit distance between two strings.
+ * Space-optimized — uses two rows instead of full matrix.
+ */
+function levenshtein(a: string, b: string): number {
+  if (a.length === 0) return b.length;
+  if (b.length === 0) return a.length;
+  // Ensure a is the shorter one for less memory
+  if (a.length > b.length) [a, b] = [b, a];
+
+  let prev = new Uint8Array(a.length + 1);
+  let curr = new Uint8Array(a.length + 1);
+
+  for (let i = 0; i <= a.length; i++) prev[i] = i;
+
+  for (let j = 1; j <= b.length; j++) {
+    curr[0] = j;
+    for (let i = 1; i <= a.length; i++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      curr[i] = Math.min(
+        prev[i] + 1,
+        curr[i - 1] + 1,
+        prev[i - 1] + cost,
+      );
+    }
+    [prev, curr] = [curr, prev];
+  }
+  return prev[a.length];
+}
+
+/**
+ * Best fuzzy similarity (0–1) between a query word and any word in `text`.
+ * 1 = exact match, 0 = too far apart.
+ */
+function fuzzyWordSim(queryWord: string, text: string): number {
+  if (queryWord.length < 3) return text.includes(queryWord) ? 1 : 0;
+  const words = text.split(/[\s,()/+.\-—–]+/).filter(w => w.length > 0);
+  let bestDist = Infinity;
+  for (const word of words) {
+    const dist = levenshtein(queryWord, word);
+    if (dist < bestDist) bestDist = dist;
+  }
+  if (bestDist === Infinity) return 0;
+  // Acceptable distance threshold: floor(max(1, queryWord.length / 3))
+  const maxAccept = Math.max(1, Math.floor(queryWord.length / 3));
+  if (bestDist > maxAccept) return 0;
+  return 1 - bestDist / Math.max(queryWord.length, 3);
+}
+
 export function getSourceQuality(entry: SystemPromptEntry): 'verified' | 'partial' | 'limited' {
   const officialCount = entry.sources.filter(
     s => s.type === 'docs' || s.type === 'whitepaper' || s.type === 'api-reference' || s.type === 'model-card'
@@ -65,44 +114,50 @@ export function searchEntries(query: string): SystemPromptEntry[] {
     const cat = entry.category.toLowerCase();
     const eco = entry.ecosystem.toLowerCase();
 
-    // Name matches (highest priority)
+    // ── Exact/string matching (same as before) ──
     if (name === q) score += 100;
     else if (name.startsWith(q)) score += 50;
     else if (qWords.every(w => name.includes(w))) score += 30;
     else if (name.includes(q)) score += 20;
 
-    // Provider
     if (provider.includes(q)) score += 8;
 
-    // Category
     if (cat === q) score += 15;
     else if (cat.includes(q)) score += 5;
 
-    // Ecosystem
     if (eco === q) score += 10;
     else if (eco.includes(q)) score += 4;
 
-    // Description
     if (desc.includes(q)) score += 6;
     else if (qWords.some(w => desc.includes(w))) score += 2;
 
-    // Multi-word bonus: match across fields
     if (qWords.length > 1) {
       const allText = `${name} ${provider} ${desc} ${cat} ${eco}`;
       if (qWords.every(w => allText.includes(w))) score += 5;
     }
 
-    // Tips
     if (entry.tips.some(t => t.toLowerCase().includes(q))) score += 3;
     else if (entry.tips.some(t => qWords.some(w => t.toLowerCase().includes(w)))) score += 1;
 
-    // Source titles
     if (entry.sources.some(s => s.title.toLowerCase().includes(q))) score += 3;
     else if (entry.sources.some(s => qWords.some(w => s.title.toLowerCase().includes(w)))) score += 1;
 
-    // Short version / system prompt (lower priority — large text, noisy)
     if (entry.shortVersion.toLowerCase().includes(q)) score += 2;
     if (entry.systemPrompt.toLowerCase().includes(q)) score += 1;
+
+    // ── Fuzzy fallback: catch typos / near-misses ──
+    if (q.length >= 3 && score < 15) {
+      for (const w of qWords) {
+        const nameSim = fuzzyWordSim(w, name);
+        if (nameSim > 0.5) { score += Math.round(nameSim * 25); break; }
+      }
+      if (score < 10) {
+        for (const w of qWords) {
+          const provSim = fuzzyWordSim(w, provider);
+          if (provSim > 0.5) { score += Math.round(provSim * 8); break; }
+        }
+      }
+    }
 
     if (score > 0) scored.push({ entry, score });
   }
