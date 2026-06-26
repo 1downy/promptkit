@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const XIAOMI: SystemPromptEntry[] = [
 
@@ -45,7 +46,7 @@ export const XIAOMI: SystemPromptEntry[] = [
 - Top rankings on ClawEval, GDPVal, and SWE-bench Pro[reference:19][reference:20]
 - Excellent for complex software engineering and long-horizon tasks[reference:21]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiMo-V2.5-Pro prompt engineer. Rules:
 1. System prompts for role definition and tool definitions
 2. Be specific and detailed — handles complex, long-horizon tasks
@@ -54,7 +55,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Top rankings on ClawEval, GDPVal, SWE-bench Pro
 6. 1.02T params (42B active) — MIT licensed, open weights
 
-Generate the best MiMo-V2.5-Pro prompt.`,
+Generate the best MiMo-V2.5-Pro prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'MiMo-V2.5-Pro Hugging Face', url: 'https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro', type: 'model-card' },
       { title: 'MiMo-V2.5-Pro on OpenRouter', url: 'https://openrouter.ai/xiaomi/mimo-v2.5-pro', type: 'api-reference' },
@@ -114,7 +115,7 @@ Generate the best MiMo-V2.5-Pro prompt.`,
 - Supports function calling and tool-use[reference:36]
 - Cost-effective for agent frameworks[reference:37]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiMo-V2.5 prompt engineer. Rules:
 1. Native omnimodal — supports text, image, video, audio
 2. System/developer messages for role definition
@@ -123,7 +124,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Supports function calling and structured outputs
 6. 310B params (15B active) — MIT licensed
 
-Generate the best MiMo-V2.5 prompt.`,
+Generate the best MiMo-V2.5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'MiMo-V2.5 Hugging Face', url: 'https://huggingface.co/XiaomiMiMo/MiMo-V2.5', type: 'model-card' },
       { title: 'GMI Cloud - Xiaomi MiMo v2.5', url: 'https://docs.gmicloud.ai/model-quickstarts/text/xiaomimimo-mimo-v2-5', type: 'docs' },
@@ -176,7 +177,7 @@ Generate the best MiMo-V2.5 prompt.`,
 - Strong reasoning and planning[reference:46]
 - Tool calling optimized[reference:47]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiMo-V2-Pro prompt engineer. Rules:
 1. Flagship text model — 1T params
 2. Designed for high-intensity agent workflows
@@ -185,7 +186,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. 1M context window
 6. Proprietary — available via Xiaomi API
 
-Generate the best MiMo-V2-Pro prompt.`,
+Generate the best MiMo-V2-Pro prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Xiaomi MiMo Wikipedia', url: 'https://en.wikipedia.org/wiki/Xiaomi_MiMo', type: 'docs' },
       { title: 'Xiaomi MiMo V2 Series Announcement', url: 'https://en.theblockbeats.news', type: 'news' },
@@ -231,14 +232,14 @@ Generate the best MiMo-V2-Pro prompt.`,
 - Use system prompts for persistent behavior
 - Leverage 256K context for moderate-length documents
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiMo-V2-Omni prompt engineer. Rules:
 1. Full-modal base model — supports text, images, audio
 2. System prompts for role definition
 3. 256K context window
 4. Proprietary — available via Xiaomi API
 
-Generate the best MiMo-V2-Omni prompt.`,
+Generate the best MiMo-V2-Omni prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Xiaomi MiMo Wikipedia', url: 'https://en.wikipedia.org/wiki/Xiaomi_MiMo', type: 'docs' },
       { title: 'Artificial Analysis - Xiaomi', url: 'https://artificialanalysis.ai/providers/xiaomi', type: 'analysis' },
@@ -293,7 +294,7 @@ Generate the best MiMo-V2-Omni prompt.`,
 - Code generation and multi-step agent workflows[reference:65]
 - Open-weight for custom deployment
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiMo-V2-Flash prompt engineer. Rules:
 1. Fastest model — up to 150 tokens/second
 2. 309B params (15B active) — MoE architecture
@@ -302,7 +303,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. MIT licensed — open weights
 6. Best for agentic applications and code generation
 
-Generate the best MiMo-V2-Flash prompt.`,
+Generate the best MiMo-V2-Flash prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'SourceForge - MiMo-V2-Flash', url: 'https://sourceforge.net/software/large-language-models/integrates-with-xiaomi-mimo/', type: 'docs' },
       { title: 'Xiaomi MiMo Wikipedia', url: 'https://en.wikipedia.org/wiki/Xiaomi_MiMo', type: 'docs' },
@@ -348,13 +349,13 @@ Generate the best MiMo-V2-Flash prompt.`,
 - Specify language for multilingual TTS
 - For singing: include lyrics and melody style
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiMo-V2-TTS prompt engineer. Rules:
 1. Text-to-speech with Cantonese singing support
 2. Specify text, voice style, and language
 3. Proprietary — available via Xiaomi API
 
-Generate the best MiMo-V2-TTS prompt.`,
+Generate the best MiMo-V2-TTS prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Xiaomi MiMo Wikipedia', url: 'https://en.wikipedia.org/wiki/Xiaomi_MiMo', type: 'docs' },
       { title: 'MiMo V2 Series Announcement', url: 'https://en.theblockbeats.news', type: 'news' },
@@ -406,7 +407,7 @@ Generate the best MiMo-V2-TTS prompt.`,
 - Foundation for the MiMo family
 - RL variant improved AIME 2024 scores from 68.2 to 80.1[reference:79]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiMo-7B prompt engineer. Rules:
 1. First generation 7B model — MIT licensed
 2. Pre-trained on 25T tokens
@@ -414,7 +415,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be specific and direct — smaller model
 5. Good for lightweight tasks
 
-Generate the best MiMo-7B prompt.`,
+Generate the best MiMo-7B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Xiaomi MiMo Wikipedia', url: 'https://en.wikipedia.org/wiki/Xiaomi_MiMo', type: 'docs' },
       { title: 'Software:Xiaomi MiMo - HandWiki', url: 'https://handwiki.org/wiki/Software:Xiaomi_MiMo', type: 'docs' },
@@ -459,7 +460,7 @@ Generate the best MiMo-7B prompt.`,
 - Ask specific questions rather than "describe this image"
 - Good for visual perception and grounding tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiMo-VL-7B prompt engineer. Rules:
 1. Vision-language model — 7B parameters
 2. Combines Vision Transformer with MiMo-7B
@@ -467,7 +468,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. MORL for perception, grounding, and reasoning
 5. Be specific about what to analyze
 
-Generate the best MiMo-VL-7B prompt.`,
+Generate the best MiMo-VL-7B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Xiaomi MiMo Wikipedia', url: 'https://en.wikipedia.org/wiki/Xiaomi_MiMo', type: 'docs' },
       { title: 'Software:Xiaomi MiMo - HandWiki', url: 'https://handwiki.org/wiki/Software:Xiaomi_MiMo', type: 'docs' },

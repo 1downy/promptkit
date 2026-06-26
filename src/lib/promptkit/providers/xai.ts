@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const XAI: SystemPromptEntry[] = [
 
@@ -43,7 +44,7 @@ export const XAI: SystemPromptEntry[] = [
 - For image inputs: max 20MiB, jpg/jpeg or png supported, any image/text input order accepted[reference:13]
 - Grok 4 is best for one-shot Q&A and complex concepts[reference:14]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Grok 4.3 prompt engineer. Rules:
 1. System prompts for role definition
 2. 1M context — use for long documents and conversations
@@ -53,7 +54,7 @@ Generate ONLY the prompt text. No explanations.`,
 6. Enable search tools for real-time data (Web Search / X Search)
 7. Accepts text and image inputs (max 20MiB, jpg/png)
 
-Generate the best Grok 4.3 prompt.`,
+Generate the best Grok 4.3 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Models | xAI Docs', url: 'https://docs.x.ai/developers/models', type: 'docs' },
       { title: 'xAI API Models', url: 'https://x.ai/api', type: 'api-reference' },
@@ -110,7 +111,7 @@ Generate the best Grok 4.3 prompt.`,
 - **grok-build-0.1**: Great at working quickly and tirelessly to find answers or implement changes[reference:28]
 - **Grok 4.3**: Best for diving deep into complex concepts and tough debugging[reference:29]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Grok Build 0.1 prompt engineer. Rules:
 1. Agentic coding model — 4x speed, 1/10th cost of leading models
 2. 256K context — use for large codebases
@@ -119,7 +120,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Assign agentic tasks — not one-shot queries
 6. Iterate and refine — cost-effective to experiment
 
-Generate the best Grok Build 0.1 prompt.`,
+Generate the best Grok Build 0.1 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Models | xAI Docs', url: 'https://docs.x.ai/developers/models', type: 'docs' },
       { title: 'May 15, 2026 Model Retirement', url: 'https://docs.x.ai/developers/migration/may-15-retirement', type: 'docs' },
@@ -170,7 +171,7 @@ Generate the best Grok Build 0.1 prompt.`,
 - **grok-imagine-image-quality**: Higher quality output[reference:35]
 - **grok-imagine-image**: Standard generation[reference:36]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Grok Imagine Image prompt expert. Rules:
 - Natural language descriptions
 - Subject → Style → Composition → Details → Quality
@@ -178,7 +179,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Supports 1K and 2K resolution outputs
 - Speed is industry-leading
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Models | xAI Docs', url: 'https://docs.x.ai/developers/models', type: 'docs' },
       { title: 'Image Generations | xAI Docs', url: 'https://docs.x.ai/developers/image-generations', type: 'docs' },
@@ -225,7 +226,7 @@ Generate ONLY the prompt text.`,
 - Be specific about camera angles and movements
 - Use text prompts or static images as input[reference:41]
 
-Generate ONLY the video prompt text. No explanations.`,
+Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Grok Imagine Video prompt expert. Rules:
 - Natural language descriptions
 - Generate video with synchronized audio
@@ -234,7 +235,7 @@ Generate ONLY the video prompt text. No explanations.`,
 - Describe: scene → subject/action → motion → camera → lighting → style
 - Use cinematic/directorial language
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Models | xAI Docs', url: 'https://docs.x.ai/developers/models', type: 'docs' },
       { title: 'xAI API Models', url: 'https://x.ai/api', type: 'api-reference' },
@@ -276,14 +277,14 @@ Generate ONLY the video prompt text.`,
 - Specify conversation style and tone
 - Use for real-time voice applications
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Grok Voice API prompt expert. Rules:
 - Build real-time voice agents
 - Define agent role, conversation style, context, and constraints
 - Supports speech-to-text and text-to-speech
 - Real-time conversational AI
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Models | xAI Docs', url: 'https://docs.x.ai/developers/models', type: 'docs' },
       { title: 'xAI API Models', url: 'https://x.ai/api', type: 'api-reference' },

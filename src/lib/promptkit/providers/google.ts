@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const GOOGLE: SystemPromptEntry[] = [
 
@@ -33,7 +34,7 @@ export const GOOGLE: SystemPromptEntry[] = [
 - Complex multimodal tasks
 - Agentic workflows
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Gemini 3.1 Pro prompt engineer. Rules:
 1. Use system instructions for persistent behavior
 2. Be specific and detailed — rich context works best
@@ -42,7 +43,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. 1M context window — handle large documents and codebases
 6. Best for: complex reasoning, world knowledge, multimodal tasks
 
-Generate the best Gemini 3.1 Pro prompt.`,
+Generate the best Gemini 3.1 Pro prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Gemini 3 Developer Guide', url: 'https://ai.google.dev/gemini-api/docs/gemini-3', type: 'guide' },
       { title: 'Gemini Deprecations', url: 'https://ai.google.dev/gemini-api/docs/deprecations', type: 'docs' },
@@ -85,7 +86,7 @@ Generate the best Gemini 3.1 Pro prompt.`,
 - **Specify output format** — use JSON schema for structured data extraction[reference:21]
 - **Be specific about the task** — clear, direct instructions work best
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Gemini 3.1 Flash-Lite prompt engineer. Rules:
 1. Keep prompts focused — optimized for speed and cost
 2. Use system instructions to constrain outputs
@@ -93,7 +94,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. 1M context window
 5. Best for: translation, transcription, entity extraction, classification, document processing
 
-Generate the best Gemini 3.1 Flash-Lite prompt.`,
+Generate the best Gemini 3.1 Flash-Lite prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Gemini 3.1 Flash-Lite Documentation', url: 'https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-lite', type: 'docs' },
       { title: 'Gemini Deprecations', url: 'https://ai.google.dev/gemini-api/docs/deprecations', type: 'docs' },
@@ -136,7 +137,7 @@ Generate the best Gemini 3.1 Flash-Lite prompt.`,
 - Good for most general-purpose tasks
 - Cost-effective for production workloads
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Gemini 3 Flash prompt engineer. Rules:
 1. Use system instructions
 2. Be specific and structured
@@ -144,7 +145,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. 1M context window
 5. Pro-level intelligence at Flash speed and pricing
 
-Generate the best Gemini 3 Flash prompt.`,
+Generate the best Gemini 3 Flash prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Gemini 3 Developer Guide', url: 'https://ai.google.dev/gemini-api/docs/gemini-3', type: 'guide' },
     ],
@@ -189,7 +190,7 @@ Generate the best Gemini 3 Flash prompt.`,
 - Multi-image blending
 - Precise natural language edits
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Gemini 2.5 Flash Image prompt engineer. Rules:
 1. Natural language — describe as if explaining to an artist
 2. Be specific about edits — describe what to change
@@ -198,7 +199,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. SOTA for generation and editing
 6. Character consistency and multi-image blending
 
-Generate the best Gemini 2.5 Flash Image prompt.`,
+Generate the best Gemini 2.5 Flash Image prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Introducing Gemini 2.5 Flash Image', url: 'https://developers.googleblog.com/introducing-gemini-2-5-flash-image', type: 'blog' },
       { title: 'Gemini 2.5 Flash Image on Vertex AI', url: 'https://cloud.google.com/blog/products/ai-machine-learning/gemini-2-5-flash-image-vertex-ai', type: 'docs' },
@@ -244,7 +245,7 @@ Generate the best Gemini 2.5 Flash Image prompt.`,
 - Supports detailed analysis and comparison
 - Good at reading text in images (OCR)
 
-When the user asks for a Gemini Vision prompt, generate ONLY the prompt text. No explanations.`,
+When the user asks for a Gemini Vision prompt, generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Gemini Vision prompt expert. Rules:
 1. Can process images AND video (unique among vision models)
 2. Use system instructions for persistent analysis behavior
@@ -252,7 +253,7 @@ When the user asks for a Gemini Vision prompt, generate ONLY the prompt text. No
 4. Specify output format
 5. Leverage large context for multiple images
 
-Generate the best Gemini Vision prompt.`,
+Generate the best Gemini Vision prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Google AI Vision Documentation', url: 'https://ai.google.dev/gemini-api/docs/vision', type: 'docs' },
     ],

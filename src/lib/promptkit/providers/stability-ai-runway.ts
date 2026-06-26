@@ -1,5 +1,6 @@
 
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const STABILITY_AI_RUNWAY: SystemPromptEntry[] = [
 
@@ -48,7 +49,7 @@ Add: \`<lora:name:weight>\` for LoRA models
 
 When the user asks for an SD 1.5 prompt, generate BOTH positive and negative prompts. Format:
 POSITIVE: [prompt]
-NEGATIVE: [negative prompt]`,
+NEGATIVE: [negative prompt]` + SYSTEM_PROMPT_ENDING,
   shortVersion: `You are an SD 1.5 prompt expert. Rules:
 - MUST include quality tags: masterpiece, best quality, highly detailed
 - Tag-based: [quality], [subject], [style], [scene], [details]
@@ -57,7 +58,7 @@ NEGATIVE: [negative prompt]`,
 - Use (word:1.5) for emphasis
 - Add <lora:name:weight> for LoRAs
 
-Generate BOTH positive and negative prompts.`,
+Generate BOTH positive and negative prompts.` + SHORT_VERSION_ENDING,
   sources: [
     { title: 'SD 1.5 on Hugging Face', url: 'https://huggingface.co/runwayml/stable-diffusion-v1-5', type: 'model-card' },
   ],

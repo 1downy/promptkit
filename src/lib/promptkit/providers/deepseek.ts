@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const DEEPSEEK: SystemPromptEntry[] = [
 
@@ -48,7 +49,7 @@ export const DEEPSEEK: SystemPromptEntry[] = [
 - **top_p**: 0-1 (default 0.95) — nucleus sampling
 - **reasoning_effort**: Controls reasoning depth — default is "high"[reference:17]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert DeepSeek V4 Pro prompt engineer. Rules:
 1. Use system message for role/behavior definition
 2. Enhanced agentic capabilities — describe full workflows
@@ -58,7 +59,7 @@ Generate ONLY the prompt text. No explanations.`,
 6. Open-source SOTA in agentic coding
 7. 384K max output tokens
 
-Generate the best DeepSeek V4 Pro prompt for the user's goal.`,
+Generate the best DeepSeek V4 Pro prompt for the user's goal.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'DeepSeek V4 Preview Release', url: 'https://api-docs.deepseek.com/news/news260424', type: 'blog' },
       { title: 'Models & Pricing', url: 'https://api-docs.deepseek.com/quick_start/pricing', type: 'docs' },
@@ -118,7 +119,7 @@ Generate the best DeepSeek V4 Pro prompt for the user's goal.`,
 - **top_p**: 0-1 (default 0.95) — nucleus sampling
 - **reasoning_effort**: Controls reasoning depth
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert DeepSeek V4 Flash prompt engineer. Rules:
 1. Use system message for role/behavior definition
 2. Fast, efficient — ideal for production workloads
@@ -128,7 +129,7 @@ Generate ONLY the prompt text. No explanations.`,
 6. Cost-effective — use for high-volume tasks
 7. Performs on par with V4-Pro on simple agent tasks
 
-Generate the best DeepSeek V4 Flash prompt for the user's goal.`,
+Generate the best DeepSeek V4 Flash prompt for the user's goal.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'DeepSeek V4 Preview Release', url: 'https://api-docs.deepseek.com/news/news260424', type: 'blog' },
       { title: 'Models & Pricing', url: 'https://api-docs.deepseek.com/quick_start/pricing', type: 'docs' },
@@ -180,7 +181,7 @@ Generate the best DeepSeek V4 Flash prompt for the user's goal.`,
 - Optimized for complex logical reasoning and deep thinking[reference:45]
 - **Does NOT support tool calls**[reference:46]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert DeepSeek V3.2 prompt engineer. Rules:
 1. First model with "thinking with tools" capability
 2. Supports tool-use in thinking and non-thinking modes
@@ -188,7 +189,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Performance rivals Gemini-3.0-Pro on reasoning benchmarks
 5. V3.2-Speciale for deep reasoning (no tool calls)
 
-Generate the best DeepSeek V3.2 prompt.`,
+Generate the best DeepSeek V3.2 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'DeepSeek V3.2 Release', url: 'https://api-docs.deepseek.com/news/news251201', type: 'blog' },
       { title: 'DeepSeek V3.2 正式版', url: 'https://api-docs.deepseek.com/news/news251201?lang=zh', type: 'blog' },
@@ -241,7 +242,7 @@ Generate the best DeepSeek V3.2 prompt.`,
 - **temperature**: 0.5-0.7 recommended for reasoning tasks
 - **max_tokens**: Up to 16K for regular output, 32K for CoT[reference:57]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert DeepSeek R1-0528 prompt engineer. Rules:
 1. Do NOT use system prompts — user messages only
 2. Keep instructions simple — let R1 choose reasoning approach
@@ -251,7 +252,7 @@ Generate ONLY the prompt text. No explanations.`,
 6. Supports JSON output and function calling
 7. 128K context, 671B parameters
 
-Generate the best DeepSeek R1-0528 prompt.`,
+Generate the best DeepSeek R1-0528 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'DeepSeek-R1-0528 Release', url: 'https://api-docs.deepseek.com/news/news250528', type: 'blog' },
       { title: 'DeepSeek R1 Model Info', url: 'https://maas.ai-yuanjing.com', type: 'docs' },

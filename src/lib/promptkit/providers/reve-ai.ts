@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const REVE_AI: SystemPromptEntry[] = [
 
@@ -39,7 +40,7 @@ For Reve 2.0, think of your prompt as describing both the composition and the vi
 - **Focus on Composition**: Unlike prompt-only models, Reve 2.0 responds well to layout descriptions
 - **Combine Input Types**: Use layouts, natural language, and reference images together for best results
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Reve 2.0 prompt expert. Rules:
 - Layout-first 4K model — controls composition and iterative editing
 - Describe: composition/layout → visual style → subject details → context
@@ -47,7 +48,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Combine layouts, language, and reference images
 - Ideal for campaign assets, landing pages, product mockups, posters with text
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Reve 2.0: The Layout-First 4K Image Model', url: 'https://wavespeed.ai/blog/posts/reve-2-0-layout-first-4k-image-model/', type: 'blog' },
       { title: 'Reve 2.0 and the Bet on Layouts Instead of Prompts', url: 'https://felloai.com', type: 'guide' },
@@ -100,7 +101,7 @@ Generate ONLY the prompt text.`,
 ### Example Prompt
 "A powerful low-angle fashion portrait of a woman standing confidently in front of a large suspension bridge, shot on a bright, clear day. She wears a dramatic, avant-garde sheer orange ruffled outfit that catches the sunlight and adds rich texture and movement to the image."
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Reve Image 1.0 prompt expert. Rules:
 - #1 in image generation quality — excels at prompt adherence and text rendering
 - Describe: subject → style → scene → lighting → text elements → quality
@@ -108,7 +109,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Leverage text rendering for branding, advertising, social media
 - Use aspect ratios: 16:9, 4:3, 3:4, 1:1, 9:16
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Reve Image 1.0 on WaveSpeedAI', url: 'https://wavespeed.ai/blog/posts/introducing-reve-text-to-image-on-wavespeedai/', type: 'blog' },
       { title: 'Reve AI\'s Image Generator - eWeek', url: 'https://www.eweek.com/news/reve-image-ai-image-generator/', type: 'blog' },
@@ -159,7 +160,7 @@ Generate ONLY the prompt text.`,
 ### Example Prompt
 "A powerful low-angle fashion portrait of a woman standing confidently in front of a large suspension bridge, shot on a bright, clear day. She wears a dramatic, avant-garde sheer orange ruffled outfit that catches the sunlight and adds rich texture and movement to the image."
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Reve Create prompt expert. Rules:
 - Text-to-image generation up to 4K with strong aesthetic sense
 - Describe: subject → style → lighting → scene → quality
@@ -167,7 +168,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Excels at fashion editorial, unique lighting, natural textures
 - Fast generation for quick iteration
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Reve is now available in ComfyUI', url: 'https://blog.comfy.org/p/reve-is-now-available-in-comfyui/', type: 'blog' },
       { title: 'Reve Create on Replicate', url: 'https://replicate.com/reve/create', type: 'api-reference' },
@@ -220,7 +221,7 @@ Generate ONLY the prompt text.`,
 - Build complex scenes from separate reference images[reference:25]
 - Create variations by mixing and matching elements[reference:26]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Reve Remix prompt expert. Rules:
 - Image-to-image remixing with 1-4 reference images
 - Describe what to combine and how elements should blend
@@ -228,7 +229,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Use for e-commerce, complex scenes, and variations
 - Spatial relationships, proportions, and lighting are preserved
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Reve Remix on Replicate', url: 'https://internal.replicate.com/reve/remix/readme', type: 'api-reference' },
       { title: 'Reve Remix on WaveSpeedAI', url: 'https://wavespeed.ai', type: 'api-reference' },
@@ -280,7 +281,7 @@ Generate ONLY the prompt text.`,
 - Portrait retouching and styling with professional lighting and color grading[reference:38]
 - Concept art iteration with multiple style interpretations[reference:39]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Reve Remix Fast prompt expert. Rules:
 - Fast image remixing and editing — structure-preserving transformations
 - Describe: what to change → what to preserve → reference roles → quality
@@ -288,7 +289,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Identity preservation for portraits and brand images
 - Available formats: JPEG, PNG, WebP
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Reve Remix Fast on WaveSpeedAI', url: 'https://wavespeed.ai/blog/zh-TW/posts/introducing-reve-remix-fast-on-wavespeedai/', type: 'blog' },
     ],
@@ -341,7 +342,7 @@ Generate ONLY the prompt text.`,
 - "Apply vintage film aesthetic"
 - "Convert to cinematic night scene"
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Reve Edit prompt expert. Rules:
 - Natural language image editing
 - Describe: what to change → what to preserve → style → quality
@@ -349,7 +350,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Make adjustments in multiple steps for precise control
 - Part of Reve's integrated Create, Remix, Edit workflow
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Reve Edit API on WaveSpeedAI', url: 'https://wavespeed.ai', type: 'api-reference' },
       { title: 'Reve Edit on Picsart Docs', url: 'https://docs.picsart.io', type: 'docs' },

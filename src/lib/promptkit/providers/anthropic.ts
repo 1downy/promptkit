@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const ANTHROPIC: SystemPromptEntry[] = [
 
@@ -44,7 +45,7 @@ Use XML tags to structure prompts for all Claude models[reference:7]:
 - **Request "above and beyond" behavior explicitly**: Don't rely on inference from vague prompts
 - **Think of Claude as a brilliant but new employee**: Needs clear guidance
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Claude Fable 5 prompt engineer. Rules:
 1. Fable 5 uses adaptive thinking by default — decides when and how much to reason
 2. Best for: hard coding problems, long-running agents, complex refactors, research synthesis
@@ -54,7 +55,7 @@ Generate ONLY the prompt text. No explanations.`,
 6. 95% on SWE-bench Verified, 80% on SWE-bench Pro
 7. 128K max output tokens
 
-Generate the best Claude Fable 5 prompt.`,
+Generate the best Claude Fable 5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Prompting best practices - Claude Docs', url: 'https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices', type: 'guide' },
       { title: 'Claude Fable 5 on Replicate', url: 'https://replicate.com/anthropic/claude-fable-5', type: 'docs' },
@@ -102,7 +103,7 @@ Anthropic's model family now spans four classes[reference:12]:
 3. **Opus** — High intelligence for complex tasks
 4. **Mythos** — Most advanced (Fable 5 and Mythos 5)
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Claude Mythos 5 prompt engineer. Rules:
 1. Mythos-class model — highest tier of Anthropic intelligence
 2. Limited availability — released June 9, 2026
@@ -110,7 +111,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be clear and direct
 5. Part of Anthropic's four-class model family
 
-Generate the best Claude Mythos 5 prompt.`,
+Generate the best Claude Mythos 5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Covered Models - Claude Help Center', url: 'https://support.claude.com/hc/en-us/articles/covered-models', type: 'docs' },
       { title: 'Claude Fable 5 Announcement', url: 'https://www.anthropic.com/news/claude-fable-5-mythos-5', type: 'blog' },
@@ -162,7 +163,7 @@ Use XML tags to structure prompts for all Claude models[reference:17]:
 - Be specific about desired output
 - Request "above and beyond" behavior explicitly
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Claude Opus 4.8 prompt engineer. Rules:
 1. Advanced reasoning, coding, and vision capabilities
 2. Improved over Opus 4.7 — recommended migration target
@@ -171,7 +172,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Be clear and direct — explicit instructions work best
 6. Single fixed snapshot model
 
-Generate the best Claude Opus 4.8 prompt.`,
+Generate the best Claude Opus 4.8 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Prompting Claude Opus 4.8 - Claude Docs', url: 'https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-4-8', type: 'guide' },
       { title: 'Claude Opus 4.8 Release Notes', url: 'https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-8', type: 'docs' },
@@ -218,7 +219,7 @@ Use XML tags to structure prompts[reference:23]:
 - **<formatting>**: Output format specifications
 - **<example>**: Few-shot examples
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Claude Opus 4.7 prompt engineer. Rules:
 1. Improved for software engineering and long-running coding tasks
 2. Better vision capabilities with higher resolution
@@ -226,7 +227,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Use XML tags: <instructions>, <context>, <formatting>, <example>
 5. Be clear and direct
 
-Generate the best Claude Opus 4.7 prompt.`,
+Generate the best Claude Opus 4.7 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Anthropic Transparency Hub', url: 'https://www.anthropic.com/transparency', type: 'docs' },
       { title: 'Claude Opus 4.7 System Prompts', url: 'https://platform.claude.com/docs/en/release-notes/system-prompts', type: 'docs' },
@@ -270,14 +271,14 @@ Use XML tags to structure prompts[reference:27]:
 - **<formatting>**: Output format specifications
 - **<example>**: Few-shot examples
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Claude Opus 4.6 prompt engineer. Rules:
 1. Flagship model — strongest reasoning and creative capabilities
 2. Single fixed snapshot model
 3. Use XML tags: <instructions>, <context>, <formatting>, <example>
 4. Be clear and direct
 
-Generate the best Claude Opus 4.6 prompt.`,
+Generate the best Claude Opus 4.6 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Claude Opus 4.6 System Prompts', url: 'https://platform.claude.com/docs/en/release-notes/system-prompts', type: 'docs' },
       { title: 'Prompting best practices - Claude Docs', url: 'https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices', type: 'guide' },
@@ -325,7 +326,7 @@ Generate the best Claude Opus 4.6 prompt.`,
 - Analysis and summarization
 - Structured output tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Claude Sonnet 4.6 prompt engineer. Rules:
 1. Balanced performance — best for most production tasks
 2. Single fixed snapshot model
@@ -333,7 +334,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be clear and direct
 5. Excellent balance of intelligence, speed, and cost
 
-Generate the best Claude Sonnet 4.6 prompt.`,
+Generate the best Claude Sonnet 4.6 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Claude Sonnet 4.6 System Prompts', url: 'https://platform.claude.com/docs/en/release-notes/system-prompts', type: 'docs' },
       { title: 'Prompting best practices - Claude Docs', url: 'https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices', type: 'guide' },
@@ -383,7 +384,7 @@ Generate the best Claude Sonnet 4.6 prompt.`,
 - Quick Q&A
 - High-volume production workloads
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Claude Haiku 4.5 prompt engineer. Rules:
 1. Fastest and most cost-effective Claude model
 2. 200K context window
@@ -391,7 +392,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be clear and direct
 5. Best for: classification, extraction, short-form generation, high-volume production
 
-Generate the best Claude Haiku 4.5 prompt.`,
+Generate the best Claude Haiku 4.5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Claude Haiku 4.5 System Prompts', url: 'https://platform.claude.com/docs/en/release-notes/system-prompts', type: 'docs' },
       { title: 'Prompting best practices - Claude Docs', url: 'https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices', type: 'guide' },

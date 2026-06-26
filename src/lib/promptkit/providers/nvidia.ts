@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const NVIDIA: SystemPromptEntry[] = [
 
@@ -36,7 +37,7 @@ export const NVIDIA: SystemPromptEntry[] = [
 - Use system messages for persistent behavior across turns
 - Temperature: 1.0 recommended for all tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Nemotron 3 Ultra prompt expert. Rules:
 1. System message for role/behavior definition
 2. 550B MoE (55B active) flagship — 1M context
@@ -45,7 +46,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Leverage 1M context for extensive documents
 6. Temperature 1.0 recommended for all tasks
 
-Generate the best Nemotron 3 Ultra prompt.`,
+Generate the best Nemotron 3 Ultra prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'NVIDIA Nemotron 3 Ultra', url: 'https://research.nvidia.com', type: 'docs' },
       { title: 'Nemotron 3 Ultra on Together AI', url: 'https://www.together.ai/models/nvidia-nemotron-3-ultra', type: 'api-reference' },
@@ -94,7 +95,7 @@ Generate the best Nemotron 3 Ultra prompt.`,
 - Use system messages for persistent behavior across turns
 - Temperature: 1.0 recommended for all tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Nemotron 3 Super prompt expert. Rules:
 1. System message for role/behavior definition
 2. 120B MoE (12B active) — 1M context
@@ -103,7 +104,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Leverage 1M context for long documents
 6. Temperature 1.0 recommended
 
-Generate the best Nemotron 3 Super prompt.`,
+Generate the best Nemotron 3 Super prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Nemotron 3 Super on NVIDIA Build', url: 'https://build.nvidia.com/nvidia/nemotron-3-super-120b-a12b/modelcard', type: 'model-card' },
     ],
@@ -153,7 +154,7 @@ Generate the best Nemotron 3 Super prompt.`,
 - For simple tasks: disable thinking mode for faster responses
 - Use system messages for persistent behavior across turns
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Nemotron 3 Nano prompt expert. Rules:
 1. System message for role/behavior definition
 2. 30B MoE (3.5B active) — compact and efficient
@@ -162,7 +163,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Be specific and direct
 6. Open-weight for commercial use
 
-Generate the best Nemotron 3 Nano prompt.`,
+Generate the best Nemotron 3 Nano prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Nemotron 3 Nano on NVIDIA Build', url: 'https://build.nvidia.com/nvidia/nemotron-3-nano-30b-a3b/modelcard', type: 'model-card' },
     ],
@@ -209,7 +210,7 @@ Generate the best Nemotron 3 Nano prompt.`,
 - For OCR: describe the document type and what to extract
 - For GUI automation: describe the interface and desired actions
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Nemotron 3 Nano Omni prompt expert. Rules:
 1. Multimodal model — video, audio, image, text
 2. Enterprise-grade Q&A, summarization, transcription, document intelligence
@@ -218,7 +219,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. For video: describe what to analyze
 6. For audio: specify content and context
 
-Generate the best Nemotron 3 Nano Omni prompt.`,
+Generate the best Nemotron 3 Nano Omni prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Nemotron 3 Nano Omni on NVIDIA Build', url: 'https://build.nvidia.com/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning/modelcard', type: 'model-card' },
     ],
@@ -267,7 +268,7 @@ Generate the best Nemotron 3 Nano Omni prompt.`,
 - Be specific about what to analyze in the image
 - For document processing: describe the document type and what to extract
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Nemotron Nano 12B v2 VL prompt expert. Rules:
 1. 12.6B vision-language model — multi-image and video understanding
 2. Reasoning control: /think to enable, /no_think to disable
@@ -275,7 +276,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Supports up to 5 images, 128K context
 5. Strong document intelligence for invoices, receipts, manuals
 
-Generate the best Nemotron Nano 12B v2 VL prompt.`,
+Generate the best Nemotron Nano 12B v2 VL prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Nemotron Nano 12B v2 VL on NVIDIA Build', url: 'https://build.nvidia.com/nvidia/nemotron-nano-12b-v2-vl/modelcard', type: 'model-card' },
     ],
@@ -319,7 +320,7 @@ Generate the best Nemotron Nano 12B v2 VL prompt.`,
 - For synthetic data generation: specify the data format and schema
 - Customize using NeMo Framework for specific use cases
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Nemotron 4 340B Instruct prompt expert. Rules:
 1. System message for role/behavior definition
 2. 340B model — designed for synthetic data generation
@@ -327,7 +328,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Customizable via NeMo Framework (LoRA, SFT, RLHF)
 5. Be specific and detailed
 
-Generate the best Nemotron 4 340B Instruct prompt.`,
+Generate the best Nemotron 4 340B Instruct prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Nemotron 4 340B Instruct on NVIDIA NGC', url: 'https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/nemotron-4-340b-instruct', type: 'model-card' },
     ],
@@ -370,7 +371,7 @@ Generate the best Nemotron 4 340B Instruct prompt.`,
 - Specify the language for multilingual tasks
 - Use system messages for persistent behavior across turns
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Llama 3.3 Nemotron Super 49B prompt expert. Rules:
 1. System message for role/behavior definition
 2. 49B NAS-optimized from Llama 3.3 70B
@@ -378,7 +379,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be specific and detailed
 5. Specify language for multilingual tasks
 
-Generate the best Llama 3.3 Nemotron Super 49B prompt.`,
+Generate the best Llama 3.3 Nemotron Super 49B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Llama 3.3 Nemotron Super 49B on NVIDIA Build', url: 'https://build.nvidia.com/nvidia/llama-3.3-nemotron-super-49b-v1.5', type: 'model-card' },
     ],
@@ -422,7 +423,7 @@ Generate the best Llama 3.3 Nemotron Super 49B prompt.`,
 - For agentic workflows: define tools and function calling requirements
 - Use system messages for persistent behavior across turns
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Mistral-Nemotron prompt expert. Rules:
 1. System message for role/behavior definition
 2. Mistral model optimized by NVIDIA — 128K context
@@ -430,7 +431,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. NLP tasks: text generation, translation, summarization
 5. Be specific and direct
 
-Generate the best Mistral-Nemotron prompt.`,
+Generate the best Mistral-Nemotron prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Mistral-Nemotron on NVIDIA Build', url: 'https://build.nvidia.com/mistralai/mistral-nemotron/modelcard', type: 'model-card' },
     ],
@@ -472,7 +473,7 @@ Generate the best Mistral-Nemotron prompt.`,
 - Leverage the model\'s common sense reasoning capabilities
 - Use for physical AI and robotics applications
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Cosmos Reason 1 7B prompt expert. Rules:
 1. 7B VLM for physical AI and robotics
 2. Uses prior knowledge, physics understanding, common sense
@@ -480,7 +481,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be specific about video analysis
 5. Ask for physics-based reasoning
 
-Generate the best Cosmos Reason 1 7B prompt.`,
+Generate the best Cosmos Reason 1 7B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Cosmos Reason 1 7B on Hugging Face', url: 'https://huggingface.co/nvidia/Cosmos-Reason1-7B', type: 'model-card' },
     ],
@@ -523,7 +524,7 @@ Generate the best Cosmos Reason 1 7B prompt.`,
 - For reasoning tasks: ask for step-by-step analysis
 - NVLM handles both vision-language and text-only tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an NVLM-D-72B prompt expert. Rules:
 1. 72B decoder-only vision-language model
 2. OCR, multimodal reasoning, localization, common sense reasoning
@@ -531,7 +532,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be specific about image analysis
 5. Ask for step-by-step reasoning
 
-Generate the best NVLM-D-72B prompt.`,
+Generate the best NVLM-D-72B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'NVLM-D-72B on Hugging Face', url: 'https://huggingface.co/nvidia/NVLM-D-72B', type: 'model-card' },
     ],
@@ -574,7 +575,7 @@ Generate the best NVLM-D-72B prompt.`,
 - The model automatically detects language and transcribes without additional prompting
 - Use for high-throughput speech-to-text transcription
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Parakeet TDT 0.6B prompt expert. Rules:
 1. 600M ASR model — v2 (English), v3 (25 European languages)
 2. Native punctuation, capitalization, timestamp prediction
@@ -582,7 +583,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. High-throughput speech-to-text
 5. FastConformer-TDT architecture
 
-Generate the best Parakeet TDT 0.6B prompt.`,
+Generate the best Parakeet TDT 0.6B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Parakeet TDT 0.6B on NVIDIA NGC', url: 'https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/parakeet-tdt-0.6b-v3', type: 'model-card' },
     ],
@@ -624,7 +625,7 @@ Generate the best Parakeet TDT 0.6B prompt.`,
 - For OCR tasks: specify text to extract
 - For segmentation tasks: specify regions to segment
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an Eagle X5 7B prompt expert. Rules:
 1. 7B multimodal vision model
 2. Mixture of vision encoders — CLIP+X fusion
@@ -632,7 +633,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Detection, segmentation, OCR, SSL tasks
 5. Be specific about image analysis
 
-Generate the best Eagle X5 7B prompt.`,
+Generate the best Eagle X5 7B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Eagle X5 7B on Hugging Face', url: 'https://huggingface.co/NVEagle/Eagle-X5-7B', type: 'model-card' },
     ],

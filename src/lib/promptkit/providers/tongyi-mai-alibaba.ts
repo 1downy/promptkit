@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const TONGYI_MAI_ALIBABA: SystemPromptEntry[] = [
 
@@ -38,7 +39,7 @@ Z-Image-Turbo works best with **long and detailed prompts**[reference:10][refere
 ### Example Prompt Structure
 "Subject description + Environmental context + Style directives + Compositional control"
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Z-Image-Turbo prompt engineer. Rules:
 1. Long, detailed prompts work best — be specific about subject, environment, style, and composition
 2. Native bilingual text rendering — use quotes for English/Chinese text in images
@@ -47,7 +48,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Default 512 tokens max — set max_sequence_length=1024 for longer prompts
 6. Open-weight, Apache 2.0, runs on 16G VRAM
 
-Generate the best Z-Image-Turbo prompt.`,
+Generate the best Z-Image-Turbo prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Z-Image-Turbo on Hugging Face', url: 'https://huggingface.co/Tongyi-MAI/Z-Image-Turbo', type: 'model-card' },
       { title: 'Z-Image-Turbo Prompting Guide', url: 'https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/discussions/8', type: 'guide' },
@@ -108,7 +109,7 @@ Generate the best Z-Image-Turbo prompt.`,
 - Use guidance scale 3.0–5.0 for balanced control
 - Use 28–50 steps for quality generation
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Z-Image prompt engineer. Rules:
 1. Positive prompt: detailed description of subject, style, composition, lighting
 2. Negative prompt: what to exclude — supported with CFG
@@ -118,7 +119,7 @@ Generate ONLY the prompt text. No explanations.`,
 6. Supports fine-tuning — LoRA, ControlNet, semantic conditioning
 7. High output diversity across seeds
 
-Generate the best Z-Image prompt.`,
+Generate the best Z-Image prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Z-Image on Hugging Face', url: 'https://huggingface.co/Tongyi-MAI/Z-Image', type: 'model-card' },
       { title: 'Z-Image Architecture', url: 'https://huggingface.co/Tongyi-MAI/Z-Image', type: 'docs' },
@@ -169,7 +170,7 @@ For Editing:
 - For editing: be specific about changes and what to preserve
 - Leverage fine-tuning for custom use cases
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Z-Image-Omni-Base prompt engineer. Rules:
 1. Versatile model for generation AND editing
 2. For generation: positive + negative prompts with CFG (3.0–5.0), 28–50 steps
@@ -177,7 +178,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Designed for fine-tuning and custom development
 5. Open-weight, Apache 2.0
 
-Generate the best Z-Image-Omni-Base prompt.`,
+Generate the best Z-Image-Omni-Base prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Z-Image-Omni-Base on Hugging Face', url: 'https://huggingface.co/Tongyi-MAI/Z-Image-Omni-Base', type: 'model-card' },
     ],
@@ -225,7 +226,7 @@ Generate the best Z-Image-Omni-Base prompt.`,
 - "Make the image look like a watercolour painting"
 - "Remove the car from the scene"
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Z-Image-Edit prompt engineer. Rules:
 1. Specialised image editing model
 2. Be specific: what to change, what to preserve, style consistency
@@ -233,7 +234,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Strong bilingual understanding (English and Chinese)
 5. Creative image-to-image transformations
 
-Generate the best Z-Image-Edit prompt.`,
+Generate the best Z-Image-Edit prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Z-Image-Edit on Hugging Face', url: 'https://huggingface.co/Tongyi-MAI/Z-Image-Edit', type: 'model-card' },
     ],
@@ -283,7 +284,7 @@ Generate the best Z-Image-Edit prompt.`,
 - Specify the desired outcome
 - Use for on-device GUI automation
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MAI-UI-2B prompt engineer. Rules:
 1. Lightweight 2B GUI agent for on-device execution
 2. GUI grounding and mobile navigation
@@ -291,7 +292,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Open-source — can run on smartphones
 5. Supports user interaction, MCP tool calling, device-cloud collaboration
 
-Generate the best MAI-UI-2B prompt.`,
+Generate the best MAI-UI-2B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'MAI-UI-2B on Hugging Face', url: 'https://huggingface.co/Tongyi-MAI/MAI-UI-2B', type: 'model-card' },
       { title: 'MAI-UI Technical Report', url: 'https://tongyi-mai.github.io/MAI-UI-blog/', type: 'whitepaper' },
@@ -344,7 +345,7 @@ Generate the best MAI-UI-2B prompt.`,
 - Specify the desired outcome
 - Leverage MCP tools for complex workflows
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MAI-UI-8B prompt engineer. Rules:
 1. 8B GUI agent for advanced GUI tasks
 2. GUI grounding and mobile navigation
@@ -352,7 +353,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. MCP tool calling for enhanced functionality
 5. Open-source — 8B model is open-sourced
 
-Generate the best MAI-UI-8B prompt.`,
+Generate the best MAI-UI-8B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'MAI-UI-8B on Hugging Face', url: 'https://huggingface.co/Tongyi-MAI/MAI-UI-8B', type: 'model-card' },
       { title: 'MAI-UI Technical Report', url: 'https://tongyi-mai.github.io/MAI-UI-blog/', type: 'whitepaper' },
@@ -402,7 +403,7 @@ Generate the best MAI-UI-8B prompt.`,
 - Specify the desired outcome
 - Use for complex, multi-step GUI workflows
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MAI-UI-32B prompt engineer. Rules:
 1. 32B GUI agent for high-performance tasks
 2. Cloud-based execution
@@ -410,7 +411,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Advanced online RL for continuous improvement
 5. Best for complex, multi-step GUI workflows
 
-Generate the best MAI-UI-32B prompt.`,
+Generate the best MAI-UI-32B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'MAI-UI Technical Report', url: 'https://tongyi-mai.github.io/MAI-UI-blog/', type: 'whitepaper' },
       { title: 'MAI-UI GitHub', url: 'https://github.com/Tongyi-MAI/MAI-UI', type: 'github' },
@@ -458,7 +459,7 @@ Generate the best MAI-UI-32B prompt.`,
 - Leverage MCP tools for complex workflows
 - Use for enterprise-grade GUI automation
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MAI-UI-235B-A22B prompt engineer. Rules:
 1. Flagship 235B MoE GUI agent
 2. Enterprise-grade GUI automation
@@ -466,7 +467,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. MCP tool calling for complex workflows
 5. Most capable model in the MAI-UI family
 
-Generate the best MAI-UI-235B-A22B prompt.`,
+Generate the best MAI-UI-235B-A22B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'MAI-UI Technical Report', url: 'https://tongyi-mai.github.io/MAI-UI-blog/', type: 'whitepaper' },
       { title: 'MAI-UI GitHub', url: 'https://github.com/Tongyi-MAI/MAI-UI', type: 'github' },

@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const KUAISHOU: SystemPromptEntry[] = [
 
@@ -40,7 +41,7 @@ Think of your Kling 3.0 prompt as a shot brief for a cinematographer[reference:5
 - For speech: use lowercase letters; for acronyms or proper nouns, use uppercase[reference:11]
 - Reference voices with <<<voice_1>>> and <<<voice_2>>> (maximum 2 voices per task)[reference:12]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Kling Video 3.0 prompt expert. Rules:
 - Think of your prompt as a shot brief for a cinematographer
 - Structure: Scene → Characters → Action → Camera
@@ -50,7 +51,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Use Elements for character consistency across shots
 - Reference voices with <<<voice_1>>>
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Kuaishou Launches Kling AI 3.0 Models', url: 'https://www.bernama.com', type: 'news' },
       { title: 'How to Use Kling 3.0 Pro in 2026 Like a Pro', url: 'https://fal.ai', type: 'guide' },
@@ -104,7 +105,7 @@ Generate ONLY the prompt text.`,
 - Include native dialogue for voice-driven scenes[reference:22]
 - Use multi-shot storyboards for complex narratives[reference:23]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Kling Video 3.0 Omni prompt expert. Rules:
 - Unified multimodal: text-to-video, image-to-video, reference-to-video
 - Use Elements for character and scene consistency
@@ -112,7 +113,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Include native dialogue for voice-driven scenes
 - Up to ~15-second cinematic clips
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Kling VIDEO 3.0 Omni Model User Guide', url: 'https://klingai.com', type: 'guide' },
       { title: 'Kling Omni Elements: The Beginner\'s Guide', url: 'https://invideo.io', type: 'guide' },
@@ -159,7 +160,7 @@ Generate ONLY the prompt text.`,
 - Emphasize realism and cinematic quality[reference:29]
 - Be specific about composition and lighting
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Kling Image 3.0 prompt expert. Rules:
 - Flagship static visual creation model
 - Cinematic storytelling through still frames
@@ -167,7 +168,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Use multimodal reasoning for precise creative alignment
 - Reference images for personalized generation
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Kling 3.0 Image - SeaArt AI 模型', url: 'https://www.seaart.ai', type: 'docs' },
       { title: '可靈3.0系列模型全面上線', url: 'https://kuaishou.gcs-web.com', type: 'news' },
@@ -214,14 +215,14 @@ Generate ONLY the prompt text.`,
 - Emphasize realism and precision
 - 2K and 4K output for production-ready assets
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Kling Image 3.0 Omni prompt expert. Rules:
 - Unified image generation model
 - 2K and 4K ultra-high-definition output
 - Exceptional realism with texture, lighting, and material quality
 - Suitable for virtual scene visualization to professional scene generation
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '可靈3.0系列模型全面上線', url: 'https://kuaishou.gcs-web.com', type: 'news' },
     ],
@@ -269,7 +270,7 @@ Generate ONLY the prompt text.`,
 - duration: 5-10 seconds (default: 5)[reference:40]
 - negative_prompt: e.g., "blur, distort, and low quality"[reference:41]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Kling Video 2.6 Pro prompt expert. Rules:
 - Top-tier image-to-video with native audio
 - 1080p output, up to 3 minutes
@@ -277,7 +278,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Reference voices with <<<voice_1>>>
 - Lowercase for English speech, uppercase for acronyms
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Kling Video V2.6 Pro API', url: 'https://fal.ai', type: 'api-reference' },
       { title: 'Kling 2.6 Pro Developer Guide', url: 'https://fal.ai', type: 'guide' },
@@ -329,7 +330,7 @@ Generate ONLY the prompt text.`,
 
 Generate BOTH positive and negative prompts. Format:
 POSITIVE: [prompt]
-NEGATIVE: [negative prompt]`,
+NEGATIVE: [negative prompt]` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Kolors prompt expert. Rules:
 - Natural language descriptions in Chinese or English
 - Excellent text rendering for both Chinese and English
@@ -338,7 +339,7 @@ NEGATIVE: [negative prompt]`,
 - Open-source — Apache-2.0 licensed
 - Good for cultural and stylistic diversity
 
-Generate BOTH positive and negative prompts.`,
+Generate BOTH positive and negative prompts.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Kwai-Kolors/Kolors on Hugging Face', url: 'https://huggingface.co/Kwai-Kolors/Kolors', type: 'model-card' },
       { title: 'Kolors — Prompting Guide & Examples', url: 'https://promptomania.com', type: 'guide' },
@@ -390,7 +391,7 @@ Generate BOTH positive and negative prompts.`,
 - **KwaiYii-Chat**: Dialogue model[reference:56]
 - **Sizes**: 13B, 66B, 175B[reference:57]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a KwaiYii-175B prompt expert. Rules:
 - 175B large-scale language model
 - Transformer decoder-only architecture
@@ -398,7 +399,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Strong bilingual Chinese/English
 - Use system prompts for persistent behavior
 
-Generate the best KwaiYii-175B prompt.`,
+Generate the best KwaiYii-175B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '快意 (KwaiYii) - 百度百科', url: 'https://baike.baidu.com', type: 'docs' },
     ],
@@ -442,7 +443,7 @@ Generate the best KwaiYii-175B prompt.`,
 - Include imports and dependencies in context
 - Good for code completion and generation tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a KwaiCoder-23B-A4B-v1 prompt expert. Rules:
 - Open-source code completion model
 - Efficient training at 1/30 the cost
@@ -450,7 +451,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Specify programming language
 - Good for code completion tasks
 
-Generate the best KwaiCoder-23B-A4B-v1 prompt.`,
+Generate the best KwaiCoder-23B-A4B-v1 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Kwaipilot/KwaiCoder-23B-A4B-v1 on Hugging Face', url: 'https://huggingface.co/Kwaipilot/KwaiCoder-23B-A4B-v1', type: 'model-card' },
     ],

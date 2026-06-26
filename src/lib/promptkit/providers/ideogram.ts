@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const IDEOGRAM: SystemPromptEntry[] = [
 
@@ -88,7 +89,7 @@ For text in images, use type "text" in elements:
 - Describe text placement, font style, size, and color explicitly
 - Great for: typography, posters, logos, marketing materials, print-on-demand, interface assets, brand worlds[reference:8]
 
-Generate ONLY the prompt text. Use plain-text or JSON format as appropriate.`,
+Generate ONLY the prompt text. Use plain-text or JSON format as appropriate.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an Ideogram 4.0 prompt expert. Rules:
 - Best-in-class text rendering — use quotes for text: "YOUR TEXT"
 - JSON prompts give significantly better control over layout, style, and color
@@ -98,7 +99,7 @@ Generate ONLY the prompt text. Use plain-text or JSON format as appropriate.`,
 - Supports post-generation editing: remove background, layerize text, extend, reframe, upscale, remix, Magic Fill
 - Great for: typography, posters, logos, marketing materials, brand assets
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Available Models | Ideogram', url: 'https://docs.ideogram.ai/using-ideogram/generation-settings/available-models', type: 'docs' },
       { title: 'Ideogram 4 Prompting Guide', url: 'https://github.com/ideogram-oss/ideogram4/blob/main/docs/prompting.md', type: 'guide' },

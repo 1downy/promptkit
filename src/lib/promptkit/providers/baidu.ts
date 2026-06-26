@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const BAIDU: SystemPromptEntry[] = [
 
@@ -39,7 +40,7 @@ export const BAIDU: SystemPromptEntry[] = [
 - Cost-effective for production workloads
 - Available via Baidu Qianfan platform[reference:4]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert ERNIE 5.1 prompt engineer. Rules:
 1. Use system message for role/behavior definition
 2. Outstanding agentic capabilities — describe full workflows
@@ -48,7 +49,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Available via Baidu Qianfan platform
 6. #4 globally on Arena Search leaderboard
 
-Generate the best ERNIE 5.1 prompt.`,
+Generate the best ERNIE 5.1 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'ERNIE 5.1 Official Release', url: 'https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/', type: 'blog' },
       { title: 'ERNIE 5.1 Preview on LMArena', url: 'https://yiyan.baidu.com/blog/posts/ernie-5.1-preview-0430-release-on-lmarena/', type: 'blog' },
@@ -93,14 +94,14 @@ Generate the best ERNIE 5.1 prompt.`,
 - Leverage domain expertise — specify the domain for best results
 - Use structured output formats
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert ERNIE 5.1 Preview prompt engineer. Rules:
 1. #1 Chinese model on LMArena Text leaderboard
 2. #1 in Legal & Government, #4 in Business/Finance, #7 in Software
 3. Be specific and detailed
 4. Specify domain for best results
 
-Generate the best ERNIE 5.1 Preview prompt.`,
+Generate the best ERNIE 5.1 Preview prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'ERNIE 5.1 Preview on LMArena', url: 'https://yiyan.baidu.com/blog/posts/ernie-5.1-preview-0430-release-on-lmarena/', type: 'blog' },
     ],
@@ -147,7 +148,7 @@ Generate the best ERNIE 5.1 Preview prompt.`,
 - Omni-capability across text, image, video, and audio
 - Elastic training — can spawn efficient sub-models without retraining[reference:14]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert ERNIE 5.0 prompt engineer. Rules:
 1. 2.4T unified multimodal foundation model
 2. Supports text, image, video, and audio
@@ -155,7 +156,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. <3% activation rate — efficient inference
 5. Unified autoregressive framework
 
-Generate the best ERNIE 5.0 prompt.`,
+Generate the best ERNIE 5.0 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'ERNIE 5.0 Technical Blog', url: 'https://yiyan.baidu.com/blog/posts/ernie5.0/', type: 'blog' },
     ],
@@ -206,7 +207,7 @@ Generate the best ERNIE 5.0 prompt.`,
 - For VL models: specify thinking mode for complex reasoning tasks
 - Open-weight — can be run locally with llama.cpp or MNN[reference:23]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert ERNIE 4.5 prompt engineer. Rules:
 1. Open-source under Apache 2.0 — 10 models across 3 series
 2. 0.3B (on-device), A3B (efficient), A47B (state-of-the-art)
@@ -214,7 +215,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be specific and detailed
 5. Can run locally with llama.cpp or MNN
 
-Generate the best ERNIE 4.5 prompt.`,
+Generate the best ERNIE 4.5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'ERNIE 4.5 Developer Resource Guide', url: 'https://github.com/PFCCLab/ERNIE4.5-Developer-Resource', type: 'github' },
       { title: 'ERNIE 4.5 on Hugging Face', url: 'https://huggingface.co/baidu', type: 'model-card' },
@@ -265,7 +266,7 @@ Generate the best ERNIE 4.5 prompt.`,
 - **-Thinking**: Enhanced reasoning with chain-of-thought
 - **-Paddle**: PaddlePaddle framework implementation
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert ERNIE 4.5 VL prompt engineer. Rules:
 1. 28B vision-language model — supports images and video
 2. Thinking mode for enhanced reasoning, non-thinking for fast perception
@@ -273,7 +274,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Chain of thought mechanism for interpretability
 5. Open-source under Apache 2.0
 
-Generate the best ERNIE 4.5 VL prompt.`,
+Generate the best ERNIE 4.5 VL prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'ERNIE 4.5 VL on Hugging Face', url: 'https://huggingface.co/baidu/ERNIE-4.5-VL-28B-A3B', type: 'model-card' },
       { title: 'ERNIE 4.5 VL Technical Details', url: 'https://aihub.caict.ac.cn', type: 'docs' },
@@ -325,7 +326,7 @@ Generate the best ERNIE 4.5 VL prompt.`,
 - Logical reasoning and complex calculations[reference:35]
 - Daily dialogue and conversation[reference:36]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert ERNIE X1 prompt engineer. Rules:
 1. Multimodal deep-thinking reasoning model
 2. Comparable to DeepSeek R1 at half the price
@@ -333,7 +334,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. State problems precisely with all given values
 5. Capable of tool use
 
-Generate the best ERNIE X1 prompt.`,
+Generate the best ERNIE X1 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Baidu Unveils ERNIE X1', url: 'https://www.nasdaq.com/articles/baidu-unveils-ernie-4.5-and-reasoning-model-ernie-x1', type: 'news' },
       { title: 'ERNIE X1 on Bloomberg', url: 'https://www.bloomberg.com/news/articles/2025-03-16/baidu-releases-reasoning-ai-model-to-take-on-deepseek', type: 'news' },
@@ -388,7 +389,7 @@ Generate the best ERNIE X1 prompt.`,
 - Prompt Enhancer can be enabled/disabled (may reduce instruction-following accuracy)[reference:52]
 - Available in regular and Turbo checkpoints[reference:53]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert ERNIE-Image prompt engineer. Rules:
 1. 8B DiT model — compact but highly competitive
 2. Excels at complex instruction following, text rendering, and structured generation
@@ -398,7 +399,7 @@ Generate ONLY the prompt text. No explanations.`,
 6. Supports English, Chinese, and Japanese prompts
 7. Runs on consumer GPUs (24G VRAM)
 
-Generate the best ERNIE-Image prompt.`,
+Generate the best ERNIE-Image prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'ERNIE-Image on Hugging Face', url: 'https://huggingface.co/baidu/ERNIE-Image', type: 'model-card' },
       { title: 'ERNIE-Image Introduction', url: 'https://yiyan.baidu.com/blog/zh/posts/ernie-image/', type: 'blog' },
@@ -445,14 +446,14 @@ Same as ERNIE-Image:
 - Same as ERNIE-Image
 - Optimized for speed — good for production workflows
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert ERNIE-Image-Turbo prompt engineer. Rules:
 1. Turbo checkpoint — faster inference
 2. Same 8B DiT architecture and capabilities as ERNIE-Image
 3. Excellent text rendering and structured generation
 4. Use detailed, structured prompts
 
-Generate the best ERNIE-Image-Turbo prompt.`,
+Generate the best ERNIE-Image-Turbo prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'ERNIE-Image-Turbo on Hugging Face', url: 'https://huggingface.co/baidu/ERNIE-Image-Turbo', type: 'model-card' },
       { title: 'ERNIE-Image SGLang Documentation', url: 'https://docs.sglang.io/cookbook/diffusion/Ernie-Image/Ernie-Image', type: 'docs' },
@@ -494,7 +495,7 @@ Generate the best ERNIE-Image-Turbo prompt.`,
 - Be specific and direct
 - Best for straightforward tasks: classification, extraction, simple Q&A
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert ERNIE-Lite prompt engineer. Rules:
 1. Lightweight model — balances performance and inference speed
 2. Suitable for low-compute AI accelerators
@@ -502,7 +503,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Keep prompts focused and direct
 5. Best for simple tasks
 
-Generate the best ERNIE-Lite prompt.`,
+Generate the best ERNIE-Lite prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'ERNIE-Lite Documentation', url: 'https://ai.baidu.com', type: 'docs' },
       { title: 'Qianfan ModelBuilder Free Models', url: 'https://cloud.baidu.com', type: 'docs' },
@@ -545,7 +546,7 @@ Generate the best ERNIE-Lite prompt.`,
 - Use system prompts for persistent behavior
 - Good for general-purpose tasks and fine-tuning
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert ERNIE-Speed prompt engineer. Rules:
 1. High-performance model — excellent general capabilities
 2. Suitable as base model for fine-tuning
@@ -553,7 +554,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. 8K and 128K context variants
 5. Good for general-purpose tasks
 
-Generate the best ERNIE-Speed prompt.`,
+Generate the best ERNIE-Speed prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'ERNIE-Speed Documentation', url: 'https://cloud.baidu.com', type: 'docs' },
       { title: 'ERNIE-Speed API Guide', url: 'https://cloud.baidu.com/doc/WENXINWORKSHOP/index.html', type: 'docs' },
@@ -595,13 +596,13 @@ Generate the best ERNIE-Speed prompt.`,
 - Be specific and direct
 - Best for high-throughput production workloads
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert ERNIE-Turbo prompt engineer. Rules:
 1. Fast response speed — lower API costs
 2. Keep prompts focused — optimized for speed
 3. Best for high-throughput production workloads
 
-Generate the best ERNIE-Turbo prompt.`,
+Generate the best ERNIE-Turbo prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'ERNIE-Turbo Documentation', url: 'https://ernie-bot-agent.readthedocs.io', type: 'docs' },
     ],
@@ -642,14 +643,14 @@ Generate the best ERNIE-Turbo prompt.`,
 - Use system prompts for persistent behavior
 - Good for general-purpose tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert ERNIE 4.0 prompt engineer. Rules:
 1. Previous generation flagship model
 2. Strong knowledge enhancement and content generation
 3. Be specific and detailed
 4. Use system prompts
 
-Generate the best ERNIE 4.0 prompt.`,
+Generate the best ERNIE 4.0 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'ERNIE 4.0 Documentation', url: 'https://ernie-bot-agent.readthedocs.io', type: 'docs' },
     ],
@@ -692,14 +693,14 @@ Generate the best ERNIE 4.0 prompt.`,
 - Specify success criteria
 - Use for agentic and automated tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Qianfan-Agent-Speed prompt engineer. Rules:
 1. Agent-specialized model — instruction-tuned for enterprise
 2. Excels at Q&A and agentic scenarios
 3. Define task, tools, workflow steps, constraints, output format
 4. 8K context
 
-Generate the best Qianfan-Agent-Speed prompt.`,
+Generate the best Qianfan-Agent-Speed prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Qianfan-Agent-Speed-8K Documentation', url: 'https://cloud.baidu.com', type: 'docs' },
     ],

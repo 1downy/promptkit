@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const VIDU: SystemPromptEntry[] = [
 
@@ -44,7 +45,7 @@ Think of your prompt as a comprehensive film brief:
 ### Example Prompt
 "A woman steps out of a painting into a room, walks to a table, and gently places a coffee cup down. Warm morning light, cinematic, smooth transition, consistent style, fixed camera, no flicker."[reference:19]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Vidu Q3 prompt expert. Rules:
 - Flagship model — 16 seconds, 1080p, synchronized audio
 - Describe: scene → characters → motion → camera → audio → progression
@@ -54,7 +55,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Built-in prompt enhancer available
 - Ranked No. 1 in China, No. 2 globally
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Vidu Q3 Baidu Baike', url: 'https://baike.baidu.com/item/Vidu%20Q3/67330811', type: 'docs' },
       { title: 'ShengShu Launches Vidu Q3 Reference-to-Video', url: 'https://www.tmcnet.com/usubmit/2026/04/13/10363364.htm', type: 'news' },
@@ -111,7 +112,7 @@ Generate ONLY the video prompt text.`,
 - "the iron man transform into the sport car"[reference:39]
 - "人物在0.5秒内完全蒸发，衣物细节同步解体，不留任何像素残留"[reference:40]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Vidu 2.0 prompt expert. Rules:
 - 8-second 720p video, under 10 seconds generation
 - Text, Image, Reference-to-Video, Start-End modes
@@ -121,7 +122,7 @@ Generate ONLY the prompt text. No explanations.`,
 - For Start-End: describe how start becomes end
 - Adjust movement amplitude for motion control
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Vidu 2.0 API on Together AI', url: 'https://www.together.ai/models/vidu-2-0', type: 'api-reference' },
       { title: 'Vidu 2.0 Core Upgrades', url: 'https://www.163.com', type: 'news' },
@@ -176,7 +177,7 @@ When using multiple references, explicitly assign what each reference is used fo
 ### Example Prompt
 "Use reference 1 as the room scene and table setup. Use reference 2 for the girl's identity and painting style. The girl steps out of the painting into the room, walks to the table, and gently places the coffee cup down. Warm morning light, cinematic, smooth transition."[reference:55]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Vidu Reference-to-Video 2.0 prompt expert. Rules:
 - Reference-guided video generation with multiple images
 - Explicitly assign what each reference is used for
@@ -185,7 +186,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Seed control for reproducible results
 - Describe action and camera intent
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Vidu Reference-to-Video 2.0 API Documentation', url: 'https://wavespeed.ai/docs/docs-api/vidu/vidu-reference-to-video-2.0', type: 'api-reference' },
       { title: 'Vidu Reference to Video 2.0 API - WaveSpeedAI', url: 'https://wavespeed.ai', type: 'api-reference' },
@@ -239,7 +240,7 @@ Explain how the start image becomes the end image[reference:68]:
 ### Example Prompt
 "The scene transitions from a blank white canvas to a vibrant sunset landscape. Brush strokes appear one by one, painting the sky in warm oranges and purples. A sun emerges in the center, casting golden light across the scene. Smooth, cinematic transition with gentle camera pull-back."
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Vidu Start-End to Video prompt expert. Rules:
 - Dual-keyframe interpolation — start and end images with text prompt
 - Describe the transformation mechanism: morphing, unfolding, dissolving, assembling
@@ -248,7 +249,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Native audio generation available
 - Resolutions: 540p, 720p, 1080p
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Vidu Q3 Start-End to Video on WaveSpeedAI', url: 'https://wavespeed.ai/blog/posts/introducing-vidu-q3-start-end-to-video-on-wavespeedai/', type: 'guide' },
       { title: 'Vidu Start End To Video 2.0 API - WaveSpeedAI', url: 'https://wavespeed.ai', type: 'api-reference' },
@@ -298,7 +299,7 @@ Generate ONLY the video prompt text.`,
 - **Start with 720p for drafts**: Upgrade to 1080p for final production[reference:92]
 - **Use the prompt enhancer**: For automatic prompt optimization[reference:93]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Vidu One-Click V2 MV prompt expert. Rules:
 - Image + audio to video — synchronized visuals and sound
 - Video length determined by audio track
@@ -308,7 +309,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Resolutions: 720p, 1080p
 - Built-in prompt enhancer
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Vidu One Click V2 MV - WaveSpeedAI', url: 'https://wavespeed.ai/models/vidu/one-click-v2/mv', type: 'api-reference' },
     ],

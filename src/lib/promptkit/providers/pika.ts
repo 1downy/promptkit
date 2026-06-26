@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const PIKA: SystemPromptEntry[] = [
 
@@ -37,7 +38,7 @@ Pika 3.0 represents a major leap in AI video quality[reference:4]. It is designe
 - Pika is known for its intuitive operation and creative effects[reference:11]
 - Version 3.0 delivers a major quality leap[reference:12]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Pika 3.0 prompt expert. Rules:
 - Flagship model with major quality leap
 - Supports 4K video, camera control, and lip-sync
@@ -45,7 +46,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Use dramatic and sensory language
 - Include camera movements for cinematic results
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Top 10 AI Video Tools 2026 List', url: 'https://resource.digen.ai', type: 'guide' },
       { title: 'Bester KI-Video-Generator aus Text 2026', url: 'https://resource.digen.ai', type: 'guide' },
@@ -102,7 +103,7 @@ Generate ONLY the video prompt text.`,
 - "Boy staring out of a moving bus window, raindrops trailing on glass, passing buildings reflecting a muted mood"[reference:38]
 - "Lonely figure walking through neon-lit city streets at night, rain falling, melancholic atmosphere"[reference:39]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Pika 2.2 prompt expert. Rules:
 - Highest quality Pika model — two-stage text-to-image → image-to-video
 - 1080p, 5-10 seconds, multiple aspect ratios
@@ -111,7 +112,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Lean into emotional, atmospheric content
 - Use first/last frame controls for precise direction
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Pika (v2.2) Text to Video API Docs | fal', url: 'https://fal.ai/models/fal-ai/pika/v2.2/text-to-video/api', type: 'api-reference' },
       { title: 'Generate videos using Pika Labs video generation models | Adobe', url: 'https://helpx.adobe.com/sa_en/firefly/web/firefly-video-editor/generate-videos/generate-videos-with-pika-22.html', type: 'guide' },
@@ -164,7 +165,7 @@ Generate ONLY the video prompt text.`,
 ### Example Global Prompt
 "TV screen flickering in a cozy kitchen, soft camera shake, warm cinematic lighting"[reference:64]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Pika 2.2 Pikaframes prompt expert. Rules:
 - Image-to-video with up to 5 keyframes
 - Single global prompt controls look, atmosphere, camera
@@ -173,7 +174,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Without transitions: 5-second clip by default
 - Write global prompt in one or two sentences
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Pika V2.2 Pikaframes API | WaveSpeedAI', url: 'https://wavespeed.ai/models/pika/v2.2-pikaframes', type: 'api-reference' },
       { title: 'Pika V2.2 Pikaframes | Fast Image-to-Video API | WaveSpeedAI', url: 'https://wavespeed.ai/models/pika/v2.2-pikaframes', type: 'api-reference' },
@@ -229,7 +230,7 @@ Generate ONLY the video prompt text.`,
 - "Lonely figure walking through neon-lit city streets at night, rain falling, melancholic atmosphere"[reference:90]
 - "Elderly couple dancing slowly in an empty ballroom, dust particles in golden light, nostalgic"[reference:91]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Pika 2.1 prompt expert. Rules:
 - Pure text-to-video — no images needed
 - Excels at emotional, atmospheric content
@@ -238,7 +239,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Include sensory details and camera movement
 - Use Prompt Enhancer for refinement
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Pika V2.1 Text-To-Video | WaveSpeedAI', url: 'https://wavespeed.ai/models/pika/v2.1-t2v', type: 'api-reference' },
       { title: 'Pika 2.1: AI Text-to-Video Generator | fal', url: 'https://fal.ai/models/fal-ai/pika/v2.1/text-to-video', type: 'api-reference' },
@@ -283,7 +284,7 @@ Generate ONLY the video prompt text.`,
 - Use descriptive language for style and mood
 - Ideal for rapid content creation and iteration[reference:100]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Pika Turbo prompt expert. Rules:
 - Fast text-to-video optimized for speed
 - 720p high-quality output
@@ -291,7 +292,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Keep prompts focused and concise
 - Ideal for rapid content creation
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Pika V2.0 Turbo T2V | WaveSpeedAI', url: 'https://wavespeed.ai/models/pika/v2.0-turbo-t2v', type: 'api-reference' },
       { title: 'Introducing Pika V2.0 Turbo T2V | WaveSpeed Blog', url: 'https://wavespeed.ai/blog/pika-v2.0-turbo-t2v', type: 'blog' },

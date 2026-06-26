@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const ALIBABA: SystemPromptEntry[] = [
 
@@ -39,7 +40,7 @@ export const ALIBABA: SystemPromptEntry[] = [
 - **Qwen3.7 Max**: Strongest reasoning, flagship agent capabilities, higher cost[reference:7]
 - **Qwen3.7 Plus**: Balanced capability and cost, full tool calling support, 1M context[reference:8]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Qwen3.7 Max prompt engineer. Rules:
 1. Define task, tools, workflow, constraints, output format
 2. System prompts for tool definitions
@@ -49,7 +50,7 @@ Generate ONLY the prompt text. No explanations.`,
 6. 1M context window
 7. Flagship reasoning model
 
-Generate the best Qwen3.7 Max prompt.`,
+Generate the best Qwen3.7 Max prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '文本產生模型 - Alibaba Cloud', url: 'https://www.alibabacloud.com/help/zh/model-studio/generation', type: 'docs' },
       { title: 'Qwen3.7: The Agent Frontier', url: 'https://www.alibabacloud.com/help/en/model-studio/qwen3.7', type: 'docs' },
@@ -95,7 +96,7 @@ Generate the best Qwen3.7 Max prompt.`,
 - Specify output format
 - Excellent bilingual Chinese/English performance
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Qwen3.7 Plus prompt engineer. Rules:
 1. Define role, task, context, format, constraints
 2. Be specific and direct
@@ -104,7 +105,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. 1M context
 6. Balanced capability and cost
 
-Generate the best Qwen3.7 Plus prompt.`,
+Generate the best Qwen3.7 Plus prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '文本產生模型 - Alibaba Cloud', url: 'https://www.alibabacloud.com/help/zh/model-studio/generation', type: 'docs' },
     ],
@@ -149,7 +150,7 @@ Generate the best Qwen3.7 Plus prompt.`,
 - Excellent bilingual performance
 - Include few-shot examples
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Qwen3.6 Plus prompt engineer. Rules:
 1. Define role, task, context, format, language
 2. Be specific and detailed
@@ -158,7 +159,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Excellent bilingual Chinese/English
 6. 1M context, 65,536 max output
 
-Generate the best Qwen3.6 Plus prompt.`,
+Generate the best Qwen3.6 Plus prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Qwen3.6-Plus API Documentation', url: 'https://docs.aimlapi.com', type: 'docs' },
     ],
@@ -213,7 +214,7 @@ Generate the best Qwen3.6 Plus prompt.`,
 - **Qwen3.5-Plus**: Hosted API version, up to 1M context[reference:35]
 - **Qwen3.5-397B-A17B**: Open-weight, self-hostable[reference:36]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert prompt engineer for Qwen 3.5. Rules:
 1. Be specific and explicit — provide context and constraints
 2. Assign a role for better output quality
@@ -224,7 +225,7 @@ Generate ONLY the prompt text. No explanations.`,
 7. Supports text, image, video inputs
 8. 1M context (Qwen3.5-Plus)
 
-Generate the best Qwen 3.5 prompt for the user's goal.`,
+Generate the best Qwen 3.5 prompt for the user's goal.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Qwen Prompt Engineering Guide', url: 'https://qwen-ai.com/prompts/', type: 'guide' },
       { title: 'How to Use Qwen 3.5 API', url: 'https://apidog.com', type: 'guide' },
@@ -274,7 +275,7 @@ Generate the best Qwen 3.5 prompt for the user's goal.`,
 - Specify output format explicitly
 - Use for well-defined tasks where cost matters
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Qwen3.5 Flash prompt engineer. Rules:
 1. Keep prompts focused — speed is priority
 2. Be specific and direct
@@ -283,7 +284,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Accepts video, image, and text inputs
 6. Cost-optimized for production
 
-Generate the best Qwen3.5 Flash prompt.`,
+Generate the best Qwen3.5 Flash prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Generative AI for Marketing Content', url: 'https://www.alibabacloud.com', type: 'docs' },
       { title: 'Structured output - Alibaba Cloud', url: 'https://www.alibabacloud.com/help/en/model-studio/structured-output', type: 'docs' },
@@ -336,7 +337,7 @@ Generate the best Qwen3.5 Flash prompt.`,
 - Audio/video analysis (content moderation, meeting transcription, caption generation)[reference:58]
 - Voice cloning[reference:59]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Qwen3.5 Omni prompt engineer. Rules:
 1. Supports text, audio, image, and video inputs
 2. Generates text and speech outputs
@@ -345,7 +346,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Supports real-time conversation and file analysis
 6. Specify output language for translation
 
-Generate the best Qwen3.5 Omni prompt.`,
+Generate the best Qwen3.5 Omni prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '全模态 - Alibaba Cloud', url: 'https://www.alibabacloud.com/help/zh/model-studio/omni/', type: 'docs' },
       { title: 'Omni-modal - Alibaba Cloud', url: 'https://www.alibabacloud.com/help/en/model-studio/omni/', type: 'docs' },
@@ -394,14 +395,14 @@ Generate the best Qwen3.5 Omni prompt.`,
 - Multilingual meetings[reference:67]
 - Live interpretation[reference:68]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Qwen3.5 Livetranslate prompt engineer. Rules:
 1. Specify source and target language
 2. ~3 second latency for real-time translation
 3. 60 languages supported
 4. WebSocket for real-time, HTTP for file translation
 
-Generate the best Qwen3.5 Livetranslate prompt.`,
+Generate the best Qwen3.5 Livetranslate prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '全模态 - Alibaba Cloud', url: 'https://www.alibabacloud.com/help/zh/model-studio/omni/', type: 'docs' },
       { title: 'Omni-modal - Alibaba Cloud', url: 'https://www.alibabacloud.com/help/en/model-studio/omni/', type: 'docs' },
@@ -450,7 +451,7 @@ Generate the best Qwen3.5 Livetranslate prompt.`,
 - Lightweight multimodal tasks
 - 11 output languages[reference:76]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Qwen3 Omni-Flash prompt engineer. Rules:
 1. Supports text, audio, image, and video inputs
 2. Text-only output
@@ -458,7 +459,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Supports thinking mode
 5. Cost-sensitive alternative
 
-Generate the best Qwen3 Omni-Flash prompt.`,
+Generate the best Qwen3 Omni-Flash prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Omni-modal - Alibaba Cloud', url: 'https://www.alibabacloud.com/help/en/model-studio/omni/', type: 'docs' },
     ],
@@ -502,7 +503,7 @@ Generate the best Qwen3 Omni-Flash prompt.`,
 - Request no Markdown code blocks for direct code[reference:84]
 - Include test cases with expected inputs/outputs
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Qwen3-Coder-Next prompt engineer. Rules:
 1. Specify language and framework FIRST
 2. List functional requirements clearly
@@ -511,7 +512,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. 256K context for large codebases
 6. 80B MoE (3B active) — efficient inference
 
-Generate the best Qwen3-Coder-Next prompt.`,
+Generate the best Qwen3-Coder-Next prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Qwen3-Coder-Next Model Card', url: 'https://huggingface.co/Qwen/Qwen3-Coder-Next', type: 'model-card' },
       { title: 'Code capabilities (Qwen-Coder)', url: 'https://www.alibabacloud.com/help/en/model-studio/qwen-coder', type: 'docs' },
@@ -553,14 +554,14 @@ Generate the best Qwen3-Coder-Next prompt.`,
 - Specify language first
 - Include edge cases
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Qwen-Coder-Turbo prompt engineer. Rules:
 1. Specify language first
 2. List requirements clearly
 3. Include edge cases
 4. Fast code generation
 
-Generate the best Qwen-Coder-Turbo prompt.`,
+Generate the best Qwen-Coder-Turbo prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Code capabilities (Qwen-Coder)', url: 'https://www.alibabacloud.com/help/en/model-studio/qwen-coder', type: 'docs' },
     ],
@@ -605,7 +606,7 @@ Generate the best Qwen-Coder-Turbo prompt.`,
 ### Supported Aspect Ratios
 - Multiple aspect ratios available[reference:95]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Qwen Image 2512 prompt engineer. Rules:
 1. Natural language: setting → subject → lighting → atmosphere → style
 2. Be specific about composition, lighting, and details
@@ -613,7 +614,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Semantic instruction following — be precise about posture and actions
 5. Multiple aspect ratios supported
 
-Generate the best Qwen Image 2512 prompt.`,
+Generate the best Qwen Image 2512 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Qwen Image 2512 on Replicate', url: 'https://replicate.com/qwen/qwen-image-2512', type: 'docs' },
       { title: 'Qwen Image 2512 Prompt Guide', url: 'https://fal.ai/models/qwen-image-2512', type: 'guide' },
@@ -663,7 +664,7 @@ Generate the best Qwen Image 2512 prompt.`,
 - Specify what to keep unchanged
 - Be specific about the edit
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Qwen Image Edit prompt engineer. Rules:
 1. Describe what to CHANGE — editing model
 2. Specify text to add or modify
@@ -671,7 +672,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Specify what to keep unchanged
 5. Natural language editing instructions
 
-Generate the best Qwen Image Edit prompt.`,
+Generate the best Qwen Image Edit prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Qwen image editing API reference', url: 'https://www.alibabacloud.com/help/en/model-studio/qwen-image-edit', type: 'docs' },
     ],
@@ -714,14 +715,14 @@ Generate the best Qwen Image Edit prompt.`,
 - Chinese and English prompts supported
 - Describe subject, style, and composition clearly
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Tongyi Wanxiang prompt expert. Rules:
 - Natural language descriptions
 - Chinese and English support
 - Describe: subject → style → composition → details
 - Strong Chinese cultural content understanding
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Tongyi Wanxiang Documentation', url: 'https://www.alibabacloud.com/help/en/model-studio/tongyi-wanxiang', type: 'docs' },
     ],
@@ -764,7 +765,7 @@ Generate ONLY the prompt text.`,
 - For thinking variant: let the model reason through visual tasks
 - Specify detail level needed
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Qwen3-VL prompt engineer. Rules:
 1. Most powerful vision-language model in Qwen series
 2. Be specific about what to analyze
@@ -772,7 +773,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. 131.1K token context for complex reasoning
 5. Thinking variant available for reasoning-specialized tasks
 
-Generate the best Qwen3-VL prompt.`,
+Generate the best Qwen3-VL prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Qwen3-VL Usage Guide', url: 'https://docs.vllm.ai', type: 'docs' },
     ],
@@ -828,7 +829,7 @@ Prompt = Entity (description) + Scene (description) + Motion (description) + Aes
 - Be specific about motion direction and speed
 - Include temporal descriptions
 
-Generate ONLY the video prompt text. No explanations.`,
+Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Wan 3.0 prompt expert. Rules:
 1. Structure: Entity + Scene + Motion + Aesthetic Control + Stylization
 2. Cover all five dimensions — don't skip aesthetic control
@@ -837,7 +838,7 @@ Generate ONLY the video prompt text. No explanations.`,
 5. Natural language (Chinese or English)
 6. Open-weight — can be run locally
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Alibaba Releases Wan 3.0', url: 'https://thenextgentechinsider.com', type: 'blog' },
       { title: 'Text-to-video prompt guide', url: 'https://www.alibabacloud.com/help/en/model-studio/text-to-video-prompt', type: 'guide' },
@@ -936,7 +937,7 @@ Prompt = Reference identifier + Action + Scene + Lines (optional) + Background m
 - **Resolution**: 480P, 720P, or 1080P[reference:4†L20]
 - **Format**: MP4[reference:4†L18]
 
-Generate ONLY the video prompt text. No explanations.`,
+Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Wan 2.7 Text-to-Video prompt engineer. Rules:
 1. Structure: Entity + Scene + Motion + Aesthetic Control + Stylization
 2. For image-to-video: Prompt = Motion + Camera movement
@@ -948,7 +949,7 @@ Generate ONLY the video prompt text. No explanations.`,
 8. Supports text, image, and audio input
 9. Preserves appearance, motion, voice timbre, and background from references
 
-Generate the best Wan 2.7 Text-to-Video prompt.`,
+Generate the best Wan 2.7 Text-to-Video prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Text-to-video/Image-to-video prompt guide', url: 'https://www.alibabacloud.com/help/en/model-studio/text-to-video-prompt', type: 'guide' },
       { title: 'Wan - text-to-video API reference', url: 'https://www.alibabacloud.com/help/en/model-studio/text-to-video-api-reference', type: 'docs' },
@@ -996,14 +997,14 @@ Same as Wan 2.7:
 - Describe camera movement explicitly
 - Add sound descriptions for audio generation
 
-Generate ONLY the video prompt text. No explanations.`,
+Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Wan 2.6 prompt expert. Rules:
 1. Same patterns as Wan 2.7
 2. Supports multi-shot narrative
 3. Audio generation with auto-dubbing
 4. 15 seconds at 1080P
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Text-to-video - Alibaba Cloud', url: 'https://www.alibabacloud.com/help/en/model-studio/text-to-video-guide/', type: 'docs' },
     ],
@@ -1087,7 +1088,7 @@ Prompt = Subject + Setting + Style + Camera + Atmosphere + Detail modifiers[refe
 - **Format**: PNG[reference:5†L9]
 - **Max outputs**: 4 per call (up to 12 for image set generation)[reference:0†L24-L25]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Wan2.7-Image-Pro prompt engineer. Rules:
 1. Structure: Subject + Setting + Style (basic) OR Subject + Setting + Style + Camera + Atmosphere + Detail modifiers (advanced)
 2. Use structured template: subject, action/pose, style, setting, lighting, atmosphere, camera angle, shot size, lens
@@ -1098,7 +1099,7 @@ Generate ONLY the prompt text. No explanations.`,
 7. Chinese and English prompts supported
 8. Max 2,000 characters
 
-Generate the best Wan2.7-Image-Pro prompt.`,
+Generate the best Wan2.7-Image-Pro prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Wan2.7 - image generation and editing API reference', url: 'https://www.alibabacloud.com/help/en/model-studio/wan-image-generation-and-editing-api-reference', type: 'docs' },
       { title: 'Text-to-image prompt guide', url: 'https://www.alibabacloud.com/help/en/model-studio/text-to-image-prompt', type: 'guide' },
@@ -1145,7 +1146,7 @@ The voice_prompt is the "blueprint" for the ideal voice[reference:156]
 - Specify emotional quality
 - Reference existing voices for comparison
 
-Generate ONLY the voice design prompt. No explanations.`,
+Generate ONLY the voice design prompt. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Qwen Voice Design prompt engineer. Rules:
 1. Describe voice characteristics: pitch, tone, timbre
 2. Specify speaking style: speed, rhythm, emphasis
@@ -1153,7 +1154,7 @@ Generate ONLY the voice design prompt. No explanations.`,
 4. Specify accent or regional qualities
 5. Describe the use case
 
-Generate the best Qwen Voice Design prompt.`,
+Generate the best Qwen Voice Design prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Qwen voice design API reference', url: 'https://www.alibabacloud.com/help/en/model-studio/qwen-voice-design', type: 'docs' },
     ],

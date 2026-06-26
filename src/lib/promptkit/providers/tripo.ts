@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const TRIPO: SystemPromptEntry[] = [
 
@@ -35,7 +36,7 @@ For high-fidelity industrial and cinematic assets, be specific about geometry, m
 - For 3D printing: include structural requirements
 - For industrial design: focus on form, function, and material behavior
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Tripo H3.1 prompt expert. Rules:
 - High-fidelity flagship model for industrial design and cinematic assets
 - Describe: object → geometry/form → materials/finish → style → purpose
@@ -43,7 +44,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Specify exact materials and finishes
 - Use for 3D printing, industrial design, and cinematic rendering
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Tripo AI secures $50 million and unveils new 3D models', url: 'https://3dprintingindustry.com/news/tripo-ai-secures-50-million-and-unveils-new-3d-models-for-production-ready-asset-generation-250426/', type: 'news' },
       { title: 'Tripo AI Launches Smart Mesh P1.0', url: 'https://investor.wedbush.com/news/tripo-ai-launches-smart-mesh-p1-0-marking-the-arrival-of-ai-3d-2-0', type: 'news' },
@@ -89,7 +90,7 @@ For real-time and interactive assets, focus on topology, polygon efficiency, and
 - For game assets: describe the level of detail needed
 - For robotics/XR: emphasize structural integrity and clean meshes
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Tripo P1.0 prompt expert. Rules:
 - Optimized for real-time graphics and interactive environments
 - Describe: object → topology requirements → style → purpose
@@ -97,7 +98,7 @@ Generate ONLY the prompt text. No explanations.`,
 - For game assets: include engine or platform requirements
 - Generates topology-aware meshes with clean geometry
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Tripo AI secures $50 million and unveils new 3D models', url: 'https://3dprintingindustry.com/news/tripo-ai-secures-50-million-and-unveils-new-3d-models-for-production-ready-asset-generation-250426/', type: 'news' },
       { title: 'Tripo AI Launches Smart Mesh P1.0', url: 'https://investor.wedbush.com/news/tripo-ai-launches-smart-mesh-p1-0-marking-the-arrival-of-ai-3d-2-0', type: 'news' },
@@ -141,14 +142,14 @@ For world model generation, describe the environment, spatial relationships, and
 - Include interactive elements and their behaviors
 - Use for world-building and spatial understanding tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Tripo W1.0 prompt expert. Rules:
 - Early-stage world model for spatial understanding
 - Describe: environment → spatial relationships → interactive elements → purpose
 - Use for robotics simulation and immersive media
 - Part of Tripo AI's expansion into programmable spatial content
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Tripo AI secures $50 million and unveils new 3D models', url: 'https://3dprintingindustry.com/news/tripo-ai-secures-50-million-and-unveils-new-3d-models-for-production-ready-asset-generation-250426/', type: 'news' },
     ],
@@ -192,7 +193,7 @@ For texture generation, focus on surface properties, material behavior, and visu
 - Describe the desired visual quality and finish
 - Use for high-resolution texturing of existing models
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Tripo 8K Texture prompt expert. Rules:
 - Generates true 8K photorealistic textures in under two minutes
 - Works on any model from any source
@@ -200,7 +201,7 @@ Generate ONLY the prompt text. No explanations.`,
 - No rebuild required — applies to existing models
 - Export-ready for all major 3D applications
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Tripo 五月更新速递', url: 'https://www.tripo3d.ai/blog/tripo-may-updates', type: 'blog' },
     ],
@@ -259,7 +260,7 @@ Use negative_prompt parameter to exclude unwanted elements:
 - **Naive Prompt**: "dragon" → generic, unusable shape
 - **Engineered Prompt**: "Low-poly 3D model of a dragon with faceted geometric shapes, vibrant flat colors, hand-painted texture style, optimized for mobile game asset" → detailed, usable model
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Tripo 3D prompt expert. Rules:
 - Text-to-3D, Image-to-3D, Multi-view to 3D
 - Place key information (subject + descriptors) at the beginning
@@ -268,7 +269,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Be specific but concise — overly complex prompts can cause detail loss
 - Export formats: GLB, GLTF, FBX, OBJ, STL, 3MF, USDZ
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Tripo3d Python SDK on PyPI', url: 'https://pypi.org/project/tripo3d/', type: 'api-reference' },
       { title: 'How to Use Tripo 3D API: Complete Developer Guide', url: 'https://apidog.com/blog/how-to-use-tripo-3d-api/', type: 'guide' },

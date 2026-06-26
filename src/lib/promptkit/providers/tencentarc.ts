@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const TENCENTARC: SystemPromptEntry[] = [
 
@@ -53,7 +54,7 @@ Use standard SDXL negative prompts:
 - \`woman img, portrait photo, holding two cats, colorful, perfect face, natural skin, hard shadows, film grain\`[reference:12]
 - \`man img, corporate portrait, professional suit, studio lighting, clean background\`
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a PhotoMaker V2 prompt expert. Rules:
 1. ALWAYS start with class word + "img": man img, woman img, girl img, boy img
 2. Don't describe facial features — identity comes from reference photos
@@ -62,7 +63,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Style strength 30-50 for stylization
 6. Negative prompts: asymmetry, worst quality, illustration, 3d, 2d, painting
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'PhotoMaker GitHub Repository', url: 'https://github.com/TencentARC/PhotoMaker', type: 'github' },
       { title: 'PhotoMaker V2 README', url: 'https://github.com/TencentARC/PhotoMaker/blob/main/README_pmv2.md', type: 'docs' },
@@ -112,14 +113,14 @@ Same as PhotoMaker V2:
 ### Style Templates
 Choose from pre-defined style templates in the PhotoMaker-Style demo[reference:16]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a PhotoMaker-Style prompt expert. Rules:
 1. ALWAYS start with class word + "img": man img, woman img, girl img, boy img
 2. Style strength 30-50 — lower = better ID fidelity, higher = more stylization
 3. Use style templates from PhotoMaker-Style demo
 4. Don't describe facial features — identity from reference photos
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'PhotoMaker-Style on Replicate', url: 'https://replicate.com/tencentarc/photomaker-style', type: 'api-reference' },
       { title: 'PhotoMaker-Style Hugging Face Space', url: 'https://huggingface.co/spaces/TencentARC/PhotoMaker-Style', type: 'docs' },
@@ -168,7 +169,7 @@ Generate ONLY the prompt text.`,
 ### Example Prompt
 "Astronaut in a jungle, cold color palette, muted colors, detailed, 8k"[reference:25][reference:26]
 
-Generate ONLY the prompt text for creating the input image. No explanations.`,
+Generate ONLY the prompt text for creating the input image. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an InstantMesh prompt expert. Rules:
 1. Describe: object → front-facing view → clean background → even lighting
 2. Front-facing views with clean/white backgrounds work best
@@ -177,7 +178,7 @@ Generate ONLY the prompt text for creating the input image. No explanations.`,
 5. Creates 3D mesh within 10 seconds
 6. Open-weight from TencentARC
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'InstantMesh GitHub Repository', url: 'https://github.com/TencentARC/InstantMesh', type: 'github' },
       { title: 'InstantMesh Hugging Face', url: 'https://huggingface.co/TencentARC/InstantMesh', type: 'model-card' },
@@ -220,14 +221,14 @@ Generate ONLY the prompt text.`,
 - Prompting is less critical than input image quality
 - Use for restoring old photos, enhancing low-quality faces
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a GFPGAN prompt expert. Rules:
 - Face restoration model using GAN prior
 - Works best with clear face inputs
 - Use for restoring old photos and enhancing faces
 - Open-weight from TencentARC
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GFPGAN GitHub Repository', url: 'https://github.com/TencentARC/GFPGAN', type: 'github' },
       { title: 'GFPGAN arXiv Paper', url: 'https://arxiv.org/abs/2101.04061', type: 'whitepaper' },
@@ -274,7 +275,7 @@ Generate ONLY the prompt text.`,
 - Combine with base SD models for flexible generation
 - Use style templates for consistent artistic output
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a T2I-Adapter prompt expert. Rules:
 - Lightweight adapter for controllable SD generation
 - Supports sketch, depth, segmentation, and more
@@ -282,7 +283,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Works with SD 1.5 and SDXL
 - Open-weight from TencentARC
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'T2I-Adapter GitHub Repository', url: 'https://github.com/TencentARC/T2I-Adapter', type: 'github' },
       { title: 'T2I-Adapter arXiv Paper', url: 'https://arxiv.org/abs/2302.08453', type: 'whitepaper' },
@@ -331,7 +332,7 @@ Generate ONLY the prompt text.`,
 - **Remove**: Remove unwanted objects
 - **Addition**: Add new elements to images
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a BrushNet prompt expert. Rules:
 - Plug-and-play image inpainting model
 - Use for: background edit, local edit, removal, addition
@@ -339,7 +340,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Be specific about what to inpaint
 - Open-weight from TencentARC
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'BrushNet GitHub Repository', url: 'https://github.com/TencentARC/BrushNet', type: 'github' },
       { title: 'BrushNet arXiv Paper', url: 'https://arxiv.org/abs/2403.06976', type: 'whitepaper' },
@@ -382,7 +383,7 @@ Generate ONLY the prompt text.`,
 - Use task-specific prompts for better performance[reference:41]
 - Be clear about what information you need
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a QA-CLIP prompt expert. Rules:
 - Visual question answering on CLIP
 - Ask specific questions about image content
@@ -390,7 +391,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Apache 2.0 license
 - From QQ-ARC Joint Lab, Tencent PCG
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'QA-CLIP Hugging Face', url: 'https://huggingface.co/TencentARC/QA-CLIP', type: 'model-card' },
     ],

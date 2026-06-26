@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const RESEARCH: SystemPromptEntry[] = [
 
@@ -38,7 +39,7 @@ export const RESEARCH: SystemPromptEntry[] = [
 - Describe the scene and style, not the face
 - Works best with front-facing or slight-angle reference images
 
-When the user asks for an InstantID prompt, generate ONLY the prompt text (excluding facial descriptions). No explanations.`,
+When the user asks for an InstantID prompt, generate ONLY the prompt text (excluding facial descriptions). No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an InstantID prompt expert. Rules:
 1. Identity comes from reference image — don't describe faces
 2. Describe: pose/expression → clothing → setting → style → quality
@@ -46,7 +47,7 @@ When the user asks for an InstantID prompt, generate ONLY the prompt text (exclu
 4. Works with a single reference face image
 5. Adjust IdentityNet strength for identity vs style tradeoff
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'InstantID Technical Paper', url: 'https://arxiv.org/html/2401.07519v1', type: 'whitepaper' },
       { title: 'InstantID Project Page', url: 'https://instantid.github.io', type: 'docs' },
@@ -91,14 +92,14 @@ Generate ONLY the prompt text.`,
 - DO describe everything else about the scene
 - PuLID preserves identity with less style interference than some alternatives
 
-When the user asks for a PuLID prompt, generate ONLY the prompt text. No explanations.`,
+When the user asks for a PuLID prompt, generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a PuLID prompt expert. Rules:
 1. Identity from reference — don't describe faces
 2. Describe: pose → clothing → setting → style → quality
 3. Less style interference than some alternatives
 4. Single reference image needed
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'PuLID GitHub Repository', url: 'https://github.com/ToTheBeginning/PuLID', type: 'github' },
       { title: 'PuLID arXiv Paper', url: 'https://arxiv.org/abs/2404.16022', type: 'whitepaper' },
@@ -143,14 +144,14 @@ Generate ONLY the prompt text.`,
 - Use multiple reference images for better ID fidelity
 - Style and text control are key strengths
 
-When the user asks for a PhotoMaker prompt, generate ONLY the prompt text. No explanations.`,
+When the user asks for a PhotoMaker prompt, generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a PhotoMaker prompt expert. Rules:
 1. Identity from reference images — don't describe faces
 2. Describe: pose/expression → clothing → setting → style → quality
 3. Use multiple reference images for better ID fidelity
 4. Efficient generation — no fine-tuning required
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'PhotoMaker arXiv Paper', url: 'https://ar5iv.labs.arxiv.org/html/2312.04461', type: 'whitepaper' },
       { title: 'PhotoMaker GitHub Repository', url: 'https://github.com/TencentARC/PhotoMaker', type: 'github' },
@@ -194,14 +195,14 @@ Generate ONLY the prompt text.`,
 - DO describe everything else about the scene
 - The model does not achieve perfect photorealism and ID consistency
 
-When the user asks for an IP-Adapter-FaceID prompt, generate ONLY the prompt text. No explanations.`,
+When the user asks for an IP-Adapter-FaceID prompt, generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an IP-Adapter-FaceID prompt expert. Rules:
 1. Identity from reference — don't describe faces
 2. Describe: pose → clothing → setting → style → quality
 3. Uses face ID embedding from face recognition model
 4. LoRA improves ID consistency
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'IP-Adapter-FaceID GitHub', url: 'https://github.com/h94/IP-Adapter-FaceID', type: 'github' },
     ],
@@ -242,14 +243,14 @@ Generate ONLY the prompt text.`,
 - Do NOT describe specific facial features — identity comes from reference
 - DO describe everything else about the scene
 
-When the user asks for an EcomID prompt, generate ONLY the prompt text. No explanations.`,
+When the user asks for an EcomID prompt, generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an EcomID prompt expert. Rules:
 1. Identity from reference — don't describe faces
 2. Describe: pose → clothing → setting → style → quality
 3. Combines PuLID and InstantID strengths
 4. Better background consistency and facial keypoint control
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'SDXL-EcomID Hugging Face', url: 'https://huggingface.co/alimama-creative/SDXL-EcomID', type: 'model-card' },
     ],

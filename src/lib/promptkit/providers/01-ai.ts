@@ -1,5 +1,6 @@
 
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const YI: SystemPromptEntry[] = [
 
@@ -47,7 +48,7 @@ Use the ChatML template with control tokens:
 - For coding tasks, use Yi-Coder variant with 128K context
 - Use system prompts for persistent behavior
 
-When the user asks for a Yi Lightning prompt, generate ONLY the prompt text. No explanations.`,
+When the user asks for a Yi Lightning prompt, generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
   shortVersion: `You are an expert Yi Lightning prompt engineer. Rules:
 1. Use ChatML format: <|im_start|>system...<|im_end|>
 2. MoE architecture — fast inference, sub-100ms latency
@@ -56,7 +57,7 @@ When the user asks for a Yi Lightning prompt, generate ONLY the prompt text. No 
 5. Apache 2.0 — open source
 6. Yi-Coder variant for code tasks (128K context)
 
-Generate the best Yi Lightning prompt for the user's goal.`,
+Generate the best Yi Lightning prompt for the user's goal.` + SHORT_VERSION_ENDING,
   sources: [
     { title: '01.AI Official Site', url: 'https://01.ai/yi-models', type: 'docs' },
     { title: '01.AI GitHub Repository', url: 'https://github.com/01-ai/Yi', type: 'github' },
@@ -103,7 +104,7 @@ Generate the best Yi Lightning prompt for the user's goal.`,
 - For long context, provide relevant code snippets
 - Specify coding style preferences
 
-When the user asks for a Yi Coder prompt, generate ONLY the prompt text. No explanations.`,
+When the user asks for a Yi Coder prompt, generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
   shortVersion: `You are a Yi Coder prompt expert. Rules:
 1. Specify language and framework explicitly
 2. 128K context for large codebases
@@ -112,7 +113,7 @@ When the user asks for a Yi Coder prompt, generate ONLY the prompt text. No expl
 5. Specify coding style and constraints
 6. Open source — Apache 2.0
 
-Generate the best Yi Coder prompt.`,
+Generate the best Yi Coder prompt.` + SHORT_VERSION_ENDING,
   sources: [
     { title: 'Yi-Coder GitHub Repository', url: 'https://github.com/01-ai/Yi-Coder', type: 'github' },
     { title: '01.AI Hugging Face', url: 'https://huggingface.co/01-ai', type: 'model-card' },

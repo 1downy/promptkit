@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const ZHIPU_AI: SystemPromptEntry[] = [
 
@@ -41,7 +42,7 @@ export const ZHIPU_AI: SystemPromptEntry[] = [
 - Multi-file code generation and refactoring
 - Mobile/Client engineering with ADB, logcat, and device debugging[reference:11]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GLM-5.2 prompt engineer. Rules:
 1. 1M context — provide full project context upfront
 2. Enable thinking for complex reasoning: thinking={"type":"enabled"}
@@ -51,7 +52,7 @@ Generate ONLY the prompt text. No explanations.`,
 6. Strongest open-source coding model on benchmarks
 7. Available via Z.ai API, OpenRouter, Ollama
 
-Generate the best GLM-5.2 prompt.`,
+Generate the best GLM-5.2 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GLM-5.2 - 智谱AI开放文档', url: 'https://docs.bigmodel.cn/cn/guide/models/text/glm-5.2', type: 'docs' },
       { title: '迁移至 GLM-5.2 - 智谱AI开放文档', url: 'https://docs.bigmodel.cn/cn/guide/start/migrate-to-glm-new', type: 'guide' },
@@ -103,7 +104,7 @@ Generate the best GLM-5.2 prompt.`,
 - Specify timing and persistence requirements
 - Use for agentic and automated workflows
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GLM-5-Turbo prompt engineer. Rules:
 1. Agent-optimized for OpenClaw/Lobster scenarios
 2. Define task, tools, timing, workflow steps, constraints
@@ -111,7 +112,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Claude Opus class model
 5. Available via Z.ai API
 
-Generate the best GLM-5-Turbo prompt.`,
+Generate the best GLM-5-Turbo prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GLM-5-Turbo - 智谱AI开放文档', url: 'https://docs.bigmodel.cn/cn/guide/models/text/glm-5-turbo', type: 'docs' },
     ],
@@ -157,7 +158,7 @@ Generate the best GLM-5-Turbo prompt.`,
 - GLM-5.1 handles ambiguous problems with better judgment[reference:21]
 - Revisits reasoning and revises strategy through the process[reference:22]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GLM-5.1 prompt engineer. Rules:
 1. Agentic engineering model — 744B MoE (40B active)
 2. SOTA on SWE-Bench Pro
@@ -165,7 +166,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be specific and detailed
 5. Use system prompts for persistent behavior
 
-Generate the best GLM-5.1 prompt.`,
+Generate the best GLM-5.1 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GLM-5/README.md - GitHub', url: 'https://github.com/zai-org/GLM-5/blob/main/README.md', type: 'github' },
       { title: 'GLM-5.1 Inference - Modular', url: 'https://www.modular.com', type: 'docs' },
@@ -213,7 +214,7 @@ Generate the best GLM-5.1 prompt.`,
 - Leverage the 200K context for long documents
 - Good for general-purpose and agent tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GLM-5 prompt engineer. Rules:
 1. Open-weight foundation model — 744B MoE (40B active)
 2. 200K context, 128K max output
@@ -222,7 +223,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Be specific and detailed
 6. MIT licensed — can be self-hosted
 
-Generate the best GLM-5 prompt.`,
+Generate the best GLM-5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GLM-5 - 智谱AI开放文档', url: 'https://docs.bigmodel.cn/cn/guide/models/text/glm-5', type: 'docs' },
       { title: 'GLM-5/README.md - GitHub', url: 'https://github.com/zai-org/GLM-5/blob/main/README.md', type: 'github' },
@@ -271,7 +272,7 @@ Generate the best GLM-5 prompt.`,
 - Use system prompts for persistent behavior
 - Good for coding, writing, and creative tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GLM-4.7 prompt engineer. Rules:
 1. High-intelligence model — 200K context, 128K max output
 2. Enhanced coding, long-term planning, and tool coordination
@@ -280,7 +281,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Professional PPT/poster generation
 6. Be specific about design and aesthetic requirements
 
-Generate the best GLM-4.7 prompt.`,
+Generate the best GLM-4.7 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '最新模型：GLM-4.7 - 智谱AI开放文档', url: 'https://docs.bigmodel.cn/cn/guide/start/latest-glm-4.7', type: 'docs' },
       { title: '模型概览 - 智谱AI开放文档', url: 'https://docs.bigmodel.cn', type: 'docs' },
@@ -327,7 +328,7 @@ Generate the best GLM-4.7 prompt.`,
 - Good balance of quality and efficiency
 - Cost-effective for production use
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GLM-4.7-Flash prompt engineer. Rules:
 1. 30B MoE (3B active) — balances performance and efficiency
 2. 200K context, 128K max output
@@ -335,7 +336,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Free via BigModel.cn
 5. Keep prompts clear and direct
 
-Generate the best GLM-4.7-Flash prompt.`,
+Generate the best GLM-4.7-Flash prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GLM-4.7-Flash - 智谱AI开放文档', url: 'https://docs.bigmodel.cn/cn/guide/models/free/glm-4.7-flash', type: 'docs' },
       { title: 'GLM-4.7-Flash 模型卡 - 鲸智社区', url: 'https://aihub.caict.ac.cn', type: 'model-card' },
@@ -378,14 +379,14 @@ Generate the best GLM-4.7-Flash prompt.`,
 - Be specific and direct
 - Best for high-throughput, lightweight tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GLM-4.7-FlashX prompt engineer. Rules:
 1. Ultra-lightweight, high-speed model
 2. Optimized for Chinese writing, translation, role-playing
 3. Keep prompts concise — speed priority
 4. Best for high-throughput, lightweight tasks
 
-Generate the best GLM-4.7-FlashX prompt.`,
+Generate the best GLM-4.7-FlashX prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '模型概览 - 智谱AI开放文档', url: 'https://docs.bigmodel.cn', type: 'docs' },
     ],
@@ -435,7 +436,7 @@ Generate the best GLM-4.7-FlashX prompt.`,
 - Use non-thinking mode for simple, fast responses
 - Be specific and detailed
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GLM-4.5 prompt engineer. Rules:
 1. Agent foundation model — 355B MoE (32B active)
 2. Native unification of reasoning, coding, and agent capabilities
@@ -443,7 +444,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. MIT licensed — open weights, commercial use permitted
 5. Enable thinking mode for complex reasoning tasks
 
-Generate the best GLM-4.5 prompt.`,
+Generate the best GLM-4.5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GLM-4.5 - 智谱AI开放文档', url: 'https://docs.bigmodel.cn', type: 'docs' },
       { title: 'ZHIPU/GLM-4.5 - 鲸智社区', url: 'https://aihub.caict.ac.cn/models/ZHIPU/GLM-4.5', type: 'model-card' },
@@ -472,7 +473,7 @@ Generate the best GLM-4.5 prompt.`,
 
 Please migrate to GLM-4.7-Flash for continued service.
 
-For new prompts, use the GLM-4.7-Flash system prompt.`,
+For new prompts, use the GLM-4.7-Flash system prompt.` + SYSTEM_PROMPT_ENDING,
     shortVersion: '⚠️ DEPRECATING — Use GLM-4.7-Flash instead. Deprecates January 30, 2026.',
     sources: [
       { title: 'GLM-4.5-Flash - 智谱AI开放文档', url: 'https://docs.bigmodel.cn/cn/guide/models/free/glm-4.5-flash', type: 'docs' },
@@ -513,14 +514,14 @@ For new prompts, use the GLM-4.7-Flash system prompt.`,
 - Use non-thinking mode for simple, fast responses
 - Efficient for deployment on resource-constrained environments
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GLM-4.5-Air prompt engineer. Rules:
 1. Compact agent model — 106B MoE (12B active)
 2. Hybrid reasoning — thinking and non-thinking modes
 3. MIT licensed — open weights, commercial use permitted
 4. Efficient for deployment on resource-constrained environments
 
-Generate the best GLM-4.5-Air prompt.`,
+Generate the best GLM-4.5-Air prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'ZHIPU/GLM-4.5 - 鲸智社区', url: 'https://aihub.caict.ac.cn/models/ZHIPU/GLM-4.5', type: 'model-card' },
     ],
@@ -565,7 +566,7 @@ Generate the best GLM-4.5-Air prompt.`,
 - Ask specific questions rather than "describe this image"
 - For video: specify time-based questions for accurate responses
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GLM-4V-Plus prompt engineer. Rules:
 1. Vision understanding — visual summarization, editing, reasoning
 2. Supports visual Q&A, captioning, grounding, object detection
@@ -573,7 +574,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Multi-turn dialogue support
 5. Be specific about what to analyze
 
-Generate the best GLM-4V-Plus prompt.`,
+Generate the best GLM-4V-Plus prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GLM-4V-Plus-0111 - 智谱AI开放文档', url: 'https://docs.bigmodel.cn', type: 'docs' },
     ],
@@ -618,7 +619,7 @@ Generate the best GLM-4V-Plus prompt.`,
 - Ask for specific data points or trends
 - Request predictions based on historical data
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GLM-4V-Flash prompt engineer. Rules:
 1. Fast vision model — excellent chart analysis
 2. Identifies inflection points, peaks, and valleys
@@ -626,7 +627,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Generates scientific predictions
 5. Be specific about chart elements to analyze
 
-Generate the best GLM-4V-Flash prompt.`,
+Generate the best GLM-4V-Flash prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GLM-4V-Flash - 智谱AI开放文档', url: 'https://docs.bigmodel.cn', type: 'docs' },
     ],
@@ -676,7 +677,7 @@ Generate the best GLM-4V-Flash prompt.`,
 - Can process multiple images in multi-turn dialogue
 - Long text + multi-image joint reasoning supported[reference:61]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GLM-4V-9B prompt engineer. Rules:
 1. 9B open-source vision-language model
 2. 1120×1120 resolution — high-quality image understanding
@@ -685,7 +686,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Three prompt types: description, OCR, reasoning
 6. Supports long text + multi-image joint reasoning
 
-Generate the best GLM-4V-9B prompt.`,
+Generate the best GLM-4V-9B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GLM-4V-9B on Hugging Face', url: 'https://huggingface.co/zai-org/glm-4v-9b', type: 'model-card' },
       { title: 'GLM-4V-9B 提示词工程 - CSDN', url: 'https://blog.csdn.net', type: 'guide' },
@@ -740,7 +741,7 @@ Use precise, specific visual descriptions rather than abstract concepts[referenc
 - Be detailed about the scene, subject, lighting, and mood
 - Supports Chinese and English prompts — use either language
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a CogView4 prompt expert. Rules:
 1. Bilingual — Chinese and English prompts supported
 2. Structure: Subject → Medium → Environment → Lighting → Color → Mood → Composition
@@ -749,7 +750,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Renders Chinese and English text in images
 6. Open-source — available via zai-org/CogView4
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'CogView4 - GitHub', url: 'https://github.com/zai-org/CogView4', type: 'github' },
       { title: 'CogView4 - Hugging Face Diffusers', url: 'https://huggingface.co/docs/diffusers/v0.37.0/api/pipelines/cogview4', type: 'docs' },
@@ -800,7 +801,7 @@ Generate ONLY the prompt text.`,
 - For image-to-video: reference the input image clearly
 - Keep scenes focused for best results
 
-Generate ONLY the video prompt text. No explanations.`,
+Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a CogVideoX prompt expert. Rules:
 1. Supports text-to-video, image-to-video, and video continuation
 2. v1.5: 5-10 seconds, 768p, 16fps
@@ -808,7 +809,7 @@ Generate ONLY the video prompt text. No explanations.`,
 4. Be specific about motion direction and speed
 5. Open-source — available via Hugging Face
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'CogVideoX - Hugging Face', url: 'https://huggingface.co/THUDM/CogVideoX-5b', type: 'model-card' },
       { title: 'CogVideoX v1.5 - 鲸智社区', url: 'https://aihub.caict.ac.cn', type: 'model-card' },

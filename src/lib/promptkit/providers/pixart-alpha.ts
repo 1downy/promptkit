@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const PIXART_ALPHA: SystemPromptEntry[] = [
 
@@ -35,7 +36,7 @@ export const PIXART_ALPHA: SystemPromptEntry[] = [
 - **High Resolution**: Specify resolution needs (1024px, 2K, or 4K) as appropriate
 - **Quality Modifiers**: Include quality-related terms for enhanced output
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a PixArt-Sigma prompt expert. Rules:
 - English prompts ONLY
 - Transformer-based DiT model — 0.6B parameters
@@ -44,7 +45,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Describe: Subject → Style → Scene → Details → Quality
 - Be specific and detailed for best results
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'PixArt-Sigma GitHub Repository', url: 'https://github.com/PixArt-alpha/PixArt-sigma', type: 'github' },
       { title: 'PixArt-Sigma arXiv Paper', url: 'https://arxiv.org/abs/2403.04692', type: 'whitepaper' },
@@ -93,7 +94,7 @@ Generate ONLY the prompt text.`,
 - Use quality modifiers to enhance output
 - For complex prompts, the Transformer architecture handles detailed descriptions well
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a PixArt-Alpha prompt expert. Rules:
 - Transformer-based diffusion model
 - 1024px high-quality image generation
@@ -101,7 +102,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Describe: Subject → Style → Scene → Details → Quality
 - Be specific and descriptive
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'PixArt-Alpha GitHub Repository', url: 'https://github.com/PixArt-alpha/PixArt-alpha', type: 'github' },
       { title: 'PixArt-Alpha README', url: 'https://github.com/PixArt-alpha/PixArt-alpha/blob/master/README.md', type: 'docs' },
@@ -149,7 +150,7 @@ Generate ONLY the prompt text.`,
 - Use quality modifiers to enhance output
 - For ControlNet: describe the control guidance needed (sketch, pose, etc.)
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a PixArt-Delta prompt expert. Rules:
 - LCM integration — 2-4 step generation
 - Ultra-fast: 0.5 seconds for 1024×1024 images
@@ -158,7 +159,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Describe: Subject → Style → Scene → Details → Quality
 - For ControlNet: specify control guidance type
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'PixArt-Delta arXiv Paper', url: 'https://arxiv.org/abs/2401.05252', type: 'whitepaper' },
       { title: 'PixArt-Alpha GitHub', url: 'https://github.com/PixArt-alpha/PixArt-alpha', type: 'github' },
@@ -205,7 +206,7 @@ Generate ONLY the prompt text.`,
 - Use quality modifiers to enhance output
 - For fast generation, keep prompts clear and focused
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a PixArt-LCM prompt expert. Rules:
 - LCM integration for 2-4 step generation
 - Fast inference — accelerated over PixArt-Alpha
@@ -213,7 +214,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Describe: Subject → Style → Scene → Details → Quality
 - Keep prompts clear and focused for speed
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'PixArt-LCM on Hugging Face', url: 'https://huggingface.co/PixArt-alpha/PixArt-LCM-XL-2-1024-MS', type: 'model-card' },
       { title: 'PixArt-Alpha GitHub', url: 'https://github.com/PixArt-alpha/PixArt-alpha', type: 'github' },
@@ -259,14 +260,14 @@ Generate ONLY the prompt text.`,
 - Use quality modifiers to enhance output
 - Keep prompts clear for one-step generation
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a PixArt-DMD prompt expert. Rules:
 - One-step generator — ultra-fast inference
 - Built on PixArt-Alpha foundation
 - Describe: Subject → Style → Scene → Details → Quality
 - Keep prompts clear for one-step generation
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'PixArt-Sigma GitHub', url: 'https://github.com/PixArt-alpha/PixArt-sigma', type: 'github' },
     ],

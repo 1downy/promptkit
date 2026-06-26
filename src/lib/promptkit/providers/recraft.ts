@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const RECRAFT: SystemPromptEntry[] = [
 
@@ -39,7 +40,7 @@ export const RECRAFT: SystemPromptEntry[] = [
 - **For lifestyle images**: Focus on authenticity, context, and natural behavior[reference:29]
 - **Structured prompts** yield intentional, controllable, and repeatable results[reference:30]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Recraft V4.1 prompt expert. Rules:
 - Most expressive Recraft model — brings creative POV to prompts
 - Excels with short prompts — fills gaps with taste
@@ -49,7 +50,7 @@ Generate ONLY the prompt text. No explanations.`,
 - For vector: focus on structure and geometry, not texture
 - Structured prompts = intentional, controllable results
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Recraft V4.1 - Recraft', url: 'https://www.recraft.ai/docs/recraft-models/recraft-v4-1', type: 'docs' },
       { title: 'Recraft V4.1 Release: More Beautiful by Nature', url: 'https://www.recraft.ai/blog/recraft-v4-1-more-beautiful-by-nature', type: 'blog' },
@@ -98,7 +99,7 @@ Generate ONLY the prompt text.`,
 - For cinematic images: describe light, camera, and motion control[reference:46]
 - Structured prompts yield intentional, controllable, and repeatable results[reference:47]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Recraft V4.1 Utility prompt expert. Rules:
 - General-purpose variant — predictable, utilitarian outputs
 - Available in Standard (1MP) and Pro (4MP)
@@ -106,7 +107,7 @@ Generate ONLY the prompt text. No explanations.`,
 - For vector: focus on structure and geometry
 - Clear, direct instructions for best results
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Getting started - Recraft', url: 'https://www.recraft.ai/docs/api-reference/getting-started', type: 'api-reference' },
       { title: 'Recraft V4.1 Release: More Beautiful by Nature', url: 'https://www.recraft.ai/blog/recraft-v4-1-more-beautiful-by-nature', type: 'blog' },
@@ -157,7 +158,7 @@ Generate ONLY the prompt text.`,
 - **For lifestyle images**: Focus on authenticity, context, and natural behavior[reference:69]
 - Structured prompts yield intentional, controllable, and repeatable results[reference:70]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Recraft V4 prompt expert. Rules:
 - Ground-up rebuild — design taste, prompt accuracy, output quality
 - Short prompts = interpretive mode; structured prompts = architectural control
@@ -166,7 +167,7 @@ Generate ONLY the prompt text. No explanations.`,
 - For vector: focus on structure and geometry
 - Strong in vector illustration, logo systems, 3D, photorealism
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Getting started - Recraft', url: 'https://www.recraft.ai/docs/api-reference/getting-started', type: 'api-reference' },
       { title: 'Prompting with Recraft V4 - Recraft', url: 'https://www.recraft.ai/docs/prompt-engineering-guide/prompting-with-recraft-v4', type: 'guide' },
@@ -213,7 +214,7 @@ Generate ONLY the prompt text.`,
 - For vector/logo work: describe shape logic, symmetry, and color systems
 - For text rendering: specify text placement and positioning
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Recraft V3 prompt expert. Rules:
 - Major advances in photorealism and text rendering
 - Ranked #1 on Hugging Face Text-to-Image leaderboard
@@ -221,7 +222,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Describe: subject → style → colors → purpose → quality
 - Use specific nouns for the subject
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Getting started - Recraft', url: 'https://www.recraft.ai/docs/api-reference/getting-started', type: 'api-reference' },
       { title: 'Choosing a model - Recraft', url: 'https://www.recraft.ai/docs/recraft-models/choosing-a-model', type: 'docs' },
@@ -265,7 +266,7 @@ Generate ONLY the prompt text.`,
 - Include style descriptors for consistency
 - For vector/logo work: describe shape logic and color systems
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Recraft V2 prompt expert. Rules:
 - First AI model built for designers
 - Raster and vector with anatomical accuracy
@@ -273,7 +274,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Unique creative effects exclusive to V2
 - Describe: subject → style → colors → purpose → quality
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Getting started - Recraft', url: 'https://www.recraft.ai/docs/api-reference/getting-started', type: 'api-reference' },
       { title: 'Choosing a model - Recraft', url: 'https://www.recraft.ai/docs/recraft-models/choosing-a-model', type: 'docs' },
