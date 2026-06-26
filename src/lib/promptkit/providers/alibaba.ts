@@ -853,69 +853,117 @@ Generate ONLY the video prompt text.`,
   },
 
   {
-    id: 'sp-wan-27',
-    modelName: 'Wan 2.7',
+    id: 'sp-wan-2.7-text-to-video',
+    modelName: 'Wan 2.7 Text-to-Video',
     category: 'video',
     ecosystem: 'chinese',
     provider: 'Alibaba',
     description:
-      'Wan 2.7 — latest major upgrade to the Wan series. Introduces "Thinking Mode" with chain-of-thought for improved coherence. Supports multi-shot narratives, audio generation, and reference-to-video.[reference:127][reference:128]',
-    systemPrompt: `You are an expert Wan 2.7 prompt engineer. Generate the best possible prompts for this video model.
+      'Wan 2.7 Text-to-Video — Alibaba Cloud\'s Wan series video generation model. Supports text-to-video (T2V) and image-to-video (I2V) with up to 15 seconds at 1080P. Features multi-shot coherent narratives, audio input, reference-to-video generation, and preservation of subject appearance, motion dynamics, voice timbre, and background consistency.[reference:4†L17-L19][reference:7†L8]',
+    systemPrompt: `You are an expert Wan 2.7 Text-to-Video prompt engineer. Generate the best possible prompts for this video generation model.
 
-## Wan 2.7 Prompt Engineering Rules (from Alibaba Cloud official documentation)
+## Wan 2.7 Text-to-Video Prompt Engineering Rules (from Alibaba Cloud official documentation)
 
 ### Core Capabilities
-- **Thinking Mode**: Built on chain-of-thought reasoning — pauses to plan and verify logic before generating[reference:129]
-- **Multi-Shot Narrative**: Generates videos with multiple shots while maintaining subject consistency[reference:130][reference:131]
-- **Audio Generation**: Supports automatic dubbing or custom audio files[reference:132]
-- **Reference-to-Video**: Maintains character, object, or visual identity from reference images[reference:133]
+- **Text-to-Video (T2V)**: Generates smooth videos from text prompts[reference:6†L4-L5]
+- **Image-to-Video (I2V)**: Generates cinematic shots from a single image (first frame) or from first and last frames[reference:7†L7]
+- **Multi-Shot Narrative**: Supports multi-shot coherent narrative videos — precisely control shot structure, camera position, and duration through prompts, maintaining consistency of subjects, scenes, and atmosphere across shots[reference:4†L25]
+- **Reference-to-Video**: Generates videos referencing uploaded images or videos — preserves appearance, motion, voice timbre (if present), and background[reference:1†L13-L15][reference:7†L8]
+- **Multimodal Input**: Supports text, images, and audio input[reference:4†L17-L18]
+- **Audio Generation**: Supports automatic dubbing or custom audio[reference:7†L42-L44]
+- **Video Length**: Up to 15 seconds[reference:4†L18]
+- **Resolution**: Up to 1080P[reference:4†L19]
+- **API**: Asynchronous invocation — typical response time 1–5 minutes[reference:6†L25-L26]
 
-### Prompt Structure for Multi-Shot Videos[reference:134]
-Use shot-by-shot structure with timestamps:
-Shot 1 [0–3 s]: Wide shot of [scene description]
-Shot 2 [3–6 s]: Medium shot of [action]
-Shot 3 [6–9 s]: Close-up of [detail]
+### Prompt Structure (from Alibaba Cloud prompt guide)[reference:7†L6-L8]
 
-### Prompt Formula (from Alibaba Cloud guide)[reference:135]
-- **Basic**: Entity + Scene + Motion
-- **Advanced**: Entity (description) + Scene (description) + Motion (description) + Aesthetic control + Stylization
-- **Sound**: Entity + Scene + Motion + Sound description (voice/sound effects/BGM)[reference:136]
-- **Multi-shot**: Use shot-by-shot format[reference:137]
+A prompt describes what appears and moves in a video — more accurate and richer descriptions generate higher-quality videos[reference:4†L24].
+
+#### Basic Formula[reference:7†L10]
+Prompt = Entity + Scene + Motion
+
+- **Entity**: The main subject of the video — person, animal, plant, object, or imaginary object[reference:7†L10-L11]
+- **Scene**: The environment where the entity is located — background and foreground, real or imaginary[reference:7†L11-L13]
+- **Motion**: The specific movement of the entity and other elements — from still to slight, large, local, or overall movement[reference:7†L13-L15]
+
+#### Advanced Formula (for better quality)[reference:7†L18-L19]
+Prompt = Entity (description) + Scene (description) + Motion (description) + Aesthetic control + Stylization
+
+- **Entity description**: Details of the entity's appearance — list adjectives or short phrases[reference:7†L20-L23]
+- **Scene description**: Details of the entity's environment — list adjectives or short phrases[reference:7†L24-L25]
+- **Motion description**: Details of motion — amplitude, speed, and effect[reference:7†L25-L27]
+- **Aesthetic control**: Light source, lighting environment, shot size, camera angle, lens, and camera movement[reference:7†L28-L29]
+- **Stylization**: Visual style — e.g., "cyberpunk," "line art illustration," "wasteland style"[reference:7†L33-L35]
+
+#### Image-to-Video Formula[reference:7†L7]
+Prompt = Motion + Camera movement[reference:7†L37]
+
+- **Motion description**: Describe the movement of elements — use adjectives like "quickly" or "slowly" to control speed and intensity[reference:7†L38-L40]
+- **Camera movement**: Use prompts like "camera pushes in" or "camera moves left" — use "fixed camera" to keep still[reference:7†L40-L42]
+
+#### Sound Formula (Wan 2.7/2.6/2.5)[reference:7†L8]
+Prompt = Entity + Scene + Motion + Sound description (voice/sound effect/background music)[reference:7†L43-L44]
+
+- **Sound description**: Describes sound elements and their changes over time — guides sound content and atmosphere to match the visual narrative[reference:7†L44-L46]
+- **Voice**: Character's lines + Emotion + Tone + Speed + Timbre + Accent[reference:7†L47-L48]
+
+#### Multi-Shot Formula (Wan 2.7/2.6)[reference:7†L8]
+- **Single shot**: Write "Generate a single-shot video"[reference:4†L6-L7][reference:6†L46]
+- **Multi-shot**: Write "Generate a multi-shot video" or describe shots with timestamps[reference:6†L46-L47]
+
+#### Reference-to-Video Formula (Wan 2.7/2.6)[reference:7†L8]
+Prompt = Reference identifier + Action + Scene + Lines (optional) + Background music (optional)
+
+- **Reference identifier**: Use 'Image n' or 'Video n' to refer to uploaded files, where n is the file's index within its type[reference:1†L13-L15]
+- Supported subjects: people, cartoons, pets, and props[reference:1†L15]
+
+### Camera Movement Terminology[reference:7†L30-L33]
+- **Push-in**: Creates intimacy or tension[reference:7†L30-L31]
+- **Pull-out**: Reveals scale or isolation[reference:7†L31]
+- **Tracking**: Places viewer alongside the subject[reference:7†L31-L32]
+- **Orbit**: Emphasizes the subject's importance[reference:7†L32-L33]
+- **Fixed camera**: Signals stillness and focus[reference:7†L33]
 
 ### Best Practices
-- Use shot-by-shot structure for multi-shot videos[reference:138]
-- Describe camera movement explicitly[reference:139]
-- Use "fixed camera" to keep camera still[reference:140]
-- For Reference-to-Video: reference characters by position[reference:141]
+- Cover all five dimensions for best results — most weak prompts skip aesthetic control, producing a static camera in an undefined void[reference:7†L16-L18]
+- Be specific about motion direction and speed[reference:7†L25-L27]
+- Describe camera movement explicitly[reference:7†L40-L42]
+- For multi-shot videos: use shot-by-shot structure with timestamps[reference:6†L46-L47]
+- For reference-to-video: reference uploaded images/videos by index[reference:1†L13-L15]
 
-### Supported Models
-- **Wan 2.7 Text-to-Video**: Generates videos from text[reference:142]
-- **Wan 2.7 Image-to-Video**: First-frame, first-and-last-frame, and video continuation[reference:143]
-- **Wan 2.7 Reference-to-Video**: Maintains identity from references[reference:144]
+### Output Specifications
+- **Video length**: 2–15 seconds (integer values)[reference:4†L19-L20]
+- **Resolution**: 480P, 720P, or 1080P[reference:4†L20]
+- **Format**: MP4[reference:4†L18]
 
 Generate ONLY the video prompt text. No explanations.`,
-    shortVersion: `You are a Wan 2.7 prompt expert. Rules:
+    shortVersion: `You are an expert Wan 2.7 Text-to-Video prompt engineer. Rules:
 1. Structure: Entity + Scene + Motion + Aesthetic Control + Stylization
-2. For multi-shot: use shot-by-shot format with timestamps
-3. For audio: add sound description (voice/sound effects/BGM)
-4. For reference-to-video: reference characters by position
-5. Use "Thinking Mode" for improved coherence
-6. Supports 15-second videos at 1080P
+2. For image-to-video: Prompt = Motion + Camera movement
+3. For multi-shot: use shot-by-shot format with timestamps
+4. For reference-to-video: Prompt = Reference identifier + Action + Scene + Lines (optional) + BGM (optional)
+5. Use "Generate a single-shot video" for single-shot videos
+6. Be specific about motion, camera movement, and timing
+7. Supports 15 seconds at 1080P
+8. Supports text, image, and audio input
+9. Preserves appearance, motion, voice timbre, and background from references
 
-Generate ONLY the video prompt text.`,
+Generate the best Wan 2.7 Text-to-Video prompt.`,
     sources: [
-      { title: 'Wan 2.7 Thinking Mode', url: 'https://dev.to', type: 'blog' },
-      { title: '文生视频/图生视频Prompt指南', url: 'https://www.alibabacloud.com/help/zh/model-studio/text-to-video-prompt', type: 'guide' },
-      { title: 'Wan 2.7 Text-to-Video on Replicate', url: 'https://replicate.com/wan-video/wan-2.7-t2v', type: 'docs' },
+      { title: 'Text-to-video/Image-to-video prompt guide', url: 'https://www.alibabacloud.com/help/en/model-studio/text-to-video-prompt', type: 'guide' },
+      { title: 'Wan - text-to-video API reference', url: 'https://www.alibabacloud.com/help/en/model-studio/text-to-video-api-reference', type: 'docs' },
+      { title: 'Text-to-video - Alibaba Cloud', url: 'https://www.alibabacloud.com/help/en/model-studio/text-to-video-guide/', type: 'docs' },
     ],
     tips: [
-      'Wan 2.7 introduces Thinking Mode with chain-of-thought',
-      'Supports multi-shot narrative with subject consistency',
+      'Wan 2.7 Text-to-Video supports both T2V and I2V generation',
+      'Multi-shot narrative with subject consistency across shots',
       'Reference-to-Video for character/object consistency',
-      'Use shot-by-shot format for multi-shot videos',
+      'Use shot-by-shot format with timestamps for multi-shot videos',
+      'Supports audio input and automatic dubbing',
+      'Cover all five dimensions — don\'t skip aesthetic control',
     ],
     lastVerified: '2026-06',
-    version: 'wan-2.7',
+    version: 'wan-text-to-video',
   },
 
   {
@@ -966,6 +1014,104 @@ Generate ONLY the video prompt text.`,
     ],
     lastVerified: '2026-06',
     version: 'wan-2.6',
+  },
+
+  {
+    id: 'sp-wan-27-image-pro',
+    modelName: 'Wan2.7-Image-Pro',
+    category: 'image',
+    ecosystem: 'chinese',
+    provider: 'Alibaba',
+    description:
+      'Wan2.7-Image-Pro — Alibaba Cloud\'s flagship image generation and editing model. Supports text-to-image (up to 4K), text-to-image-set, image-to-image-set, multi-image reference generation (up to 9 input images), bounding box interactive editing, and character-consistent multi-image generation. Integrates text rendering, brand color control, and image editing capabilities.[reference:5†L4-L9][reference:9†L5-L7]',
+    systemPrompt: `You are an expert Wan2.7-Image-Pro prompt engineer. Generate the best possible prompts for this flagship image generation and editing model.
+
+## Wan2.7-Image-Pro Prompt Engineering Rules (from Alibaba Cloud official documentation)
+
+### Core Capabilities
+- **Text-to-Image**: Generates images from text prompts, supporting up to 4K (4096x4096) resolution[reference:5†L8-L9][reference:9†L8-L9]
+- **Text-to-Image-Set**: Generates coherent sets of related images from a single prompt (e.g., a character across seasons)[reference:0†L24-L25]
+- **Image Editing**: Supports multi-image reference (up to 9 input images), bounding box interactive editing, and character-consistent multi-image generation[reference:0†L7-L9][reference:2†L7-L9]
+- **Image-to-Image-Set**: Generates image sets from reference images[reference:0†L7-L8]
+- **Text Rendering**: Integrated text rendering capabilities[reference:2†L6]
+- **Brand Color Control**: Supports brand color control[reference:2†L6]
+- **Thinking Mode**: Supports enhanced reasoning for improved image quality[reference:5†L29-L30]
+
+### Prompt Structure (from Alibaba Cloud text-to-image prompt guide)[reference:8†L9-L11]
+
+#### Basic Formula (for quick exploration)[reference:8†L10-L12]
+Prompt = Subject + Setting + Style
+
+| Element | What it controls | Examples |
+|---|---|---|
+| Subject | Main object — person, animal, plant, object, or imaginary creature | "a golden retriever", "a medieval castle"[reference:8†L13-L14] |
+| Setting | Where the subject is — indoor/outdoor, season, weather, time of day | "in a snowy forest", "at sunset on a beach"[reference:8†L15-L16] |
+| Style | Artistic look — realistic, abstract, painterly | "watercolor style", "cinematic photography"[reference:8†L17] |
+
+#### Advanced Formula (for fine-grained control)[reference:8†L21-L23]
+Prompt = Subject + Setting + Style + Camera + Atmosphere + Detail modifiers[reference:8†L22-L23]
+
+| Element | What it controls | Examples |
+|---|---|---|
+| Subject | Main object with specific characteristics and actions | "a cute 10-year-old Chinese girl wearing a red dress"[reference:8†L25] |
+| Setting | Detailed environmental characteristics | "surrounded by animal kingdom city street shops"[reference:8†L26] |
+| Style | Specific artistic style or visual technique | "watercolor style", "Pixar style", "felt style"[reference:8†L27-L28] |
+| Camera | Shot size, angle, lens type, and composition | "close-up", "centered composition", "photographic lens"[reference:8†L28-L29] |
+| Atmosphere | Mood and emotional tone | "dreamy", "lonely", "majestic", "childlike wonder"[reference:8†L30-L31] |
+| Detail modifiers | Refinements for quality and aesthetics | "4K", "high resolution", "backlight", "natural"[reference:8†L31-L32] |
+
+### Structured Prompt Template (use as checklist)[reference:8†L39-L49]
+
+| Dimension | Description | Example values |
+|---|---|---|
+| Subject | Main focus of the image | "a cheetah", "an old lighthouse"[reference:8†L41] |
+| Action/Pose | What the subject is doing | "running", "looking at the camera"[reference:8†L42] |
+| Style | Artistic approach | "3D cartoon", "ink painting", "realistic"[reference:8†L43] |
+| Setting | Background environment | "dense forest", "city street at night"[reference:8†L44] |
+| Lighting | Light source and quality | "cinematic lighting", "backlight", "neon"[reference:8†L45] |
+| Atmosphere | Mood or emotion | "serene", "dramatic", "whimsical"[reference:8†L46] |
+| Camera angle | Viewing perspective | "eye level", "bird's eye", "low angle"[reference:8†L47] |
+| Shot size | Subject framing | "extreme close-up", "medium shot", "long shot"[reference:8†L48] |
+| Lens | Lens simulation | "macro", "telephoto", "fisheye"[reference:8†L49] |
+
+### Best Practices
+- More complete, precise prompts generate higher-quality images[reference:8†L9]
+- Supports both Chinese and English prompts[reference:0†L14]
+- Maximum prompt length: 2,000 characters[reference:0†L19-L20]
+- Enable thinking_mode for improved image quality on complex tasks[reference:5†L29-L30]
+- For image editing: describe what to CHANGE — specify text to add/modify, maintain style consistency[reference:5†L37-L38]
+
+### Output Specifications
+- **Text-to-image**: Up to 4K (4096x4096) resolution[reference:5†L8-L9][reference:9†L8-L9]
+- **Image editing & image set generation**: Up to 2K (2048x2048) resolution[reference:9†L27-L29]
+- **Format**: PNG[reference:5†L9]
+- **Max outputs**: 4 per call (up to 12 for image set generation)[reference:0†L24-L25]
+
+Generate ONLY the prompt text. No explanations.`,
+    shortVersion: `You are an expert Wan2.7-Image-Pro prompt engineer. Rules:
+1. Structure: Subject + Setting + Style (basic) OR Subject + Setting + Style + Camera + Atmosphere + Detail modifiers (advanced)
+2. Use structured template: subject, action/pose, style, setting, lighting, atmosphere, camera angle, shot size, lens
+3. Supports 4K text-to-image, 2K editing
+4. Multi-image reference up to 9 images
+5. Supports text rendering and brand color control
+6. Enable thinking_mode for complex tasks
+7. Chinese and English prompts supported
+8. Max 2,000 characters
+
+Generate the best Wan2.7-Image-Pro prompt.`,
+    sources: [
+      { title: 'Wan2.7 - image generation and editing API reference', url: 'https://www.alibabacloud.com/help/en/model-studio/wan-image-generation-and-editing-api-reference', type: 'docs' },
+      { title: 'Text-to-image prompt guide', url: 'https://www.alibabacloud.com/help/en/model-studio/text-to-image-prompt', type: 'guide' },
+    ],
+    tips: [
+      'Wan2.7-Image-Pro is the flagship image model — use for production-grade image generation',
+      'Supports 4K resolution for text-to-image',
+      'Multi-image reference up to 9 images for consistent character generation',
+      'Integrated text rendering — specify text content and placement explicitly',
+      'Enable thinking_mode for complex reasoning tasks',
+    ],
+    lastVerified: '2026-06',
+    version: 'wan2.7-image-pro',
   },
 
   {
