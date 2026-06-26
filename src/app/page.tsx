@@ -19,6 +19,7 @@ import {
   getSourceQuality as getEntryQuality,
   sortEntries,
   highlightMatches,
+  getDisplayPrompt,
   SystemPromptEntry,
   SourceRef,
   ModelCategory,
@@ -614,6 +615,8 @@ const EntryCard = React.memo(function EntryCard({ entry, query }: { entry: Syste
     : quality === 'partial' ? 'hover:border-amber-500/50'
     : 'hover:border-red-500/50';
 
+  const useChinesePrompt = useAppStore(s => s.useChinesePrompt);
+
   const rankings = useMemo(() => {
     const result: { ranking: ArenaRanking; label: string }[] = [];
     if (entry.category === 'video') {
@@ -684,7 +687,7 @@ const EntryCard = React.memo(function EntryCard({ entry, query }: { entry: Syste
           {/* Short version preview — 3 lines */}
           <div className="bg-muted/30 rounded-lg p-3 mb-3">
             <pre className="text-[11px] font-mono line-clamp-3 whitespace-pre-wrap text-muted-foreground">
-              {entry.shortVersion}
+              {getDisplayPrompt(entry, 'short', useChinesePrompt)}
             </pre>
           </div>
 
@@ -700,7 +703,7 @@ const EntryCard = React.memo(function EntryCard({ entry, query }: { entry: Syste
 
         {/* Actions */}
         <div className="flex items-center gap-1.5 pt-2 border-t border-border">
-          <CopyButton text={entry.systemPrompt} label="Copy" className="flex-1 h-7 text-xs" />
+          <CopyButton text={getDisplayPrompt(entry, 'full', useChinesePrompt)} label="Copy" className="flex-1 h-7 text-xs" />
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
@@ -739,7 +742,9 @@ const EntryCard = React.memo(function EntryCard({ entry, query }: { entry: Syste
 
 function OpenInDropdown({ entry }: { entry: SystemPromptEntry }) {
   const defaultPlatform = getChatPlatform(entry.provider);
-  const promptText = useAppStore((s) => s.showShortVersion ? (getEntryById(entry.id)?.shortVersion ?? entry.systemPrompt) : entry.systemPrompt);
+  const showShort = useAppStore((s) => s.showShortVersion);
+  const useChinese = useAppStore((s) => s.useChinesePrompt);
+  const promptText = getDisplayPrompt(entry, showShort ? 'short' : 'full', useChinese);
 
   const openChat = useCallback((platform: ChatPlatform) => {
     const url = platform.url + encodeURIComponent(promptText);
@@ -826,7 +831,7 @@ function ArenaRankCard({ ranking, label }: { ranking: ArenaRanking; label: strin
 
 
 function DetailView() {
-  const { selectedEntryId, setSelectedEntryId, showShortVersion, setShowShortVersion, isBookmarked, addBookmark, removeBookmark, compareIds, addCompare } = useAppStore();
+  const { selectedEntryId, setSelectedEntryId, showShortVersion, setShowShortVersion, useChinesePrompt, setUseChinesePrompt, isBookmarked, addBookmark, removeBookmark, compareIds, addCompare } = useAppStore();
   const entry = selectedEntryId ? getEntryById(selectedEntryId) : null;
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -838,7 +843,7 @@ function DetailView() {
   if (!entry) return null;
 
   const bookmarked = isBookmarked(entry.id);
-  const promptText = showShortVersion ? entry.shortVersion : entry.systemPrompt;
+  const promptText = getDisplayPrompt(entry, showShortVersion ? 'short' : 'full', useChinesePrompt);
   const catConfig = CATEGORY_CONFIG[entry.category];
   const quality = getEntryQuality(entry);
   const isVideo = entry.category === 'video';
@@ -971,17 +976,31 @@ function DetailView() {
         <ArenaRankCard ranking={arenaRanking} label={isImage ? 'Text-to-Image' : 'Chatbot'} />
       )}
 
-      {/* Version Toggle + Copy */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Label htmlFor="version-toggle" className="text-sm font-medium">
-            {showShortVersion ? 'Short Version' : 'Full Version'}
-          </Label>
-          <Switch
-            id="version-toggle"
-            checked={showShortVersion}
-            onCheckedChange={setShowShortVersion}
-          />
+      {/* Version Toggle + Language Toggle + Copy */}
+      <div className="flex items-center justify-between flex-wrap gap-3">
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            <Label htmlFor="version-toggle" className="text-sm font-medium">
+              {showShortVersion ? 'Short Version' : 'Full Version'}
+            </Label>
+            <Switch
+              id="version-toggle"
+              checked={showShortVersion}
+              onCheckedChange={setShowShortVersion}
+            />
+          </div>
+          {entry.ecosystem === 'chinese' && ['image', 'video', '3d'].includes(entry.category) && (
+            <div className="flex items-center gap-3">
+              <Label htmlFor="lang-toggle" className="text-sm font-medium">
+                {useChinesePrompt ? '中文' : 'English'}
+              </Label>
+              <Switch
+                id="lang-toggle"
+                checked={useChinesePrompt}
+                onCheckedChange={setUseChinesePrompt}
+              />
+            </div>
+          )}
         </div>
         <CopyButton text={promptText} label={showShortVersion ? 'Copy Short' : 'Copy Full'} className="min-w-[120px]" />
       </div>
@@ -1075,6 +1094,8 @@ function DetailView() {
 
 function CompareView() {
   const { compareIds, removeCompare, clearCompare, setActiveView } = useAppStore();
+  const useChinesePrompt = useAppStore(s => s.useChinesePrompt);
+  const setUseChinesePrompt = useAppStore(s => s.setUseChinesePrompt);
   const [viewMode, setViewMode] = useState<'specs' | 'prompts'>('specs');
   const [promptMode, setPromptMode] = useState<'short' | 'full'>('short');
 
@@ -1225,7 +1246,7 @@ function CompareView() {
       {viewMode === 'prompts' && (
         <div className="space-y-4">
           {/* Toggle: short / full */}
-          <div className="flex items-center justify-end gap-1">
+          <div className="flex items-center justify-end gap-2">
             <button
               onClick={() => setPromptMode('short')}
               className={cn(
@@ -1248,6 +1269,22 @@ function CompareView() {
             >
               Full System Prompt
             </button>
+            {entries.some(e => e.ecosystem === 'chinese' && ['image', 'video', '3d'].includes(e.category)) && (
+              <>
+                <span className="text-xs text-muted-foreground mx-1">|</span>
+                <button
+                  onClick={() => setUseChinesePrompt(!useChinesePrompt)}
+                  className={cn(
+                    'px-3 py-1.5 text-xs rounded-md font-medium transition-colors',
+                    useChinesePrompt
+                      ? 'bg-amber-500/10 text-amber-500'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  )}
+                >
+                  {useChinesePrompt ? '中文' : 'English'}
+                </button>
+              </>
+            )}
           </div>
 
           {/* Prompt Columns */}
@@ -1259,7 +1296,7 @@ function CompareView() {
             entries.length >= 4 && 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4',
           )}>
             {entries.map(entry => {
-              const text = promptMode === 'short' ? entry.shortVersion : entry.systemPrompt;
+              const text = getDisplayPrompt(entry, promptMode, useChinesePrompt);
               return (
                 <Card key={entry.id} className="flex flex-col">
                   <CardHeader className="pb-2">
@@ -1295,6 +1332,7 @@ function CompareView() {
 
 function BookmarksView() {
   const { bookmarks, removeBookmark } = useAppStore();
+  const useChinesePrompt = useAppStore(s => s.useChinesePrompt);
   const entries = useMemo(() =>
     bookmarks.map(b => ({ ...b, entry: getEntryById(b.entryId) })).filter(b => b.entry),
     [bookmarks]
@@ -1332,10 +1370,10 @@ function BookmarksView() {
                 <Badge variant="outline" className="text-[9px] shrink-0 ml-2">{entry!.category.toUpperCase()}</Badge>
               </div>
               <pre className="text-[11px] font-mono line-clamp-4 whitespace-pre-wrap bg-muted/30 rounded-lg p-3 mb-3">
-                {entry!.shortVersion.slice(0, 200)}...
+                {getDisplayPrompt(entry!, 'short', useChinesePrompt).slice(0, 200)}...
               </pre>
               <div className="flex gap-2">
-                <CopyButton text={b.type === 'short' ? entry!.shortVersion : entry!.systemPrompt} label="Copy" className="flex-1 h-7 text-xs" />
+                <CopyButton text={getDisplayPrompt(entry!, b.type === 'short' ? 'short' : 'full', useChinesePrompt)} label="Copy" className="flex-1 h-7 text-xs" />
                 <Button variant="ghost" size="sm" className="h-7 text-destructive" onClick={() => removeBookmark(b.entryId)} aria-label={`Remove ${entry!.modelName} from saved`}>
                   <X className="h-3.5 w-3.5" />
                 </Button>

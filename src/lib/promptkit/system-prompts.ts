@@ -2,6 +2,7 @@ export type { ModelCategory, ModelEcosystem, SourceRef, SystemPromptEntry } from
 
 import { ALL_PROVIDER_ENTRIES } from './providers';
 import type { ModelCategory, SystemPromptEntry } from './types';
+import { SYSTEM_PROMPT_ENDING_ZH, SHORT_VERSION_ENDING_ZH } from './prompt-endings';
 
 const TEXT = ALL_PROVIDER_ENTRIES.filter(e => e.category === 'text');
 const CODE = ALL_PROVIDER_ENTRIES.filter(e => e.category === 'code');
@@ -230,4 +231,15 @@ export function highlightMatches(text: string, query: string): string {
   const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const regex = new RegExp(`(${escaped})`, 'gi');
   return text.replace(regex, '<mark class="bg-amber-500/20 text-amber-500 rounded-sm px-0.5">$1</mark>');
+}
+
+const CHINESE_CATEGORIES = new Set(['image', 'video', '3d']);
+
+export function getDisplayPrompt(entry: SystemPromptEntry, type: 'full' | 'short', useChinese: boolean): string {
+  const base = type === 'full' ? entry.systemPrompt : entry.shortVersion;
+  if (!useChinese) return base;
+  if (entry.ecosystem !== 'chinese') return base;
+  if (!CHINESE_CATEGORIES.has(entry.category)) return base;
+  const ending = type === 'full' ? SYSTEM_PROMPT_ENDING_ZH : SHORT_VERSION_ENDING_ZH;
+  return base + ending;
 }

@@ -58,6 +58,10 @@ interface AppState {
   // Version toggle
   showShortVersion: boolean;
   setShowShortVersion: (v: boolean) => void;
+
+  // Chinese prompt toggle
+  useChinesePrompt: boolean;
+  setUseChinesePrompt: (v: boolean) => void;
 }
 
 export const useAppStore = create<AppState>()(
@@ -107,6 +111,9 @@ export const useAppStore = create<AppState>()(
 
       showShortVersion: false,
       setShowShortVersion: (v) => set({ showShortVersion: v }),
+
+      useChinesePrompt: true,
+      setUseChinesePrompt: (v) => set({ useChinesePrompt: v }),
     }),
     {
       name: 'promptkit-store',
