@@ -7,18 +7,28 @@ import { Label } from '@/components/ui/label';
 import { cn } from '@/lib/utils';
 import { Copy, Check } from 'lucide-react';
 import { toast } from 'sonner';
+import { useAppStore } from '@/lib/promptkit/store';
+import { getDisplayPrompt } from '@/lib/promptkit/system-prompts';
 
 export function ModelPromptView({
   systemPrompt,
   shortVersion,
+  ecosystem,
+  category,
 }: {
   systemPrompt: string;
   shortVersion: string;
+  ecosystem?: string;
+  category?: string;
 }) {
   const [showShort, setShowShort] = useState(false);
   const [copied, setCopied] = useState(false);
+  const useChinesePrompt = useAppStore(s => s.useChinesePrompt);
+  const setUseChinesePrompt = useAppStore(s => s.setUseChinesePrompt);
+  const showLangToggle = ecosystem === 'chinese' && category && ['image', 'video', '3d'].includes(category);
 
-  const promptText = showShort ? shortVersion : systemPrompt;
+  const entry = { systemPrompt, shortVersion, ecosystem: ecosystem ?? '', category: category ?? '' } as any;
+  const promptText = getDisplayPrompt(entry, showShort ? 'short' : 'full', useChinesePrompt);
 
   const handleCopy = useCallback(() => {
     navigator.clipboard.writeText(promptText).then(() => {
@@ -40,6 +50,19 @@ export function ModelPromptView({
             checked={showShort}
             onCheckedChange={setShowShort}
           />
+          {showLangToggle && (
+            <>
+              <span className="text-xs text-muted-foreground mx-1">|</span>
+              <Label htmlFor="model-lang-toggle" className="text-sm font-medium">
+                {useChinesePrompt ? '中文' : 'English'}
+              </Label>
+              <Switch
+                id="model-lang-toggle"
+                checked={useChinesePrompt}
+                onCheckedChange={setUseChinesePrompt}
+              />
+            </>
+          )}
         </div>
         <Button
           variant={copied ? 'default' : 'outline'}

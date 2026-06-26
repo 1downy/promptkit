@@ -164,7 +164,7 @@ export default async function ModelPage({
             <h2 id="system-prompt-heading" className="text-sm font-semibold mb-3 flex items-center gap-2">
               ✨ System Prompt
             </h2>
-            <ModelPromptView systemPrompt={entry.systemPrompt} shortVersion={entry.shortVersion} />
+            <ModelPromptView systemPrompt={entry.systemPrompt} shortVersion={entry.shortVersion} ecosystem={entry.ecosystem} category={entry.category} />
           </section>
 
           {/* Tips */}
