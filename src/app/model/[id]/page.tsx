@@ -119,7 +119,7 @@ export default async function ModelPage({
               <li aria-hidden="true">/</li>
               <li><Link href={`/?category=${entry.category}`} className="hover:text-amber-500 transition-colors">{categoryLabel}</Link></li>
               <li aria-hidden="true">/</li>
-              <li className="text-foreground font-medium" aria-current="page">{entry.modelName}</li>
+              <li><Link href={`/model/${entry.id}`} className="text-foreground font-medium hover:text-amber-500 transition-colors" aria-current="page">{entry.modelName}</Link></li>
             </ol>
           </nav>
 

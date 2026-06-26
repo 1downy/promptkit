@@ -235,7 +235,7 @@ export function highlightMatches(text: string, query: string): string {
 
 const CHINESE_CATEGORIES = new Set(['image', 'video', '3d']);
 
-export function getDisplayPrompt(entry: SystemPromptEntry, type: 'full' | 'short', useChinese: boolean): string {
+export function getDisplayPrompt(entry: { systemPrompt: string; shortVersion: string; ecosystem: string; category: string }, type: 'full' | 'short', useChinese: boolean): string {
   const base = type === 'full' ? entry.systemPrompt : entry.shortVersion;
   if (!useChinese) return base;
   if (entry.ecosystem !== 'chinese') return base;
