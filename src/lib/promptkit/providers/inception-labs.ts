@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const INCEPTION_LABS: SystemPromptEntry[] = [
 
@@ -58,7 +59,7 @@ Control reasoning depth with \`reasoning_effort\` parameter[reference:12][refere
 - **temperature**: Range 0.5-1.0[reference:22]
 - **stop**: Up to 4 stop sequences[reference:23]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Mercury 2 prompt expert. Rules:
 - Diffusion LLM — NOT autoregressive. Generates tokens in parallel, iteratively refines output.
 - Recommended order: Persona & Style → Knowledge Base → Current Task
@@ -68,7 +69,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Streaming with diffusion mode visualizes denoising process
 - Temperature: 0.5-1.0, max_tokens: 1-50,000
 
-Generate the best Mercury 2 prompt.`,
+Generate the best Mercury 2 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Prompt Guide - Inception Platform', url: 'https://docs.inceptionlabs.ai/resources/prompt-guide', type: 'guide' },
       { title: 'API Parameters - Inception Platform', url: 'https://docs.inceptionlabs.ai/get-started/api-parameters', type: 'docs' },
@@ -125,7 +126,7 @@ The request must contain a single user message with required edit prompt tags[re
 - Use the Edit endpoint for larger code region edits[reference:30]
 - Keep prompts focused on the specific code edit or completion needed
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Mercury Edit 2 prompt expert. Rules:
 - Specialized code editing and fill-in-the-middle (FIM) model
 - 32K context window
@@ -134,7 +135,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Edit endpoint for code region edits
 - Ultra-fast diffusion-based code generation
 
-Generate the best Mercury Edit 2 prompt.`,
+Generate the best Mercury Edit 2 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Models, Endpoints, and Pricing - Inception Platform', url: 'https://docs.inceptionlabs.ai/get-started/models', type: 'docs' },
       { title: 'Introducing Mercury Edit 2 – Inception', url: 'https://www.inceptionlabs.ai', type: 'blog' },
@@ -196,7 +197,7 @@ Mercury Coder excels at apply-edit tasks — accurately applies edits 92% of the
 - 5-10x faster response times[reference:37]
 - Ideal for coding assistants, voice-driven interfaces, and agentic AI systems[reference:38]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Mercury Coder prompt expert. Rules:
 - First commercial diffusion-based code LLM
 - Two sizes: Mini (1,109 tok/s) and Small (737 tok/s)
@@ -205,7 +206,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Structure: Language → Task → Requirements → I/O → Constraints → Context
 - Use Apply-Edit endpoint for code modifications
 
-Generate the best Mercury Coder prompt.`,
+Generate the best Mercury Coder prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Mercury: Ultra-Fast Language Models Based on Diffusion', url: 'https://arxiv.org/html/2506.17298v1', type: 'whitepaper' },
       { title: 'Ultra-Fast Apply-Edit with Mercury Coder – Inception', url: 'https://www.inceptionlabs.ai', type: 'blog' },

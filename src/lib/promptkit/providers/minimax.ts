@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const MINIMAX: SystemPromptEntry[] = [
 
@@ -42,7 +43,7 @@ M3 natively supports interleaved thinking. Best practice: return the model's ful
 - **top_p**: 0.95 (default)[reference:11]
 - **top_k**: 40 (default)[reference:12]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiniMax-M3 prompt engineer. Rules:
 1. System prompts for role and tool definitions
 2. Be specific and explicit — direct instructions with constraints
@@ -52,7 +53,7 @@ Generate ONLY the prompt text. No explanations.`,
 6. Interleaved thinking for tool use — return full response with reasoning
 7. temperature=1.0, top_p=0.95, top_k=40
 
-Generate the best MiniMax-M3 prompt.`,
+Generate the best MiniMax-M3 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
@@ -105,7 +106,7 @@ Generate the best MiniMax-M3 prompt.`,
 - **temperature**: 0.7-1.0
 - **top_p**: 0.95
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiniMax-M2.7 prompt engineer. Rules:
 1. System prompts for role definition
 2. Be specific and detailed
@@ -114,7 +115,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Excels at programming, tool calling, search, office productivity
 6. Use "think step by step" for complex reasoning
 
-Generate the best MiniMax-M2.7 prompt.`,
+Generate the best MiniMax-M2.7 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
@@ -158,14 +159,14 @@ Generate the best MiniMax-M2.7 prompt.`,
 - Same quality as M2.7 with faster inference
 - Good for production workflows requiring speed
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiniMax-M2.7-highspeed prompt engineer. Rules:
 1. Same performance as M2.7 — faster output (~100 tps)
 2. Keep prompts focused — speed optimized
 3. 204,800 context window
 4. Best for production workflows requiring speed
 
-Generate the best MiniMax-M2.7-highspeed prompt.`,
+Generate the best MiniMax-M2.7-highspeed prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
@@ -207,7 +208,7 @@ Generate the best MiniMax-M2.7-highspeed prompt.`,
 - Use system prompts for persistent behavior
 - Cost-effective for production workloads
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiniMax-M2.5 prompt engineer. Rules:
 1. System prompts for role definition
 2. Be specific and direct
@@ -215,7 +216,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Best price-performance ratio
 5. Good for programming, tool calling, search, and office productivity
 
-Generate the best MiniMax-M2.5 prompt.`,
+Generate the best MiniMax-M2.5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
@@ -256,13 +257,13 @@ Generate the best MiniMax-M2.5 prompt.`,
 - Keep prompts focused — speed optimized
 - Same quality as M2.5 with faster inference
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiniMax-M2.5-highspeed prompt engineer. Rules:
 1. Same performance as M2.5 — faster output (~100 tps)
 2. Keep prompts focused — speed optimized
 3. 204,800 context window
 
-Generate the best MiniMax-M2.5-highspeed prompt.`,
+Generate the best MiniMax-M2.5-highspeed prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
@@ -304,14 +305,14 @@ Generate the best MiniMax-M2.5-highspeed prompt.`,
 - List requirements clearly
 - Good for code generation and refactoring
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiniMax-M2.1 prompt engineer. Rules:
 1. Specify language and framework explicitly
 2. Strong multi-language programming capabilities
 3. Good for code generation and refactoring
 4. 204,800 context window
 
-Generate the best MiniMax-M2.1 prompt.`,
+Generate the best MiniMax-M2.1 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
@@ -352,13 +353,13 @@ Generate the best MiniMax-M2.1 prompt.`,
 - Keep prompts focused — speed optimized
 - Same quality as M2.1 with faster inference
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiniMax-M2.1-highspeed prompt engineer. Rules:
 1. Same performance as M2.1 — faster output (~100 tps)
 2. Keep prompts focused — speed optimized
 3. 204,800 context window
 
-Generate the best MiniMax-M2.1-highspeed prompt.`,
+Generate the best MiniMax-M2.1-highspeed prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
@@ -400,14 +401,14 @@ Generate the best MiniMax-M2.1-highspeed prompt.`,
 - Use system prompts for persistent behavior
 - Good for agentic workflows and reasoning tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiniMax-M2 prompt engineer. Rules:
 1. Efficient model for agentic era
 2. Agentic capabilities with advanced reasoning
 3. 204,800 context window
 4. Use system prompts for persistent behavior
 
-Generate the best MiniMax-M2 prompt.`,
+Generate the best MiniMax-M2 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
@@ -450,14 +451,14 @@ Generate the best MiniMax-M2 prompt.`,
 - Specify scenario and context
 - Good for chatbot and role-playing applications
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiniMax-M2-her prompt engineer. Rules:
 1. Designed for dialogue scenarios and role-playing
 2. Define character persona clearly
 3. Support multi-turn conversations
 4. 64K context window
 
-Generate the best MiniMax-M2-her prompt.`,
+Generate the best MiniMax-M2-her prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
     ],
@@ -504,7 +505,7 @@ Generate the best MiniMax-M2-her prompt.`,
 - Same quality as Hailuo 2.3 with faster generation
 - Available via MiniMax API[reference:40]
 
-Generate ONLY the video prompt text. No explanations.`,
+Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a MiniMax Hailuo 2.3 prompt expert. Rules:
 - Natural language descriptions
 - Use cinematic/directorial language
@@ -513,7 +514,7 @@ Generate ONLY the video prompt text. No explanations.`,
 - Chinese and English supported
 - Fast variant available for faster generation
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
       { title: 'Models - MiniMax API Docs', url: 'https://platform.minimax.io/docs/release-notes/models', type: 'release-notes' },
@@ -556,7 +557,7 @@ Generate ONLY the video prompt text.`,
 - Use cinematic and directorial language
 - Keep prompts focused for speed
 
-Generate ONLY the video prompt text. No explanations.`,
+Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a MiniMax Hailuo 2.3 Fast prompt expert. Rules:
 - Same quality as Hailuo 2.3 with faster generation
 - Supports image-to-video generation
@@ -564,7 +565,7 @@ Generate ONLY the video prompt text. No explanations.`,
 - Describe: scene → subject/action → camera → lighting → style
 - Keep prompts focused for speed
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
     ],
@@ -604,7 +605,7 @@ Generate ONLY the video prompt text.`,
 - Describe camera angles and movements
 - Chinese and English prompts supported
 
-Generate ONLY the video prompt text. No explanations.`,
+Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a MiniMax Hailuo 02 prompt expert. Rules:
 - Natural language descriptions
 - 1080p resolution, up to 10 seconds
@@ -612,7 +613,7 @@ Generate ONLY the video prompt text. No explanations.`,
 - Describe: scene → subject/action → camera → lighting → style
 - Chinese and English supported
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Models - MiniMax API Docs', url: 'https://platform.minimax.io/docs/release-notes/models', type: 'release-notes' },
     ],
@@ -654,7 +655,7 @@ Generate ONLY the video prompt text.`,
 - Describe lighting and color palette
 - Chinese and English prompts supported
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a MiniMax image-01 prompt expert. Rules:
 - Natural language descriptions
 - Supports text-to-image and image-to-image
@@ -662,7 +663,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Delicate visual rendering
 - Chinese and English supported
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
       { title: 'Models - MiniMax API Docs', url: 'https://platform.minimax.io/docs/release-notes/models', type: 'release-notes' },
@@ -705,7 +706,7 @@ Generate ONLY the prompt text.`,
 - Use sound tags for expressive speech
 - Adjust speed and pitch for natural delivery
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a MiniMax Speech-2.8-HD prompt expert. Rules:
 - Ultra-realistic speech synthesis
 - 300+ system voices and custom cloning
@@ -713,7 +714,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Use sound tags for expressive speech
 - Specify voice characteristics and emotion
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
       { title: 'API Overview - MiniMax API Docs', url: 'https://platform.minimax.io/docs/api-reference/api-overview', type: 'docs' },
@@ -755,14 +756,14 @@ Generate ONLY the prompt text.`,
 - Specify voice characteristics
 - Optimized for speed-critical applications
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a MiniMax Speech-2.8-Turbo prompt expert. Rules:
 - Extreme generation speed
 - Natural audio effects
 - Keep prompts clear and focused
 - Optimized for speed-critical applications
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
       { title: 'API Overview - MiniMax API Docs', url: 'https://platform.minimax.io/docs/api-reference/api-overview', type: 'docs' },

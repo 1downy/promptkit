@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const STABILITY_AI: SystemPromptEntry[] = [
 
@@ -51,7 +52,7 @@ Negative prompts are supported and recommended. Include:
 
 Generate BOTH positive and negative prompts. Format:
 POSITIVE: [prompt]
-NEGATIVE: [negative prompt]`,
+NEGATIVE: [negative prompt]` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an SD3.5 Large prompt expert. Rules:
 - 8B flagship model — improved anatomy, typography, and prompt adherence
 - Use 7-element framework: Subject → Style → Scene → Details → Lighting → Composition → Quality
@@ -60,7 +61,7 @@ NEGATIVE: [negative prompt]`,
 - Negative prompts are recommended
 - Guidance scale controls prompt adherence vs creativity
 
-Generate BOTH positive and negative prompts.`,
+Generate BOTH positive and negative prompts.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Stable Diffusion 3.5 Core Models', url: 'https://stability.ai/core-models', type: 'docs' },
       { title: 'Stable Diffusion 3.5 Prompt Guide', url: 'https://stability.ai/learning-hub', type: 'guide' },
@@ -117,7 +118,7 @@ Include standard negative prompts:
 
 Generate BOTH positive and negative prompts. Format:
 POSITIVE: [prompt]
-NEGATIVE: [negative prompt]`,
+NEGATIVE: [negative prompt]` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an SD3.5 Large Turbo prompt expert. Rules:
 - Distilled version — faster inference with comparable quality
 - Same 7-element framework as SD3.5 Large
@@ -125,7 +126,7 @@ NEGATIVE: [negative prompt]`,
 - Keyword weighting: (word:1.3)
 - Negative prompts are recommended
 
-Generate BOTH positive and negative prompts.`,
+Generate BOTH positive and negative prompts.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Stable Diffusion 3.5 Core Models', url: 'https://stability.ai/core-models', type: 'docs' },
       { title: 'Introducing Stable Diffusion 3.5', url: 'https://stability.ai/news-updates/introducing-stable-diffusion-3-5', type: 'blog' },
@@ -173,14 +174,14 @@ Include standard negative prompts:
 
 Generate BOTH positive and negative prompts. Format:
 POSITIVE: [prompt]
-NEGATIVE: [negative prompt]`,
+NEGATIVE: [negative prompt]` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an SD3.5 Medium prompt expert. Rules:
 - Balanced model from SD3.5 family
 - Use 7-element framework: Subject → Style → Scene → Details → Lighting → Composition → Quality
 - Negative prompts are recommended
 - Open-weight for local deployment
 
-Generate BOTH positive and negative prompts.`,
+Generate BOTH positive and negative prompts.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Stable Diffusion 3.5 Core Models', url: 'https://stability.ai/core-models', type: 'docs' },
       { title: 'Introducing Stable Diffusion 3.5', url: 'https://stability.ai/news-updates/introducing-stable-diffusion-3-5', type: 'blog' },
@@ -233,7 +234,7 @@ Include standard negative prompts:
 
 Generate BOTH positive and negative prompts. Format:
 POSITIVE: [prompt]
-NEGATIVE: [negative prompt]`,
+NEGATIVE: [negative prompt]` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an SD3 Medium prompt expert. Rules:
 - 2B parameter model outperforming SDXL
 - MMDiT architecture — better text understanding and spelling
@@ -242,7 +243,7 @@ NEGATIVE: [negative prompt]`,
 - Negative prompts are recommended
 - Non-commercial license only
 
-Generate BOTH positive and negative prompts.`,
+Generate BOTH positive and negative prompts.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Stable Diffusion 3 Medium FAQ', url: 'https://stability.ai/sd3-faq', type: 'docs' },
       { title: 'Stable Diffusion 3 Medium Release', url: 'https://stability.ai/news-updates/stable-diffusion-3-medium', type: 'blog' },
@@ -306,7 +307,7 @@ Add: <lora:name:weight> (e.g., <lora:detail_tweaker:1.0>)
 
 Generate BOTH positive and negative prompts. Format:
 POSITIVE: [prompt]
-NEGATIVE: [negative prompt]`,
+NEGATIVE: [negative prompt]` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an SDXL prompt expert. Rules:
 - Format: masterpiece, best quality, [subject], [style], [scene], [details], [technical]
 - Always include quality tags: masterpiece, best quality
@@ -315,7 +316,7 @@ NEGATIVE: [negative prompt]`,
 - Resolution: 1024x1024 or 1152x896 or 896x1152
 - Add <lora:name:weight> for LoRAs
 
-Generate BOTH positive and negative prompts.`,
+Generate BOTH positive and negative prompts.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'SDXL on Hugging Face', url: 'https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0', type: 'model-card' },
       { title: 'SDXL Pricing & Specs', url: 'https://cloudprice.net', type: 'docs' },
@@ -366,14 +367,14 @@ Include standard negative prompts:
 
 Generate BOTH positive and negative prompts. Format:
 POSITIVE: [prompt]
-NEGATIVE: [negative prompt]`,
+NEGATIVE: [negative prompt]` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an SDXL Turbo prompt expert. Rules:
 - Real-time single-step generation
 - Maintains high fidelity
 - Keep prompts focused — optimized for speed
 - Negative prompts are recommended
 
-Generate BOTH positive and negative prompts.`,
+Generate BOTH positive and negative prompts.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'SDXL Turbo Release', url: 'https://stability.ai/news-updates/stability-ai-sdxl-turbo', type: 'blog' },
       { title: 'SDXL Turbo Core Models', url: 'https://stability.ai/core-models', type: 'docs' },
@@ -425,7 +426,7 @@ Use the (word:weight) format to control specific word weights[reference:19]:
 ### Example Prompt
 "A surreal landscape with glowing mushrooms under a night sky"[reference:23]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Stable Image Ultra prompt expert. Rules:
 - Most advanced commercial model — based on SD3
 - Use detailed, descriptive prompts
@@ -433,7 +434,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Aspect ratio set via API parameters
 - Model ID: stable-image-ultra
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Stable Assistant Features', url: 'https://stability.ai/news-updates/stability-ai-releases-stable-assistant-features', type: 'blog' },
       { title: 'Stable Image Ultra Heroku Dev Center', url: 'https://devcenter.heroku.com', type: 'api-reference' },
@@ -477,14 +478,14 @@ Generate ONLY the prompt text.`,
 - Specify aspect ratio via API parameters
 - Long prompts are supported — leverage up to 10,000 characters for detailed descriptions
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Stable Image Core prompt expert. Rules:
 - Commercial API model — stable-image-core-v1:0
 - Up to 10,000 character prompts
 - Aspect ratio set via API
 - Use clear, descriptive prompts
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Stable Image Core AWS Docs', url: 'https://docs.aws.amazon.com', type: 'api-reference' },
     ],
@@ -527,7 +528,7 @@ Generate ONLY the prompt text.`,
 - Stable Cascade performs well in prompt alignment and aesthetic quality[reference:36]
 - Available via Stability AI Stable Cascade repository
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Stable Cascade prompt expert. Rules:
 - Three-stage cascade model (Stage A, B, C)
 - High-quality, flexible, and efficient
@@ -535,7 +536,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Be specific and descriptive
 - Research preview model
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Stable Cascade Release', url: 'https://stability.ai/news-updates/introducing-stable-cascade', type: 'blog' },
       { title: 'Stable Cascade Hugging Face', url: 'https://huggingface.co/stabilityai/stable-cascade', type: 'model-card' },
@@ -584,7 +585,7 @@ Since SVD is primarily image-to-video[reference:42], the prompt/description help
 - Adjust motion_bucket_id for motion intensity control
 - SVD-XT (25-frame) for longer videos
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Stable Video Diffusion prompt expert. Rules:
 - Image-to-video from a single reference image
 - 14-frame (SVD) and 25-frame (SVD-XT) variants
@@ -592,7 +593,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Start with a strong reference image
 - Open-weight for local deployment
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Stable Video Diffusion Core Models', url: 'https://stability.ai/core-models', type: 'docs' },
       { title: 'Stable Video Diffusion Prompting Guide', url: 'https://promptomania.com', type: 'guide' },
@@ -634,14 +635,14 @@ Generate ONLY the video prompt text.`,
 - Be specific about the object and its features
 - Describe materials and textures clearly
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Stable Video 3D prompt expert. Rules:
 - 3D generation from images
 - Open-weight model
 - Use high-quality reference images
 - Be specific about object, materials, and textures
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Stable Video 3D Core Models', url: 'https://stability.ai/core-models', type: 'docs' },
     ],
@@ -682,14 +683,14 @@ Generate ONLY the prompt text.`,
 - Be specific about the object and its features
 - Describe materials and textures clearly
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Stable Fast 3D prompt expert. Rules:
 - Rapid 3D asset generation from a single image
 - New standard for speed and quality
 - Open-weight for local deployment
 - Use high-quality input images
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Introducing Stable Fast 3D', url: 'https://stability.ai/news-updates/introducing-stable-fast-3d', type: 'blog' },
       { title: 'Stable Fast 3D Core Models', url: 'https://stability.ai/core-models', type: 'docs' },
@@ -732,14 +733,14 @@ Generate ONLY the prompt text.`,
 - Be specific about the object and its features
 - Describe edits clearly for real-time modification
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Stable Point Aware 3D prompt expert. Rules:
 - Real-time 3D editing and structure generation
 - Sub-second generation from single image
 - Open-weight on Hugging Face
 - Use high-quality input images
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Introducing Stable Point Aware 3D', url: 'https://stability.ai/news-updates/stable-point-aware-3d', type: 'blog' },
       { title: 'Stable Point Aware 3D Core Models', url: 'https://stability.ai/core-models', type: 'docs' },
@@ -781,14 +782,14 @@ Generate ONLY the prompt text.`,
 - Describe instrumentation clearly
 - Specify musical structure for longer compositions
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Stable Audio 3.0 Large prompt expert. Rules:
 - Commercial audio model — API and enterprise self-hosting
 - Generate music from text prompts
 - Be specific about genre, mood, and instrumentation
 - Describe musical structure
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Stable Audio 3.0 Release', url: 'https://stability.ai/news-updates/stable-audio-3', type: 'blog' },
       { title: 'Stable Audio 3.0 Core Models', url: 'https://stability.ai/core-models', type: 'docs' },
@@ -830,14 +831,14 @@ Generate ONLY the prompt text.`,
 - Describe instrumentation clearly
 - Open-weight — can be run locally
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Stable Audio 3.0 Medium prompt expert. Rules:
 - Open-weight audio model on Hugging Face
 - Generate music from text prompts
 - Be specific about genre, mood, and instrumentation
 - Enterprise licensing available
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Stable Audio 3.0 Release', url: 'https://stability.ai/news-updates/stable-audio-3', type: 'blog' },
       { title: 'Stable Audio 3.0 Core Models', url: 'https://stability.ai/core-models', type: 'docs' },
@@ -878,14 +879,14 @@ Generate ONLY the prompt text.`,
 - Be specific about the sound type
 - Open-weight for local deployment
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Stable Audio 3.0 Small prompt expert. Rules:
 - Lightweight open-weight audio model
 - Optimized for sound effects and audio samples
 - Keep prompts concise
 - Available on Hugging Face
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Stable Audio 3.0 Release', url: 'https://stability.ai/news-updates/stable-audio-3', type: 'blog' },
       { title: 'Stable Audio Open Release', url: 'https://stability.ai/news-updates/introducing-stable-audio-open', type: 'blog' },
@@ -926,14 +927,14 @@ Generate ONLY the prompt text.`,
 - Be descriptive about the sound characteristics
 - Open-weight for local deployment
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Stable Audio 3.0 Small SFX prompt expert. Rules:
 - Sound effects-specialized open-weight model
 - Generate short audio samples from text prompts
 - Keep prompts focused on specific sound effects
 - Available on Hugging Face
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Stable Audio 3.0 Release', url: 'https://stability.ai/news-updates/stable-audio-3', type: 'blog' },
       { title: 'Stable Audio Open Release', url: 'https://stability.ai/news-updates/introducing-stable-audio-open', type: 'blog' },

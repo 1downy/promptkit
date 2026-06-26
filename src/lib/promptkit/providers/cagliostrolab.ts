@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const CAGLIOSTROLAB: SystemPromptEntry[] = [
 
@@ -48,7 +49,7 @@ The model was trained using the **tag ordering method** for identity and style t
 
 Generate BOTH positive and negative prompts. Format:
 POSITIVE: [prompt]
-NEGATIVE: [negative prompt]`,
+NEGATIVE: [negative prompt]` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an Animagine XL 4.0 prompt expert. Rules:
 - Tag ordering is CRITICAL: 1girl/1boy → character name → series → attributes → quality tags
 - Always start with "1girl" or "1boy"
@@ -57,7 +58,7 @@ NEGATIVE: [negative prompt]`,
 - Recommended: 832×1216, guidance 7, steps 28
 - Knowledge cutoff: January 7, 2025
 
-Generate BOTH positive and negative prompts.`,
+Generate BOTH positive and negative prompts.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Animagine XL 4.0 Hugging Face', url: 'https://huggingface.co/cagliostrolab/animagine-xl-4.0', type: 'model-card' },
       { title: 'Animagine XL 4.0 README', url: 'https://huggingface.co/cagliostrolab/animagine-xl-4.0/blob/main/README.md', type: 'docs' },
@@ -119,7 +120,7 @@ Same as Animagine XL 4.0. The model was trained using the tag ordering method[re
 
 Generate BOTH positive and negative prompts. Format:
 POSITIVE: [prompt]
-NEGATIVE: [negative prompt]`,
+NEGATIVE: [negative prompt]` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an Animagine XL 4.0 Zero prompt expert. Rules:
 - Tag ordering is CRITICAL: 1girl/1boy → character name → series → attributes → quality tags
 - Always start with "1girl" or "1boy"
@@ -127,7 +128,7 @@ NEGATIVE: [negative prompt]`,
 - Ideal foundation for LoRA training
 - Recommended: 832×1216, guidance 7, steps 28
 
-Generate BOTH positive and negative prompts.`,
+Generate BOTH positive and negative prompts.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Animagine XL 4.0 Zero Hugging Face', url: 'https://huggingface.co/cagliostrolab/animagine-xl-4.0-zero', type: 'model-card' },
       { title: 'Animagine XL 4.0 README', url: 'https://huggingface.co/cagliostrolab/animagine-xl-4.0/blob/main/README.md', type: 'docs' },
@@ -186,7 +187,7 @@ Same as Animagine XL 3.0. For optimal results, follow the structured template[re
 
 Generate BOTH positive and negative prompts. Format:
 POSITIVE: [prompt]
-NEGATIVE: [negative prompt]`,
+NEGATIVE: [negative prompt]` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an Animagine XL 3.1 prompt expert. Rules:
 - Tag ordering: 1girl/1boy → character name → series → attributes → quality tags
 - Always start with "1girl" or "1boy"
@@ -194,7 +195,7 @@ NEGATIVE: [negative prompt]`,
 - Enhanced with popular anime franchises
 - Recommended: 832×1216, guidance 7, steps 28
 
-Generate BOTH positive and negative prompts.`,
+Generate BOTH positive and negative prompts.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Animagine XL 3.1 Commit', url: 'https://huggingface.co/cagliostrolab/animagine-xl-3.1/commit/dcd9ed134c7b304512abbefb514bba2d5d498099', type: 'docs' },
       { title: 'Animagine XL 3.0 Hugging Face', url: 'https://huggingface.co/cagliostrolab/animagine-xl-3.0', type: 'model-card' },
@@ -254,7 +255,7 @@ For optimal results, follow this structured template[reference:11]:
 
 Generate BOTH positive and negative prompts. Format:
 POSITIVE: [prompt]
-NEGATIVE: [negative prompt]`,
+NEGATIVE: [negative prompt]` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an Animagine XL 3.0 prompt expert. Rules:
 - Tag ordering: 1girl/1boy → character name → series → attributes → quality tags
 - Always start with "1girl" or "1boy"
@@ -262,7 +263,7 @@ NEGATIVE: [negative prompt]`,
 - Enhanced hand anatomy and concept understanding
 - Recommended: 832×1216, guidance 7, steps 28
 
-Generate BOTH positive and negative prompts.`,
+Generate BOTH positive and negative prompts.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Animagine XL 3.0 Hugging Face', url: 'https://huggingface.co/cagliostrolab/animagine-xl-3.0', type: 'model-card' },
     ],
@@ -313,14 +314,14 @@ This is a legacy model. For newer projects, use Animagine XL 3.0, 3.1, or 4.0.
 
 Generate BOTH positive and negative prompts. Format:
 POSITIVE: [prompt]
-NEGATIVE: [negative prompt]`,
+NEGATIVE: [negative prompt]` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an Animagine XL prompt expert. Rules:
 - Quality tags: masterpiece, best quality, very aesthetic, absurdres
 - Use Danbooru-style tags: 1girl, solo, [hair] hair, [eye] eyes
 - Include negative prompts
 - LEGACY MODEL — use Animagine XL 3.0, 3.1, or 4.0 for new projects
 
-Generate BOTH positive and negative prompts.`,
+Generate BOTH positive and negative prompts.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Animagine XL on Hugging Face', url: 'https://huggingface.co/cagliostrolab/animagine-xl-3.1', type: 'model-card' },
     ],

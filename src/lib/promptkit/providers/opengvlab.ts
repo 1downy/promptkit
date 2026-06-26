@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const OPENGVLAB: SystemPromptEntry[] = [
 
@@ -36,7 +37,7 @@ export const OPENGVLAB: SystemPromptEntry[] = [
 - Use system messages for persistent behavior across turns
 - Supports multi-image and video inputs
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an InternVL 3.5 prompt expert. Rules:
 1. System message for role/behavior definition
 2. State-of-the-art multimodal reasoning with Cascade RL
@@ -45,7 +46,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Supports multi-image and video inputs
 6. Apache 2.0 licensed — open source
 
-Generate the best InternVL 3.5 prompt.`,
+Generate the best InternVL 3.5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'InternVL 3.5 Model Card', url: 'https://huggingface.co/OpenGVLab/InternVL3_5-GPT-OSS-20B-A4B-Preview-HF', type: 'model-card' },
       { title: 'InternVL Paper', url: 'https://huggingface.co/papers/2508.18265', type: 'whitepaper' },
@@ -98,7 +99,7 @@ Generate the best InternVL 3.5 prompt.`,
 ### Available Variants
 - 1B, 2B, 4B, 8B, 26B, 40B, 76B, 78B[reference:18]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an InternVL 2.5 prompt expert. Rules:
 1. System message for role/behavior definition
 2. ViT-MLP-LLM paradigm for multimodal understanding
@@ -108,7 +109,7 @@ Generate ONLY the prompt text. No explanations.`,
 6. Frame-1, Frame-2 tags for video frames
 7. Available in 1B to 78B parameter variants
 
-Generate the best InternVL 2.5 prompt.`,
+Generate the best InternVL 2.5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'InternVL 2.5 Model Card', url: 'https://huggingface.co/OpenGVLab/InternVL2_5-78B', type: 'model-card' },
       { title: 'InternVL 2.5 Collection', url: 'https://huggingface.co/collections/OpenGVLab/internvl25', type: 'docs' },
@@ -157,7 +158,7 @@ Generate the best InternVL 2.5 prompt.`,
 ### Available Variants
 - 1B, 2B, 4B, 8B, 26B, 40B, 76B[reference:23]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an InternVL 2.0 prompt expert. Rules:
 1. System message for role/behavior definition
 2. ViT-MLP-LLM paradigm for multimodal understanding
@@ -166,7 +167,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Use Image-1, Image-2 tags for multiple images
 6. Available in 1B to 76B parameter variants
 
-Generate the best InternVL 2.0 prompt.`,
+Generate the best InternVL 2.0 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'InternVL 2.0 Collection', url: 'https://huggingface.co/collections/OpenGVLab/internvl20', type: 'docs' },
     ],
@@ -207,7 +208,7 @@ Generate the best InternVL 2.0 prompt.`,
 - Leverage dynamic high-resolution for detailed analysis
 - Focus on image understanding and reasoning
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an InternVL 1.5 prompt expert. Rules:
 1. System message for role/behavior definition
 2. ViT-MLP-LLM paradigm for multimodal understanding
@@ -215,7 +216,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Dynamic high-resolution with 448×448 tiles
 5. Open-source — MIT licensed
 
-Generate the best InternVL 1.5 prompt.`,
+Generate the best InternVL 1.5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'InternVL 1.5 Collection', url: 'https://huggingface.co/collections/OpenGVLab/internvl15', type: 'docs' },
     ],
@@ -257,7 +258,7 @@ Generate the best InternVL 1.5 prompt.`,
 - Best for extracting visual features and representations
 - Focus on clear image descriptions and specific tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an InternImage prompt expert. Rules:
 1. Vision foundation model with deformable convolutions
 2. 90.1% Top-1 accuracy on ImageNet
@@ -265,7 +266,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Best for classification and detection tasks
 5. From Shanghai AI Lab, Tsinghua University
 
-Generate the best InternImage prompt.`,
+Generate the best InternImage prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'InternImage GitHub', url: 'https://github.com/OpenGVLab/InternImage', type: 'github' },
       { title: 'InternImage Model Card', url: 'https://huggingface.co/OpenGVLab/internimage_h_22kto1k_640', type: 'model-card' },
@@ -309,7 +310,7 @@ Generate the best InternImage prompt.`,
 - Use clear questions about actions, objects, and sequences
 - Leverage the model's ability to reason about long temporal contexts
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an InternVideo-Next prompt expert. Rules:
 1. General video foundation model for world understanding
 2. SOTA on over 60 video and audio tasks
@@ -317,7 +318,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be specific about temporal aspects and key events
 5. Supports video, audio, and speech understanding
 
-Generate the best InternVideo-Next prompt.`,
+Generate the best InternVideo-Next prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'InternVideo GitHub', url: 'https://github.com/OpenGVLab/InternVideo', type: 'github' },
       { title: 'InternVideo-Next Technical Report', url: 'https://arxiv.org/pdf/2512.01342', type: 'whitepaper' },
@@ -361,7 +362,7 @@ Generate the best InternVideo-Next prompt.`,
 - Use clear questions about actions, objects, and relationships
 - Leverage the model's ability to capture long-form temporal structure
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an InternVideo 2.5 prompt expert. Rules:
 1. Empowers video MLLMs with long and rich context modeling
 2. Leading performance on short and long video benchmarks
@@ -369,7 +370,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Captures long-form temporal structure
 5. Be specific about temporal aspects and key events
 
-Generate the best InternVideo 2.5 prompt.`,
+Generate the best InternVideo 2.5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'InternVideo 2.5 Technical Report', url: 'https://arxiv.org/pdf/2501.12386', type: 'whitepaper' },
       { title: 'InternVideo GitHub', url: 'https://github.com/OpenGVLab/InternVideo', type: 'github' },
@@ -413,7 +414,7 @@ Generate the best InternVideo 2.5 prompt.`,
 - For video dialogue: describe the conversational context
 - Use clear questions about objects, actions, and relationships
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an InternVideo 2 prompt expert. Rules:
 1. SOTA video foundation model for action recognition and video dialogue
 2. Progressive training unifying multiple learning frameworks
@@ -421,7 +422,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be specific about temporal aspects and key events
 5. Supports video, audio, and speech understanding
 
-Generate the best InternVideo 2 prompt.`,
+Generate the best InternVideo 2 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'InternVideo 2 Technical Report', url: 'https://arxiv.org/abs/2403.15377', type: 'whitepaper' },
       { title: 'InternVideo GitHub', url: 'https://github.com/OpenGVLab/InternVideo', type: 'github' },
@@ -464,7 +465,7 @@ Generate the best InternVideo 2 prompt.`,
 - For interactive dialogue: specify the conversational context
 - Use natural language instructions for video understanding
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a VideoChat prompt expert. Rules:
 1. End-to-end video comprehension assistant
 2. Interactive video understanding and dialogue
@@ -472,7 +473,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Ask clear questions about actions and objects
 5. Supports conversational video understanding
 
-Generate the best VideoChat prompt.`,
+Generate the best VideoChat prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'VideoChat GitHub', url: 'https://github.com/OpenGVLab/Ask-Anything', type: 'github' },
     ],
@@ -513,7 +514,7 @@ Generate the best VideoChat prompt.`,
 - Use clear instructions for panoptic visual recognition
 - Leverage the model's open-world understanding capabilities
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an All-Seeing prompt expert. Rules:
 1. Panoptic visual recognition and understanding
 2. General relation comprehension of the open world
@@ -521,7 +522,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be specific about objects and relationships to recognize
 5. Leverages open-world understanding
 
-Generate the best All-Seeing prompt.`,
+Generate the best All-Seeing prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'All-Seeing Project GitHub', url: 'https://github.com/OpenGVLab/all-seeing', type: 'github' },
     ],

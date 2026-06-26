@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const MOONSHOT_AI: SystemPromptEntry[] = [
 
@@ -47,7 +48,7 @@ export const MOONSHOT_AI: SystemPromptEntry[] = [
 - Use system messages for persistent behavior across turns
 - Supports vision inputs — describe images or screenshots explicitly for coding-driven design[reference:11]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Kimi K2.6 prompt expert. Rules:
 1. System message for role/behavior definition
 2. 1T MoE (32B active) flagship model — 256K context
@@ -57,7 +58,7 @@ Generate ONLY the prompt text. No explanations.`,
 6. Long-horizon coding: Rust, Go, Python, frontend, DevOps
 7. OpenAI-compatible API with function calling
 
-Generate the best Kimi K2.6 prompt.`,
+Generate the best Kimi K2.6 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Kimi K2.6 API | Together AI', url: 'https://www.together.ai/models/kimi-k26', type: 'api-reference' },
       { title: 'moonshotai/Kimi-K2.6 · Hugging Face', url: 'https://huggingface.co/moonshotai/Kimi-K2.6', type: 'model-card' },
@@ -117,7 +118,7 @@ Generate the best Kimi K2.6 prompt.`,
 - Pass reasoning_content from previous turns to maintain continuity
 - Supports vision inputs — include screenshots of UI bugs or diagrams[reference:25]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Kimi K2.7 Code prompt expert. Rules:
 1. Coding-focused agentic model — 1T MoE (32B active), 256K context
 2. Forced thinking — no non-thinking path, reasoning preserved across turns
@@ -127,7 +128,7 @@ Generate ONLY the prompt text. No explanations.`,
 6. Long-horizon coding: multi-file changes, refactors, debugging
 7. Pass reasoning_content across turns for continuity
 
-Generate the best Kimi K2.7 Code prompt.`,
+Generate the best Kimi K2.7 Code prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Kimi K2.7 Code: Open-Source Agentic Coding Model', url: 'https://www.kimi.com/resources/kimi-k2-7-code', type: 'docs' },
       { title: 'moonshotai/Kimi-K2.7-Code · Hugging Face', url: 'https://huggingface.co/moonshotai/Kimi-K2.7-Code', type: 'model-card' },
@@ -180,7 +181,7 @@ Generate the best Kimi K2.7 Code prompt.`,
 - Ideal for CI/CD integration, automated code reviews, and bulk code generation
 - For the fastest responses, keep context short when possible
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Kimi K2.7 Code HighSpeed prompt expert. Rules:
 1. High-speed variant — ~180 Tokens/s, up to 260 Tokens/s
 2. Same as K2.7 Code with higher throughput
@@ -189,7 +190,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Ideal for high-throughput coding workflows
 6. Pass reasoning_content across turns for continuity
 
-Generate the best Kimi K2.7 Code HighSpeed prompt.`,
+Generate the best Kimi K2.7 Code HighSpeed prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Kimi K2.7 Code High Speed on Vercel AI Gateway', url: 'https://vercel.com/ai-gateway/models/kimi-k2.7-code-highspeed/similar', type: 'api-reference' },
       { title: 'Moonshot (Kimi) | Promptfoo', url: 'https://www.promptfoo.dev/docs/providers/moonshot/', type: 'docs' },
@@ -236,7 +237,7 @@ Generate the best Kimi K2.7 Code HighSpeed prompt.`,
 - For complex tasks: describe the problem thoroughly
 - For simple tasks: you can request less verbose reasoning
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Kimi K2.5 prompt expert. Rules:
 1. Thinking model — reasons before answering
 2. 256K context
@@ -244,7 +245,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be specific and direct
 5. Leverage 256K context for long documents
 
-Generate the best Kimi K2.5 prompt.`,
+Generate the best Kimi K2.5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Moonshot (Kimi) | Promptfoo', url: 'https://www.promptfoo.dev/docs/providers/moonshot/', type: 'docs' },
     ],
@@ -286,7 +287,7 @@ Generate the best Kimi K2.5 prompt.`,
 - Use for straightforward generation tasks
 - For more complex tasks, consider the Kimi K2 series
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Moonshot v1 prompt expert. Rules:
 1. Generation model — non-thinking
 2. 8K context
@@ -294,7 +295,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be specific and direct
 5. Use for straightforward generation tasks
 
-Generate the best Moonshot v1 prompt.`,
+Generate the best Moonshot v1 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Moonshot (Kimi) | Promptfoo', url: 'https://www.promptfoo.dev/docs/providers/moonshot/', type: 'docs' },
     ],
@@ -334,14 +335,14 @@ Generate the best Moonshot v1 prompt.`,
 - Leverage the 32K context for moderate-length documents
 - Use for straightforward generation tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Moonshot v1 32K prompt expert. Rules:
 1. Generation model — non-thinking
 2. 32K context
 3. Be specific and direct
 4. Use for straightforward generation tasks
 
-Generate the best Moonshot v1 32K prompt.`,
+Generate the best Moonshot v1 32K prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Moonshot (Kimi) | Promptfoo', url: 'https://www.promptfoo.dev/docs/providers/moonshot/', type: 'docs' },
     ],
@@ -380,14 +381,14 @@ Generate the best Moonshot v1 32K prompt.`,
 - Leverage the 128K context for long documents
 - Use for straightforward generation tasks with long context
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Moonshot v1 128K prompt expert. Rules:
 1. Generation model — non-thinking
 2. 128K context
 3. Be specific and direct
 4. Leverage 128K context for long documents
 
-Generate the best Moonshot v1 128K prompt.`,
+Generate the best Moonshot v1 128K prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Moonshot (Kimi) | Promptfoo', url: 'https://www.promptfoo.dev/docs/providers/moonshot/', type: 'docs' },
     ],

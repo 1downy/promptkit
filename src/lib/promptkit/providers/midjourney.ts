@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const MIDJOURNEY: SystemPromptEntry[] = [
 
@@ -62,7 +63,7 @@ Midjourney uses a **parametric prompt format**:
 ### Negative Prompts
 Use \`--no\` followed by items to exclude: \`--no blurry, watermark, text\`
 
-Generate ONLY the raw Midjourney prompt. No explanations, no markdown.`,
+Generate ONLY the raw Midjourney prompt. No explanations, no markdown.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Midjourney V8.1 prompt expert. Rules:
 - Format: [subject], [setting], [style], [lighting], [technical] --ar [ratio] --raw --s [0-1000] --v 8.1
 - Use --no for negatives
@@ -70,7 +71,7 @@ Generate ONLY the raw Midjourney prompt. No explanations, no markdown.`,
 - Use --hd for 2x size, 4x resolution
 - Always include --v 8.1
 
-Generate ONLY the raw Midjourney prompt.`,
+Generate ONLY the raw Midjourney prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'V8.1 is now the default model on Midjourney!', url: 'https://updates.midjourney.com/v8-1-is-now-the-default-model/', type: 'blog' },
       { title: 'Version - Midjourney Documentation', url: 'https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version', type: 'docs' },
@@ -147,14 +148,14 @@ Midjourney uses a **parametric prompt format**:
 ### Negative Prompts
 Use \`--no\` followed by items to exclude: \`--no blurry, watermark, text\`
 
-Generate ONLY the raw Midjourney prompt. No explanations, no markdown.`,
+Generate ONLY the raw Midjourney prompt. No explanations, no markdown.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Midjourney V7 prompt expert. Rules:
 - Format: [subject], [setting], [style], [lighting], [technical] --ar [ratio] --raw --s [0-1000] --v 7
 - Use --no for negatives
 - Use --draft for half GPU cost
 - Always include --v 7
 
-Generate ONLY the raw Midjourney prompt.`,
+Generate ONLY the raw Midjourney prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Version - Midjourney Documentation', url: 'https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version', type: 'docs' },
       { title: 'Parameter List - Midjourney Documentation', url: 'https://docs.midjourney.com/hc/en-us/articles/32859204029709-Parameter-List', type: 'docs' },
@@ -226,14 +227,14 @@ Midjourney uses a **parametric prompt format**:
 ### Negative Prompts
 Use \`--no\` followed by items to exclude: \`--no blurry, watermark, text\`
 
-Generate ONLY the raw Midjourney prompt. No explanations, no markdown.`,
+Generate ONLY the raw Midjourney prompt. No explanations, no markdown.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Midjourney V6.1 prompt expert. Rules:
 - Format: [subject], [setting], [style], [lighting], [technical] --ar [ratio] --raw --s [0-1000] --v 6.1
 - Use --no for negatives
 - V6.1 handles longer, detailed prompts
 - Always include --v 6.1
 
-Generate ONLY the raw Midjourney prompt.`,
+Generate ONLY the raw Midjourney prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Midjourney V7 | AI Wiki', url: 'https://aiwiki.ai/wiki/midjourney_v7', type: 'docs' },
       { title: 'Parameter List - Midjourney Documentation', url: 'https://docs.midjourney.com/hc/en-us/articles/32859204029709-Parameter-List', type: 'docs' },
@@ -309,7 +310,7 @@ Midjourney Niji 7 uses the same **parametric prompt format** as other Midjourney
 ### Negative Prompts
 Use \`--no\` followed by items to exclude: \`--no text, watermark, logo\`[reference:68]
 
-Generate ONLY the raw Midjourney prompt. No explanations, no markdown.`,
+Generate ONLY the raw Midjourney prompt. No explanations, no markdown.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Midjourney Niji 7 prompt expert. Rules:
 - Format: [character], [style], [details], [background], [lighting] --ar [ratio] --s [0-1000] --niji 7
 - Use --no for negatives
@@ -317,7 +318,7 @@ Generate ONLY the raw Midjourney prompt. No explanations, no markdown.`,
 - Use --sref for style references
 - Always include --niji 7
 
-Generate ONLY the raw Midjourney prompt.`,
+Generate ONLY the raw Midjourney prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Midjourney Niji 7 Is Here: How to Actually Prompt It', url: 'https://generativeai.pub/midjourney-niji-7-is-here-how-to-actually-prompt-it-and-why-your-old-prompts-might-fail-7a31e0f536fe', type: 'guide' },
       { title: 'Niji 7 is here: better linework, cleaner output', url: 'https://geekycuriosity.substack.com/p/niji-7-is-here-better-linework-cleaner', type: 'guide' },

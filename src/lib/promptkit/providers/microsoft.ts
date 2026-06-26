@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const MICROSOFT: SystemPromptEntry[] = [
 
@@ -33,7 +34,7 @@ export const MICROSOFT: SystemPromptEntry[] = [
 - For software engineering: provide full context and specific requirements
 - Use system messages for persistent behavior across turns
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MAI-Thinking-1 prompt engineer. Rules:
 1. System message for role/behavior definition
 2. 35B active MoE with 256K context — flagship reasoning model
@@ -42,7 +43,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Leverage 256K context for long documents and codebases
 6. Trained on clean data, no third-party distillation
 
-Generate the best MAI-Thinking-1 prompt.`,
+Generate the best MAI-Thinking-1 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Building a hill-climbing machine: Launching seven new MAI models', url: 'https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/', type: 'blog' },
       { title: 'Microsoft Build 2026: MAI keynote transcript', url: 'https://microsoft.ai/news/microsoft-build-2026-mai-keynote-transcript/', type: 'blog' },
@@ -94,7 +95,7 @@ Generate the best MAI-Thinking-1 prompt.`,
 - For editing: provide clear before/after descriptions
 - Use natural language prompts for best results
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a MAI-Image-2.5 prompt expert. Rules:
 - Natural language descriptions — reads prompts literally
 - For generation: Subject → Scene → Style → Details
@@ -104,7 +105,7 @@ Generate ONLY the prompt text. No explanations.`,
 - #2 on leaderboards — surpassing Nano Banana 2
 - Flash variant available for efficient production workloads
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Building a hill-climbing machine: Launching seven new MAI models', url: 'https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/', type: 'blog' },
       { title: 'MAI-Image-2.5 on Azure AI Foundry', url: 'https://ai.azure.com/catalog/models/MAI-Image-2.5', type: 'docs' },
@@ -150,7 +151,7 @@ Same as MAI-Image-2.5:
 - For photorealistic results: describe lighting, camera, and lens
 - For editing: be specific about changes and what to preserve
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a MAI-Image-2.5-Flash prompt expert. Rules:
 - Ultra-efficient variant — lower cost, faster inference
 - Same professional-grade quality as MAI-Image-2.5
@@ -158,7 +159,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Keep prompts focused — optimized for speed
 - Production workloads at scale
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Building a hill-climbing machine: Launching seven new MAI models', url: 'https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/', type: 'blog' },
     ],
@@ -203,7 +204,7 @@ Generate ONLY the prompt text.`,
 - Specify edge cases and testing expectations
 - Use for production agentic coding workflows
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a MAI-Code-1-Flash prompt expert. Rules:
 - 5B active parameters — agentic coding model
 - Deeply integrated into GitHub Copilot, VS Code, Microsoft stack
@@ -212,7 +213,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Provide sufficient surrounding code context
 - Use for production agentic coding workflows
 
-Generate the best MAI-Code-1-Flash prompt.`,
+Generate the best MAI-Code-1-Flash prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Building a hill-climbing machine: Launching seven new MAI models', url: 'https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/', type: 'blog' },
     ],
@@ -256,7 +257,7 @@ Generate the best MAI-Code-1-Flash prompt.`,
 - For time-sensitive content: request timestamps
 - MAI-Transcribe-1.5 is optimized for real-world production use
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a MAI-Transcribe-1.5 prompt expert. Rules:
 - SOTA transcription model — best in the world
 - 5x faster than competing models
@@ -265,7 +266,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Request speaker labels and timestamps as needed
 - Optimized for real-world production use
 
-Generate the best MAI-Transcribe-1.5 prompt.`,
+Generate the best MAI-Transcribe-1.5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Building a hill-climbing machine: Launching seven new MAI models', url: 'https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/', type: 'blog' },
     ],
@@ -311,7 +312,7 @@ Generate the best MAI-Transcribe-1.5 prompt.`,
 - For voice adaptation: provide a short voice sample
 - For Voice Agents: use the Flash variant for ultra-low latency
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a MAI-Voice-2 prompt expert. Rules:
 - Expressive speech with beautiful prosody
 - Fine-grained emotional control — pace, tone, delivery
@@ -319,7 +320,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Flash variant for ultra-latency Voice Agents
 - Specify voice characteristics and emotional tone
 
-Generate the best MAI-Voice-2 prompt.`,
+Generate the best MAI-Voice-2 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Building a hill-climbing machine: Launching seven new MAI models', url: 'https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/', type: 'blog' },
     ],
@@ -374,7 +375,7 @@ Use the ChatML template with control tokens:
 - Phi-4 excels at complex reasoning relative to its size[reference:62]
 - MIT licensed — can be used commercially
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Phi-4 prompt expert. Rules:
 - 14B parameters — dense decoder-only Transformer
 - Always use ChatML template: <|im_start|>system<|im_sep|>...<|im_end|>
@@ -383,7 +384,7 @@ Generate ONLY the prompt text. No explanations.`,
 - MIT licensed — open source for commercial use
 - For math/reasoning: request step-by-step solutions explicitly
 
-Generate the best Phi-4 prompt.`,
+Generate the best Phi-4 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Phi-4 Technical Report', url: 'https://ar5iv.labs.arxiv.org/html/2412.08905', type: 'whitepaper' },
       { title: 'Phi-4 on Hugging Face', url: 'https://huggingface.co/microsoft/phi-4', type: 'model-card' },
@@ -435,7 +436,7 @@ Please structure your response into two main sections: Thought and Solution usin
 - The model will generate the <think> section automatically
 - Use for complex reasoning and logic-intensive tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Phi-4-reasoning prompt expert. Rules:
 - 14B reasoning model — <think> CoT tags
 - Always use ChatML template with system prompt
@@ -443,7 +444,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Optimized for multi-step, logic-intensive problems
 - State problems clearly with all given values
 
-Generate the best Phi-4-reasoning prompt.`,
+Generate the best Phi-4-reasoning prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Phi-4-reasoning on Hugging Face', url: 'https://huggingface.co/microsoft/Phi-4-reasoning', type: 'model-card' },
     ],
@@ -493,7 +494,7 @@ Use the ChatML template with control tokens:
 - Good for resource-constrained environments
 - Use for efficient deployment
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Phi-4-mini prompt expert. Rules:
 - 3.8B compact model
 - Strong math and coding relative to size
@@ -501,7 +502,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Keep prompts focused and clear
 - Good for resource-constrained environments
 
-Generate the best Phi-4-mini prompt.`,
+Generate the best Phi-4-mini prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Phi-4-Mini Technical Report', url: 'https://arxiv.org/abs/2503.11883', type: 'whitepaper' },
     ],
@@ -543,14 +544,14 @@ Generate the best Phi-4-mini prompt.`,
 - For speech/audio: specify the audio content and context
 - Use the appropriate inference mode based on the task
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Phi-4-Multimodal prompt expert. Rules:
 - Unified multimodal model — single checkpoint
 - Modes: text-only, text+image, speech/audio, speech+image
 - Be specific about which modalities to analyze
 - Use appropriate inference mode for the task
 
-Generate the best Phi-4-Multimodal prompt.`,
+Generate the best Phi-4-Multimodal prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Phi-4-Multimodal Technical Report', url: 'https://ar5iv.labs.arxiv.org/html/2503.11883', type: 'whitepaper' },
     ],
@@ -592,7 +593,7 @@ Generate the best Phi-4-Multimodal prompt.`,
 - Be specific about what to look for in the image
 - Use the <think> tags for chain-of-thought reasoning
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Phi-4-reasoning-vision-15B prompt expert. Rules:
 - 15B multimodal reasoning model
 - Combines reasoning with vision capabilities
@@ -600,7 +601,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Be specific about image analysis and reasoning steps
 - Open-weight model
 
-Generate the best Phi-4-reasoning-vision-15B prompt.`,
+Generate the best Phi-4-reasoning-vision-15B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Phi-4-reasoning-vision-15B on Hugging Face', url: 'https://huggingface.co/microsoft/Phi-4-reasoning-vision-15B', type: 'model-card' },
     ],
@@ -646,7 +647,7 @@ Generate the best Phi-4-reasoning-vision-15B prompt.`,
 - For image-to-3D: provide clear, well-lit images
 - Choose the appropriate size variant based on quality/speed needs
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a TRELLIS prompt expert. Rules:
 - Describe: Object → Shape → Texture/Material → Style → Details
 - Single objects work best
@@ -655,7 +656,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Returns 3D assets in three simultaneous formats
 - MIT licensed — open source
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'TRELLIS on Hugging Face', url: 'https://huggingface.co/microsoft/TRELLIS-text-base', type: 'model-card' },
       { title: 'TRELLIS on NVIDIA API', url: 'https://docs.api.nvidia.com/nim/reference/msft-trellis-3d-1', type: 'docs' },

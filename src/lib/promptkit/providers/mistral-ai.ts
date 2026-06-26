@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const MISTRAL_AI: SystemPromptEntry[] = [
 
@@ -35,7 +36,7 @@ export const MISTRAL_AI: SystemPromptEntry[] = [
 - For reasoning: state problems precisely and request step-by-step solutions
 - Use system messages for persistent behavior across turns
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Mistral Medium 3.5 prompt engineer. Rules:
 1. System message for role/behavior definition
 2. Dense 128B flagship model — 256K context
@@ -45,7 +46,7 @@ Generate ONLY the prompt text. No explanations.`,
 6. Be specific and detailed — handles complex tasks
 7. Leverage 256K context for long documents
 
-Generate the best Mistral Medium 3.5 prompt.`,
+Generate the best Mistral Medium 3.5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Mistral Medium 3.5 - Mistral AI', url: 'https://docs.mistral.ai/models/model-cards/mistral-medium-3-5-26-04', type: 'model-card' },
       { title: 'Mistral Medium 3.5 on Hugging Face', url: 'https://huggingface.co/mistralai/Mistral-Medium-3.5-128B', type: 'model-card' },
@@ -93,7 +94,7 @@ Generate the best Mistral Medium 3.5 prompt.`,
 - For multimodal tasks: describe images or visual context explicitly
 - Use the built-in function calling for tool-based workflows
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Mistral Small 4 prompt engineer. Rules:
 1. System message for role/behavior definition
 2. 119B MoE with 6.5B active — 128 experts, 4 active
@@ -102,7 +103,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Native function calling and multimodal (Pixtral)
 6. Open-source for commercial use
 
-Generate the best Mistral Small 4 prompt.`,
+Generate the best Mistral Small 4 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Introducing Mistral Small 4 | Mistral AI', url: 'https://mistral.ai/news/mistral-small-4', type: 'blog' },
       { title: 'Mistral Small 4 on Hugging Face', url: 'https://huggingface.co/mistralai/Mistral-Small-4-119B-2603', type: 'model-card' },
@@ -150,7 +151,7 @@ Generate the best Mistral Small 4 prompt.`,
 - Use system messages for persistent behavior across turns
 - Apache 2.0 licensed — free for commercial use
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Mistral Large 3 prompt engineer. Rules:
 1. System message for role/behavior definition
 2. MoE: 41B active, 675B total — 256K context
@@ -159,7 +160,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. State-of-the-art long-context performance
 6. Be specific and detailed — handles enterprise workloads
 
-Generate the best Mistral Large 3 prompt.`,
+Generate the best Mistral Large 3 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Introducing Mistral 3 | Mistral AI', url: 'https://mistral.ai/news/mistral-large-3', type: 'blog' },
       { title: 'Mistral Large 3 - Mistral AI', url: 'https://docs.mistral.ai/models/model-cards/mistral-large-3-25-12', type: 'model-card' },
@@ -207,7 +208,7 @@ Generate the best Mistral Large 3 prompt.`,
 - For function calling: provide clear function definitions
 - Use JSON mode for structured output
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Mistral Large 2 prompt engineer. Rules:
 1. System message for role/behavior definition
 2. 123B dense model — 128K context
@@ -216,7 +217,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Enhanced function calling and JSON mode
 6. Be explicit — prompts are instructions, not suggestions
 
-Generate the best Mistral Large 2 prompt.`,
+Generate the best Mistral Large 2 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Mistral Large 2 Blog Post', url: 'https://mistral.ai/news/mistral-large-2407/', type: 'blog' },
       { title: 'Mistral Large 2 on Hugging Face', url: 'https://huggingface.co/mistralai/Mistral-Large-Instruct-2407', type: 'model-card' },
@@ -265,7 +266,7 @@ Generate the best Mistral Large 2 prompt.`,
 - Use system messages for persistent behavior
 - Ideal for production applications that need reliable performance without premium costs
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Mistral Small 3.2 prompt engineer. Rules:
 1. System message for role/behavior definition
 2. 24B compact model — 128K context
@@ -274,7 +275,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Optimized for low-latency inference
 6. Ideal for production applications
 
-Generate the best Mistral Small 3.2 prompt.`,
+Generate the best Mistral Small 3.2 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Mistral Small 3.2 - Mistral AI', url: 'https://docs.mistral.ai/models/model-cards/mistral-small-3-2-25-06', type: 'model-card' },
     ],
@@ -323,7 +324,7 @@ Generate the best Mistral Small 3.2 prompt.`,
 - For reasoning tasks: use the reasoning variant for best results
 - Use system messages for persistent behavior
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Ministral 3 14B prompt engineer. Rules:
 1. System message for role/behavior definition
 2. 14B model — 128K context
@@ -333,7 +334,7 @@ Generate ONLY the prompt text. No explanations.`,
 6. Reasoning variant: 85% on AIME \'25
 7. Optimized for local deployment
 
-Generate the best Ministral 3 14B prompt.`,
+Generate the best Ministral 3 14B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Ministral 3 14B - Mistral AI', url: 'https://docs.mistral.ai/models/model-cards/ministral-3-14b-25-12', type: 'model-card' },
     ],
@@ -380,7 +381,7 @@ Generate the best Ministral 3 14B prompt.`,
 - Use system messages for persistent behavior
 - Ideal for edge deployment and resource-constrained environments
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Ministral 3 8B prompt engineer. Rules:
 1. System message for role/behavior definition
 2. 8B balanced model — 128K context
@@ -388,7 +389,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Best-in-class text and vision capabilities
 5. Built for edge deployment
 
-Generate the best Ministral 3 8B prompt.`,
+Generate the best Ministral 3 8B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Ministral 3 8B - Mistral AI', url: 'https://docs.mistral.ai/models/model-cards/ministral-3-8b-25-12', type: 'model-card' },
     ],
@@ -435,7 +436,7 @@ Generate the best Ministral 3 8B prompt.`,
 - Use system messages for persistent behavior
 - Ideal for edge devices and resource-constrained environments
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Ministral 3 3B prompt engineer. Rules:
 1. System message for role/behavior definition
 2. 3B smallest model — 128K context
@@ -443,7 +444,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Robust language and vision capabilities
 5. Designed for edge deployment and resource-constrained environments
 
-Generate the best Ministral 3 3B prompt.`,
+Generate the best Ministral 3 3B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Ministral 3 3B - Mistral AI', url: 'https://docs.mistral.ai/models/model-cards/ministral-3-3b-25-12', type: 'model-card' },
     ],
@@ -489,7 +490,7 @@ Generate the best Ministral 3 3B prompt.`,
 - Include edge cases and error handling requirements
 - Use Codestral for code generation and completion tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Codestral prompt expert. Rules:
 1. 22B code-specialized model — 256K context
 2. Fill-in-the-Middle (FIM) for IDE-style completion
@@ -497,7 +498,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Provide surrounding code context for FIM
 5. Designed for code generation and completion
 
-Generate the best Codestral prompt.`,
+Generate the best Codestral prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Codestral - Mistral AI', url: 'https://docs.mistral.ai/models/model-cards/codestral-25-01', type: 'model-card' },
     ],
@@ -547,7 +548,7 @@ For best results, use the following system prompt:
 - Include verification/testing instructions
 - Devstral can perform multi-step development tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Devstral prompt expert. Rules:
 1. System prompt: "You are Devstral, a helpful agentic model trained by Mistral AI using the OpenHands scaffold"
 2. Describe the development objective clearly
@@ -556,7 +557,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Include verification/testing instructions
 6. Agentic — can navigate codebases and edit files
 
-Generate the best Devstral prompt.`,
+Generate the best Devstral prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Devstral: How to Run & Fine-tune | Unsloth Documentation', url: 'https://unsloth.ai/docs/devstral', type: 'guide' },
       { title: 'Mistral AI\'s Devstral 2 | SiliconANGLE', url: 'https://siliconangle.com/2025/12/09/mistral-ais-devstral-2-open-weights-vibe-coding-model-built-rival-best-proprietary-systems/', type: 'news' },
@@ -600,7 +601,7 @@ Generate the best Devstral prompt.`,
 - Pixtral is optimized for image understanding tasks
 - Use system messages for persistent behavior
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Pixtral 12B prompt expert. Rules:
 1. 12B multimodal model with 400M vision encoder — 128K context
 2. Apache 2.0 licensed — open weights
@@ -608,7 +609,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be specific about what to analyze in the image
 5. Ask specific questions rather than general descriptions
 
-Generate the best Pixtral 12B prompt.`,
+Generate the best Pixtral 12B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Pixtral 12B on Hugging Face', url: 'https://huggingface.co/mistralai/Pixtral-12B-2409', type: 'model-card' },
     ],
@@ -653,7 +654,7 @@ Generate the best Pixtral 12B prompt.`,
 - Use system messages for persistent behavior
 - Ideal for regional content creation and customer support
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Mistral Saba prompt expert. Rules:
 1. 24B regional model — trained on Middle East and South Asia datasets
 2. More accurate than models 5x its size
@@ -661,7 +662,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Specify language: Arabic, Hindi, Urdu, etc.
 5. Leverage regional knowledge for culturally relevant responses
 
-Generate the best Mistral Saba prompt.`,
+Generate the best Mistral Saba prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Mistral Saba | Mistral AI', url: 'https://mistral.ai/news/mistral-saba', type: 'blog' },
       { title: 'Mistral Saba - Mistral AI', url: 'https://docs.mistral.ai/models/model-cards/mistral-saba-25-02', type: 'model-card' },
@@ -707,7 +708,7 @@ Generate the best Mistral Saba prompt.`,
 - Indicate if tables or forms need special attention
 - Use for document digitization and data extraction workflows
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Mistral OCR 3 prompt expert. Rules:
 1. OCR model — converts documents to Markdown and HTML
 2. Specialized for table reconstruction, form parsing, handwriting
@@ -715,7 +716,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Specify document type and extraction focus
 5. Use for document digitization and data extraction
 
-Generate the best Mistral OCR 3 prompt.`,
+Generate the best Mistral OCR 3 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Mistral Releases OCR 3 with Improved Accuracy', url: 'https://www.infoq.com/news/2026/01/mistral-ocr-3', type: 'news' },
     ],
@@ -759,7 +760,7 @@ Generate the best Mistral OCR 3 prompt.`,
 - Specify language for best results
 - Use for content safety and moderation workflows
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Mistral Moderation 2 prompt expert. Rules:
 1. Moderation and safety classifier — 128K context
 2. Built-in jailbreaking detection
@@ -767,7 +768,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Provide full conversation context
 5. Based on Ministral 3B
 
-Generate the best Mistral Moderation 2 prompt.`,
+Generate the best Mistral Moderation 2 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Mistral Moderation 2 - Mistral AI', url: 'https://docs.mistral.ai/models/model-cards/mistral-moderation-2-26-03', type: 'model-card' },
     ],

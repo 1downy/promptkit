@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const GENMO: SystemPromptEntry[] = [
 
@@ -38,7 +39,7 @@ Mochi 1 responds best to clear, descriptive prompts that focus on motion and sce
 ### Prompt Example
 "Close-up of a chameleon's eye, with its scaly skin changing color. Ultra high resolution 4k."[reference:19][reference:20]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Mochi 1 prompt expert. Rules:
 - Natural language descriptions are best
 - Focus on motion: describe speed, direction, and fluidity
@@ -46,7 +47,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Keep prompts focused on a single, short scene (up to 5.4 seconds)
 - Leverage the model's strength in motion quality and prompt adherence
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Mochi 1: A new SOTA in open text-to-video', url: 'https://www.genmo.ai/blog/mochi-1-a-new-sota-in-open-text-to-video', type: 'blog' },
       { title: 'Mochi 1 Preview on Hugging Face', url: 'https://huggingface.co/genmo/mochi-1-preview', type: 'docs' },

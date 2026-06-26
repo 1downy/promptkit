@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const LUMA_AI: SystemPromptEntry[] = [
 
@@ -45,7 +46,7 @@ Ray 3.14 responds best to structured, visual prompts:
 ### Example Prompt
 "A man in a red coat runs through a foggy forest, cinematic lighting, tracking shot, camera follows him from behind."
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Luma Ray 3.14 prompt expert. Rules:
 - Latest model — 10-second clips up to 4K with 16-bit HDR
 - Structure: Main Subject → Action → Details → Scene → Style → Camera → Reinforcer
@@ -54,7 +55,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Use keyframes for precise control
 - Internal reasoning step for better prompt adherence
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Generate videos using Luma AI video generation models', url: 'https://helpx.adobe.com/nz/firefly/web/firefly-video-editor/generate-videos/generate-videos-using-luma-ai-video-models.html', type: 'docs' },
       { title: 'Luma Dream Machine | AI Wiki', url: 'https://aiwiki.ai/wiki/luma_dream_machine', type: 'docs' },
@@ -109,7 +110,7 @@ Ray 3 HDR responds best to structured, visual prompts:
 ### Recommended Prompt Format
 "Main subject → Action → Subject details → Scene → Style → Camera move → Reinforcer"
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Luma Ray 3 HDR prompt expert. Rules:
 - Professional HDR model — native 16-bit HDR output up to 4K
 - Structure: Main Subject → Action → Details → Scene → Style → Camera → Reinforcer
@@ -118,7 +119,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Internal reasoning step for better prompt adherence
 - Use keyframes for precise control
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Generate videos using Luma AI video generation models', url: 'https://helpx.adobe.com/nz/firefly/web/firefly-video-editor/generate-videos/generate-videos-using-luma-ai-video-models.html', type: 'docs' },
       { title: 'Luma Dream Machine | AI Wiki', url: 'https://aiwiki.ai/wiki/luma_dream_machine', type: 'docs' },
@@ -171,7 +172,7 @@ Ray 3 responds best to structured, visual prompts:
 ### Recommended Prompt Format
 "Main subject → Action → Subject details → Scene → Style → Camera move → Reinforcer"
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Luma Ray 3 prompt expert. Rules:
 - Third-generation model — 10-second clips up to 4K
 - Structure: Main Subject → Action → Details → Scene → Style → Camera → Reinforcer
@@ -180,7 +181,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Internal reasoning step for better prompt adherence
 - Use keyframes for precise control
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Generate videos using Luma AI video generation models', url: 'https://helpx.adobe.com/nz/firefly/web/firefly-video-editor/generate-videos/generate-videos-using-luma-ai-video-models.html', type: 'docs' },
       { title: 'Luma Dream Machine | AI Wiki', url: 'https://aiwiki.ai/wiki/luma_dream_machine', type: 'docs' },
@@ -246,7 +247,7 @@ Ray 2 supports composable camera control through natural language:
 ### Example Prompt
 "A man in a red coat runs through a foggy forest, cinematic lighting, tracking shot, camera follows him from behind."
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Luma Ray 2 prompt expert. Rules:
 - Structure: Main Subject → Action → Details → Scene → Style → Camera → Reinforcer
 - Use natural, specific language — be descriptive
@@ -257,7 +258,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Supports audio generation
 - 1080p with 4K upscaling
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Introducing Ray2 - Luma AI Changelog', url: 'https://lumalabs.ai/changelog/introducing-ray2', type: 'docs' },
       { title: 'Ray2 FAQ - Luma AI', url: 'https://lumalabs.ai/learning-hub/dream-machine-guide-ray2', type: 'docs' },
@@ -312,7 +313,7 @@ Generate ONLY the prompt text.`,
 ### Recommended Prompt Format
 "Main subject → Action → Scene → Style → Camera move"
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Luma Ray 2 Flash prompt expert. Rules:
 - 3x faster, 3x cheaper than Ray 2 — optimized for speed
 - 5-10 second clips at 540p or 720p
@@ -321,7 +322,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Keep prompts focused and clear
 - Audio generation supported
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Ray2 FAQ - Luma AI', url: 'https://lumalabs.ai/learning-hub/dream-machine-guide-ray2', type: 'docs' },
       { title: 'Luma Ray 2 Flash I2V - WaveSpeedAI', url: 'https://wavespeed.ai', type: 'docs' },

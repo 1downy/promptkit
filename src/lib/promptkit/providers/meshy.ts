@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const MESHY: SystemPromptEntry[] = [
 
@@ -43,7 +44,7 @@ export const MESHY: SystemPromptEntry[] = [
 - "A detailed steampunk pocket watch with bronze gears visible through a glass face, ornate engravings, PBR textures"
 - "Pixar style boy character game hero, colorful, stylized proportions"
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Meshy 6 prompt expert. Rules:
 - Start with object type: character, vehicle, prop, sculpture
 - Add 3-5 strong visual descriptors: shape, materials, colors, style
@@ -53,7 +54,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Supports multiple languages
 - Generates textured models with up to ~600K faces
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Free Text to 3D AI Generator 2026 | Meshy', url: 'https://www.meshy.ai/features/text-to-3d', type: 'docs' },
       { title: 'Meshy API Documentation', url: 'https://docs.meshy.ai', type: 'api-reference' },
@@ -102,7 +103,7 @@ Generate ONLY the prompt text.`,
 - Maximum 800 characters per prompt
 - Meshy understands multiple languages
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Meshy 5 prompt expert. Rules:
 - Start with object type: character, vehicle, prop
 - Add 3-5 strong visual descriptors: shape, materials, colors, style
@@ -110,7 +111,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Use recognizable references for style
 - Maximum 800 characters
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Cara Menulis Prompt Teks yang Sempurna untuk Meshy 5', url: 'https://www.meshy.ai/id/blog/meshy-5-text-to-3d', type: 'guide' },
       { title: 'Free Text to 3D AI Generator 2026 | Meshy', url: 'https://www.meshy.ai/features/text-to-3d', type: 'docs' },
@@ -155,14 +156,14 @@ Generate ONLY the prompt text.`,
 - Describe the object clearly for the modeling stage
 - The texturing stage will apply materials based on the prompt
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Meshy 4 prompt expert. Rules:
 - Meshy 4 features significantly improved geometry with clean hard surfaces
 - Two-stage workflow: Modeling → Texturing
 - Be specific about the object and its features
 - Describe shape, form, and details clearly
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Meshy-4: Break Grounds', url: 'https://www.meshy.ai/blog/meshy-4-break-grounds', type: 'blog' },
       { title: 'Free Text to 3D AI Generator 2026 | Meshy', url: 'https://www.meshy.ai/features/text-to-3d', type: 'docs' },

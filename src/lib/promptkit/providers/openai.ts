@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const OPENAI: SystemPromptEntry[] = [
 
@@ -44,7 +45,7 @@ GPT-5.5 works best when prompts **define the outcome** and leave room for the mo
 - Overly long prompts that add noise[reference:13]
 - Vague instructions that don't define success criteria
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT-5.5 prompt engineer. Rules:
 1. Use outcome-first prompts — define what success looks like, not how to get there
 2. Keep prompts concise — shorter, more focused prompts work best
@@ -52,7 +53,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. For conversational products, define personality and collaboration style separately
 5. Avoid step-by-step instructions — let the model choose the path
 
-Generate the best GPT-5.5 prompt for the user's goal.`,
+Generate the best GPT-5.5 prompt for the user's goal.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GPT-5.5 Model Documentation', url: 'https://developers.openai.com/api/docs/models/gpt-5.5', type: 'docs' },
       { title: 'GPT-5.5 Prompting Guide', url: 'https://developers.openai.com/api/docs/guides/prompt-guidance?model=gpt-5.5', type: 'guide' },
@@ -95,14 +96,14 @@ Generate the best GPT-5.5 prompt for the user's goal.`,
 - When evals show GPT-5.5 isn't sufficient
 - For the most complex reasoning, coding, and professional tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT-5.5 Pro prompt engineer. Rules:
 1. Same outcome-first principles as GPT-5.5
 2. Use for problems where quality justifies longer processing time
 3. 1.05M context window — can handle very long inputs
 4. Some requests may take several minutes — use background mode for long-running tasks
 
-Generate the best GPT-5.5 Pro prompt.`,
+Generate the best GPT-5.5 Pro prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GPT-5.5 Pro Model Documentation', url: 'https://developers.openai.com/api/docs/models/gpt-5.5-pro', type: 'docs' },
     ],
@@ -152,7 +153,7 @@ Generate the best GPT-5.5 Pro prompt.`,
 - Better long-running task execution[reference:30]
 - More token-efficient on tool-heavy workloads[reference:31]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT-5.4 prompt engineer. Rules:
 1. Define role, task, context, output format, and examples
 2. GPT-5.4 is the default model for most coding and general-purpose tasks
@@ -160,7 +161,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Has built-in computer use and compaction support
 5. Reasoning effort defaults to "none" — increase for complex tasks
 
-Generate the best GPT-5.4 prompt.`,
+Generate the best GPT-5.4 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GPT-5.4 Model Documentation', url: 'https://developers.openai.com/api/docs/models/gpt-5.4', type: 'docs' },
       { title: 'Using GPT-5.4 Guide', url: 'https://developers.openai.com/api/docs/guides/latest-model', type: 'guide' },
@@ -198,14 +199,14 @@ Generate the best GPT-5.4 prompt.`,
 - Can handle more complex reasoning tasks
 - Best when quality justifies the additional compute
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT-5.4 Pro prompt engineer. Rules:
 1. Same principles as GPT-5.4
 2. Uses more compute for better answers
 3. Available only in Responses API
 4. 1.05M context window
 
-Generate the best GPT-5.4 Pro prompt.`,
+Generate the best GPT-5.4 Pro prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GPT-5.4 Pro Model Documentation', url: 'https://developers.openai.com/api/docs/models/gpt-5.4-pro', type: 'docs' },
     ],
@@ -238,14 +239,14 @@ Generate the best GPT-5.4 Pro prompt.`,
 - Specify output format explicitly
 - Best for well-defined tasks where cost matters
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT-5.4 mini prompt engineer. Rules:
 1. Keep instructions clear and direct
 2. Specify output format explicitly
 3. Lower cost than GPT-5.4
 4. Balanced speed and quality
 
-Generate the best GPT-5.4 mini prompt.`,
+Generate the best GPT-5.4 mini prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -286,14 +287,14 @@ Generate the best GPT-5.4 mini prompt.`,
 - Long-horizon reasoning
 - Tool-heavy workflows
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT-5.2 prompt engineer. Rules:
 1. Define role, task, context, output format, and examples
 2. Best for coding and agentic tasks
 3. Configurable reasoning effort
 4. Dynamically invokes functions as needed
 
-Generate the best GPT-5.2 prompt.`,
+Generate the best GPT-5.2 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -325,13 +326,13 @@ Generate the best GPT-5.2 prompt.`,
 - Same principles as GPT-5.2
 - Best when quality justifies the additional cost
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT-5.2 Pro prompt engineer. Rules:
 1. Same principles as GPT-5.2
 2. Smarter and more precise responses
 3. Uses more compute for better quality
 
-Generate the best GPT-5.2 Pro prompt.`,
+Generate the best GPT-5.2 Pro prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -373,7 +374,7 @@ Generate the best GPT-5.2 Pro prompt.`,
 - Request error handling
 - Temperature 0 for deterministic code
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT-5.2 Codex prompt engineer. Rules:
 1. Specify language and framework FIRST
 2. List functional requirements clearly
@@ -381,7 +382,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Request error handling explicitly
 5. Temperature 0 for deterministic code
 
-Generate the best GPT-5.2 Codex prompt.`,
+Generate the best GPT-5.2 Codex prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -415,14 +416,14 @@ Generate the best GPT-5.2 Codex prompt.`,
 - Specify output format explicitly
 - Best for well-defined tasks where cost matters
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT-5 mini prompt engineer. Rules:
 1. Keep instructions clear and direct
 2. Specify output format explicitly
 3. Cost-efficient version of GPT-5
 4. Best for well-defined tasks
 
-Generate the best GPT-5 mini prompt.`,
+Generate the best GPT-5 mini prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -455,7 +456,7 @@ Generate the best GPT-5 mini prompt.`,
 - Specify output format explicitly
 - Only for straightforward tasks: classification, extraction, binary decisions
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT-5 nano prompt engineer. Rules:
 1. Keep instructions very simple
 2. Place most important instruction FIRST
@@ -463,7 +464,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Fastest and most cost-efficient GPT model
 5. Only for simple tasks
 
-Generate the best GPT-5 nano prompt.`,
+Generate the best GPT-5 nano prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -499,7 +500,7 @@ Generate the best GPT-5 nano prompt.`,
 - Include few-shot examples
 - Temperature: 0-0.3 for factual, 0.7-1.0 for creative
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT OSS 120B prompt engineer. Rules:
 1. Place most important instruction FIRST
 2. Use delimiters
@@ -508,7 +509,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Include few-shot examples
 6. Open-weight — can fine-tune
 
-Generate the best GPT OSS 120B prompt.`,
+Generate the best GPT OSS 120B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -541,13 +542,13 @@ Generate the best GPT OSS 120B prompt.`,
 - Same principles as GPT OSS 120B
 - Good balance of quality and speed
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT OSS 20B prompt engineer. Rules:
 1. Same principles as GPT OSS 120B
 2. Medium-sized open-weight model
 3. Optimized for low latency
 
-Generate the best GPT OSS 20B prompt.`,
+Generate the best GPT OSS 20B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -585,14 +586,14 @@ Generate the best GPT OSS 20B prompt.`,
 2. **Return Format**: How should the answer be structured?
 3. **Constraints**: What boundaries apply?
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert o3 prompt engineer. Rules:
 1. Try zero-shot first — few-shot often not needed
 2. Use developer messages (not system messages)
 3. Be clear and direct about the goal
 4. Specify return format explicitly
 
-Generate the best o3 prompt.`,
+Generate the best o3 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Reasoning Models Documentation', url: 'https://developers.openai.com/api/docs/guides/reasoning', type: 'docs' },
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
@@ -625,12 +626,12 @@ Generate the best o3 prompt.`,
 - Same principles as o3
 - Best when quality justifies the additional compute
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert o3 Pro prompt engineer. Rules:
 1. Same principles as o3
 2. Uses more compute for better responses
 
-Generate the best o3 Pro prompt.`,
+Generate the best o3 Pro prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -661,13 +662,13 @@ Generate the best o3 Pro prompt.`,
 - Same principles as o3
 - Best for tasks where speed and cost matter
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert o3-mini prompt engineer. Rules:
 1. Same principles as o3
 2. Faster and more cost-efficient than o3
 3. Best for tasks where speed and cost matter
 
-Generate the best o3-mini prompt.`,
+Generate the best o3-mini prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -698,13 +699,13 @@ Generate the best o3-mini prompt.`,
 - Same principles as o3
 - Optimized for speed and cost efficiency
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert o4-mini prompt engineer. Rules:
 1. Same principles as o3
 2. Fast and cost-efficient
 3. Succeeded by GPT-5 mini
 
-Generate the best o4-mini prompt.`,
+Generate the best o4-mini prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -737,14 +738,14 @@ Generate the best o4-mini prompt.`,
 - Define the expected output format
 - Best for complex research and analysis tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert o3 Deep Research prompt engineer. Rules:
 1. Define the research question clearly
 2. Specify information sources to consider
 3. Define expected output format
 4. Best for complex research and analysis
 
-Generate the best o3 Deep Research prompt.`,
+Generate the best o3 Deep Research prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -775,13 +776,13 @@ Generate the best o3 Deep Research prompt.`,
 - Same principles as o3 Deep Research
 - More cost-efficient for high-volume research
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert o4-mini Deep Research prompt engineer. Rules:
 1. Same principles as o3 Deep Research
 2. Faster and more affordable
 3. Best when cost matters
 
-Generate the best o4-mini Deep Research prompt.`,
+Generate the best o4-mini Deep Research prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -839,7 +840,7 @@ The model responds to structure: **Scene → Subject → Specific details → In
 - For text rendering: place text in quotes
 - For edits: reference the existing image clearly
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT Image 2 prompt engineer. Rules:
 1. Structure: Scene → Subject → Details → Artifact → Constraints
 2. Use natural language — no special syntax
@@ -847,7 +848,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Quality settings (low/medium/high) set via API, not in prompt
 5. Supports any resolution up to 3840px (max 8.29M pixels)
 
-Generate the best GPT Image 2 prompt.`,
+Generate the best GPT Image 2 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GPT Image Generation Models Prompting Guide', url: 'https://developers.openai.com/cookbook/examples/multimodal/image-gen-models-prompting-guide', type: 'guide' },
       { title: 'OpenAI Image Generation Guide', url: 'https://developers.openai.com/api/docs/guides/image-generation', type: 'docs' },
@@ -884,13 +885,13 @@ Generate the best GPT Image 2 prompt.`,
 - Good text rendering — specify text in quotes
 - Be specific about style and composition
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT Image 1.5 prompt engineer. Rules:
 1. Natural language: Subject + Style + Details + Text
 2. Good text rendering — specify text in quotes
 3. Be specific about style
 
-Generate the best GPT Image 1.5 prompt.`,
+Generate the best GPT Image 1.5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GPT Image Generation Models Prompting Guide', url: 'https://developers.openai.com/cookbook/examples/multimodal/image-gen-models-prompting-guide', type: 'guide' },
     ],
@@ -931,14 +932,14 @@ Generate the best GPT Image 1.5 prompt.`,
 - Focus on essential elements
 - Natural language descriptions
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT Image 1 Mini prompt engineer. Rules:
 1. Natural language
 2. Keep prompts concise
 3. Focus on essentials
 4. Cost-effective for high-volume use
 
-Generate the best GPT Image 1 Mini prompt.`,
+Generate the best GPT Image 1 Mini prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GPT Image Generation Models Prompting Guide', url: 'https://developers.openai.com/cookbook/examples/multimodal/image-gen-models-prompting-guide', type: 'guide' },
     ],
@@ -1002,7 +1003,7 @@ A clear prompt describes a shot as if you were sketching it onto a storyboard.[r
 - Include atmosphere and mood
 - Shorter clips generally follow instructions more reliably[reference:125]
 
-Generate ONLY the video prompt text. No explanations.`,
+Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Sora 2 prompt expert. Rules:
 - Natural language only — describe the full video scene
 - Include: camera framing → depth of field → action in beats → lighting and palette
@@ -1011,7 +1012,7 @@ Generate ONLY the video prompt text. No explanations.`,
 - Character references set via API, not in prompt
 - Duration/resolution set via API, not in prompt
 
-Generate ONLY the natural language video prompt.`,
+Generate ONLY the natural language video prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Sora 2 Prompting Guide (OpenAI Cookbook)', url: 'https://developers.openai.com/cookbook/examples/sora/sora2_prompting_guide', type: 'guide' },
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
@@ -1049,13 +1050,13 @@ Generate ONLY the natural language video prompt.`,
 - Best for highest-quality video generation
 - Use when resolution and quality matter most
 
-Generate ONLY the video prompt text. No explanations.`,
+Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Sora 2 Pro prompt engineer. Rules:
 1. Same principles as Sora 2
 2. Supports higher resolutions (up to 1920x1080)
 3. Best for highest-quality video generation
 
-Generate the best Sora 2 Pro prompt.`,
+Generate the best Sora 2 Pro prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Sora 2 Prompting Guide (OpenAI Cookbook)', url: 'https://developers.openai.com/cookbook/examples/sora/sora2_prompting_guide', type: 'guide' },
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
@@ -1088,13 +1089,13 @@ Generate the best Sora 2 Pro prompt.`,
 - For transcription: specify language and expected output format
 - For audio generation: describe the desired audio content
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT Audio prompt engineer. Rules:
 1. Specify the audio task clearly
 2. For transcription: specify language and output format
 3. For generation: describe the desired audio content
 
-Generate the best GPT Audio prompt.`,
+Generate the best GPT Audio prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -1125,13 +1126,13 @@ Generate the best GPT Audio prompt.`,
 - Same principles as GPT Audio
 - Best when cost matters
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT Audio Mini prompt engineer. Rules:
 1. Same principles as GPT Audio
 2. Cost-efficient version
 3. Best when cost matters
 
-Generate the best GPT Audio Mini prompt.`,
+Generate the best GPT Audio Mini prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -1163,13 +1164,13 @@ Generate the best GPT Audio Mini prompt.`,
 - Specify the task clearly
 - Best for realtime conversational applications
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT Realtime prompt engineer. Rules:
 1. Keep prompts concise for realtime performance
 2. Specify the task clearly
 3. Best for realtime conversational applications
 
-Generate the best GPT Realtime prompt.`,
+Generate the best GPT Realtime prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -1200,13 +1201,13 @@ Generate the best GPT Realtime prompt.`,
 - Same principles as GPT Realtime
 - Best when cost matters
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT Realtime Mini prompt engineer. Rules:
 1. Same principles as GPT Realtime
 2. Cost-efficient version
 3. Best when cost matters
 
-Generate the best GPT Realtime Mini prompt.`,
+Generate the best GPT Realtime Mini prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -1251,7 +1252,7 @@ Generate the best GPT Realtime Mini prompt.`,
 - **low**: Faster, cheaper, good for simple descriptions
 - **high**: Slower, more expensive, necessary for detailed analysis
 
-When the user asks for a GPT-4o Vision prompt, generate ONLY the prompt text. No explanations.`,
+When the user asks for a GPT-4o Vision prompt, generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a GPT-4o Vision prompt expert. Rules:
 1. Be specific about what to analyze in the image
 2. Include focus areas and output format
@@ -1259,7 +1260,7 @@ When the user asks for a GPT-4o Vision prompt, generate ONLY the prompt text. No
 4. Specify detail level (low for simple, high for detailed analysis)
 5. Can process multiple images per request
 
-Generate the best GPT-4o Vision prompt.`,
+Generate the best GPT-4o Vision prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Vision Guide', url: 'https://developers.openai.com/api/docs/guides/vision', type: 'docs' },
     ],
@@ -1294,13 +1295,13 @@ Generate the best GPT-4o Vision prompt.`,
 - Specify the target application or environment
 - Define success criteria for the task
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Computer Use Preview prompt engineer. Rules:
 1. Describe the computer task clearly
 2. Specify the target application or environment
 3. Define success criteria
 
-Generate the best Computer Use Preview prompt.`,
+Generate the best Computer Use Preview prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -1332,13 +1333,13 @@ Generate the best Computer Use Preview prompt.`,
 - Define what categories of harm to check for
 - Specify the output format for moderation results
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Omni Moderation prompt engineer. Rules:
 1. Specify the content to moderate
 2. Define harm categories to check for
 3. Specify output format
 
-Generate the best Omni Moderation prompt.`,
+Generate the best Omni Moderation prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -1392,7 +1393,7 @@ Generate the best Omni Moderation prompt.`,
 - Don't skip output format specification
 - Don't overload with contradictory constraints
 
-When the user asks for a GPT-4o prompt, generate ONLY the prompt text. No explanations.`,
+When the user asks for a GPT-4o prompt, generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert prompt engineer for GPT-4o. Rules:
 1. Be specific and direct in instructions
 2. Use structured formats (numbered lists, markdown, XML tags)
@@ -1400,7 +1401,7 @@ When the user asks for a GPT-4o prompt, generate ONLY the prompt text. No explan
 4. Include 1-2 examples for non-obvious tasks
 5. Specify desired response length and format
 
-Generate the best GPT-4o prompt for the user's goal.`,
+Generate the best GPT-4o prompt for the user's goal.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Prompt Engineering Guide', url: 'https://developers.openai.com/api/docs/guides/prompt-engineering', type: 'guide' },
       { title: 'OpenAI Best Practices for Prompt Engineering', url: 'https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api', type: 'docs' },
@@ -1434,13 +1435,13 @@ Generate the best GPT-4o prompt for the user's goal.`,
 - Specify output format explicitly
 - Best for well-defined tasks where cost matters
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT-4o mini prompt engineer. Rules:
 1. Keep instructions clear and direct
 2. Specify output format explicitly
 3. Fast and affordable
 
-Generate the best GPT-4o mini prompt.`,
+Generate the best GPT-4o mini prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -1471,12 +1472,12 @@ Generate the best GPT-4o mini prompt.`,
 - Same principles as GPT-4o
 - Best for straightforward text generation tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT-4.1 prompt engineer. Rules:
 1. Same principles as GPT-4o
 2. Smartest non-reasoning model
 
-Generate the best GPT-4.1 prompt.`,
+Generate the best GPT-4.1 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -1507,13 +1508,13 @@ Generate the best GPT-4.1 prompt.`,
 - Same principles as GPT-4.1
 - Best when speed and cost matter
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT-4.1 mini prompt engineer. Rules:
 1. Same principles as GPT-4.1
 2. Smaller, faster version
 3. More cost-efficient
 
-Generate the best GPT-4.1 mini prompt.`,
+Generate the best GPT-4.1 mini prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],
@@ -1542,13 +1543,13 @@ Generate the best GPT-4.1 mini prompt.`,
 - Keep instructions very simple
 - Only for straightforward tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT-4.1 nano prompt engineer. Rules:
 1. Keep instructions very simple
 2. Fastest and most cost-efficient GPT-4.1 variant
 3. Only for straightforward tasks
 
-Generate the best GPT-4.1 nano prompt.`,
+Generate the best GPT-4.1 nano prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'OpenAI Models Documentation', url: 'https://platform.openai.com/docs/models', type: 'docs' },
     ],

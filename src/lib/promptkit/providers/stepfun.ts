@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const STEPFUN: SystemPromptEntry[] = [
 
@@ -45,7 +46,7 @@ export const STEPFUN: SystemPromptEntry[] = [
 - Supports both OpenAI-compatible and Anthropic-compatible API endpoints[reference:11]
 - For coding tasks: specify language, framework, and requirements clearly
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Step 3.7 Flash prompt expert. Rules:
 1. Flagship multimodal reasoning model — 198B total / 13B active MoE
 2. Native image and video understanding — 256K context
@@ -54,7 +55,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Be specific and detailed for complex agentic tasks
 6. Supports OpenAI and Anthropic-compatible APIs
 
-Generate the best Step 3.7 Flash prompt.`,
+Generate the best Step 3.7 Flash prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '推理模型接入 - StepFun 开放平台文档中心', url: 'https://platform.stepfun.com/docs/zh/step-plan/integrations/reasoning-api', type: 'docs' },
       { title: '视觉理解大模型 - StepFun 开放平台文档中心', url: 'https://platform.stepfun.com/docs/zh/guides/models/vision', type: 'docs' },
@@ -113,7 +114,7 @@ Generate the best Step 3.7 Flash prompt.`,
 - Use the reasoning_effort field (low/high) for the agent-optimized variant[reference:23]
 - The model supports both OpenAI-compatible and Anthropic-compatible APIs[reference:24]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Step 3.5 Flash prompt expert. Rules:
 1. Flagship open-source reasoning model — 196B total / 11B active MoE
 2. 256K context — 100-350 tok/s throughput
@@ -123,7 +124,7 @@ Generate ONLY the prompt text. No explanations.`,
 6. Variants: base (step-3.5-flash) and agent-optimized (step-3.5-flash-2603)
 7. Be specific and detailed for complex agentic tasks
 
-Generate the best Step 3.5 Flash prompt.`,
+Generate the best Step 3.5 Flash prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Step 3.5 Flash - StepFun 开放平台文档中心', url: 'https://platform.stepfun.com/docs/zh/guides/models/step-3.5-flash', type: 'docs' },
       { title: 'Step-3.5-Flash README - GitHub', url: 'https://github.com/stepfun-ai/Step-3.5-Flash/blob/main/README.md', type: 'github' },
@@ -166,7 +167,7 @@ Generate the best Step 3.5 Flash prompt.`,
 - Write clear, well-structured prompts for best routing decisions
 - The router is designed for production workflows where task complexity varies
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Step Router V1 prompt expert. Rules:
 1. Intelligent routing model — automatically selects optimal model
 2. Routes between deepseek-v4-pro and step-3.5-flash
@@ -174,7 +175,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Write clear, well-structured prompts
 5. Designed for production workflows with varying task complexity
 
-Generate the best Step Router V1 prompt.`,
+Generate the best Step Router V1 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Step 3.5 Flash - StepFun 开放平台文档中心', url: 'https://platform.stepfun.com/docs/zh/guides/models/step-3.5-flash', type: 'docs' },
       { title: '推理模型接入 - StepFun 开放平台文档中心', url: 'https://platform.stepfun.com/docs/zh/step-plan/integrations/reasoning-api', type: 'docs' },
@@ -219,7 +220,7 @@ Generate the best Step Router V1 prompt.`,
 - Use for complex planning and reasoning tasks requiring deep understanding
 - For coding tasks: specify language, framework, and requirements clearly
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Step-2 prompt expert. Rules:
 1. Trillion-parameter MoE model — approaching international mainstream performance
 2. Strong planning and reasoning capabilities
@@ -227,7 +228,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be specific and detailed for complex tasks
 5. Use for planning, reasoning, and complex language tasks
 
-Generate the best Step-2 prompt.`,
+Generate the best Step-2 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '文本大模型 - StepFun 开放平台文档中心', url: 'https://platform.stepfun.com/docs/zh/guides/models/text', type: 'docs' },
     ],
@@ -272,7 +273,7 @@ Generate the best Step-2 prompt.`,
 - Use for real-time applications, lightweight tasks, and code generation
 - For coding tasks: specify language and requirements clearly
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Step-2-mini prompt expert. Rules:
 1. Ultra-fast MFA architecture — 32K context
 2. ~3% of Step-2 parameters, 80%+ of Step-2 performance
@@ -281,7 +282,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Keep prompts focused — optimized for speed
 6. Use for real-time applications and lightweight tasks
 
-Generate the best Step-2-mini prompt.`,
+Generate the best Step-2-mini prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '文本大模型 - StepFun 开放平台文档中心', url: 'https://platform.stepfun.com/docs/zh/guides/models/text', type: 'docs' },
     ],
@@ -325,7 +326,7 @@ Generate the best Step-2-mini prompt.`,
 - For coding tasks: specify language and requirements clearly
 - Good for general-purpose text generation and reasoning
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Step-1 prompt expert. Rules:
 1. Foundational text model — over 100B parameters
 2. Strong at text creation, logical reasoning, math, and coding
@@ -333,7 +334,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Choose context length based on your needs
 5. Be specific and detailed for complex tasks
 
-Generate the best Step-1 prompt.`,
+Generate the best Step-1 prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '文本大模型 - StepFun 开放平台文档中心', url: 'https://platform.stepfun.com/docs/zh/guides/models/text', type: 'docs' },
     ],
@@ -376,7 +377,7 @@ Generate the best Step-1 prompt.`,
 - Supports image formats: JPG, JPEG, PNG, static GIF, WebP[reference:46]
 - Max image size: 4096×4096 pixels[reference:47]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Step-1o Turbo Vision prompt expert. Rules:
 1. Fast vision-language model — 32K context
 2. Accepts text, image, and video inputs
@@ -384,7 +385,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be specific about what to analyze
 5. Optimized for speed — good for production workflows
 
-Generate the best Step-1o Turbo Vision prompt.`,
+Generate the best Step-1o Turbo Vision prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '视觉理解大模型 - StepFun 开放平台文档中心', url: 'https://platform.stepfun.com/docs/zh/guides/models/vision', type: 'docs' },
     ],
@@ -426,14 +427,14 @@ Generate the best Step-1o Turbo Vision prompt.`,
 - Provide context about the interface state
 - The model handles visual understanding, reasoning, and action execution in a closed loop
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Step-GUI prompt expert. Rules:
 1. GUI agent model — visual understanding + step reasoning + action execution
 2. Performs continuous multi-step GUI tasks like a human
 3. Describe the task goal and GUI context clearly
 4. Use for GUI automation and interaction tasks
 
-Generate the best Step-GUI prompt.`,
+Generate the best Step-GUI prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Model Lab - StepFun 开放平台文档中心', url: 'https://platform.stepfun.com/docs/zh/guides/models/overview', type: 'docs' },
     ],
@@ -482,7 +483,7 @@ Generate the best Step-GUI prompt.`,
 - For image editing: provide a clear reference image
 - The model is optimized for fast generation and editing
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Step-Image-Edit-2 prompt expert. Rules:
 1. Lightweight image generation and editing — 1-2 second edits
 2. Supports up to 4096×4096 input resolution
@@ -490,7 +491,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. For editing: describe what to change and what to preserve
 5. cfg_scale controls prompt adherence
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '图像模型接入 - StepFun 开放平台文档中心', url: 'https://platform.stepfun.com/docs/zh/step-plan/integrations/image-api', type: 'docs' },
       { title: '图像模型接入 - StepFun 开放平台文档中心', url: 'https://platform.stepfun.com/docs/zh/step-plan/integrations/image-api', type: 'docs' },
@@ -543,7 +544,7 @@ Generate ONLY the prompt text.`,
 - NextStep-1 understands everyday natural language for editing[reference:64]
 - The model supports a wide range of editing operations[reference:65]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a NextStep-1 prompt expert. Rules:
 1. 14B autoregressive image model — state-of-the-art performance
 2. Text-to-image generation and natural language editing
@@ -551,7 +552,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Be specific and detailed for generation tasks
 5. Use natural language for flexible editing
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Meet NextStep-1 - StepFun GitHub', url: 'https://stepfun-ai.github.io/NextStep-1/nextstep_1_blog/', type: 'blog' },
       { title: 'NextStep-1 GitHub', url: 'https://github.com/stepfun-ai/NextStep-1', type: 'github' },
@@ -594,7 +595,7 @@ Generate ONLY the prompt text.`,
 - Describe what to change and what to preserve
 - The model handles various editing types including object manipulation and style transfer
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Step1X-Edit prompt expert. Rules:
 1. Open-source image editing model — proprietary-level performance
 2. Comparable to GPT-4o and Gemini 2 Flash
@@ -602,7 +603,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Use clear, specific instructions
 5. Describe what to change and what to preserve
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'stepfun-ai/Step1X-Edit GitHub', url: 'https://github.com/stepfun-ai/Step1X-Edit', type: 'github' },
       { title: 'Step1X-Edit arXiv', url: 'https://arxiv.org/abs/2505.00611', type: 'whitepaper' },
@@ -648,7 +649,7 @@ Generate ONLY the prompt text.`,
 - Use cinematic and directorial language
 - The model has strong text-to-video capabilities with bilingual understanding
 
-Generate ONLY the video prompt text. No explanations.`,
+Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Step-Video-T2V prompt expert. Rules:
 1. 30B text-to-video model — generates up to 204 frames
 2. Describe: scene → subject/action → motion → camera → lighting → style
@@ -656,7 +657,7 @@ Generate ONLY the video prompt text. No explanations.`,
 4. Describe temporal flow
 5. Supports bilingual Chinese and English prompts
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Step-Video-T2V Technical Report', url: 'https://ar5iv.labs.arxiv.org/html/2502.07728', type: 'whitepaper' },
     ],
@@ -702,7 +703,7 @@ Generate ONLY the video prompt text.`,
 - Camera motion control adds cinematic quality
 - Excellent for animating static images with controllable motion[reference:79]
 
-Generate ONLY the video prompt text. No explanations.`,
+Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Step-Video-TI2V prompt expert. Rules:
 1. 30B image-to-video model — generates up to 102 frames
 2. Motion amplitude control and camera motion control
@@ -710,7 +711,7 @@ Generate ONLY the video prompt text. No explanations.`,
 4. Describe motion clearly and specifically
 5. Use for animating static images with controllable motion
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Step-Video-TI2V Technical Report', url: 'https://ar5iv.labs.arxiv.org/html/2503.00221', type: 'whitepaper' },
     ],
@@ -752,14 +753,14 @@ Generate ONLY the video prompt text.`,
 - Specify emotional boundaries for consistent interactions
 - Use for voice assistant and companionship applications
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a StepAudio 2.5 Realtime prompt expert. Rules:
 1. Human-like real-time voice model — voice-to-voice interaction
 2. Paralinguistic perception: hesitation, laughter, emotional cues
 3. Fully customizable personalities — granular trait control
 4. Use for emotional companionship, conversation, Q&A, task assistants
 
-Generate the best StepAudio 2.5 Realtime prompt.`,
+Generate the best StepAudio 2.5 Realtime prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '模型能力总览 - StepFun 开放平台文档中心', url: 'https://platform.stepfun.com/docs/zh/guides/models/overview', type: 'docs' },
     ],
@@ -804,7 +805,7 @@ Generate the best StepAudio 2.5 Realtime prompt.`,
 - Specify voice characteristics for natural delivery
 - The model understands context for more expressive speech
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a StepAudio 2.5 TTS prompt expert. Rules:
 1. Contextual TTS — Global Context + Inline Context control
 2. Zero-shot voice cloning without additional training
@@ -812,7 +813,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Use for audiobooks, dubbing, voiceovers, emotional narration
 5. Define Global Context for overall tone, Inline Context for specific moments
 
-Generate the best StepAudio 2.5 TTS prompt.`,
+Generate the best StepAudio 2.5 TTS prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '模型能力总览 - StepFun 开放平台文档中心', url: 'https://platform.stepfun.com/docs/zh/guides/models/overview', type: 'docs' },
     ],
@@ -856,7 +857,7 @@ Generate the best StepAudio 2.5 TTS prompt.`,
 - For time-sensitive content: request timestamps
 - Optimized for Voice Agent, batch transcription, real-time subtitles, and live streaming scenarios[reference:94]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a StepAudio 2.5 ASR prompt expert. Rules:
 1. Next-gen streaming ASR — 4B parameters with MTP architecture
 2. 5 minutes of audio transcribed in under 1 second
@@ -864,7 +865,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Bilingual — Chinese and English
 5. Use for Voice Agents, batch transcription, real-time subtitles, live streaming
 
-Generate the best StepAudio 2.5 ASR prompt.`,
+Generate the best StepAudio 2.5 ASR prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '模型能力总览 - StepFun 开放平台文档中心', url: 'https://platform.stepfun.com/docs/zh/guides/models/overview', type: 'docs' },
     ],
@@ -907,7 +908,7 @@ Generate the best StepAudio 2.5 ASR prompt.`,
 - For conversation: define the persona and interaction style
 - For multimodal RAG: provide relevant context for reduced hallucinations
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Step-Audio-2-mini prompt expert. Rules:
 1. Open-source end-to-end audio model — Apache 2.0
 2. ASR, audio understanding, and speech conversation
@@ -915,7 +916,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Voice timbre switching capability
 5. Use for audio understanding and conversational AI
 
-Generate the best Step-Audio-2-mini prompt.`,
+Generate the best Step-Audio-2-mini prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'stepfun-ai/Step-Audio-2-mini - 鲸智社区', url: 'https://aihub.caict.ac.cn/models/stepfun-ai/Step-Audio-2-mini', type: 'model-card' },
     ],

@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const SOURCEFUL: SystemPromptEntry[] = [
 
@@ -39,7 +40,7 @@ export const SOURCEFUL: SystemPromptEntry[] = [
 - Use custom fonts for brand-accurate typography
 - Higher reasoning levels do more editing passes and apply a stricter internal judge, with xhigh suited to batch runs that need high repeatability
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Riverflow 2.5 Pro prompt expert. Rules:
 - Multi-step reasoning with adjustable thinking (low/medium/high/xhigh)
 - Unified text-to-image and image-to-image with up to 10 input images
@@ -49,7 +50,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Reference images by figure number
 - Be specific about what to keep, change, and combine
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Riverflow V2.5 Pro - OpenRouter Models', url: 'https://openrouter.ai/models?category=programming', type: 'docs' },
       { title: 'Riverflow V2.5 Pro - API Pricing & Providers', url: 'https://openrouter.ai/sourceful/riverflow-v2.5-pro?sort=throughput', type: 'api-reference' },
@@ -102,7 +103,7 @@ Generate ONLY the prompt text.`,
 - Describe lighting conditions and camera style for more precise outputs
 - When using the Font Urls field, ensure the link points directly to the font resource (e.g., ending in .ttf or .woff2)
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Riverflow 2.0 Pro prompt expert. Rules:
 - Agentic model with multi-stage self-correction for high prompt fidelity
 - Text-to-image and image-to-image with up to 10 reference images
@@ -112,7 +113,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Use specific photography terms for realism
 - 2K at same price as 1K — choose 2K
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Riverflow 2.0 Suite: From Concepting to Label-Perfect Production', url: 'https://help.scenario.com/articles/2577851773-riverflow-2-0-suite-from-concepting-to-label-perfect-production', type: 'guide' },
       { title: 'Sourceful Riverflow 2.0 Pro Text To Image API - WaveSpeedAI', url: 'https://wavespeed.ai/docs/docs-api/sourceful/sourceful-riverflow-2.0-pro-text-to-image', type: 'api-reference' },
@@ -164,7 +165,7 @@ Generate ONLY the prompt text.`,
 - Use for early-stage ideation and large marketing libraries
 - Most generations complete in a few seconds at 1K resolution
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Riverflow 2.0 Fast prompt expert. Rules:
 - Speed-optimized — 7x more cost-effective than Pro
 - Native font control with up to 2 custom fonts
@@ -174,7 +175,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Up to 4 reference images for editing
 - Keep prompts focused — optimized for high volume
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Riverflow 2.0 Suite: From Concepting to Label-Perfect Production', url: 'https://help.scenario.com/articles/2577851773-riverflow-2-0-suite-from-concepting-to-label-perfect-production', type: 'guide' },
       { title: 'Riverflow 2.0 Fast: Text-to-Image with Font Control - Picasso IA', url: 'https://picassoia.com/en/collection/text-to-image/sourceful-riverflow-20-fast', type: 'guide' },
@@ -221,7 +222,7 @@ Generate ONLY the prompt text.`,
 - Use for "label-perfect" visualizations, especially on complex surfaces like bottles and packaging
 - Ideal for fixing AI-generated artifacts or low-resolution source files
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Riverflow 2.0 REFSR prompt expert. Rules:
 - Reference Super-Resolution for branding restoration and technical editing
 - Rebuilds text and logos on complex surfaces (bottles, cans, boxes)
@@ -229,7 +230,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Keeps lighting and environment of original scene intact
 - Ideal for UI, micro-text, and packaging label correction
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Riverflow 2.0 Suite: From Concepting to Label-Perfect Production', url: 'https://help.scenario.com/articles/2577851773-riverflow-2-0-suite-from-concepting-to-label-perfect-production', type: 'guide' },
       { title: 'Riverflow 2.0 RefSR | Reference Super-Resolution API - Replicate', url: 'https://replicate.com/sourceful/riverflow-2.0-refsr', type: 'api-reference' },
@@ -280,7 +281,7 @@ Generate ONLY the prompt text.`,
 ### Example Edit
 "Figure 1 wearing the coat from Figure 2 in a brooklyn warehouse background, rugged, lots of lush plants"
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Riverflow 2.0 Pro Edit prompt expert. Rules:
 - Premium image editing with up to 10 reference images
 - Reference images by figure number: "Figure 1", "Figure 2"
@@ -289,7 +290,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Use auto aspect ratio to preserve original proportions
 - 2K at same price as 1K — choose 2K
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Sourceful Riverflow 2.0 Pro Edit API - WaveSpeedAI', url: 'https://wavespeed.ai/docs/docs-api/sourceful/sourceful-riverflow-2.0-pro-edit', type: 'api-reference' },
     ],

@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const LIGHTRICKS: SystemPromptEntry[] = [
 
@@ -57,7 +58,7 @@ LTX-2 interprets prompts like a cinematographer reading director\'s notes. Use l
 - For image-to-video: describe the motion and transformation you want to see
 - Use the prompt enhancer for short prompts when available[reference:10]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an LTX-2 prompt expert. Rules:
 - Think of your prompt as a mini screenplay with a beginning-to-end sequence
 - Six essential elements: Shot Establishment, Scene Setting, Action Description, Camera Movement, Temporal Progression, Audio
@@ -67,7 +68,7 @@ Generate ONLY the prompt text. No explanations.`,
 - For short prompts, enable prompt enhancer
 - Supports synchronized audio — include dialogue and sound in your narrative
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GitHub - Lightricks/LTX-Video Official Repository', url: 'https://github.com/Lightricks/LTX-Video', type: 'github' },
       { title: 'LTX-2 Prompting Guide - DEV Community', url: 'https://dev.to/gary_yan_86eb77d35e0070f5/ltx-2-prompting-guide-master-ai-video-generation-with-expert-techniques-2ejk', type: 'guide' },
@@ -126,7 +127,7 @@ Use the same six essential elements as LTX-2:
 - Leverage the improved prompt understanding for more nuanced motion descriptions
 - The rebuilt VAE rewards detailed texture descriptions for sharper output[reference:26]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an LTX-2.3 prompt expert. Rules:
 - Use the same six essential elements as LTX-2: Shot Establishment, Scene Setting, Action, Camera Movement, Temporal Progression, Audio
 - LTX-2.3 handles complex timing, motion, and expression descriptions better
@@ -135,7 +136,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Include audio descriptions — audio alignment is tighter
 - Up to 20 seconds per generation, up to 4K
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'LTX-2.3: Sharper Video, Native Portrait, and Cleaner Audio', url: 'https://rits.shanghai.nyu.edu/ai/ltx-2-3-sharper-video-native-portrait-and-cleaner-audio-in-lightricks-latest-open-source-model/', type: 'guide' },
       { title: 'LTX-2.3 Pro Benchmarks', url: 'https://llm-stats.com/models/ltx-2.3-pro', type: 'docs' },
@@ -185,7 +186,7 @@ Use the same six essential elements as LTX-2:
 - Complex motion synchronization is a key strength — describe motion precisely
 - Supports both text prompts and image references
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an LTX-2.3 Pro prompt expert. Rules:
 - Flagship tier — use for maximum visual quality and complex motion synchronization
 - Same six essential elements as LTX-2
@@ -194,7 +195,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Supports text prompts and image references
 - Available via API
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'LTX 2.3 Series: The Professional Video Suite', url: 'https://help.scenario.com', type: 'docs' },
       { title: 'LTX-2.3 Pro Benchmarks', url: 'https://llm-stats.com/models/ltx-2.3-pro', type: 'docs' },
@@ -242,7 +243,7 @@ Use the same six essential elements as LTX-2:
 - For structure-conditioned editing: describe the structural modifications
 - Detailed narrative prompts work best
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an LTX-2 19B prompt expert. Rules:
 - 19B large variant of LTX-2
 - Same six essential elements as LTX-2
@@ -250,7 +251,7 @@ Generate ONLY the prompt text. No explanations.`,
 - For image-to-video: describe the transformation between frames
 - Available via API
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'LTX-2 19B Benchmarks', url: 'https://llm-stats.com/models/ltx-2-19b', type: 'docs' },
     ],
@@ -294,7 +295,7 @@ Generate ONLY the prompt text.`,
 - For image-to-video: describe the motion you want to apply to the image
 - The model supports up to 5.4 seconds at 480p (30 FPS) or 768×512 (24 FPS)[reference:50][reference:51]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an LTX-Video prompt expert. Rules:
 - First DiT-based video model, optimized for real-time generation
 - Describe: Scene → Subject & Motion → Camera → Style
@@ -303,7 +304,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Up to 5.4 seconds at 480p (30 FPS) or 768×512 (24 FPS)
 - Superseded by LTX-2 — use LTX-2 for new projects
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'GitHub - Lightricks/LTX-Video', url: 'https://github.com/Lightricks/LTX-Video', type: 'github' },
       { title: 'LTX-Video on Replicate', url: 'https://replicate.com', type: 'api-reference' },

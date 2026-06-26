@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const COHERE: SystemPromptEntry[] = [
 
@@ -41,7 +42,7 @@ Command A is configured as a conversational model by default — it is verbose, 
 - Maximum context length for Command A is 256K tokens[reference:15]
 - Use the system message to guide model behavior efficiently[reference:16]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Command A prompt engineer. Rules:
 1. Use system message (preamble) for role/behavior
 2. Enterprise RAG-focused — provide documents and ask to ground answers
@@ -50,7 +51,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Supports tool use, function calling, and agents
 6. 111B parameters, 256K context, 23 languages
 
-Generate the best Command A prompt.`,
+Generate the best Command A prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Command A | Cohere', url: 'https://docs.cohere.com/v2/docs/command-a', type: 'docs' },
       { title: 'Using Command A on Hugging Face', url: 'https://docs.cohere.com/docs/command-a-hf', type: 'docs' },
@@ -103,7 +104,7 @@ Generate the best Command A prompt.`,
 - Leverage vision capabilities for image inputs
 - Supports efficient private deployment[reference:27]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Command A+ prompt engineer. Rules:
 1. System messages for role and tool definitions
 2. 218B total params (25B active) — MoE architecture
@@ -112,7 +113,7 @@ Generate ONLY the prompt text. No explanations.`,
 5. Open-source (Apache 2.0) — can be deployed privately
 6. Be specific about agentic workflows and tool use
 
-Generate the best Command A+ prompt.`,
+Generate the best Command A+ prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Introducing Command A+ | Cohere', url: 'https://cohere.com/blog/command-a-plus', type: 'blog' },
       { title: "Cohere's Command A Plus Model | Cohere", url: 'https://docs.cohere.com/v2/docs/command-a-plus', type: 'docs' },
@@ -169,7 +170,7 @@ Command R uses a structured Augmented Generation prompt template[reference:39]:
 - Add more specific instructions to get closer to the response you need[reference:44]
 - Maximum context length is 128K tokens[reference:45]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Command R prompt engineer. Rules:
 1. Use structured prompt sections: System Preamble, User Preamble, Retrieved Snippets, Instructions
 2. Provide retrieved snippets for RAG tasks
@@ -177,7 +178,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Use tokenizer on Hugging Face for proper formatting
 5. Supports single-step and multi-step tool use
 
-Generate the best Command R prompt.`,
+Generate the best Command R prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Prompting Command R and R+ | Cohere', url: 'https://docs.cohere.com/docs/prompting-command-r', type: 'guide' },
       { title: "Cohere's Command R Model | Cohere", url: 'https://docs.cohere.com/v2/docs/command-r', type: 'docs' },
@@ -233,7 +234,7 @@ Same structured prompt format as Command R[reference:50]:
 - Be specific and clear in task instructions
 - Maximum context length is 128K tokens[reference:55]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Command R+ prompt engineer. Rules:
 1. Use structured prompt sections: System Preamble, User Preamble, Retrieved Snippets, Instructions
 2. Optimized for complex tasks requiring deeper understanding
@@ -241,7 +242,7 @@ Generate ONLY the prompt text. No explanations.`,
 4. Ideal for question-answering, sentiment analysis, information retrieval
 5. Supports single-step and multi-step tool use
 
-Generate the best Command R+ prompt.`,
+Generate the best Command R+ prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Prompting Command R and R+ | Cohere', url: 'https://docs.cohere.com/docs/prompting-command-r', type: 'guide' },
       { title: 'Cohere Command R+ Model Card', url: 'https://docs.cohere.com/v2/docs/command-r-model-card', type: 'docs' },

@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const HVISION_NKU: SystemPromptEntry[] = [
 
@@ -53,7 +54,7 @@ Include: "low quality, low resolution"[reference:10]
 - Provide a sequence of condition images
 - The motion predictor generates video by predicting motion between images in a compressed image semantic space[reference:12]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a StoryDiffusion prompt expert. Rules:
 1. Keep character description IDENTICAL across all panel prompts
 2. Only change scene, pose, and expression between panels
@@ -65,7 +66,7 @@ Generate ONLY the prompt text. No explanations.`,
 8. Compatible with all SD1.5 and SDXL models
 9. Can generate video from condition images
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'StoryDiffusion GitHub Repository', url: 'https://github.com/HVision-NKU/StoryDiffusion', type: 'github' },
       { title: 'StoryDiffusion arXiv Paper', url: 'https://arxiv.org/abs/2405.01434', type: 'whitepaper' },

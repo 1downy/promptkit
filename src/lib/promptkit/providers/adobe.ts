@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const ADOBE: SystemPromptEntry[] = [
 
@@ -39,7 +40,7 @@ export const ADOBE: SystemPromptEntry[] = [
 - For edits: be specific about what to change while preserving the subject
 - Leverage Image 5's context awareness for precise edits
 
-Generate ONLY the natural language prompt text. No explanations.`,
+Generate ONLY the natural language prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Firefly Image 5 prompt expert. Rules:
 - Natural language descriptions — be specific, descriptive, original, and empathetic
 - Supports 4MP native resolution
@@ -48,7 +49,7 @@ Generate ONLY the natural language prompt text. No explanations.`,
 - Use at least 3 words — avoid "generate" or "create"
 - Available in Firefly, Photoshop, and via API
 
-Generate ONLY the natural language prompt.`,
+Generate ONLY the natural language prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Using Generate Image with Image5', url: 'https://developer-stage.adobe.com', type: 'api-reference' },
       { title: 'Migrating to Image5', url: 'https://developer.adobe.com', type: 'api-reference' },
@@ -102,7 +103,7 @@ Generate ONLY the natural language prompt.`,
 - Adjust Visual intensity, Composition, and Style settings for finer control[reference:22]
 - Describe lighting and color palette for better atmosphere
 
-Generate ONLY the natural language prompt text. No explanations.`,
+Generate ONLY the natural language prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Firefly Image 4 prompt expert. Rules:
 - Natural language descriptions — be specific, descriptive, original, and empathetic
 - Generates 4 variations per prompt
@@ -111,7 +112,7 @@ Generate ONLY the natural language prompt text. No explanations.`,
 - Use at least 3 words — avoid "generate" or "create"
 - Best for rapid ideation and everyday creative needs
 
-Generate ONLY the natural language prompt.`,
+Generate ONLY the natural language prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Enhance prompts to generate images', url: 'https://helpx.adobe.com', type: 'docs' },
       { title: 'Generate images from text descriptions', url: 'https://helpx.adobe.com', type: 'docs' },
@@ -166,7 +167,7 @@ Generate ONLY the natural language prompt.`,
 - Specify photorealistic or cinematic style explicitly
 - Mention camera settings when appropriate (focal length, aperture)
 
-Generate ONLY the natural language prompt text. No explanations.`,
+Generate ONLY the natural language prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Firefly Image 4 Ultra prompt expert. Rules:
 - Natural language descriptions — be highly specific and detailed
 - Generates a single high-detail, photorealistic image
@@ -175,7 +176,7 @@ Generate ONLY the natural language prompt text. No explanations.`,
 - Use lighting descriptions for realism
 - Premium model — use when quality matters most
 
-Generate ONLY the natural language prompt.`,
+Generate ONLY the natural language prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Try Firefly Image Model 4', url: 'https://helpx.adobe.com', type: 'guide' },
       { title: 'Generate images from text descriptions', url: 'https://helpx.adobe.com', type: 'docs' },
@@ -218,14 +219,14 @@ Generate ONLY the natural language prompt.`,
 - Same principles as newer Firefly models
 - For new projects, prefer Firefly Image 4 or Image 5
 
-Generate ONLY the natural language prompt text. No explanations.`,
+Generate ONLY the natural language prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Firefly Image 3 prompt expert. Rules:
 - ⚠️ LEGACY MODEL — superseded by Image 4 and Image 5
 - Natural language descriptions
 - Generates 4 variations per prompt
 - For new projects, use Firefly Image 4 or Image 5
 
-Generate ONLY the natural language prompt.`,
+Generate ONLY the natural language prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Generate images from text descriptions', url: 'https://helpx.adobe.com', type: 'docs' },
     ],
@@ -266,7 +267,7 @@ Generate ONLY the natural language prompt.`,
 - Be specific about objects, textures, and lighting
 - Use negative prompts to exclude unwanted elements
 
-Generate ONLY the natural language prompt text. No explanations.`,
+Generate ONLY the natural language prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Firefly Fill & Expand prompt expert. Rules:
 - Generative fill and expand for Photoshop
 - Describe what should fill the selected area
@@ -274,7 +275,7 @@ Generate ONLY the natural language prompt text. No explanations.`,
 - Be specific about objects, textures, and lighting
 - Available in Photoshop model selector
 
-Generate ONLY the natural language prompt.`,
+Generate ONLY the natural language prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Select an AI model for generative control', url: 'https://helpx.adobe.com', type: 'docs' },
     ],
@@ -325,7 +326,7 @@ A well-structured, concise prompt helps Firefly understand what kind of video yo
 - **Include Mood**: Use emotional language for engaging videos
 - **Use Keyframes**: Upload first/last frames for precise control
 
-Generate ONLY the video prompt text. No explanations.`,
+Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Firefly Video prompt expert. Rules:
 - Natural language descriptions of video scenes
 - Include: scene → subject/action → camera movement → lighting → style
@@ -335,7 +336,7 @@ Generate ONLY the video prompt text. No explanations.`,
 - Use seed number for reproducible results
 - Commercially safe — trained on licensed content
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Generate videos using Firefly models', url: 'https://helpx.adobe.com', type: 'docs' },
       { title: 'Generate videos using text prompts', url: 'https://helpx.adobe.com', type: 'docs' },
@@ -385,7 +386,7 @@ Generate ONLY the video prompt text.`,
 - Specify colors for brand consistency
 - Use detail slider to control complexity
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Firefly Vector prompt expert. Rules:
 - Text to Vector Graphic for Adobe Illustrator
 - Content types: Scene (full scene), Subject (detailed element), Icon (simple graphic)
@@ -394,7 +395,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Specify colors for brand consistency
 - Available in Illustrator via Generate Vectors
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Generate scenes, subjects, and icons', url: 'https://helpx.adobe.com', type: 'docs' },
       { title: 'Generate vectors using partner models', url: 'https://helpx.adobe.com', type: 'docs' },
@@ -447,7 +448,7 @@ Style IDs capture:
 - Combine AI generation with human creative direction
 - Train the system with 10-30 images for custom models[reference:58]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Firefly Design Intelligence prompt expert. Rules:
 - AI-powered brand consistency design system
 - Learns brand rules: colors, fonts, logos, layouts
@@ -456,7 +457,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Train with 10-30 images for custom models
 - Combine AI with human creative direction
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Firefly Design Intelligence overview', url: 'https://helpx.adobe.com', type: 'docs' },
       { title: 'What\'s new in Adobe Firefly', url: 'https://helpx.adobe.com', type: 'docs' },
@@ -502,7 +503,7 @@ Generate ONLY the prompt text.`,
 - Leverage integration with Adobe Experience Cloud
 - Specify output format for automated workflows
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an Adobe Sensei prompt expert. Rules:
 - Adobe's enterprise AI platform across Experience Cloud
 - Sensei GenAI: in-house LLMs + Firefly for images
@@ -510,7 +511,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Integrated with Commerce, AEM, Analytics, Marketo
 - Agentic AI capabilities for automated workflows
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Adobe Sensei AI Reviews', url: 'https://www.ai.cc', type: 'docs' },
       { title: 'Adobe Sensei AI in eCommerce', url: 'https://www.wagento.com', type: 'news' },

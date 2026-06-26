@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const RUNWAY: SystemPromptEntry[] = [
 
@@ -43,7 +44,7 @@ For best results, follow this structure when you're new to generative media:
 ### Example Prompt
 "Medium shot of a cowboy perched on a horse in a dusty environment. The horse rears violently, its body twisting, causing the cowboy to lose his seat and begin to fall off to the left. Backlit, western epic, cinematic, high contrast, golden hour, dusty, warm amber, deep orange, rich brown, atmospheric, dramatic backlighting, rim light, silhouette, soft glow, high contrast shadows."[reference:18]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Runway Gen-4.5 prompt expert. Rules:
 - Top-rated video model — highest visual fidelity and cinematic realism
 - Text-to-Video: describe visual AND motion elements
@@ -53,7 +54,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Positive phrasing only — no negative prompts
 - 5 or 10 second durations, multiple aspect ratios
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Getting Started with Generative Video - Runway', url: 'https://help.runwayml.com/hc/en-us/articles/37425232841875-Getting-Started-with-Generative-Video', type: 'docs' },
       { title: 'Text to Video Prompting Guide - Runway', url: 'https://help.runwayml.com/hc/en-us/articles/42460036199443-Text-to-Video-Prompting-Guide', type: 'guide' },
@@ -103,7 +104,7 @@ Since the image conveys key visual information (subjects, composition, colors, l
 ### Example Prompt
 "The camera slowly pushes in as the person scales the giant soda. Handheld camera: The man stands still as the crowd moves around him. He starts yelling as the camera slowly zooms out."[reference:34]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Runway Gen-4 prompt expert. Rules:
 - World consistency — consistent characters, locations, objects across scenes
 - Image input required — prompt focuses on motion, not visual description
@@ -112,7 +113,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Test in Turbo first for iteration
 - 5 or 10 second durations
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Creating with Gen-4 Video - Runway', url: 'https://help.runwayml.com/hc/en-us/articles/37327109429011-Creating-with-Gen-4-Video', type: 'docs' },
       { title: 'Runway Research | Runway Gen-4', url: 'https://runwayml.com/research/introducing-runway-gen-4', type: 'blog' },
@@ -159,7 +160,7 @@ The same as Gen-4 — your prompt should focus almost entirely on describing des
 ### Example Prompt
 "The camera executes an aggressive, sweeping horizontal arc around the subject, followed by an extremely rapid, aggressive crash zoom that concludes with a sharp focus on the subject's eyes."[reference:48]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Runway Gen-4 Turbo prompt expert. Rules:
 - Faster, cheaper than Gen-4 — 5 credits/second
 - Image input required — prompt focuses on motion
@@ -167,7 +168,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Positive phrasing only — no negative prompts
 - Ideal for rapid iteration
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Creating with Gen-4 Video - Runway', url: 'https://help.runwayml.com/hc/en-us/articles/37327109429011-Creating-with-Gen-4-Video', type: 'docs' },
       { title: 'runwayml/gen4-turbo - Replicate', url: 'https://replicate.com/runwayml/gen4-turbo', type: 'api-reference' },
@@ -210,7 +211,7 @@ For Text to Video, use descriptive prompts that convey camera angle, subject, sc
 - **Focus on Motion**: For Image to Video, describe what should happen[reference:58]
 - **Describe Cinematic Choices**: Camera angle, subject, scene, style, movement[reference:59]
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Runway Gen-3 Alpha prompt expert. Rules:
 - Text to Video and Image to Video — Text to Video only on standard model
 - Turbo requires an input image
@@ -218,7 +219,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Describe: camera angle, subject, scene, style, movement
 - Positive phrasing only — no negative prompts
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Creating with Gen-3 Alpha and Gen-3 Alpha Turbo - Runway', url: 'https://help.runwayml.com/hc/en-us/articles/30266515017875-Creating-with-Gen-3-Alpha-and-Gen-3-Alpha-Turbo', type: 'docs' },
     ],
@@ -263,7 +264,7 @@ Generate ONLY the video prompt text.`,
 - Use clear, imperative instructions
 - For style transfer: describe the desired style
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Runway Gen-4 Aleph prompt expert. Rules:
 - Video editing and transformation model
 - Describe: what to change → what to preserve → style consistency
@@ -271,7 +272,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Max 5 seconds per generation
 - Use clear, imperative instructions
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'runwayml/gen4-aleph - Replicate', url: 'https://replicate.com/runwayml/gen4-aleph', type: 'api-reference' },
       { title: 'Runway Research | Introducing Runway Aleph', url: 'https://runwayml.com/research/introducing-runway-aleph', type: 'blog' },
@@ -317,7 +318,7 @@ Generate ONLY the video prompt text.`,
 - Use for stylization and precise video editing
 - Part of the Edit Studio workflow
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Runway Aleph 2.0 prompt expert. Rules:
 - Frame-guided video editing and stylization
 - Edited frame defines the change — model applies it consistently
@@ -325,7 +326,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Describe the edit and desired style clearly
 - Use for precise video editing and stylization
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Runway News | Introducing Aleph 2.0 and Edit Studio', url: 'https://runwayml.com/news/introducing-aleph-2-0-and-edit-studio', type: 'news' },
       { title: 'Credits & Available Models on Runway', url: 'https://academy.runwayml.com', type: 'docs' },
@@ -372,7 +373,7 @@ Generate ONLY the video prompt text.`,
 ### Example Prompt
 "A powerful low-angle fashion portrait of a woman standing confidently in front of a large suspension bridge, shot on a bright, clear day. She wears a dramatic, avant-garde sheer orange ruffled outfit that catches the sunlight and adds rich texture and movement to the image."
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Runway Gen-4 Image prompt expert. Rules:
 - Image generation with stylistic consistency
 - Supports References for consistent subjects
@@ -381,7 +382,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Describe: subject → style → composition → details
 - Use positive phrasing only
 
-Generate ONLY the prompt text.`,
+Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Runway News | Introducing the Gen-4 Image API', url: 'https://runwayml.com/news/introducing-the-gen-4-image-api', type: 'news' },
       { title: 'Runway Research | Introducing Frames', url: 'https://runwayml.com/research/introducing-frames', type: 'blog' },
@@ -427,7 +428,7 @@ Generate ONLY the prompt text.`,
 - Describe the desired emotional expression and context
 - Act-One is available on Gen-3 Alpha models
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Runway Act-One prompt expert. Rules:
 - Character animation via performance capture
 - Upload driving performance to influence expressions and mouth movements
@@ -435,7 +436,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Available on Gen-3 Alpha and Turbo models
 - Use character reference and describe desired expression
 
-Generate ONLY the video prompt text.`,
+Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Runway Research | Introducing Act-One', url: 'https://runwayml.com/research/introducing-act-one', type: 'blog' },
       { title: 'Creating with Act-One on Gen-3 Alpha and Turbo - Runway', url: 'https://help.runwayml.com/hc/en-us/articles/30266515017875-Creating-with-Gen-3-Alpha-and-Gen-3-Alpha-Turbo', type: 'docs' },

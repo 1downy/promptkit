@@ -1,4 +1,5 @@
 import type { SystemPromptEntry } from '../types';
+import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const META: SystemPromptEntry[] = [
 
@@ -43,7 +44,7 @@ Customize this template for specific needs:
 - For long-context tasks: leverage the 1M context window for comprehensive document analysis
 - Tool-calling is supported natively — use the tool role for function outputs
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Llama 4 Maverick prompt engineer. Rules:
 - Native multimodal (text + up to 5 images, English-only image understanding)
 - MoE: 400B total, 128 experts, 17B active
@@ -53,7 +54,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Tool-calling and agentic systems supported
 - Knowledge cutoff: August 2024
 
-Generate the best Llama 4 Maverick prompt.`,
+Generate the best Llama 4 Maverick prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Llama 4 Model Cards and Prompt formats', url: 'https://www.llama.com/docs/model-cards-and-prompt-formats/llama4/', type: 'docs' },
       { title: 'Building with Llama 4 - DeepLearning.AI', url: 'https://www.deeplearning.ai/short-courses/building-with-llama-4/', type: 'guide' },
@@ -114,7 +115,7 @@ Customize this template for specific needs:
 - Most efficient Llama 4 model — runs on single H100 GPU
 - Ideal for applications requiring extreme context length
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Llama 4 Scout prompt engineer. Rules:
 - Native multimodal (text + up to 5 images, English-only image understanding)
 - MoE: 109B total, 16 experts, 17B active
@@ -124,7 +125,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Use system, user, assistant, tool roles
 - Knowledge cutoff: August 2024
 
-Generate the best Llama 4 Scout prompt.`,
+Generate the best Llama 4 Scout prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Llama 4 Model Cards and Prompt formats', url: 'https://www.llama.com/docs/model-cards-and-prompt-formats/llama4/', type: 'docs' },
       { title: 'Building with Llama 4 - DeepLearning.AI', url: 'https://www.deeplearning.ai/short-courses/building-with-llama-4/', type: 'guide' },
@@ -177,7 +178,7 @@ Llama 4 uses four roles in the prompt format[reference:33]:
 - Leverage the model's scientific reasoning capabilities for advanced research problems
 - Use the native multimodality for interleaved text, image, and video reasoning
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Llama 4 Behemoth prompt expert. Rules:
 - 2T total params, 288B active, 16 experts
 - Native early-fusion multimodality: text, images, video
@@ -186,7 +187,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Limited research release — not generally available
 - Knowledge cutoff: August 2024
 
-Generate the best Llama 4 Behemoth prompt.`,
+Generate the best Llama 4 Behemoth prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Meta Shatters Open-Weights Ceiling with Llama 4 Behemoth', url: 'https://investor.wedbush.com', type: 'news' },
       { title: 'Meta Llama: Everything you need to know', url: 'https://techcrunch.com', type: 'news' },
@@ -233,7 +234,7 @@ Based on Muse Spark's capabilities as a reasoning-focused model:
 - Leverage its capabilities in science, math, and health domains
 - Keep prompts clear and focused — the model is optimized for efficiency
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Muse Spark prompt expert. Rules:
 - Successor to Llama 4 (April 2026)
 - Small and fast by design
@@ -241,7 +242,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Powers Meta AI, smart glasses, Facebook, Instagram, WhatsApp
 - US-only initially
 
-Generate the best Muse Spark prompt.`,
+Generate the best Muse Spark prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Meta releases first new AI model since shaking up team - CGTN', url: 'https://news.cgtn.com', type: 'news' },
       { title: 'I tried Muse Spark — here\'s what you need to know - Tech Yahoo', url: 'https://tech.yahoo.com', type: 'news' },
@@ -289,7 +290,7 @@ Supports the same function-calling format as Llama 3.2[reference:47]
 - Use the same prompting strategies as Llama 3.1
 - Lower cost than 405B with comparable quality
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Llama 3.3 70B prompt expert. Rules:
 - 70B parameters, 128K context
 - Matches 405B quality at lower cost
@@ -298,7 +299,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Supports function calling
 - Text-based use cases: synthetic data generation, summarization, agents
 
-Generate the best Llama 3.3 70B prompt.`,
+Generate the best Llama 3.3 70B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Llama 3.3 Model Cards and Prompt formats', url: 'https://www.llama.com/docs/model-cards-and-prompt-formats/llama3-3/', type: 'docs' },
       { title: 'Build on your own terms - Llama 3.3', url: 'https://www.llama.com/', type: 'docs' },
@@ -343,7 +344,7 @@ The prompt for Llama 3.2 vision instruct models is similar to Llama 3.1 text ins
 - For captioning: ask for descriptive image captions
 - For reasoning: ask specific questions about objects, scenes, or relationships in the image
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Llama 3.2 Vision 90B prompt expert. Rules:
 - 90B vision-language model
 - Optimized for visual recognition, image reasoning, captioning
@@ -351,7 +352,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Similar prompt format to Llama 3.1 + image special token
 - Ask specific questions about images for best results
 
-Generate the best Llama 3.2 Vision 90B prompt.`,
+Generate the best Llama 3.2 Vision 90B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Introducing Multimodal Llama 3.2 - DeepLearning.AI', url: 'https://corporate.deeplearning.ai', type: 'guide' },
       { title: 'Llama 3.2-Vision on Hugging Face', url: 'https://huggingface.co', type: 'model-card' },
@@ -395,7 +396,7 @@ The prompt for Llama 3.2 vision instruct models is similar to Llama 3.1 text ins
 - For captioning: ask for descriptive image captions
 - For reasoning: ask specific questions about objects, scenes, or relationships in the image
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Llama 3.2 Vision 11B prompt expert. Rules:
 - 11B vision-language model
 - Optimized for visual recognition, image reasoning, captioning
@@ -403,7 +404,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Similar prompt format to Llama 3.1 + image special token
 - Efficient — good for edge and cost-sensitive applications
 
-Generate the best Llama 3.2 Vision 11B prompt.`,
+Generate the best Llama 3.2 Vision 11B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Introducing Multimodal Llama 3.2 - DeepLearning.AI', url: 'https://corporate.deeplearning.ai', type: 'guide' },
       { title: 'Llama 3.2-Vision on Hugging Face', url: 'https://huggingface.co', type: 'model-card' },
@@ -445,14 +446,14 @@ Use the standard chat format:
 - Ideal for edge and resource-constrained environments
 - Use for straightforward text generation tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Llama 3.2 3B prompt expert. Rules:
 - 3B lightweight text model
 - Edge-optimized, cost-effective
 - Can run anywhere
 - Keep prompts clear and concise
 
-Generate the best Llama 3.2 3B prompt.`,
+Generate the best Llama 3.2 3B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Build on your own terms - Llama 3.2', url: 'https://www.llama.com/', type: 'docs' },
     ],
@@ -493,14 +494,14 @@ Use the standard chat format:
 - Ideal for edge devices and resource-constrained environments
 - Use for simple, straightforward tasks
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Llama 3.2 1B prompt expert. Rules:
 - 1B smallest Llama model
 - Extremely lightweight, edge-optimized
 - Can run anywhere
 - Keep prompts very concise
 
-Generate the best Llama 3.2 1B prompt.`,
+Generate the best Llama 3.2 1B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Build on your own terms - Llama 3.2', url: 'https://www.llama.com/', type: 'docs' },
     ],
@@ -544,7 +545,7 @@ Use the standard chat format:
 - Use for synthetic data generation and distillation[reference:71]
 - Full-precision performance for maximum accuracy
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Llama 3.1 405B prompt expert. Rules:
 - 405B largest Llama 3.1 model
 - 128K context
@@ -553,7 +554,7 @@ Generate ONLY the prompt text. No explanations.`,
 - General knowledge, math, tool use, multilingual translation
 - Use for synthetic data generation and distillation
 
-Generate the best Llama 3.1 405B prompt.`,
+Generate the best Llama 3.1 405B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Build on your own terms - Llama 3.1', url: 'https://www.llama.com/', type: 'docs' },
       { title: 'Meta Llama 3.1 405B - Open Model Landscape', url: 'https://kindatechnical.com', type: 'docs' },
@@ -598,7 +599,7 @@ Use the standard chat format:
 - Requires 2x A100 GPUs[reference:77]
 - Good balance of quality and computational cost
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Llama 3.1 70B prompt expert. Rules:
 - 70B balanced model
 - 128K context
@@ -606,7 +607,7 @@ Generate ONLY the prompt text. No explanations.`,
 - Requires 2x A100 GPUs
 - General knowledge, math, tool use, multilingual translation
 
-Generate the best Llama 3.1 70B prompt.`,
+Generate the best Llama 3.1 70B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Build on your own terms - Llama 3.1', url: 'https://www.llama.com/', type: 'docs' },
       { title: 'Meta Llama 3.1 70B - Open Model Landscape', url: 'https://kindatechnical.com', type: 'docs' },
@@ -650,14 +651,14 @@ Use the standard chat format:
 - Runs on consumer-grade hardware
 - Ideal for cost-sensitive and edge applications
 
-Generate ONLY the prompt text. No explanations.`,
+Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Llama 3.1 8B prompt expert. Rules:
 - 8B efficient model
 - 128K context
 - Lightweight, runs on consumer hardware
 - General knowledge, math, tool use, multilingual translation
 
-Generate the best Llama 3.1 8B prompt.`,
+Generate the best Llama 3.1 8B prompt.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Build on your own terms - Llama 3.1', url: 'https://www.llama.com/', type: 'docs' },
     ],
