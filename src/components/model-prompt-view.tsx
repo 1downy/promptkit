@@ -27,7 +27,7 @@ export function ModelPromptView({
   const setUseChinesePrompt = useAppStore(s => s.setUseChinesePrompt);
   const showLangToggle = ecosystem === 'chinese' && category && ['image', 'video', '3d'].includes(category);
 
-  const entry = { systemPrompt, shortVersion, ecosystem: ecosystem ?? '', category: category ?? '' } as any;
+  const entry = { systemPrompt, shortVersion, ecosystem: ecosystem ?? '', category: category ?? '' };
   const promptText = getDisplayPrompt(entry, showShort ? 'short' : 'full', useChinesePrompt);
 
   const handleCopy = useCallback(() => {

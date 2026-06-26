@@ -3,6 +3,7 @@
 import React, { Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useAppStore } from '@/lib/promptkit/store';
 
 function useHydrated() {
@@ -315,6 +316,7 @@ function BrowseView() {
     sortOrder, setSortOrder,
     setSelectedEntryId,
   } = useAppStore();
+  const router = useRouter();
 
   const [localSearch, setLocalSearch] = useState(searchQuery);
   const debouncedSearch = useDebounce(localSearch, 300);
@@ -328,7 +330,9 @@ function BrowseView() {
   useEffect(() => {
     const provider = searchParams.get('provider');
     if (provider) setProviderFilter(provider);
-  }, [searchParams, setProviderFilter]);
+    const category = searchParams.get('category');
+    if (category) setCategoryFilter(category);
+  }, [searchParams, setProviderFilter, setCategoryFilter]);
 
   const providers = UNIQUE_PROVIDERS;
   const categoryCounts = useMemo(() => {
@@ -560,7 +564,7 @@ function BrowseView() {
             </Badge>
           ))}
           <button
-            onClick={() => { setCategoryFilter('all'); setEcosystemFilter('all'); setProviderFilter('all'); setSourceQualityFilter('all'); }}
+            onClick={() => { setCategoryFilter('all'); setEcosystemFilter('all'); setProviderFilter('all'); setSourceQualityFilter('all'); router.replace('/'); }}
             className="text-[10px] text-muted-foreground hover:text-foreground underline underline-offset-2 whitespace-nowrap shrink-0"
           >
             Clear all
@@ -584,7 +588,7 @@ function BrowseView() {
         <Card className="flex flex-col items-center justify-center py-16 text-center">
           <Search className="h-8 w-8 text-muted-foreground/50 mb-3" />
           <p className="text-sm text-muted-foreground">No models found matching your filters.</p>
-          <Button variant="link" size="sm" className="mt-2 text-amber-500" onClick={() => { setCategoryFilter('all'); setEcosystemFilter('all'); setProviderFilter('all'); setSourceQualityFilter('all'); setLocalSearch(''); }}>
+          <Button variant="link" size="sm" className="mt-2 text-amber-500" onClick={() => { setCategoryFilter('all'); setEcosystemFilter('all'); setProviderFilter('all'); setSourceQualityFilter('all'); setLocalSearch(''); router.replace('/'); }}>
             Clear filters
           </Button>
         </Card>
@@ -1269,7 +1273,7 @@ function CompareView() {
             >
               Full System Prompt
             </button>
-            {entries.some(e => e.ecosystem === 'chinese' && ['image', 'video', '3d'].includes(e.category)) && (
+            {entries.every(e => e.ecosystem === 'chinese' && ['image', 'video', '3d'].includes(e.category)) && (
               <>
                 <span className="text-xs text-muted-foreground mx-1">|</span>
                 <button
@@ -1389,6 +1393,7 @@ function BookmarksView() {
 
 function SearchDialog() {
   const { searchOpen, setSearchOpen, setSelectedEntryId, setCategoryFilter, setActiveView } = useAppStore();
+  const router = useRouter();
   const [query, setQuery] = useState('');
   const [debouncedQuery, setDebouncedQuery] = useState('');
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -1436,7 +1441,8 @@ function SearchDialog() {
                     key={e.id}
                     value={e.id}
                     onSelect={() => {
-                      window.location.href = `/model/${e.id}`;
+                      setSearchOpen(false);
+                      router.push(`/model/${e.id}`);
                     }}
                   >
                     <Badge variant="outline" className="text-[9px] mr-2 shrink-0">{e.category}</Badge>
