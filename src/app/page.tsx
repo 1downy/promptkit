@@ -32,6 +32,7 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
+import { Skeleton } from '@/components/ui/skeleton';
 import {
   Tooltip,
   TooltipContent,
@@ -1183,13 +1184,18 @@ function SearchDialog() {
   const router = useRouter();
   const [query, setQuery] = useState('');
   const [debouncedQuery, setDebouncedQuery] = useState('');
+  const [isSearching, setIsSearching] = useState(false);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Debounce: update query state 150ms after user stops typing
   const handleQueryChange = useCallback((val: string) => {
     setQuery(val);
+    setIsSearching(true);
     if (debounceRef.current) clearTimeout(debounceRef.current);
-    debounceRef.current = setTimeout(() => setDebouncedQuery(val), 150);
+    debounceRef.current = setTimeout(() => {
+      setDebouncedQuery(val);
+      setIsSearching(false);
+    }, 150);
   }, []);
 
   // Cleanup debounce timer on unmount
@@ -1206,6 +1212,7 @@ function SearchDialog() {
   }, []);
 
   const results = useMemo(() => debouncedQuery ? searchEntries(debouncedQuery) : [], [debouncedQuery]);
+  const showSearchLoading = isSearching && !results.length;
 
   return (
     <Dialog open={searchOpen} onOpenChange={setSearchOpen}>
@@ -1220,39 +1227,54 @@ function SearchDialog() {
             onValueChange={handleQueryChange}
           />
           <CommandList>
-            <CommandEmpty>No results found.</CommandEmpty>
-            {results.length > 0 && (
-              <CommandGroup heading={`Models (${results.length})`}>
-                {results.slice(0, 50).map((e) => (
-                  <CommandItem
-                    key={e.id}
-                    value={e.id}
-                    onSelect={() => {
-                      setSearchOpen(false);
-                      router.push(`/model/${e.id}`);
-                    }}
-                  >
-                    <Badge variant="outline" className="text-[9px] mr-2 shrink-0">{e.category}</Badge>
-                    <span className="truncate" dangerouslySetInnerHTML={{ __html: highlightMatches(e.modelName, query) }} />
-                    <span className="text-xs text-muted-foreground ml-auto shrink-0">{e.provider}</span>
-                    <SourceQualityBadge entry={e} />
-                  </CommandItem>
+            {showSearchLoading ? (
+              <div className="p-2 space-y-1">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <div key={i} className="flex items-center gap-3 px-2 py-2.5">
+                    <Skeleton className="h-4 w-14 shrink-0 rounded" />
+                    <Skeleton className="h-4 flex-1" />
+                    <Skeleton className="h-3 w-20 shrink-0" />
+                    <Skeleton className="h-3 w-10 shrink-0 rounded" />
+                  </div>
                 ))}
-                {results.length > 50 && (
-                  <CommandItem
-                    value="__view_all__"
-                    onSelect={() => {
-                      setSearchOpen(false);
-                      clearQuery();
-                      setCategoryFilter('all');
-                      setActiveView('browse');
-                    }}
-                    className="text-amber-500 text-xs justify-center"
-                  >
-                    View all {results.length} results in browse mode
-                  </CommandItem>
+              </div>
+            ) : (
+              <>
+                <CommandEmpty>No results found.</CommandEmpty>
+                {results.length > 0 && (
+                  <CommandGroup heading={`Models (${results.length})`}>
+                    {results.slice(0, 50).map((e) => (
+                      <CommandItem
+                        key={e.id}
+                        value={e.id}
+                        onSelect={() => {
+                          setSearchOpen(false);
+                          router.push(`/model/${e.id}`);
+                        }}
+                      >
+                        <Badge variant="outline" className="text-[9px] mr-2 shrink-0">{e.category}</Badge>
+                        <span className="truncate" dangerouslySetInnerHTML={{ __html: highlightMatches(e.modelName, query) }} />
+                        <span className="text-xs text-muted-foreground ml-auto shrink-0">{e.provider}</span>
+                        <SourceQualityBadge entry={e} />
+                      </CommandItem>
+                    ))}
+                    {results.length > 50 && (
+                      <CommandItem
+                        value="__view_all__"
+                        onSelect={() => {
+                          setSearchOpen(false);
+                          clearQuery();
+                          setCategoryFilter('all');
+                          setActiveView('browse');
+                        }}
+                        className="text-amber-500 text-xs justify-center"
+                      >
+                        View all {results.length} results in browse mode
+                      </CommandItem>
+                    )}
+                  </CommandGroup>
                 )}
-              </CommandGroup>
+              </>
             )}
           </CommandList>
         </Command>
