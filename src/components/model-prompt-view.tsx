@@ -7,24 +7,29 @@ import { Label } from '@/components/ui/label';
 import { cn } from '@/lib/utils';
 import { Copy, Check } from 'lucide-react';
 import { toast } from 'sonner';
-import { useAppStore } from '@/lib/promptkit/store';
 import { getDisplayPrompt } from '@/lib/promptkit/system-prompts';
+import { useAppStore } from '@/lib/promptkit/store';
 
 export function ModelPromptView({
   systemPrompt,
   shortVersion,
   ecosystem,
   category,
+  entryId,
 }: {
   systemPrompt: string;
   shortVersion: string;
   ecosystem?: string;
   category?: string;
+  entryId?: string;
 }) {
-  const [showShort, setShowShort] = useState(false);
+  const getModelViewSetting = useAppStore(s => s.getModelViewSetting);
+  const setModelViewSetting = useAppStore(s => s.setModelViewSetting);
+
+  const modelSettings = entryId ? getModelViewSetting(entryId) : {};
+  const [showShort, setShowShort] = useState(modelSettings.showShortVersion ?? false);
+  const [useChinesePrompt, setUseChinesePrompt] = useState(modelSettings.useChinesePrompt ?? true);
   const [copied, setCopied] = useState(false);
-  const useChinesePrompt = useAppStore(s => s.useChinesePrompt);
-  const setUseChinesePrompt = useAppStore(s => s.setUseChinesePrompt);
   const showLangToggle = ecosystem === 'chinese' && category && ['image', 'video', '3d'].includes(category);
 
   const entry = { systemPrompt, shortVersion, ecosystem: ecosystem ?? '', category: category ?? '' };
@@ -41,6 +46,7 @@ export function ModelPromptView({
 
   return (
     <>
+      {/* Toggles + Copy */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 bg-muted/30 rounded-xl border border-border/80 mb-3 flex-wrap">
         <div className="flex flex-row items-center gap-2 w-full sm:w-auto flex-wrap">
           <div className="flex items-center justify-between sm:justify-start gap-2 bg-background/50 dark:bg-background/20 px-3 py-2 sm:p-0 rounded-lg border border-border/50 sm:border-0 flex-1 sm:flex-none">
@@ -50,7 +56,10 @@ export function ModelPromptView({
             <Switch
               id="model-prompt-toggle"
               checked={showShort}
-              onCheckedChange={setShowShort}
+              onCheckedChange={(v) => {
+                setShowShort(v);
+                if (entryId) setModelViewSetting(entryId, { showShortVersion: v });
+              }}
             />
           </div>
           {showLangToggle && (
@@ -61,7 +70,10 @@ export function ModelPromptView({
               <Switch
                 id="model-lang-toggle"
                 checked={useChinesePrompt}
-                onCheckedChange={setUseChinesePrompt}
+                onCheckedChange={(v) => {
+                  setUseChinesePrompt(v);
+                  if (entryId) setModelViewSetting(entryId, { useChinesePrompt: v });
+                }}
               />
             </div>
           )}

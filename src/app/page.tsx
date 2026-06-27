@@ -906,10 +906,10 @@ const EntryCard = React.memo(function EntryCard({ entry, query }: { entry: Syste
 });
 
 
-function OpenInDropdown({ entry }: { entry: SystemPromptEntry }) {
+function OpenInDropdown({ entry, shortVersion, chinesePrompt }: { entry: SystemPromptEntry; shortVersion?: boolean; chinesePrompt?: boolean }) {
   const defaultPlatform = getChatPlatform(entry.provider);
-  const showShort = useAppStore((s) => s.showShortVersion);
-  const useChinese = useAppStore((s) => s.useChinesePrompt);
+  const showShort = shortVersion ?? useAppStore((s) => s.showShortVersion);
+  const useChinese = chinesePrompt ?? useAppStore((s) => s.useChinesePrompt);
   const promptText = getDisplayPrompt(entry, showShort ? 'short' : 'full', useChinese);
 
   const openChat = useCallback((platform: ChatPlatform) => {
@@ -997,7 +997,7 @@ function ArenaRankCard({ ranking, label }: { ranking: ArenaRanking; label: strin
 
 
 function DetailView() {
-  const { selectedEntryId, setSelectedEntryId, showShortVersion, setShowShortVersion, useChinesePrompt, setUseChinesePrompt, isBookmarked, addBookmark, removeBookmark, compareIds, addCompare, removeCompare } = useAppStore();
+  const { selectedEntryId, setSelectedEntryId, getModelViewSetting, setModelViewSetting, isBookmarked, addBookmark, removeBookmark, compareIds, addCompare, removeCompare } = useAppStore();
   const entry = selectedEntryId ? getEntryById(selectedEntryId) : null;
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -1005,6 +1005,10 @@ function DetailView() {
   useEffect(() => {
     contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [selectedEntryId]);
+
+  const modelSettings = entry ? getModelViewSetting(entry.id) : {};
+  const showShortVersion = modelSettings.showShortVersion ?? false;
+  const useChinesePrompt = modelSettings.useChinesePrompt ?? true;
 
   const promptText = useMemo(() => {
     if (!entry) return '';
@@ -1069,7 +1073,7 @@ function DetailView() {
           <p className="text-xs text-muted-foreground mt-1">By {entry.provider} &bull; Version: {entry.version} &bull; Last verified: {entry.lastVerified}</p>
         </div>
         <div className="flex gap-2 shrink-0">
-          <OpenInDropdown entry={entry} />
+          <OpenInDropdown entry={entry} shortVersion={showShortVersion} chinesePrompt={useChinesePrompt} />
           <Button
             variant="outline"
             size="sm"
@@ -1165,7 +1169,7 @@ function DetailView() {
             <Switch
               id="version-toggle"
               checked={showShortVersion}
-              onCheckedChange={setShowShortVersion}
+              onCheckedChange={(v) => entry && setModelViewSetting(entry.id, { showShortVersion: v })}
             />
           </div>
           {entry.ecosystem === 'chinese' && ['image', 'video', '3d'].includes(entry.category) && (
@@ -1176,7 +1180,7 @@ function DetailView() {
               <Switch
                 id="lang-toggle"
                 checked={useChinesePrompt}
-                onCheckedChange={setUseChinesePrompt}
+                onCheckedChange={(v) => entry && setModelViewSetting(entry.id, { useChinesePrompt: v })}
               />
             </div>
           )}

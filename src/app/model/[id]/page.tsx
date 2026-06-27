@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ALL_ENTRIES, getEntryById, getSourceQuality } from '@/lib/promptkit/system-prompts';
 import type { SystemPromptEntry } from '@/lib/promptkit/types';
 import { ModelPromptView } from '@/components/model-prompt-view';
+import { ModelActions } from '@/components/model-actions';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
@@ -175,10 +176,19 @@ export default async function ModelPage({
 
           {/* System Prompt */}
           <section className="mb-8" aria-labelledby="system-prompt-heading">
-            <h2 id="system-prompt-heading" className="text-sm font-semibold mb-3 flex items-center gap-2">
-              ✨ System Prompt
-            </h2>
-            <ModelPromptView systemPrompt={entry.systemPrompt} shortVersion={entry.shortVersion} ecosystem={entry.ecosystem} category={entry.category} />
+            <div className="flex items-center justify-between mb-3">
+              <h2 id="system-prompt-heading" className="text-sm font-semibold flex items-center gap-2">
+                ✨ System Prompt
+              </h2>
+              <ModelActions entryId={entry.id} />
+            </div>
+            <ModelPromptView
+              systemPrompt={entry.systemPrompt}
+              shortVersion={entry.shortVersion}
+              ecosystem={entry.ecosystem}
+              category={entry.category}
+              entryId={entry.id}
+            />
           </section>
 
           {/* Tips */}

@@ -10,6 +10,11 @@ export interface BookmarkItem {
   type: 'full' | 'short';
 }
 
+export interface ModelViewSettings {
+  showShortVersion?: boolean;
+  useChinesePrompt?: boolean;
+}
+
 export type SortField = 'name' | 'provider' | 'quality' | 'date' | 'ranking';
 export type SortOrder = 'asc' | 'desc';
 export type SourceQualityFilter = 'all' | 'verified' | 'partial' | 'limited';
@@ -55,13 +60,14 @@ interface AppState {
   searchOpen: boolean;
   setSearchOpen: (v: boolean) => void;
 
-  // Version toggle
+  // Display settings
   showShortVersion: boolean;
   setShowShortVersion: (v: boolean) => void;
-
-  // Chinese prompt toggle
   useChinesePrompt: boolean;
   setUseChinesePrompt: (v: boolean) => void;
+  modelViewSettings: Record<string, ModelViewSettings>;
+  getModelViewSetting: (entryId: string) => ModelViewSettings;
+  setModelViewSetting: (entryId: string, setting: Partial<ModelViewSettings>) => void;
 }
 
 export const useAppStore = create<AppState>()(
@@ -111,15 +117,23 @@ export const useAppStore = create<AppState>()(
 
       showShortVersion: false,
       setShowShortVersion: (v) => set({ showShortVersion: v }),
-
       useChinesePrompt: true,
       setUseChinesePrompt: (v) => set({ useChinesePrompt: v }),
+      modelViewSettings: {},
+      getModelViewSetting: (entryId) => get().modelViewSettings[entryId] ?? {},
+      setModelViewSetting: (entryId, setting) => set((s) => ({
+        modelViewSettings: {
+          ...s.modelViewSettings,
+          [entryId]: { ...s.modelViewSettings[entryId], ...setting },
+        },
+      })),
     }),
     {
       name: 'promptkit-store',
       partialize: (state) => ({
         bookmarks: state.bookmarks,
         compareIds: state.compareIds,
+        modelViewSettings: state.modelViewSettings,
       }),
     }
   )
