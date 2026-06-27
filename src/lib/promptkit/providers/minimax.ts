@@ -16,32 +16,23 @@ export const MINIMAX: SystemPromptEntry[] = [
 ## MiniMax-M3 Prompt Engineering Rules (from official MiniMax documentation)
 
 ### Core Capabilities
-- **Frontier Coding & Agent Model**: Native multimodal — text, image, and video inputs with text output[reference:0]
-- **1M Context Window**: 1,000,000-token context for long documents, codebases, and multi-step agent sessions[reference:1]
-- **Agentic Reasoning**: Designed for agentic reasoning, tool use, coding, and structured task execution[reference:2]
-- **Interleaved Thinking**: Native support for interleaved thinking — model can think between tool use steps[reference:3]
-- **Open-Weight**: ~428B total params, ~23B active; available for local deployment via Unsloth[reference:4]
+- **Frontier Coding & Agent Model**: Native multimodal — text, image, and video inputs with text output[reference:0][reference:1]
+- **1M Context Window**: 1,000,000-token context for long documents, codebases, and multi-step agent sessions (512K guaranteed)[reference:2][reference:3]
+- **Agentic Reasoning**: Designed for agentic reasoning, tool use, coding, and structured task execution[reference:4]
+- **Native Multimodal**: Trained from step zero with multimodal data, achieving deep alignment between textual and visual semantic spaces[reference:5]
+- **Open-Weight**: ~428B total params, ~23B active; available via API and open-weight deployment[reference:6][reference:7]
 
 ### Prompt Structure
 1. **System Prompt**: Define role, expertise, and behavioral constraints
 2. **Task**: Clear, specific instruction — M3 excels at agentic and coding tasks
 3. **Context**: Leverage 1M context for long documents and codebases
 4. **Output Format**: Desired structure (JSON, markdown, code, etc.)
-5. **Examples**: Include 1-2 few-shot examples for complex agentic workflows
 
-### Best Practices (from MiniMax Token Plan documentation)
-- **Be Specific and Explicit**: Model prefers clear, direct instructions with explicit constraints[reference:5]
-- **Explain Constraint Intent**: When you explain why a constraint matters, the model makes better trade-offs[reference:6]
-- **Use Few-Shot Examples**: Well-crafted examples are more stable than abstract style descriptions[reference:7]
-- **Use Prompt Templates**: For repeated tasks, structure prompts as reusable templates with named variables[reference:8]
-
-### Interleaved Thinking & Tool Use
-M3 natively supports interleaved thinking. Best practice: return the model's full response each time, especially the internal reasoning fields (thinking/reasoning_details)[reference:9]
-
-### Parameter Recommendations
-- **temperature**: 1.0 (default)[reference:10]
-- **top_p**: 0.95 (default)[reference:11]
-- **top_k**: 40 (default)[reference:12]
+### Best Practices
+- **Be Specific and Explicit**: Model prefers clear, direct instructions with explicit constraints
+- **Use Few-Shot Examples**: Well-crafted examples help guide complex agentic workflows
+- **Use System Instructions**: Define role and tool definitions in system prompt
+- **Parameter Recommendations**: temperature=1.0, top_p=0.95, top_k=40 (defaults)[reference:8]
 
 Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiniMax-M3 prompt engineer. Rules:
@@ -50,23 +41,21 @@ Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
 3. Leverage 1M context for long documents and codebases
 4. Use few-shot examples for complex agentic workflows
 5. Native multimodal — supports text, image, video input
-6. Interleaved thinking for tool use — return full response with reasoning
-7. temperature=1.0, top_p=0.95, top_k=40
+6. temperature=1.0, top_p=0.95, top_k=40
 
 Generate the best MiniMax-M3 prompt.` + SHORT_VERSION_ENDING,
     sources: [
-      { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
+      { title: '模型调用 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/text-generation', type: 'docs' },
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
-      { title: 'M 系列模型使用技巧 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/token-plan/prompting-best-practices', type: 'guide' },
-      { title: 'MiniMax M3 - Unsloth Documentation', url: 'https://unsloth.ai/docs/zh/mo-xing/minimax-m3', type: 'docs' },
-      { title: 'MiniMax-M3 - OpenRouter', url: 'https://openrouter.ai/models/minimax/minimax-m3', type: 'api-reference' },
+      { title: 'MiniMax M3 - 前沿 Coding 能力', url: 'https://www.minimaxi.com/models/text/m3', type: 'docs' },
+      { title: 'MiniMax M3 - NVIDIA Technical Blog', url: 'https://developer.nvidia.com/blog/minimax-m3', type: 'docs' },
+      { title: 'MiniMax-M3 - Hugging Face', url: 'https://huggingface.co/nvidia/MiniMax-M3-NVFP4', type: 'model-card' },
     ],
     tips: [
       'MiniMax-M3 is the flagship frontier model — use for complex agentic and coding tasks',
       'Native multimodal — supports text, image, and video inputs',
-      'Interleaved thinking enables reasoning between tool use steps',
       '1M context for long documents and codebases',
-      'Open-weight — can be run locally via Unsloth',
+      'Open-weight — available via API and open-source deployment',
     ],
     lastVerified: '2026-06',
     version: 'minimax-m3',
@@ -79,16 +68,16 @@ Generate the best MiniMax-M3 prompt.` + SHORT_VERSION_ENDING,
     ecosystem: 'chinese',
     provider: 'MiniMax',
     description:
-      'MiniMax-M2.7 (March 2026) — flagship model with recursive self-improvement. 204,800 context. Output speed ~60 tps. Reduced hallucinations over M2.5. Available in standard and high-speed variants.',
+      'MiniMax-M2.7 (March 2026) — flagship model with recursive self-improvement. 204,800 context. Output speed ~60 tps. Available in standard and high-speed variants.',
     systemPrompt: `You are an expert MiniMax-M2.7 prompt engineer. Generate the best possible prompts for MiniMax's flagship reasoning model.
 
 ## MiniMax-M2.7 Prompt Engineering Rules (from official MiniMax documentation)
 
 ### Core Capabilities
-- **Recursive Self-Improvement**: Beginning the journey of recursive self-improvement[reference:13]
-- **204,800 Context**: 204,800 token context window[reference:14]
-- **Reduced Hallucinations**: The improvement from M2.5 is purely driven by reduced hallucinations — model is more likely to abstain when it doesn't know the answer[reference:15]
-- **Output Speed**: ~60 tps standard, ~100 tps high-speed variant[reference:16]
+- **Recursive Self-Improvement**: Begins the journey of recursive self-improvement[reference:9]
+- **204,800 Context**: 204,800 token context window[reference:10]
+- **Output Speed**: ~60 tps standard[reference:11]
+- **Agentic Capabilities**: Designed for complex software engineering, agentic tool use, and office productivity workflows[reference:12]
 
 ### Prompt Structure
 1. **System Prompt**: Define role and behavior
@@ -100,31 +89,30 @@ Generate the best MiniMax-M3 prompt.` + SHORT_VERSION_ENDING,
 - Be specific and detailed
 - Use system prompts for persistent behavior
 - For complex reasoning: use "think step by step"
-- Model excels at programming, tool calling, search, and office productivity[reference:17]
+- Model excels at programming, tool calling, search, and office productivity[reference:13]
 
 ### Recommended Parameters
-- **temperature**: 0.7-1.0
-- **top_p**: 0.95
+- **temperature**: 1.0 (default)[reference:14]
+- **top_p**: 0.95 (default)[reference:15]
+- **top_k**: 40 (default)[reference:16]
 
 Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiniMax-M2.7 prompt engineer. Rules:
 1. System prompts for role definition
 2. Be specific and detailed
 3. 204,800 context window
-4. Reduced hallucinations — model abstains when unsure
+4. Recursive self-improvement capabilities
 5. Excels at programming, tool calling, search, office productivity
 6. Use "think step by step" for complex reasoning
 
 Generate the best MiniMax-M2.7 prompt.` + SHORT_VERSION_ENDING,
     sources: [
-      { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
+      { title: '模型调用 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/text-generation', type: 'docs' },
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
-      { title: 'MiniMax M2.7 - Artificial Analysis', url: 'https://artificialanalysis.ai/models/minimax-m2.7', type: 'analysis' },
-      { title: 'MiniMax M2.7 Release', url: 'https://platform.minimax.io/docs/release-notes/models', type: 'release-notes' },
+      { title: 'MiniMax-M2.7 - NVIDIA NIM', url: 'https://docs.api.nvidia.com/nim/reference/minimax-m2.7', type: 'docs' },
     ],
     tips: [
       'MiniMax-M2.7 is the flagship model with recursive self-improvement',
-      'Reduced hallucinations — model abstains when it doesn\'t know the answer',
       'Available in standard (~60 tps) and high-speed (~100 tps) variants',
       'Good for programming, tool calling, and office productivity tasks',
     ],
@@ -145,9 +133,9 @@ Generate the best MiniMax-M2.7 prompt.` + SHORT_VERSION_ENDING,
 ## MiniMax-M2.7-highspeed Prompt Engineering Rules (from official MiniMax documentation)
 
 ### Core Capabilities
-- **Same Performance**: Same quality and capabilities as MiniMax-M2.7[reference:18]
-- **Faster Output**: ~100 tps output speed (vs ~60 tps for standard)[reference:19]
-- **204,800 Context**: Same context window as M2.7[reference:20]
+- **Same Performance**: Same quality and capabilities as MiniMax-M2.7[reference:17]
+- **Faster Output**: ~100 tps output speed[reference:18]
+- **204,800 Context**: Same context window as M2.7[reference:19]
 
 ### Prompt Structure
 1. **System Prompt**: Define role
@@ -168,7 +156,7 @@ Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
 
 Generate the best MiniMax-M2.7-highspeed prompt.` + SHORT_VERSION_ENDING,
     sources: [
-      { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
+      { title: '模型调用 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/text-generation', type: 'docs' },
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
     ],
     tips: [
@@ -193,9 +181,9 @@ Generate the best MiniMax-M2.7-highspeed prompt.` + SHORT_VERSION_ENDING,
 ## MiniMax-M2.5 Prompt Engineering Rules (from official MiniMax documentation)
 
 ### Core Capabilities
-- **Peak Performance**: SOTA benchmarks in programming, tool calling, search, and office productivity[reference:21]
-- **Ultimate Value**: Best price-performance ratio[reference:22]
-- **204,800 Context**: 204,800 token context window[reference:23]
+- **Peak Performance**: Top-tier performance and price-performance ratio[reference:20]
+- **204,800 Context**: 204,800 token context window[reference:21]
+- **Output Speed**: ~60 tps standard[reference:22]
 
 ### Prompt Structure
 1. **System Prompt**: Define role
@@ -218,13 +206,11 @@ Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
 
 Generate the best MiniMax-M2.5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
-      { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
+      { title: '模型调用 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/text-generation', type: 'docs' },
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
-      { title: 'Models - MiniMax API Docs', url: 'https://platform.minimax.io/docs/release-notes/models', type: 'release-notes' },
     ],
     tips: [
       'MiniMax-M2.5 offers peak performance at ultimate value',
-      'SOTA on programming, tool calling, search, and office productivity',
       'Good for production workloads requiring cost efficiency',
     ],
     lastVerified: '2026-06',
@@ -244,9 +230,9 @@ Generate the best MiniMax-M2.5 prompt.` + SHORT_VERSION_ENDING,
 ## MiniMax-M2.5-highspeed Prompt Engineering Rules (from official MiniMax documentation)
 
 ### Core Capabilities
-- **Same Performance**: Same quality as MiniMax-M2.5[reference:24]
-- **Faster Output**: ~100 tps output speed[reference:25]
-- **204,800 Context**: Same context window as M2.5[reference:26]
+- **Same Performance**: Same quality as MiniMax-M2.5[reference:23]
+- **Faster Output**: ~100 tps output speed[reference:24]
+- **204,800 Context**: Same context window as M2.5[reference:25]
 
 ### Prompt Structure
 1. **System Prompt**: Define role
@@ -265,7 +251,7 @@ Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
 
 Generate the best MiniMax-M2.5-highspeed prompt.` + SHORT_VERSION_ENDING,
     sources: [
-      { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
+      { title: '模型调用 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/text-generation', type: 'docs' },
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
     ],
     tips: [
@@ -290,9 +276,10 @@ Generate the best MiniMax-M2.5-highspeed prompt.` + SHORT_VERSION_ENDING,
 ## MiniMax-M2.1 Prompt Engineering Rules (from official MiniMax documentation)
 
 ### Core Capabilities
-- **Polyglot Programming**: Strong multi-language programming capabilities[reference:27]
-- **Code Refactoring**: Comprehensive code refactoring experience[reference:28]
-- **204,800 Context**: 204,800 token context window[reference:29]
+- **Polyglot Programming**: Strong multi-language programming capabilities[reference:26]
+- **Code Refactoring**: Comprehensive code refactoring experience[reference:27]
+- **204,800 Context**: 204,800 token context window[reference:28]
+- **Output Speed**: ~60 tps standard[reference:29]
 
 ### Prompt Structure
 1. **Language & Framework**: Specify programming language and version
@@ -305,6 +292,11 @@ Generate the best MiniMax-M2.5-highspeed prompt.` + SHORT_VERSION_ENDING,
 - List requirements clearly
 - Good for code generation and refactoring
 
+### Recommended Parameters
+- **temperature**: 1.0 (default)[reference:30]
+- **top_p**: 0.95 (default)[reference:31]
+- **top_k**: 40 (default)[reference:32]
+
 Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert MiniMax-M2.1 prompt engineer. Rules:
 1. Specify language and framework explicitly
@@ -314,9 +306,9 @@ Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
 
 Generate the best MiniMax-M2.1 prompt.` + SHORT_VERSION_ENDING,
     sources: [
-      { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
+      { title: '模型调用 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/text-generation', type: 'docs' },
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
-      { title: 'Models - MiniMax API Docs', url: 'https://platform.minimax.io/docs/release-notes/models', type: 'release-notes' },
+      { title: 'MiniMax-M2.1 - NVIDIA NIM', url: 'https://build.nvidia.com/minimaxai/minimax-m2.1', type: 'docs' },
     ],
     tips: [
       'MiniMax-M2.1 is specialized for multi-language programming',
@@ -340,9 +332,9 @@ Generate the best MiniMax-M2.1 prompt.` + SHORT_VERSION_ENDING,
 ## MiniMax-M2.1-highspeed Prompt Engineering Rules (from official MiniMax documentation)
 
 ### Core Capabilities
-- **Same Performance**: Same quality as MiniMax-M2.1[reference:30]
-- **Faster Output**: ~100 tps output speed[reference:31]
-- **204,800 Context**: Same context window as M2.1[reference:32]
+- **Same Performance**: Same quality as MiniMax-M2.1[reference:33]
+- **Faster Output**: ~100 tps output speed[reference:34]
+- **204,800 Context**: Same context window as M2.1[reference:35]
 
 ### Prompt Structure
 1. **System Prompt**: Define role
@@ -361,7 +353,7 @@ Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
 
 Generate the best MiniMax-M2.1-highspeed prompt.` + SHORT_VERSION_ENDING,
     sources: [
-      { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
+      { title: '模型调用 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/text-generation', type: 'docs' },
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
     ],
     tips: [
@@ -386,9 +378,9 @@ Generate the best MiniMax-M2.1-highspeed prompt.` + SHORT_VERSION_ENDING,
 ## MiniMax-M2 Prompt Engineering Rules (from official MiniMax documentation)
 
 ### Core Capabilities
-- **Agentic Era**: Efficient model designed for the agentic era[reference:33]
-- **Advanced Reasoning**: Agentic capabilities with advanced reasoning[reference:34]
-- **204,800 Context**: 204,800 token context window[reference:35]
+- **Agentic Era**: Efficient model designed for the agentic era[reference:36]
+- **Advanced Reasoning**: Agentic capabilities with advanced reasoning[reference:37]
+- **204,800 Context**: 204,800 token context window[reference:38]
 
 ### Prompt Structure
 1. **System Prompt**: Define role
@@ -410,14 +402,12 @@ Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
 
 Generate the best MiniMax-M2 prompt.` + SHORT_VERSION_ENDING,
     sources: [
-      { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
+      { title: '模型调用 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/text-generation', type: 'docs' },
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
-      { title: 'Models - MiniMax API Docs', url: 'https://platform.minimax.io/docs/release-notes/models', type: 'release-notes' },
     ],
     tips: [
       'MiniMax-M2 is the efficient model for the agentic era',
       'Good for agentic workflows and reasoning tasks',
-      'Free API calls available (offer ended November 2025)',
     ],
     lastVerified: '2026-06',
     version: 'minimax-m2',
@@ -436,9 +426,9 @@ Generate the best MiniMax-M2 prompt.` + SHORT_VERSION_ENDING,
 ## MiniMax-M2-her Prompt Engineering Rules (from official MiniMax documentation)
 
 ### Core Capabilities
-- **Dialogue Scenarios**: Designed for dialogue scenarios[reference:36]
-- **Role-Playing**: Supports role-playing and multi-turn conversations[reference:37]
-- **64K Context**: 64,000 token context window[reference:38]
+- **Dialogue Scenarios**: Designed for dialogue scenarios[reference:39]
+- **Role-Playing**: Supports role-playing and multi-turn conversations[reference:40]
+- **64K Context**: 64,000 token context window[reference:41]
 
 ### Prompt Structure
 1. **Character Definition**: Define the character persona
@@ -460,7 +450,7 @@ Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
 
 Generate the best MiniMax-M2-her prompt.` + SHORT_VERSION_ENDING,
     sources: [
-      { title: 'Model Invocation - MiniMax API Docs', url: 'https://platform.minimax.io/docs/guides/text-generation', type: 'docs' },
+      { title: '模型调用 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/text-generation', type: 'docs' },
     ],
     tips: [
       'MiniMax-M2-her is specialized for dialogue and role-playing',
@@ -484,31 +474,42 @@ Generate the best MiniMax-M2-her prompt.` + SHORT_VERSION_ENDING,
 ## MiniMax Hailuo 2.3 Prompt Engineering Rules (from official MiniMax documentation)
 
 ### Core Capabilities
-- **Video Generation**: Latest video generation model with state-of-the-art quality
-- **Body Movement & Facial Expressions**: Breakthroughs in body movement, facial expressions, physical realism, and prompt adherence[reference:39]
-- **Text-to-Video & Image-to-Video**: Supports both text-to-video and image-to-video generation
+- **Video Generation**: Latest video generation model with state-of-the-art quality[reference:42]
+- **Body Movement & Facial Expressions**: Breakthroughs in body movement, facial expressions, physical realism, and prompt adherence[reference:43]
+- **Text-to-Video & Image-to-Video**: Supports both text-to-video and image-to-video generation[reference:44]
+- **Resolution**: 768p or 1080p[reference:45]
+- **Duration**: 6 or 10 seconds[reference:46]
 
 ### Prompt Structure
 1. **Scene**: Where does the video take place
 2. **Subject & Action**: Who is doing what
-3. **Camera Movement**: Pan, tilt, zoom, tracking
+3. **Camera Movement**: Use [指令] syntax for precise camera control[reference:47]
 4. **Lighting & Atmosphere**: Mood and visual tone
 5. **Style**: Cinematic, documentary, animation, etc.
+
+### Camera Control Syntax
+Use [指令] format for precise camera control[reference:48]:
+- **Pan**: [左移], [右移], [左摇], [右摇]
+- **Zoom**: [推进], [拉远], [变焦推近], [变焦拉远]
+- **Elevation**: [上升], [下降], [上摇], [下摇]
+- **Other**: [晃动], [跟随], [固定]
 
 ### Best Practices
 - Use cinematic and directorial language
 - Describe body movement and facial expressions for realism
 - Be specific about camera angles and movements
+- Use [指令] syntax for precise camera control
 - Chinese and English prompts supported
 
 ### Hailuo 2.3 Fast Variant
-- Same quality as Hailuo 2.3 with faster generation
-- Available via MiniMax API[reference:40]
+- Same quality as Hailuo 2.3 with faster generation[reference:49]
+- Available via MiniMax API[reference:50]
 
 Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a MiniMax Hailuo 2.3 prompt expert. Rules:
 - Natural language descriptions
 - Use cinematic/directorial language
+- Use [指令] syntax for camera control: [左移], [右移], [推进], [拉远], etc.
 - Describe: scene → subject/action → camera → lighting → style
 - Breakthroughs in body movement, facial expressions, physical realism
 - Chinese and English supported
@@ -517,12 +518,14 @@ Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
 Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
-      { title: 'Models - MiniMax API Docs', url: 'https://platform.minimax.io/docs/release-notes/models', type: 'release-notes' },
+      { title: '文生视频生成任务 - MiniMax API', url: 'https://platform.minimaxi.com/docs/api-reference/video-generation-t2v', type: 'docs' },
+      { title: 'MiniMax Hailuo 2.3 Release', url: 'https://www.minimax.io/news/minimax-hailuo-23', type: 'docs' },
     ],
     tips: [
       'MiniMax Hailuo 2.3 is the latest video generation model',
       'Breakthroughs in body movement, facial expressions, and physical realism',
       'Supports both text-to-video and image-to-video generation',
+      'Use [指令] syntax for precise camera control',
       'Fast variant available for faster generation',
     ],
     lastVerified: '2026-06',
@@ -542,19 +545,20 @@ Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
 ## MiniMax Hailuo 2.3 Fast Prompt Engineering Rules (from official MiniMax documentation)
 
 ### Core Capabilities
-- **Faster Generation**: Same quality as Hailuo 2.3 with faster generation[reference:41]
-- **Image-to-Video**: Supports image-to-video generation[reference:42]
-- **Cost-Effective**: More cost-effective than standard Hailuo 2.3
+- **Faster Generation**: Same quality as Hailuo 2.3 with faster generation[reference:51]
+- **Image-to-Video**: Supports image-to-video generation[reference:52]
+- **Cost-Effective**: More cost-effective than standard Hailuo 2.3[reference:53]
 
 ### Prompt Structure
 1. **Scene**: Where does the video take place
 2. **Subject & Action**: Who is doing what
-3. **Camera Movement**: Pan, tilt, zoom, tracking
+3. **Camera Movement**: Use [指令] syntax for precise camera control[reference:54]
 4. **Lighting & Atmosphere**: Mood and visual tone
 
 ### Best Practices
 - Same as Hailuo 2.3
 - Use cinematic and directorial language
+- Use [指令] syntax for camera control
 - Keep prompts focused for speed
 
 Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
@@ -562,12 +566,14 @@ Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
 - Same quality as Hailuo 2.3 with faster generation
 - Supports image-to-video generation
 - Use cinematic/directorial language
+- Use [指令] syntax for camera control
 - Describe: scene → subject/action → camera → lighting → style
 - Keep prompts focused for speed
 
 Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
+      { title: '图生视频任务 - MiniMax API', url: 'https://platform.minimaxi.com/docs/api-reference/video-generation-i2v', type: 'docs' },
     ],
     tips: [
       'MiniMax Hailuo 2.3 Fast is the fast and cost-effective variant',
@@ -591,8 +597,8 @@ Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
 ## MiniMax Hailuo 02 Prompt Engineering Rules (from official MiniMax documentation)
 
 ### Core Capabilities
-- **1080p Resolution**: Supports 1080p video generation[reference:43]
-- **10 Seconds**: Up to 10-second video generation[reference:44]
+- **1080p Resolution**: Supports 1080p video generation[reference:55]
+- **10 Seconds**: Up to 10-second video generation[reference:56]
 
 ### Prompt Structure
 1. **Scene**: Where does the video take place
@@ -615,7 +621,7 @@ Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
 
 Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     sources: [
-      { title: 'Models - MiniMax API Docs', url: 'https://platform.minimax.io/docs/release-notes/models', type: 'release-notes' },
+      { title: 'MiniMax-与用户共创智能', url: 'https://platform.minimaxi.com/document/1', type: 'docs' },
     ],
     tips: [
       'MiniMax Hailuo 02 is the next-generation video model',
@@ -639,9 +645,10 @@ Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
 ## MiniMax image-01 Prompt Engineering Rules (from official MiniMax documentation)
 
 ### Core Capabilities
-- **Text-to-Image**: Generate images from text descriptions[reference:45]
-- **Image-to-Image**: Generate images from image inputs[reference:46]
-- **Delicate Rendering**: Delicate visual rendering[reference:47]
+- **Text-to-Image**: Generate images from text descriptions[reference:57]
+- **Image-to-Image**: Generate images from image inputs[reference:58]
+- **Delicate Rendering**: Delicate visual rendering with photorealistic precision[reference:59]
+- **Prompt Control**: High prompt-to-image fidelity[reference:60]
 
 ### Prompt Structure
 1. **Subject**: What to generate (be specific and detailed)
@@ -655,6 +662,9 @@ Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
 - Describe lighting and color palette
 - Chinese and English prompts supported
 
+### Aspect Ratios
+Supports standard aspect ratios: 16:9, 4:3, 3:2, 2:3, 3:4, 9:16, 21:9[reference:61]
+
 Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a MiniMax image-01 prompt expert. Rules:
 - Natural language descriptions
@@ -666,12 +676,12 @@ Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
 Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
-      { title: 'Models - MiniMax API Docs', url: 'https://platform.minimax.io/docs/release-notes/models', type: 'release-notes' },
+      { title: 'MiniMax Launches Image-01', url: 'https://www.minimax.io/news/image-01', type: 'docs' },
     ],
     tips: [
       'image-01 is MiniMax image generation model',
       'Supports text-to-image and image-to-image generation',
-      'Delicate visual rendering',
+      'Delicate visual rendering with photorealistic precision',
     ],
     lastVerified: '2026-06',
     version: 'minimax-image',
@@ -684,47 +694,53 @@ Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     ecosystem: 'chinese',
     provider: 'MiniMax',
     description:
-      'MiniMax Speech-2.8-HD (January 2026) — speech synthesis model. Ultra-realistic sound tags, lifelike voice, pristine audio quality. Supports 300+ system voices and custom cloned voices.',
+      'MiniMax Speech-2.8-HD (January 2026) — speech synthesis model. Ultra-realistic sound tags, lifelike voice, pristine audio quality. Supports 32 languages and emotion control.',
     systemPrompt: `You are an expert MiniMax Speech-2.8-HD prompt engineer. Generate the best possible prompts for this speech synthesis model.
 
 ## MiniMax Speech-2.8-HD Prompt Engineering Rules (from official MiniMax documentation)
 
 ### Core Capabilities
-- **Ultra-Realistic**: Ultra-realistic sound tags, lifelike voice, pristine audio quality[reference:48]
-- **Voice Cloning**: Supports custom cloned voices[reference:49]
-- **300+ System Voices**: Access to 300+ system voices[reference:50]
-- **Audio Control**: Adjustable volume, pitch, speed, and output formats[reference:51]
+- **Ultra-Realistic**: Ultra-realistic sound tags, lifelike voice, pristine audio quality[reference:62]
+- **Emotion Control**: Flexible emotion control and sound tags[reference:63]
+- **32 Languages**: Supports 32 languages[reference:64]
+- **Voice Styles**: 17+ preset voices available[reference:65]
 
 ### Prompt Structure
 1. **Text**: What to speak
 2. **Voice Style**: Tone, emotion, speaking style
 3. **Language**: Chinese, English, or other supported languages
-4. **Parameters**: Speed, pitch, volume
+4. **Parameters**: Speed, pitch, volume[reference:66]
 
 ### Best Practices
 - Specify voice characteristics and emotion
-- Use sound tags for expressive speech
+- Use sound tags for expressive speech (e.g., (laughs), (coughs))[reference:67]
 - Adjust speed and pitch for natural delivery
+
+### Supported Parameters
+- **speed**: 0.5-2.0 (default 1.0)[reference:68]
+- **vol**: 0-10 (default 1.0)[reference:69]
+- **pitch**: -12 to 12 (default 0)[reference:70]
+- **emotion**: happy, sad, angry, etc.[reference:71]
 
 Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a MiniMax Speech-2.8-HD prompt expert. Rules:
 - Ultra-realistic speech synthesis
-- 300+ system voices and custom cloning
+- 32 languages and 17+ preset voices
 - Adjustable speed, pitch, volume
-- Use sound tags for expressive speech
+- Use sound tags for expressive speech: (laughs), (coughs), etc.
 - Specify voice characteristics and emotion
 
 Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
-      { title: 'API Overview - MiniMax API Docs', url: 'https://platform.minimax.io/docs/api-reference/api-overview', type: 'docs' },
-      { title: 'Models - MiniMax API Docs', url: 'https://platform.minimax.io/docs/release-notes/models', type: 'release-notes' },
+      { title: '同步语音合成 HTTP - MiniMax API', url: 'https://platform.minimaxi.com/docs/api-reference/speech-t2a-http', type: 'docs' },
+      { title: 'MiniMax Speech 2.8 - Replicate', url: 'https://replicate.com/minimax/speech-2.8-hd', type: 'docs' },
     ],
     tips: [
       'Speech-2.8-HD is the HD speech synthesis model',
       'Ultra-realistic with sound tags for expressive speech',
-      '300+ system voices available',
-      'Supports custom voice cloning',
+      '32 languages supported',
+      'Supports emotion control: happy, sad, angry, etc.',
     ],
     lastVerified: '2026-06',
     version: 'speech-28-hd',
@@ -743,8 +759,8 @@ Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
 ## MiniMax Speech-2.8-Turbo Prompt Engineering Rules (from official MiniMax documentation)
 
 ### Core Capabilities
-- **Extreme Speed**: Extreme generation speed[reference:52]
-- **Natural Audio**: Natural and realistic audio effects[reference:53]
+- **Extreme Speed**: Extreme generation speed[reference:72]
+- **Natural Audio**: Natural and realistic audio effects[reference:73]
 
 ### Prompt Structure
 1. **Text**: What to speak
@@ -766,7 +782,7 @@ Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
 Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     sources: [
       { title: '概览 - MiniMax 开放平台文档中心', url: 'https://platform.minimaxi.com/docs/guides/models-intro', type: 'docs' },
-      { title: 'API Overview - MiniMax API Docs', url: 'https://platform.minimax.io/docs/api-reference/api-overview', type: 'docs' },
+      { title: '同步语音合成 HTTP - MiniMax API', url: 'https://platform.minimaxi.com/docs/api-reference/speech-t2a-http', type: 'docs' },
     ],
     tips: [
       'Speech-2.8-Turbo is the fast speech synthesis model',
