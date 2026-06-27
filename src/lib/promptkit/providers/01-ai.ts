@@ -1,4 +1,3 @@
-
 import type { SystemPromptEntry } from '../types';
 import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
@@ -10,17 +9,16 @@ export const YI: SystemPromptEntry[] = [
   category: 'text',
   ecosystem: 'chinese',
   provider: '01.AI',
-  description: '01.AI\'s Yi Lightning — fast MoE model optimized for real-time inference and low latency.',
+  description: '01.AI\'s Yi Lightning — flagship MoE model with strong performance in Chinese, math, coding, and hard prompts.',
   systemPrompt: `You are an expert Yi Lightning prompt engineer. Generate the best possible Yi Lightning prompts based on the user's description.
 
-## Yi Lightning Rules (from 01.AI official docs & Hugging Face)
+## Yi Lightning Guidelines (based on 01.AI official documentation)
 
-### Key Characteristics (from 01.ai/yi-models, huggingface.co/01-ai)
-- Mixture-of-Experts (MoE) architecture — efficient fast inference
-- Apache 2.0 license — open source
-- Sub-100ms latency on modern GPU clusters
-- Real-time AI applications — chat assistants, edge devices
-- Strong bilingual support (Chinese and English)
+### Model Characteristics
+- Mixture-of-Experts (MoE) architecture with fine-grained expert segmentation and balanced routing[reference:0][reference:1]
+- Optimized KV-caching for efficient inference[reference:2]
+- Strong bilingual support (Chinese and English)[reference:3][reference:4]
+- Available via 01.AI developer platform[reference:5][reference:6]
 
 ### Prompt Format (ChatML)
 Use the ChatML template with control tokens:
@@ -30,6 +28,8 @@ Use the ChatML template with control tokens:
 [User query here]<|im_end|>
 <|im_start|>assistant
 
+This format is recommended for Yi series models[reference:7][reference:8].
+
 ### Prompt Structure
 1. **System Message**: Define role and behavior
 2. **Task**: Clear, direct instruction
@@ -37,38 +37,35 @@ Use the ChatML template with control tokens:
 4. **Output Format**: Specify desired structure
 5. **Language**: Specify Chinese or English response language
 
-### Yi Series Variants
-- Yi-1.5 (6B/9B/34B) — upgraded versions with stronger coding, math, reasoning
-- Yi-Coder (1.5B/9B) — code-specialized with 128K context, 52 languages
-- Yi-VL (6B/34B) — multimodal vision-language models
-
 ### Best Practices
 - Be specific and direct with instructions
 - Specify response language (Chinese/English) explicitly
-- For coding tasks, use Yi-Coder variant with 128K context
-- Use system prompts for persistent behavior
+- Use system prompts to define persistent behavior
+- For code generation tasks, consider using Yi Coder for specialized coding performance[reference:9]
 
 When the user asks for a Yi Lightning prompt, generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
-  shortVersion: `You are an expert Yi Lightning prompt engineer. Rules:
+  shortVersion: `You are an expert Yi Lightning prompt engineer. Guidelines:
 1. Use ChatML format: <|im_start|>system...<|im_end|>
-2. MoE architecture — fast inference, sub-100ms latency
+2. MoE architecture with fine-grained expert segmentation
 3. Define role and task in system message
 4. Specify response language (Chinese/English)
-5. Apache 2.0 — open source
-6. Yi-Coder variant for code tasks (128K context)
+5. Bilingual model — supports both Chinese and English
+6. Available via platform.lingyiwanwu.com
 
 Generate the best Yi Lightning prompt for the user's goal.` + SHORT_VERSION_ENDING,
   sources: [
     { title: '01.AI Official Site', url: 'https://01.ai/yi-models', type: 'docs' },
     { title: '01.AI GitHub Repository', url: 'https://github.com/01-ai/Yi', type: 'github' },
     { title: '01.AI Hugging Face', url: 'https://huggingface.co/01-ai', type: 'model-card' },
+    { title: 'Yi-Lightning Technical Report', url: 'https://arxiv.org/abs/2412.01253', type: 'whitepaper' },
   ],
   tips: [
-    'Yi Lightning is MoE — fast inference suitable for real-time apps',
+    'Yi Lightning is MoE — efficient for inference',
     'Apache 2.0 license — permissive for commercial use',
     'Use ChatML format with control tokens',
     'Bilingual Chinese/English — specify language for best results',
-    'Yi-Coder variant offers 128K context for code tasks',
+    'Yi Coder variant offers 128K context for code tasks',
+    'Available via platform.lingyiwanwu.com',
   ],
   lastVerified: '2025-07',
   version: 'yi-lightning',
@@ -83,13 +80,13 @@ Generate the best Yi Lightning prompt for the user's goal.` + SHORT_VERSION_ENDI
   description: '01.AI\'s Yi-Coder — code-specialized model with 128K context, supporting 52 programming languages.',
   systemPrompt: `You are an expert Yi Coder prompt engineer. Generate the best possible Yi Coder prompts based on the user's description.
 
-## Yi Coder Rules (from 01.AI GitHub & Hugging Face)
+## Yi Coder Guidelines (from 01.AI GitHub & Hugging Face)
 
 ### Key Characteristics
-- Code-specialized model — 1.5B and 9B sizes
-- 128K long context — handles large codebases
-- Supports 52 programming languages
-- Open source — Apache 2.0 license
+- Code-specialized model — 1.5B and 9B sizes[reference:10]
+- 128K maximum context length — handles large codebases[reference:11][reference:12]
+- Supports 52 major programming languages including Java, Python, JavaScript, C++, and more[reference:13][reference:14]
+- Open source
 
 ### Prompt Structure
 1. **Language & Framework**: Specify programming language and version
@@ -105,13 +102,13 @@ Generate the best Yi Lightning prompt for the user's goal.` + SHORT_VERSION_ENDI
 - Specify coding style preferences
 
 When the user asks for a Yi Coder prompt, generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
-  shortVersion: `You are a Yi Coder prompt expert. Rules:
+  shortVersion: `You are a Yi Coder prompt expert. Guidelines:
 1. Specify language and framework explicitly
 2. 128K context for large codebases
 3. 52 programming languages supported
 4. List functional requirements clearly
 5. Specify coding style and constraints
-6. Open source — Apache 2.0
+6. Available in 1.5B and 9B sizes
 
 Generate the best Yi Coder prompt.` + SHORT_VERSION_ENDING,
   sources: [
@@ -121,7 +118,8 @@ Generate the best Yi Coder prompt.` + SHORT_VERSION_ENDING,
   tips: [
     'Yi Coder supports 128K context for large codebases',
     'Available in 1.5B and 9B sizes',
-    'Good for code completion and generation tasks',
+    'Supports 52 programming languages',
+    'Good for code completion, generation, and understanding tasks',
   ],
   lastVerified: '2025-07',
   version: 'yi-coder',
