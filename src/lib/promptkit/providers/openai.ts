@@ -16,12 +16,12 @@ export const OPENAI: SystemPromptEntry[] = [
 ## GPT-5.5 Prompt Engineering Rules (from OpenAI official documentation)
 
 ### Core Philosophy — Outcome-First Prompting
-GPT-5.5 works best when prompts **define the outcome** and leave room for the model to choose an efficient solution path.[reference:1]
+GPT-5.5 works best when prompts **define the outcome** and leave room for the model to choose an efficient solution path.[reference:0]
 
 **Key Shift from Earlier Models:**
-- Use **shorter, more outcome-oriented prompts**[reference:2]
-- Describe what "good looks like", what constraints matter, what evidence is available, and what the final answer should contain[reference:3]
-- **Avoid carrying over every instruction** from older prompt stacks — legacy prompts over-specify the process and add noise[reference:4]
+- Use **shorter, more outcome-oriented prompts**[reference:1]
+- Describe what "good looks like", what constraints matter, what evidence is available, and what the final answer should contain[reference:2]
+- **Avoid carrying over every instruction** from older prompt stacks — legacy prompts over-specify the process and add noise[reference:3]
 
 ### Prompt Structure
 1. **Outcome**: What does success look like?
@@ -30,19 +30,19 @@ GPT-5.5 works best when prompts **define the outcome** and leave room for the mo
 4. **Output Format**: What should the final answer contain?
 
 ### Personality & Collaboration Style (for conversational products)
-- **Personality**: Tone, warmth, directness, formality, humor, empathy[reference:5]
-- **Collaboration style**: When to ask questions, how proactive to be, how much context to give[reference:6]
-- Keep both short — they should shape experience, not replace clear goals[reference:7]
+- **Personality**: Tone, warmth, directness, formality, humor, empathy[reference:4]
+- **Collaboration style**: When to ask questions, how proactive to be, how much context to give[reference:5]
+- Keep both short — they should shape experience, not replace clear goals[reference:6]
 
 ### Reasoning Effort
-- Default: **medium** — recommended balanced starting point[reference:8]
-- **low**: For latency-sensitive workflows[reference:9]
-- **none**: For latency-critical tasks that don't need reasoning[reference:10]
-- **high / xhigh**: Only when evals show measurable quality gain[reference:11]
+- Default: **medium** — recommended balanced starting point[reference:7]
+- **low**: For latency-sensitive workflows[reference:8]
+- **none**: For latency-critical tasks that don't need reasoning[reference:9]
+- **high / xhigh**: Only when evals show measurable quality gain[reference:10]
 
 ### What to Avoid
-- Step-by-step process guidance unless the exact path matters[reference:12]
-- Overly long prompts that add noise[reference:13]
+- Step-by-step process guidance unless the exact path matters[reference:11]
+- Overly long prompts that add noise
 - Vague instructions that don't define success criteria
 
 Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
@@ -82,10 +82,10 @@ Generate the best GPT-5.5 prompt for the user's goal.` + SHORT_VERSION_ENDING,
 ## GPT-5.5 Pro Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Uses **more compute** to think harder and provide consistently better answers[reference:15]
-- Available in Responses API (including Batch API)[reference:16]
-- Some requests may take several minutes — use background mode for long-running tasks[reference:17]
-- 1.05M context window, 128K max output tokens[reference:18]
+- Uses **more compute** to think harder and provide consistently better answers
+- Available in Responses API (including Batch API)
+- Some requests may take several minutes — use background mode for long-running tasks
+- 1.05M context window, 128K max output tokens
 
 ### Prompting Approach
 - Same outcome-first principles as GPT-5.5
@@ -129,12 +129,12 @@ Generate the best GPT-5.5 Pro prompt.` + SHORT_VERSION_ENDING,
 ## GPT-5.4 Prompt Engineering Rules (from OpenAI official documentation)
 
 ### Core Capabilities
-- **Coding**: Production-quality code, polished front-end UI, repo-specific patterns, multi-file changes[reference:20]
-- **Reasoning**: Strong out-of-the-box coding personality — less prompt tuning needed[reference:21]
-- **Agentic Workloads**: Reduces end-to-end time across multi-step trajectories[reference:22]
-- **1M Context Window**: Analyze entire codebases or long document collections[reference:23]
-- **Computer Use**: Built-in computer-use capabilities for agent interactions[reference:24]
-- **Compaction**: Native support for longer agent trajectories while preserving context[reference:25]
+- **Coding**: Production-quality code generation, polished front-end UI, repo-specific patterns, and multi-file changes[reference:12]
+- **Reasoning**: Designed for work that's harder to do in a single pass: multi-step reasoning, long context, tool-heavy workflows[reference:13]
+- **Agentic Workloads**: Reduces end-to-end time across multi-step trajectories
+- **1M Context Window**: 1M+ token context window (922K input, 128K output) with support for text and image inputs[reference:14]
+- **Computer Use**: Includes new training for computer use tasks[reference:15]
+- **Compaction**: Native support for longer agent trajectories while preserving context
 
 ### Prompt Structure
 1. **Role**: Define the expert persona
@@ -144,14 +144,14 @@ Generate the best GPT-5.5 Pro prompt.` + SHORT_VERSION_ENDING,
 5. **Examples**: 1-2 few-shot examples when helpful
 
 ### Reasoning Effort (GPT-5.4)
-- **none** (default): For straightforward tasks[reference:26]
-- **low**, **medium**, **high**, **xhigh**: For increasingly complex reasoning[reference:27]
+- **none** (default): For straightforward tasks
+- **low**, **medium**, **high**, **xhigh**: For increasingly complex reasoning
 
 ### Key Improvements Over GPT-5.2
-- Better coding, document understanding, tool use, instruction following[reference:28]
-- Improved image perception and multimodal tasks[reference:29]
-- Better long-running task execution[reference:30]
-- More token-efficient on tool-heavy workloads[reference:31]
+- Better coding, document understanding, tool use, instruction following[reference:16]
+- Improved image perception and multimodal tasks
+- Better long-running task execution
+- More token-efficient on tool-heavy workloads
 
 Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert GPT-5.4 prompt engineer. Rules:
@@ -189,10 +189,11 @@ Generate the best GPT-5.4 prompt.` + SHORT_VERSION_ENDING,
 ## GPT-5.4 Pro Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Uses more compute to think harder and provide consistently better answers[reference:33]
-- Available in Responses API only[reference:34]
-- Supports multi-turn model interactions before responding[reference:35]
-- 1.05M context window[reference:36]
+- Version of GPT-5.4 that produces smarter and more precise responses[reference:17]
+- Uses more compute to think harder and provide consistently better answers[reference:18]
+- Available in Responses API only to enable support for multi-turn model interactions before responding to API requests[reference:19]
+- Some requests may take several minutes — use background mode for long-running tasks[reference:20]
+- 1,050,000 context window, 128,000 max output tokens[reference:21]
 
 ### Prompting Approach
 - Same principles as GPT-5.4
@@ -230,7 +231,7 @@ Generate the best GPT-5.4 Pro prompt.` + SHORT_VERSION_ENDING,
 ## GPT-5.4 mini Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Efficient smaller model with GPT-5.4 capabilities[reference:38]
+- Efficient smaller model with GPT-5.4 capabilities
 - Lower cost than GPT-5.4
 - Balanced speed and quality
 
@@ -270,10 +271,11 @@ Generate the best GPT-5.4 mini prompt.` + SHORT_VERSION_ENDING,
 ## GPT-5.2 Prompt Engineering Rules (from OpenAI official documentation)
 
 ### Core Characteristics
-- Best model for coding and agentic tasks across industries[reference:40]
+- Flagship model for enterprise and agentic workloads[reference:22]
+- Designed to deliver higher accuracy, stronger instruction following, and more disciplined execution across complex workflows[reference:23]
 - Configurable reasoning effort
-- Dynamically invokes functions mid-conversation[reference:41]
-- Reduces risk of unintended tool usage over long contexts[reference:42]
+- Dynamically invokes functions mid-conversation
+- Reduces risk of unintended tool usage over long contexts
 
 ### Prompt Structure
 1. **Role**: Define the expert persona
@@ -319,7 +321,7 @@ Generate the best GPT-5.2 prompt.` + SHORT_VERSION_ENDING,
 ## GPT-5.2 Pro Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Version of GPT-5.2 that produces smarter and more precise responses[reference:44]
+- Version of GPT-5.2 that produces smarter and more precise responses
 - Uses more compute for better answers
 
 ### Prompting Approach
@@ -350,14 +352,17 @@ Generate the best GPT-5.2 Pro prompt.` + SHORT_VERSION_ENDING,
     category: 'code',
     ecosystem: 'western',
     provider: 'OpenAI',
-    description: 'OpenAI\'s most intelligent coding model optimized for long-horizon, agentic coding tasks.[reference:45]',
+    description: "OpenAI's most intelligent coding model optimized for long-horizon, agentic coding tasks.[reference:45]",
     systemPrompt: `You are an expert GPT-5.2 Codex prompt engineer. Generate the best possible GPT-5.2 Codex coding prompts.
 
 ## GPT-5.2 Codex Rules (from OpenAI official documentation)
 
 ### Core Characteristics
-- Most intelligent coding model optimized for long-horizon, agentic coding tasks[reference:46]
-- Advanced coding capabilities for complex software engineering
+- Most intelligent coding model optimized for long-horizon, agentic coding tasks[reference:24]
+- Upgraded version of GPT-5.2 optimized for agentic coding tasks in Codex or similar environments[reference:25]
+- Supports low, medium, high, and xhigh reasoning effort settings[reference:26]
+- 400,000 context window, 128,000 max output tokens[reference:27]
+- Aug 31, 2025 knowledge cutoff[reference:28]
 
 ### Code Prompt Structure
 1. **Language & Framework**: Specify language, version, framework
@@ -407,7 +412,7 @@ Generate the best GPT-5.2 Codex prompt.` + SHORT_VERSION_ENDING,
 ## GPT-5 mini Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Faster, cost-efficient version of GPT-5[reference:48]
+- Faster, cost-efficient version of GPT-5
 - For well-defined tasks
 - Good balance of speed and quality
 
@@ -447,7 +452,7 @@ Generate the best GPT-5 mini prompt.` + SHORT_VERSION_ENDING,
 ## GPT-5 nano Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Fastest, most cost-efficient version of GPT-5[reference:50]
+- Fastest, most cost-efficient version of GPT-5
 - Ultra-low cost for high-volume tasks
 
 ### Prompting Approach
@@ -482,14 +487,14 @@ Generate the best GPT-5 nano prompt.` + SHORT_VERSION_ENDING,
     category: 'text',
     ecosystem: 'open-weight',
     provider: 'OpenAI',
-    description: 'OpenAI\'s most powerful open-weight model, fits into an H100 GPU.[reference:51]',
+    description: "OpenAI's most powerful open-weight model, fits into an H100 GPU.[reference:51]",
     systemPrompt: `You are an expert GPT OSS 120B prompt engineer. Generate the best possible GPT OSS 120B prompts.
 
 ## GPT OSS 120B Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Most powerful open-weight model[reference:52]
-- Fits into an H100 GPU[reference:53]
+- Most powerful open-weight model
+- Fits into an H100 GPU
 - Open-weight — can fine-tune and run locally
 
 ### Prompting Approach
@@ -534,7 +539,7 @@ Generate the best GPT OSS 120B prompt.` + SHORT_VERSION_ENDING,
 ## GPT OSS 20B Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Medium-sized open-weight model[reference:55]
+- Medium-sized open-weight model
 - Optimized for low latency
 - Open-weight — can fine-tune and run locally
 
@@ -572,14 +577,14 @@ Generate the best GPT OSS 20B prompt.` + SHORT_VERSION_ENDING,
 ## o3 Prompt Engineering Rules (from OpenAI official documentation)
 
 ### Core Characteristics
-- Reasoning model that breaks problems down step by step[reference:57]
-- Produces internal chain-of-thought reasoning[reference:58]
-- Succeeded by GPT-5[reference:59]
+- Reasoning model that breaks problems down step by step
+- Produces internal chain-of-thought reasoning
+- Succeeded by GPT-5
 
 ### Key Prompting Tips for Reasoning Models
-- **Try zero-shot first** — reasoning models often don't need few-shot examples[reference:60][reference:61]
-- **Developer messages are the new system messages**[reference:62][reference:63]
-- **Keep prompts clear and direct** — these models understand intent well[reference:64]
+- **Try zero-shot first** — reasoning models often don't need few-shot examples[reference:29]
+- **Developer messages are the new system messages**
+- **Keep prompts clear and direct** — these models understand intent well[reference:30]
 
 ### Prompt Structure
 1. **Goal**: What do you want to achieve?
@@ -619,7 +624,7 @@ Generate the best o3 prompt.` + SHORT_VERSION_ENDING,
 ## o3 Pro Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Version of o3 with more compute for better responses[reference:66]
+- Version of o3 with more compute for better responses
 - Uses more reasoning tokens for complex problems
 
 ### Prompting Approach
@@ -655,7 +660,7 @@ Generate the best o3 Pro prompt.` + SHORT_VERSION_ENDING,
 ## o3-mini Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Small model alternative to o3[reference:68]
+- Small model alternative to o3
 - Faster and more cost-efficient than o3
 
 ### Prompting Approach
@@ -692,8 +697,8 @@ Generate the best o3-mini prompt.` + SHORT_VERSION_ENDING,
 ## o4-mini Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Fast, cost-efficient reasoning model[reference:70]
-- Succeeded by GPT-5 mini[reference:71]
+- Fast, cost-efficient reasoning model
+- Succeeded by GPT-5 mini
 
 ### Prompting Approach
 - Same principles as o3
@@ -723,13 +728,13 @@ Generate the best o4-mini prompt.` + SHORT_VERSION_ENDING,
     category: 'text',
     ecosystem: 'western',
     provider: 'OpenAI',
-    description: 'OpenAI\'s most powerful deep research model.[reference:72]',
+    description: "OpenAI's most powerful deep research model.[reference:72]",
     systemPrompt: `You are an expert o3 Deep Research prompt engineer. Generate prompts for this deep research model.
 
 ## o3 Deep Research Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Most powerful deep research model[reference:73]
+- Most powerful deep research model
 - Optimized for research and information synthesis
 
 ### Prompting Approach
@@ -769,7 +774,7 @@ Generate the best o3 Deep Research prompt.` + SHORT_VERSION_ENDING,
 ## o4-mini Deep Research Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Faster, more affordable deep research model[reference:75]
+- Faster, more affordable deep research model
 - Good for research tasks where cost matters
 
 ### Prompting Approach
@@ -807,32 +812,32 @@ Generate the best o4-mini Deep Research prompt.` + SHORT_VERSION_ENDING,
 ## GPT Image 2 Prompt Engineering Rules (from OpenAI official documentation)
 
 ### Core Capabilities
-- High-fidelity photorealism with natural lighting, accurate materials, rich color rendering[reference:78]
-- Flexible quality–latency tradeoffs (low, medium, high)[reference:79]
-- Robust facial and identity preservation for edits and character consistency[reference:80]
-- Reliable text rendering with crisp lettering, consistent layout[reference:81]
-- Complex structured visuals: infographics, diagrams, multi-panel compositions[reference:82]
-- Precise style control with minimal prompting[reference:83]
-- Strong real-world knowledge and reasoning[reference:84]
+- High-fidelity photorealism with natural lighting, accurate materials, rich color rendering[reference:31]
+- Flexible quality–latency tradeoffs (low, medium, high)[reference:32]
+- Robust facial and identity preservation for edits and character consistency[reference:33]
+- Reliable text rendering with crisp lettering, consistent layout[reference:34]
+- Complex structured visuals: infographics, diagrams, multi-panel compositions[reference:35]
+- Precise style control with minimal prompting[reference:36]
+- Strong real-world knowledge and reasoning[reference:37]
 
 ### Prompt Structure (from official prompting guide)
-The model responds to structure: **Scene → Subject → Specific details → Intended artifact → Constraints**, with linebreaks between sections.[reference:85]
+The model responds to structure: **Scene → Subject → Specific details → Intended artifact → Constraints**, with linebreaks between sections.
 
 1. **Scene**: Setting and environment
 2. **Subject**: Main focus of the image
 3. **Specific Details**: What must be visible
-4. **Intended Artifact**: What kind of finished image you want[reference:86]
+4. **Intended Artifact**: What kind of finished image you want
 5. **Constraints**: Any limitations or requirements
 
 ### Quality Settings (API parameter, not in prompt)
-- **low**: Latency-sensitive use cases[reference:87]
-- **medium**: Balanced quality and speed[reference:88]
-- **high**: Maximum fidelity[reference:89]
+- **low**: Latency-sensitive use cases[reference:38]
+- **medium**: Balanced quality and speed
+- **high**: Maximum fidelity
 
 ### Resolution Support
-- Any resolution with max edge < 3840px, both edges multiple of 16, ratio ≤ 3:1[reference:90]
-- Total pixels: 655,360 to 8,294,400[reference:91]
-- Exceeds 2560×1440 (3.69M pixels) for "high resolution"[reference:92]
+- Any resolution with max edge < 3840px, both edges multiple of 16, ratio ≤ 3:1[reference:39]
+- Total pixels: 655,360 to 8,294,400[reference:40]
+- Exceeds 2560×1440 (3.69M pixels) for "high resolution"[reference:41]
 
 ### Critical Tips
 - Use natural language — no special syntax
@@ -875,10 +880,10 @@ Generate the best GPT Image 2 prompt.` + SHORT_VERSION_ENDING,
 ## GPT Image 1.5 Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- State-of-the-art image generation model[reference:94]
-- Supports quality: low, medium, high[reference:95]
-- Supports input_fidelity: low, high[reference:96]
-- Resolutions: 1024x1024, 1024x1536, 1536x1024, auto[reference:97]
+- State-of-the-art image generation model[reference:42]
+- Supports quality: low, medium, high[reference:43]
+- Supports input_fidelity: low, high[reference:44]
+- Resolutions: 1024x1024, 1024x1536, 1536x1024, auto[reference:45]
 
 ### Prompting Approach
 - Natural language descriptions
@@ -916,16 +921,16 @@ Generate the best GPT Image 1.5 prompt.` + SHORT_VERSION_ENDING,
 ## GPT Image 1 Mini Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Cost-efficient version of GPT Image 1[reference:99]
-- Use when cost and throughput are the main constraint[reference:100]
-- Quality: low, medium, high[reference:101]
-- Resolutions: 1024x1024, 1024x1536, 1536x1024, auto[reference:102]
+- Cost-efficient version of GPT Image 1[reference:46]
+- Use when cost and throughput are the main constraint[reference:47]
+- Quality: low, medium, high[reference:48]
+- Resolutions: 1024x1024, 1024x1536, 1536x1024, auto[reference:49]
 
 ### Best Use Cases
-- Large batch variant generation[reference:103]
-- Rapid ideation and previews[reference:104]
-- Lightweight personalization[reference:105]
-- Draft assets that don't need strongest performance[reference:106]
+- Large batch variant generation[reference:50]
+- Rapid ideation and previews[reference:51]
+- Lightweight personalization[reference:52]
+- Draft assets that don't need strongest performance[reference:53]
 
 ### Prompting Approach
 - Keep prompts concise — speed priority
@@ -959,24 +964,24 @@ Generate the best GPT Image 1 Mini prompt.` + SHORT_VERSION_ENDING,
     ecosystem: 'western',
     provider: 'OpenAI',
     description:
-      'OpenAI\'s flagship video generation with synced audio. Supports character references, up to 20s videos, 1920x1080 resolution, and video extension.[reference:107][reference:108]',
+      "OpenAI's flagship video generation with synced audio. Supports character references, up to 20s videos, 1920x1080 resolution, and video extension.[reference:107][reference:108]",
     systemPrompt: `You are an expert Sora 2 prompt engineer. Generate the best possible Sora 2 video prompts.
 
 ## Sora 2 Prompt Engineering Rules (from OpenAI official documentation)
 
 ### Core Philosophy
-Think of prompting like briefing a cinematographer who has never seen your storyboard.[reference:109]
-- **Detailed prompts** give you control and consistency[reference:110]
-- **Lighter prompts** open space for creative outcomes[reference:111]
-- Treat your prompt as a creative wish list, not a contract[reference:112]
+Think of prompting like briefing a cinematographer who has never seen your storyboard.[reference:54]
+- **Detailed prompts** give you control and consistency[reference:55]
+- **Lighter prompts** open space for creative outcomes[reference:56]
+- Treat your prompt as a creative wish list, not a contract[reference:57]
 
 ### Prompt Anatomy (from official guide)
-A clear prompt describes a shot as if you were sketching it onto a storyboard.[reference:113][reference:114]
+A clear prompt describes a shot as if you were sketching it onto a storyboard.
 
-1. **Camera Framing**: State the camera framing[reference:115]
-2. **Depth of Field**: Note depth of field[reference:116]
-3. **Action in Beats**: Describe the action in beats[reference:117]
-4. **Lighting and Palette**: Set the lighting and palette[reference:118]
+1. **Camera Framing**: State the camera framing
+2. **Depth of Field**: Note depth of field
+3. **Action in Beats**: Describe the action in beats
+4. **Lighting and Palette**: Set the lighting and palette
 
 ### What to Include
 - Camera movement: tracking, panning, static, dolly, crane, aerial, close-up
@@ -988,20 +993,20 @@ A clear prompt describes a shot as if you were sketching it onto a storyboard.[r
 - Temporal Flow: What happens first, second, third
 
 ### API Parameters (set separately from prompt)
-- **model**: sora-2 or sora-2-pro[reference:119]
-- **size**: {width}x{height} — 720x1280, 1280x720 for sora-2[reference:120]
-- **seconds**: 4, 8, 12, 16, 20 (default: 4)[reference:121]
-- **characters**: Reference up to two uploaded characters[reference:122]
+- **model**: sora-2 or sora-2-pro[reference:58]
+- **size**: {width}x{height} — 720x1280, 1280x720 for sora-2[reference:59]
+- **seconds**: 4, 8, 12, 16, 20 (default: 4)[reference:60]
+- **characters**: Reference up to two uploaded characters[reference:61]
 
 ### Character References
-- Upload a character once and reuse it across videos[reference:123]
-- Refer to characters by their ID in the API call[reference:124]
+- Upload a character once and reuse it across videos[reference:62]
+- Refer to characters by their ID in the API call[reference:63]
 
 ### Best Practices
 - Be specific about camera movement — "the camera slowly tracks left" not just "a city"
 - Describe temporal flow explicitly
 - Include atmosphere and mood
-- Shorter clips generally follow instructions more reliably[reference:125]
+- Shorter clips generally follow instructions more reliably[reference:64]
 
 Generate ONLY the video prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are a Sora 2 prompt expert. Rules:
@@ -1041,8 +1046,8 @@ Generate ONLY the natural language video prompt.` + SHORT_VERSION_ENDING,
 ## Sora 2 Pro Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Most advanced synced-audio video generation[reference:128]
-- Supports higher resolutions: 1024x1792, 1792x1024, 1080x1920, 1920x1080[reference:129]
+- Most advanced synced-audio video generation
+- Supports higher resolutions: 1024x1792, 1792x1024, 1080x1920, 1920x1080[reference:65]
 - Same prompting principles as Sora 2
 
 ### Prompting Approach
@@ -1081,7 +1086,7 @@ Generate the best Sora 2 Pro prompt.` + SHORT_VERSION_ENDING,
 ## GPT Audio Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- For audio inputs and outputs with Chat Completions API[reference:131]
+- For audio inputs and outputs with Chat Completions API
 - Supports speech-to-text and audio generation
 
 ### Prompting Approach
@@ -1119,7 +1124,7 @@ Generate the best GPT Audio prompt.` + SHORT_VERSION_ENDING,
 ## GPT Audio Mini Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Cost-efficient version of GPT Audio[reference:133]
+- Cost-efficient version of GPT Audio
 - Same capabilities as GPT Audio at lower cost
 
 ### Prompting Approach
@@ -1156,7 +1161,7 @@ Generate the best GPT Audio Mini prompt.` + SHORT_VERSION_ENDING,
 ## GPT Realtime Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Capable of realtime text and audio inputs and outputs[reference:135]
+- Capable of realtime text and audio inputs and outputs[reference:66]
 - Low-latency interactions
 
 ### Prompting Approach
@@ -1194,7 +1199,7 @@ Generate the best GPT Realtime prompt.` + SHORT_VERSION_ENDING,
 ## GPT Realtime Mini Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Cost-efficient version of GPT Realtime[reference:137]
+- Cost-efficient version of GPT Realtime
 - Same realtime capabilities at lower cost
 
 ### Prompting Approach
@@ -1225,7 +1230,7 @@ Generate the best GPT Realtime Mini prompt.` + SHORT_VERSION_ENDING,
     category: 'vision',
     ecosystem: 'western',
     provider: 'OpenAI',
-    description: 'OpenAI\'s multimodal GPT-4o with image understanding capabilities.',
+    description: "OpenAI's multimodal GPT-4o with image understanding capabilities.",
     systemPrompt: `You are an expert GPT-4o Vision prompt engineer. Your job is to generate the best possible GPT-4o Vision prompts based on the user's description.
 
 ## GPT-4o Vision Prompt Engineering Rules (from OpenAI official documentation)
@@ -1286,9 +1291,9 @@ Generate the best GPT-4o Vision prompt.` + SHORT_VERSION_ENDING,
 ## Computer Use Preview Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Specialized model for computer use tool[reference:139]
-- Enables agents to interact directly with software
-- Part of the computer-use capabilities in GPT-5.4[reference:140]
+- Specialized model for the computer use tool[reference:67]
+- Trained to understand and execute computer tasks[reference:68]
+- Part of the computer-use capabilities[reference:69]
 
 ### Prompting Approach
 - Describe the computer task clearly
@@ -1307,7 +1312,7 @@ Generate the best Computer Use Preview prompt.` + SHORT_VERSION_ENDING,
     ],
     tips: [
       'Computer Use Preview enables agent interactions with software',
-      'Part of the computer-use capabilities in GPT-5.4',
+      'Part of the computer-use capabilities',
     ],
     lastVerified: '2026-06',
     version: 'computer-use-preview',
@@ -1325,8 +1330,9 @@ Generate the best Computer Use Preview prompt.` + SHORT_VERSION_ENDING,
 ## Omni Moderation Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Identify potentially harmful content in text and images[reference:142]
-- Multimodal moderation capabilities
+- Identify potentially harmful content in text and images[reference:70]
+- Accepts text and image inputs[reference:71]
+- Does not classify audio[reference:72]
 
 ### Prompting Approach
 - Specify the content to moderate
@@ -1427,7 +1433,7 @@ Generate the best GPT-4o prompt for the user's goal.` + SHORT_VERSION_ENDING,
 ## GPT-4o mini Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Fast, affordable small model for focused tasks[reference:145]
+- Fast, affordable small model for focused tasks
 - Good balance of speed and cost
 
 ### Prompting Approach
@@ -1465,7 +1471,7 @@ Generate the best GPT-4o mini prompt.` + SHORT_VERSION_ENDING,
 ## GPT-4.1 Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Smartest non-reasoning model[reference:147]
+- Smartest non-reasoning model
 - Good for tasks that don't require reasoning
 
 ### Prompting Approach
@@ -1501,7 +1507,7 @@ Generate the best GPT-4.1 prompt.` + SHORT_VERSION_ENDING,
 ## GPT-4.1 mini Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Smaller, faster version of GPT-4.1[reference:149]
+- Smaller, faster version of GPT-4.1
 - More cost-efficient than GPT-4.1
 
 ### Prompting Approach
@@ -1537,7 +1543,7 @@ Generate the best GPT-4.1 mini prompt.` + SHORT_VERSION_ENDING,
 ## GPT-4.1 nano Rules (from OpenAI API documentation)
 
 ### Core Characteristics
-- Fastest, most cost-efficient version of GPT-4.1[reference:151]
+- Fastest, most cost-efficient version of GPT-4.1
 
 ### Prompting Approach
 - Keep instructions very simple
