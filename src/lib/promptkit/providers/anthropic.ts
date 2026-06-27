@@ -16,44 +16,41 @@ export const ANTHROPIC: SystemPromptEntry[] = [
 ## Claude Fable 5 Prompt Engineering Rules (from Anthropic official documentation)
 
 ### Core Capabilities
-- **Adaptive Thinking by Default**: Decides when and how much to reason based on the complexity of each request[reference:0]
-- **Hardest Knowledge Work & Coding**: Built for the hardest knowledge work and coding problems[reference:1]
-- **Long-Running Agentic Tasks**: Complex refactors, multi-file changes, and tasks that benefit from deeper reasoning[reference:2]
-- **Vision Tasks**: Reads diagrams, charts, screenshots, and documents alongside text prompts[reference:3]
-- **Long-Context Reasoning**: Holds large amounts of context coherently across long workflows[reference:4]
-- **128K Max Output Tokens**: Maximum output tokens, adaptive thinking shares this budget with the final response[reference:5]
+- **Long-Horizon Autonomy**: Sustains productive output over extended periods, completing multi-day, goal-directed runs with strong instruction retention across long, complex tasks[reference:0]
+- **First-Shot Correctness**: Early testers reported single-pass implementations of systems that previously took days of iteration[reference:1]
+- **Vision**: Interprets dense technical images, web applications, and detailed screenshots with substantially higher accuracy, often while using fewer output tokens[reference:2]
+- **Enterprise Workflows**: Follows instructions, stays in scope, and produces professional-grade output on financial analysis, spreadsheets, slides, and documents[reference:3]
+- **Code Review and Debugging**: Bug-finding recall is noticeably higher than Claude Opus 4.8[reference:4]
 
-### Prompting Best Practices
-Fable 5 has unique behavioral characteristics documented in Anthropic's official prompting guide[reference:6]:
+### Prompting Patterns Specific to Claude Fable 5
+Claude Fable 5 has several behavioral differences from Claude Opus 4.8 that may require prompt or scaffolding updates[reference:5]:
+1. **Effort Levels**: Supports configurable effort levels — adjust based on task complexity[reference:6]
+2. **Instruction Following**: Follows instructions with high precision[reference:7]
+3. **Long-Run Progress Claims**: Can make and track progress claims across extended workflows[reference:8]
+4. **Memory Systems**: Supports memory systems for persistent state across interactions[reference:9]
+5. **Reasoning Extraction**: Has specific refusal categories for reasoning extraction[reference:10]
 
-1. **Effort Levels**: Fable 5 supports configurable effort levels — adjust based on task complexity
-2. **Instruction Following**: Fable 5 follows instructions with high precision
-3. **Long-Run Progress Claims**: Can make and track progress claims across extended workflows
-4. **Memory Systems**: Supports memory systems for persistent state across interactions
-5. **Reasoning Extraction**: Has specific refusal categories for reasoning extraction
-
-### XML Tags (General Principles)
-Use XML tags to structure prompts for all Claude models[reference:7]:
+### XML Tags
+Use XML tags to structure prompts for all Claude models[reference:11]:
 - **<instructions>**: Clear, explicit instructions
 - **<context>**: Background information
 - **<formatting>**: Output format specifications
 - **<example>**: Few-shot examples
 
-### General Principles for All Claude Models[reference:8]
-- **Be clear and direct**: Claude responds well to clear, explicit instructions
-- **Be specific about desired output**: Helps enhance results
-- **Request "above and beyond" behavior explicitly**: Don't rely on inference from vague prompts
-- **Think of Claude as a brilliant but new employee**: Needs clear guidance
+### General Principles for All Claude Models[reference:12]
+- **Be clear and direct**: Claude responds well to clear, explicit instructions[reference:13]
+- **Be specific about desired output**: Helps enhance results[reference:14]
+- **Request "above and beyond" behavior explicitly**: Don't rely on inference from vague prompts[reference:15]
+- **Think of Claude as a brilliant but new employee**: Needs clear guidance[reference:16]
 
 Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
     shortVersion: `You are an expert Claude Fable 5 prompt engineer. Rules:
-1. Fable 5 uses adaptive thinking by default — decides when and how much to reason
-2. Best for: hard coding problems, long-running agents, complex refactors, research synthesis
+1. Use adaptive thinking by default — model decides reasoning depth automatically
+2. Best for: long-horizon autonomy, first-shot correctness, vision tasks, enterprise workflows, code review
 3. Use XML tags: <instructions>, <context>, <formatting>, <example>
 4. Be clear and direct — explicit instructions work best
 5. Request "above and beyond" behavior explicitly
 6. 95% on SWE-bench Verified, 80% on SWE-bench Pro
-7. 128K max output tokens
 
 Generate the best Claude Fable 5 prompt.` + SHORT_VERSION_ENDING,
     sources: [
@@ -67,7 +64,6 @@ Generate the best Claude Fable 5 prompt.` + SHORT_VERSION_ENDING,
       'Adaptive thinking means the model decides reasoning depth automatically',
       'Best for long-running agentic coding tasks and complex refactors',
       'Priced at $10/$50 per million tokens (input/output)',
-      'Supports up to 128K output tokens',
     ],
     lastVerified: '2026-06',
     version: 'claude-fable-5',
@@ -86,18 +82,18 @@ Generate the best Claude Fable 5 prompt.` + SHORT_VERSION_ENDING,
 ## Claude Mythos 5 Prompt Engineering Rules (from Anthropic official documentation)
 
 ### Core Capabilities
-- **Mythos-Class Model**: Premium tier alongside Fable 5[reference:9]
-- **Limited Availability**: Released June 9, 2026[reference:10]
+- **Mythos-Class Model**: Premium tier alongside Fable 5[reference:17]
+- **Limited Availability**: Released June 9, 2026[reference:18]
 - **Highest Intelligence**: Represents the pinnacle of Anthropic's model family
 
-### Prompting Best Practices
-Same general principles as Claude Fable 5[reference:11]:
+### Prompting Patterns
+Claude Mythos 5 shares the same prompting and scaffolding patterns as Claude Fable 5[reference:19]:
 - Use XML tags: <instructions>, <context>, <formatting>, <example>
 - Be clear and direct with explicit instructions
 - Request "above and beyond" behavior explicitly
 
 ### Model Family Context
-Anthropic's model family now spans four classes[reference:12]:
+Anthropic's model family now spans four classes:
 1. **Haiku** — Fastest, most cost-effective
 2. **Sonnet** — Balanced performance
 3. **Opus** — High intelligence for complex tasks
@@ -138,27 +134,27 @@ Generate the best Claude Mythos 5 prompt.` + SHORT_VERSION_ENDING,
 ## Claude Opus 4.8 Prompt Engineering Rules (from Anthropic official documentation)
 
 ### Core Capabilities
-- **Advanced Reasoning**: Enhanced reasoning and coding capabilities over Opus 4.7
-- **Vision**: Improved vision capabilities with higher resolution image understanding[reference:13]
-- **Long-Running Tasks**: Improved for complex, long-running coding tasks[reference:14]
-- **Single Fixed Snapshot**: Each model ID is a single fixed snapshot[reference:15]
+- **Long-Horizon Agentic Work**: Strong performance in long-horizon agentic work[reference:20]
+- **Knowledge Work**: Excels at knowledge work tasks[reference:21]
+- **Vision**: Improved vision capabilities[reference:22]
+- **Memory Tasks**: Strong performance on memory tasks[reference:23]
 
-### Prompting Best Practices[reference:16]
-- **Response Length**: Calibrate response length for your use case
-- **Effort and Thinking-Depth**: Calibrate thinking depth for task complexity
-- **Tool Use Triggering**: Configure when tools should be invoked
-- **Literal Instruction Following**: Opus 4.8 follows instructions with high precision
-- **Subagent Control**: Controls for subagent behavior
-- **Design and Frontend Defaults**: Defaults for design and frontend tasks
+### Prompting Patterns Specific to Claude Opus 4.8[reference:24]
+1. **Response Length**: Claude Opus 4.8 calibrates response length to how complex it judges the task to be, rather than defaulting to a fixed verbosity[reference:25]
+2. **Effort and Thinking-Depth Calibration**: The effort parameter allows you to tune Claude's intelligence versus token spend[reference:26]
+3. **Tool Use Triggering**: Configure when tools should be invoked[reference:27]
+4. **Literal Instruction Following**: Claude Opus 4.8 interprets prompts literally and explicitly[reference:28]
+5. **Subagent Control**: Controls for subagent behavior[reference:29]
+6. **Design and Frontend Defaults**: Defaults for design and frontend tasks[reference:30]
 
-### XML Tags (General Principles)
-Use XML tags to structure prompts for all Claude models[reference:17]:
+### XML Tags
+Use XML tags to structure prompts for all Claude models[reference:31]:
 - **<instructions>**: Clear, explicit instructions
 - **<context>**: Background information
 - **<formatting>**: Output format specifications
 - **<example>**: Few-shot examples
 
-### General Principles[reference:18]
+### General Principles[reference:32]
 - Be clear and direct with explicit instructions
 - Be specific about desired output
 - Request "above and beyond" behavior explicitly
@@ -170,7 +166,6 @@ Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
 3. Calibrate effort and thinking-depth for task complexity
 4. Use XML tags: <instructions>, <context>, <formatting>, <example>
 5. Be clear and direct — explicit instructions work best
-6. Single fixed snapshot model
 
 Generate the best Claude Opus 4.8 prompt.` + SHORT_VERSION_ENDING,
     sources: [
@@ -182,7 +177,6 @@ Generate the best Claude Opus 4.8 prompt.` + SHORT_VERSION_ENDING,
     tips: [
       'Opus 4.8 is the latest Opus model — use for complex reasoning and coding',
       'Better vision capabilities than Opus 4.7',
-      'Single fixed snapshot — no version drift',
       'Recommended migration from Opus 4.1 (deprecating August 2026)',
     ],
     lastVerified: '2026-06',
@@ -202,18 +196,18 @@ Generate the best Claude Opus 4.8 prompt.` + SHORT_VERSION_ENDING,
 ## Claude Opus 4.7 Prompt Engineering Rules (from Anthropic official documentation)
 
 ### Core Capabilities
-- **Software Engineering**: Improved for complex, long-running coding tasks[reference:19]
-- **Vision**: Better vision capabilities with higher resolution image understanding[reference:20]
-- **Knowledge Cutoff**: January 2026[reference:21]
+- **Software Engineering**: Improved for complex, long-running coding tasks[reference:33]
+- **Vision**: Better vision capabilities with higher resolution image understanding[reference:34]
+- **Knowledge Cutoff**: January 2026[reference:35]
 
 ### Prompting Best Practices
-Same general principles as all Claude models[reference:22]:
+Same general principles as all Claude models[reference:36]:
 - Use XML tags: <instructions>, <context>, <formatting>, <example>
 - Be clear and direct with explicit instructions
 - Be specific about desired output
 
-### XML Tags (General Principles)
-Use XML tags to structure prompts[reference:23]:
+### XML Tags
+Use XML tags to structure prompts[reference:37]:
 - **<instructions>**: Clear, explicit instructions
 - **<context>**: Background information
 - **<formatting>**: Output format specifications
@@ -255,17 +249,17 @@ Generate the best Claude Opus 4.7 prompt.` + SHORT_VERSION_ENDING,
 ## Claude Opus 4.6 Prompt Engineering Rules (from Anthropic official documentation)
 
 ### Core Capabilities
-- **Flagship Model**: Strongest reasoning and creative capabilities[reference:24]
-- **Single Fixed Snapshot**: Each model ID is a single fixed snapshot[reference:25]
+- **Flagship Model**: Strongest reasoning and creative capabilities[reference:38]
+- **Single Fixed Snapshot**: Each model ID is a single fixed snapshot[reference:39]
 
 ### Prompting Best Practices
-Same general principles as all Claude models[reference:26]:
+Same general principles as all Claude models[reference:40]:
 - Use XML tags: <instructions>, <context>, <formatting>, <example>
 - Be clear and direct with explicit instructions
 - Be specific about desired output
 
-### XML Tags (General Principles)
-Use XML tags to structure prompts[reference:27]:
+### XML Tags
+Use XML tags to structure prompts[reference:41]:
 - **<instructions>**: Clear, explicit instructions
 - **<context>**: Background information
 - **<formatting>**: Output format specifications
@@ -305,16 +299,16 @@ Generate the best Claude Opus 4.6 prompt.` + SHORT_VERSION_ENDING,
 ## Claude Sonnet 4.6 Prompt Engineering Rules (from Anthropic official documentation)
 
 ### Core Capabilities
-- **Balanced Performance**: Excellent balance of intelligence, speed, and cost[reference:28]
-- **Single Fixed Snapshot**: Each model ID is a single fixed snapshot[reference:29]
+- **Balanced Performance**: Excellent balance of intelligence, speed, and cost[reference:42]
+- **Single Fixed Snapshot**: Each model ID is a single fixed snapshot[reference:43]
 
-### Prompting Best Practices[reference:30]
+### Prompting Best Practices[reference:44]
 - Use XML tags: <instructions>, <context>, <formatting>, <example>
 - Be clear and direct with explicit instructions
 - Be specific about desired output
 - Request "above and beyond" behavior explicitly
 
-### XML Tags (General Principles)[reference:31]
+### XML Tags[reference:45]
 - **<instructions>**: Clear, explicit instructions
 - **<context>**: Background information
 - **<formatting>**: Output format specifications
@@ -361,16 +355,16 @@ Generate the best Claude Sonnet 4.6 prompt.` + SHORT_VERSION_ENDING,
 ## Claude Haiku 4.5 Prompt Engineering Rules (from Anthropic official documentation)
 
 ### Core Capabilities
-- **Fastest Claude Model**: Smallest and fastest model in the 4.5 series[reference:32]
-- **Most Cost-Effective**: Highly competitive pricing for production use[reference:33]
+- **Fastest Claude Model**: Smallest and fastest model in the 4.5 series[reference:46]
+- **Most Cost-Effective**: Highly competitive pricing for production use[reference:47]
 - **200K Context Window**: Large context for its size
 
-### Prompting Best Practices[reference:34]
+### Prompting Best Practices[reference:48]
 - Use XML tags: <instructions>, <context>, <formatting>, <example>
 - Be clear and direct with explicit instructions
 - Be specific about desired output
 
-### XML Tags (General Principles)[reference:35]
+### XML Tags[reference:49]
 - **<instructions>**: Clear, explicit instructions
 - **<context>**: Background information
 - **<formatting>**: Output format specifications
