@@ -100,7 +100,7 @@ export function ModelPromptView({
           <div className="w-full flex flex-col">
             {promptLines.map((line, i) => (
               <div key={i} className="flex items-start hover:bg-zinc-800/30 transition-colors px-4 group">
-                <span className="select-none text-right w-10 shrink-0 pr-4 text-zinc-650 text-xs mt-0.5 border-r border-zinc-850/50 mr-4 font-mono">
+                <span className="select-none text-right w-10 shrink-0 pr-4 text-zinc-500 text-xs mt-0.5 border-r border-zinc-700/50 mr-4 font-mono">
                   {i + 1}
                 </span>
                 <span className="flex-1 whitespace-pre-wrap break-all text-zinc-300">
