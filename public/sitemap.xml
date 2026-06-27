@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://promptkit.qzz.io/</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -307,13 +307,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-wan-27</loc>
+    <loc>https://promptkit.qzz.io/model/sp-wan-2.7-text-to-video</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://promptkit.qzz.io/model/sp-wan-26</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-wan-27-image-pro</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -913,13 +919,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-hunyuan-image-30</loc>
+    <loc>https://promptkit.qzz.io/model/sp-hy-image-v30</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-hunyuan-image-30-instruct</loc>
+    <loc>https://promptkit.qzz.io/model/sp-hy-image-v30-instruct</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -931,7 +937,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-hunyuan-video-15</loc>
+    <loc>https://promptkit.qzz.io/model/sp-hy-video-15</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-hy-world-15</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -949,7 +961,37 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-hunyuan-3d-express</loc>
+    <loc>https://promptkit.qzz.io/model/sp-hy-world-15-3d</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-hunyuanworld-10</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-hunyuan3d-20</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-hunyuan3d-21</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-hunyuan3d-21-paint</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-hunyuan3d-10</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

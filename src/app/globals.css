@@ -120,3 +120,55 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom modern scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--input);
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--ring);
+}
+
+/* Horizontal scroll indicators (masking) */
+.mask-grad-r {
+  mask-image: linear-gradient(to right, black calc(100% - 32px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black calc(100% - 32px), transparent 100%);
+}
+
+.mask-grad-l {
+  mask-image: linear-gradient(to left, black calc(100% - 32px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, black calc(100% - 32px), transparent 100%);
+}
+
+.mask-grad-both {
+  mask-image: linear-gradient(to right, transparent 0%, black 32px, black calc(100% - 32px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 32px, black calc(100% - 32px), transparent 100%);
+}
+
+/* Shimmer animations & glow effects */
+.hover-glow {
+  position: relative;
+}
+.hover-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 15px var(--primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+.hover-glow:hover::after {
+  opacity: 0.15;
+}
+

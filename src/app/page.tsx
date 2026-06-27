@@ -46,6 +46,16 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
 import {
   DropdownMenu,
@@ -69,6 +79,7 @@ import {
   Eye, Code2, Users, Box, Video, ImageIcon, Type,
   ShieldCheck, ShieldAlert, ShieldQuestion, Keyboard,
   MessageSquare, ChevronDown, Music, PenTool, Link as LinkIcon, Globe2,
+  SlidersHorizontal,
 } from 'lucide-react';
 import { getArenaRanking, getVideoArenaRanking, getTextArenaRanking, getImageToVideoArenaRanking } from '@/lib/promptkit/arena-ranks';
 import type { ArenaRanking } from '@/lib/promptkit/arena-ranks';
@@ -401,150 +412,301 @@ function BrowseView() {
     <div className="space-y-6">
       {/* Hero — hide when user is searching */}
       {!isSearching && (
-        <section className="text-center py-6" aria-labelledby="hero-heading">
-          <h2 id="hero-heading" className="text-2xl sm:text-3xl font-bold tracking-tight mb-2">
+        <section className="relative overflow-hidden text-center py-10 px-6 rounded-2xl border border-border bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-500/5 via-transparent to-transparent" aria-labelledby="hero-heading">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 bg-amber-500/10 blur-3xl rounded-full -z-10" />
+          <h2 id="hero-heading" className="text-2xl sm:text-4xl font-extrabold tracking-tight mb-3 bg-gradient-to-r from-foreground via-foreground/90 to-amber-500 bg-clip-text text-transparent">
             The Best System Prompts for Every AI Model
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
             Copy the expert-crafted system prompt for your target model. Paste it into ChatGPT, Claude, or any chatbot. Then ask it to generate prompts following those rules.
           </p>
-          <div className="flex items-center justify-center gap-4 mt-3 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1"><Zap className="h-3 w-3 text-amber-500" /> 400+ models</span>
-            <span className="flex items-center gap-1"><ArrowLeft className="h-3 w-3 rotate-180" /> Paste in your chatbot</span>
-            <span className="flex items-center gap-1"><Sparkles className="h-3 w-3 text-amber-500" /> Get optimized prompts</span>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-5 text-xs text-muted-foreground font-medium">
+            <span className="flex items-center gap-1.5"><Zap className="h-3.5 w-3.5 text-amber-500" /> 400+ models</span>
+            <span className="flex items-center gap-1.5"><ArrowLeft className="h-3.5 w-3.5 rotate-180 text-amber-500" /> Paste in your chatbot</span>
+            <span className="flex items-center gap-1.5"><Sparkles className="h-3.5 w-3.5 text-amber-500" /> Get optimized prompts</span>
           </div>
         </section>
       )}
 
       {/* Filters */}
       <section className="space-y-3" aria-label="Filter models">
-        {/* Category buttons — scrollable on mobile to save vertical space */}
-        <div className="flex gap-1.5 overflow-x-auto md:flex-wrap [-webkit-overflow-scrolling:touch] snap-x snap-mandatory" role="group" aria-label="Category filter">
-          <button
-            onClick={() => setCategoryFilter('all')}
-            className={cn(
-              'snap-start flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all border',
-              categoryFilter === 'all'
-                ? 'border-amber-500/50 bg-amber-500/10 text-amber-500'
-                : 'border-border hover:border-amber-500/30 text-muted-foreground'
-            )}
-            aria-pressed={categoryFilter === 'all'}
+        {/* Category buttons — scrollable on mobile with right-fade indicators */}
+        <div className="relative">
+          <div 
+            className="flex gap-1.5 overflow-x-auto md:flex-wrap [-webkit-overflow-scrolling:touch] snap-x snap-mandatory mask-grad-r md:[mask-image:none] md:[-webkit-mask-image:none] pb-1 custom-scrollbar" 
+            role="group" 
+            aria-label="Category filter"
           >
-            <Layers className="h-3.5 w-3.5" />
-            All
-            <span className={cn(
-              'ml-0.5 px-1.5 py-0 rounded-full text-[10px]',
-              categoryFilter === 'all' ? 'bg-amber-500/20' : 'bg-muted'
-            )}>
-              {categoryCounts.all}
-            </span>
-          </button>
-          {ALL_CATEGORIES.map((cat) => {
-            const config = CATEGORY_CONFIG[cat];
-            return (
-              <button
-                key={cat}
-                onClick={() => setCategoryFilter(cat)}
-                className={cn(
-                  'snap-start flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all border',
-                  categoryFilter === cat
-                    ? 'border-amber-500/50 bg-amber-500/10 text-amber-500'
-                    : 'border-border hover:border-amber-500/30 text-muted-foreground'
-                )}
-                aria-pressed={categoryFilter === cat}
-              >
-                {config.icon}
-                {config.label}
-                <span className={cn(
-                  'ml-0.5 px-1.5 py-0 rounded-full text-[10px]',
-                  categoryFilter === cat ? 'bg-amber-500/20' : 'bg-muted'
-                )}>
-                  {categoryCounts[cat] ?? 0}
-                </span>
-              </button>
-            );
-          })}
+            <button
+              onClick={() => setCategoryFilter('all')}
+              className={cn(
+                'snap-start flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all border cursor-pointer shrink-0',
+                categoryFilter === 'all'
+                  ? 'border-amber-500/50 bg-amber-500/10 text-amber-500 font-semibold'
+                  : 'border-border hover:border-amber-500/30 text-muted-foreground'
+              )}
+              aria-pressed={categoryFilter === 'all'}
+            >
+              <Layers className="h-3.5 w-3.5" />
+              All
+              <span className={cn(
+                'ml-0.5 px-1.5 py-0 rounded-full text-[10px]',
+                categoryFilter === 'all' ? 'bg-amber-500/20' : 'bg-muted'
+              )}>
+                {categoryCounts.all}
+              </span>
+            </button>
+            {ALL_CATEGORIES.map((cat) => {
+              const config = CATEGORY_CONFIG[cat];
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setCategoryFilter(cat)}
+                  className={cn(
+                    'snap-start flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all border cursor-pointer shrink-0',
+                    categoryFilter === cat
+                      ? 'border-amber-500/50 bg-amber-500/10 text-amber-500 font-semibold'
+                      : 'border-border hover:border-amber-500/30 text-muted-foreground'
+                  )}
+                  aria-pressed={categoryFilter === cat}
+                >
+                  {config.icon}
+                  {config.label}
+                  <span className={cn(
+                    'ml-0.5 px-1.5 py-0 rounded-full text-[10px]',
+                    categoryFilter === cat ? 'bg-amber-500/20' : 'bg-muted'
+                  )}>
+                    {categoryCounts[cat] ?? 0}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Search + Filter row */}
-        <div className="flex flex-col sm:flex-row gap-3">
-          <div className="relative flex-1">
-            <Input
-              placeholder="Search models, providers, categories..."
-              value={localSearch}
-              onChange={(e) => setLocalSearch(e.target.value)}
-              className="h-8 text-sm pr-8"
-              aria-label="Search models"
-            />
-            {localSearch && (
-              <button
-                onClick={() => setLocalSearch('')}
-                className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="Clear search"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            )}
-          </div>
-          <div className="flex gap-1 shrink-0 flex-wrap items-center" role="group" aria-label="Ecosystem filter">
-            {ECOSYSTEMS.map((eco) => (
-              <button
-                key={eco.value}
-                onClick={() => setEcosystemFilter(eco.value)}
-                className={cn(
-                  'px-2.5 py-1.5 rounded-md text-xs font-medium transition-all border',
-                  ecosystemFilter === eco.value
-                    ? 'border-amber-500/50 bg-amber-500/10 text-amber-500'
-                    : 'border-border hover:border-amber-500/30 text-muted-foreground'
-                )}
-                aria-pressed={ecosystemFilter === eco.value}
-              >
-                {eco.label}
-              </button>
-            ))}
-          </div>
-          {/* Provider filter */}
-          <Select value={providerFilter} onValueChange={setProviderFilter}>
-            <SelectTrigger className="h-8 text-xs w-[140px]">
-              <SelectValue placeholder="All Providers" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All Providers</SelectItem>
-              {providers.map(p => (
-                <SelectItem key={p} value={p}>{p}</SelectItem>
+        <div className="flex flex-col gap-3">
+          {/* Desktop Filters: hidden on mobile */}
+          <div className="hidden md:flex flex-row gap-3">
+            <div className="relative flex-1">
+              <Input
+                placeholder="Search models, providers, categories..."
+                value={localSearch}
+                onChange={(e) => setLocalSearch(e.target.value)}
+                className="h-8 text-sm pr-8"
+                aria-label="Search models"
+              />
+              {localSearch && (
+                <button
+                  onClick={() => setLocalSearch('')}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="Clear search"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              )}
+            </div>
+            <div className="flex gap-1 shrink-0 flex-wrap items-center" role="group" aria-label="Ecosystem filter">
+              {ECOSYSTEMS.map((eco) => (
+                <button
+                  key={eco.value}
+                  onClick={() => setEcosystemFilter(eco.value)}
+                  className={cn(
+                    'px-2.5 py-1.5 rounded-md text-xs font-medium transition-all border cursor-pointer',
+                    ecosystemFilter === eco.value
+                      ? 'border-amber-500/50 bg-amber-500/10 text-amber-500'
+                      : 'border-border hover:border-amber-500/30 text-muted-foreground'
+                  )}
+                  aria-pressed={ecosystemFilter === eco.value}
+                >
+                  {eco.label}
+                </button>
               ))}
-            </SelectContent>
-          </Select>
-          {/* Source quality filter */}
-          <Select value={sourceQualityFilter} onValueChange={setSourceQualityFilter}>
-            <SelectTrigger className="h-8 text-xs w-[120px]">
-              <SelectValue placeholder="All Qualities" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All Qualities</SelectItem>
-              <SelectItem value="verified">Verified</SelectItem>
-              <SelectItem value="partial">Partial</SelectItem>
-              <SelectItem value="limited">Limited Docs</SelectItem>
-            </SelectContent>
-          </Select>
-          {/* Sort */}
-          <Select value={`${sortBy}-${sortOrder}`} onValueChange={(v) => {
-            const [f, o] = v.split('-') as [SortField, SortOrder];
-            setSortBy(f);
-            setSortOrder(o);
-          }}>
-            <SelectTrigger className="h-8 text-xs w-[130px]">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="ranking-desc">Top Ranked</SelectItem>
-              <SelectItem value="name-asc">Name A-Z</SelectItem>
-              <SelectItem value="name-desc">Name Z-A</SelectItem>
-              <SelectItem value="provider-asc">Provider A-Z</SelectItem>
-              <SelectItem value="quality-desc">Best Quality</SelectItem>
-              <SelectItem value="date-desc">Latest</SelectItem>
-            </SelectContent>
-          </Select>
+            </div>
+            {/* Provider filter */}
+            <Select value={providerFilter} onValueChange={setProviderFilter}>
+              <SelectTrigger className="h-8 text-xs w-[140px]">
+                <SelectValue placeholder="All Providers" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Providers</SelectItem>
+                {providers.map(p => (
+                  <SelectItem key={p} value={p}>{p}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            {/* Source quality filter */}
+            <Select value={sourceQualityFilter} onValueChange={setSourceQualityFilter}>
+              <SelectTrigger className="h-8 text-xs w-[120px]">
+                <SelectValue placeholder="All Qualities" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Qualities</SelectItem>
+                <SelectItem value="verified">Verified</SelectItem>
+                <SelectItem value="partial">Partial</SelectItem>
+                <SelectItem value="limited">Limited Docs</SelectItem>
+              </SelectContent>
+            </Select>
+            {/* Sort */}
+            <Select value={`${sortBy}-${sortOrder}`} onValueChange={(v) => {
+              const [f, o] = v.split('-') as [SortField, SortOrder];
+              setSortBy(f);
+              setSortOrder(o);
+            }}>
+              <SelectTrigger className="h-8 text-xs w-[130px]">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="ranking-desc">Top Ranked</SelectItem>
+                <SelectItem value="name-asc">Name A-Z</SelectItem>
+                <SelectItem value="name-desc">Name Z-A</SelectItem>
+                <SelectItem value="provider-asc">Provider A-Z</SelectItem>
+                <SelectItem value="quality-desc">Best Quality</SelectItem>
+                <SelectItem value="date-desc">Latest</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Mobile Filters: visible only on mobile / tablet */}
+          <div className="flex md:hidden gap-2 w-full">
+            <div className="relative flex-1">
+              <Input
+                placeholder="Search models..."
+                value={localSearch}
+                onChange={(e) => setLocalSearch(e.target.value)}
+                className="h-8 text-sm pr-8"
+                aria-label="Search models"
+              />
+              {localSearch && (
+                <button
+                  onClick={() => setLocalSearch('')}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="Clear search"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              )}
+            </div>
+            
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="sm" className="h-8 gap-1.5 text-xs relative cursor-pointer">
+                  <SlidersHorizontal className="h-3.5 w-3.5" />
+                  Filters
+                  {activeFilters.length > 0 && (
+                    <span className="absolute -top-1.5 -right-1.5 bg-amber-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-[9px] font-bold">
+                      {activeFilters.length}
+                    </span>
+                  )}
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[350px] p-6 flex flex-col gap-6 overflow-y-auto">
+                <SheetHeader className="px-0 pb-4 border-b border-border text-left">
+                  <SheetTitle>Filter Models</SheetTitle>
+                  <SheetDescription>Refine models by ecosystem, provider, quality, and sort order.</SheetDescription>
+                </SheetHeader>
+                
+                <div className="flex-1 flex flex-col gap-5 py-2">
+                  {/* Ecosystem Filter */}
+                  <div className="space-y-2">
+                    <Label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Ecosystem</Label>
+                    <div className="flex flex-wrap gap-1.5">
+                      {ECOSYSTEMS.map((eco) => (
+                        <button
+                          key={eco.value}
+                          onClick={() => setEcosystemFilter(eco.value)}
+                          className={cn(
+                            'px-2.5 py-1.5 rounded-md text-xs font-medium transition-all border cursor-pointer',
+                            ecosystemFilter === eco.value
+                              ? 'border-amber-500/50 bg-amber-500/10 text-amber-500'
+                              : 'border-border hover:border-amber-500/30 text-muted-foreground'
+                          )}
+                        >
+                          {eco.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Provider Filter */}
+                  <div className="space-y-2 flex flex-col">
+                    <Label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Provider</Label>
+                    <Select value={providerFilter} onValueChange={setProviderFilter}>
+                      <SelectTrigger className="h-9 text-xs w-full">
+                        <SelectValue placeholder="All Providers" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">All Providers</SelectItem>
+                        {providers.map(p => (
+                          <SelectItem key={p} value={p}>{p}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Quality Filter */}
+                  <div className="space-y-2 flex flex-col">
+                    <Label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Source Quality</Label>
+                    <Select value={sourceQualityFilter} onValueChange={setSourceQualityFilter}>
+                      <SelectTrigger className="h-9 text-xs w-full">
+                        <SelectValue placeholder="All Qualities" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">All Qualities</SelectItem>
+                        <SelectItem value="verified">Verified</SelectItem>
+                        <SelectItem value="partial">Partial</SelectItem>
+                        <SelectItem value="limited">Limited Docs</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Sort order */}
+                  <div className="space-y-2 flex flex-col">
+                    <Label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Sort By</Label>
+                    <Select value={`${sortBy}-${sortOrder}`} onValueChange={(v) => {
+                      const [f, o] = v.split('-') as [SortField, SortOrder];
+                      setSortBy(f);
+                      setSortOrder(o);
+                    }}>
+                      <SelectTrigger className="h-9 text-xs w-full">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="ranking-desc">Top Ranked</SelectItem>
+                        <SelectItem value="name-asc">Name A-Z</SelectItem>
+                        <SelectItem value="name-desc">Name Z-A</SelectItem>
+                        <SelectItem value="provider-asc">Provider A-Z</SelectItem>
+                        <SelectItem value="quality-desc">Best Quality</SelectItem>
+                        <SelectItem value="date-desc">Latest</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
+                <SheetFooter className="px-0 pt-4 border-t border-border flex flex-row items-center justify-between gap-2">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-xs text-muted-foreground hover:text-foreground cursor-pointer"
+                    onClick={() => {
+                      setEcosystemFilter('all');
+                      setProviderFilter('all');
+                      setSourceQualityFilter('all');
+                      setSortBy('ranking');
+                      setSortOrder('desc');
+                    }}
+                  >
+                    Reset All
+                  </Button>
+                  <SheetClose asChild>
+                    <Button size="sm" className="bg-amber-500 hover:bg-amber-600 text-white cursor-pointer">
+                      Apply Filters
+                    </Button>
+                  </SheetClose>
+                </SheetFooter>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </section>
 
@@ -645,7 +807,7 @@ const EntryCard = React.memo(function EntryCard({ entry, query }: { entry: Syste
 
   return (
     <Card
-      className={cn("group transition-all cursor-pointer", qualityHoverBorder)}
+      className={cn("group transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-500/[0.03] cursor-pointer hover-glow", qualityHoverBorder)}
       role="listitem"
     >
       <CardContent className="pt-5">
@@ -835,7 +997,7 @@ function ArenaRankCard({ ranking, label }: { ranking: ArenaRanking; label: strin
 
 
 function DetailView() {
-  const { selectedEntryId, setSelectedEntryId, showShortVersion, setShowShortVersion, useChinesePrompt, setUseChinesePrompt, isBookmarked, addBookmark, removeBookmark, compareIds, addCompare } = useAppStore();
+  const { selectedEntryId, setSelectedEntryId, showShortVersion, setShowShortVersion, useChinesePrompt, setUseChinesePrompt, isBookmarked, addBookmark, removeBookmark, compareIds, addCompare, removeCompare } = useAppStore();
   const entry = selectedEntryId ? getEntryById(selectedEntryId) : null;
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -844,10 +1006,19 @@ function DetailView() {
     contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [selectedEntryId]);
 
+  const promptText = useMemo(() => {
+    if (!entry) return '';
+    return getDisplayPrompt(entry, showShortVersion ? 'short' : 'full', useChinesePrompt);
+  }, [entry, showShortVersion, useChinesePrompt]);
+
+  const promptLines = useMemo(() => {
+    if (!promptText) return [];
+    return promptText.split('\n');
+  }, [promptText]);
+
   if (!entry) return null;
 
   const bookmarked = isBookmarked(entry.id);
-  const promptText = getDisplayPrompt(entry, showShortVersion ? 'short' : 'full', useChinesePrompt);
   const catConfig = CATEGORY_CONFIG[entry.category];
   const quality = getEntryQuality(entry);
   const isVideo = entry.category === 'video';
@@ -870,7 +1041,7 @@ function DetailView() {
         variant="ghost"
         size="sm"
         onClick={() => { setSelectedEntryId(null); }}
-        className="gap-1.5 text-muted-foreground"
+        className="gap-1.5 text-muted-foreground cursor-pointer"
         aria-label="Back to library"
       >
         <ArrowLeft className="h-4 w-4" /> Back to library
@@ -886,9 +1057,9 @@ function DetailView() {
               {entry.category.toUpperCase()}
             </Badge>
             <Badge className={cn(
-              entry.ecosystem === 'chinese' ? 'bg-red-500/10 text-red-500' :
-              entry.ecosystem === 'open-weight' ? 'bg-green-500/10 text-green-500' :
-              'bg-blue-500/10 text-blue-500'
+              entry.ecosystem === 'chinese' ? 'bg-red-500/10 text-red-500 border-red-500/20' :
+              entry.ecosystem === 'open-weight' ? 'bg-green-500/10 text-green-500 border-green-500/20' :
+              'bg-blue-500/10 text-blue-500 border-blue-500/20'
             )} variant="outline">
               {entry.ecosystem}
             </Badge>
@@ -903,15 +1074,19 @@ function DetailView() {
             variant="outline"
             size="sm"
             onClick={() => { if (bookmarked) { removeBookmark(entry.id); } else { addBookmark(entry.id, 'full'); } }}
-            className={cn(bookmarked ? 'border-amber-500/50 text-amber-500' : '')}
+            className={cn(bookmarked ? 'border-amber-500/50 text-amber-500' : '', 'cursor-pointer')}
             aria-label={bookmarked ? 'Remove from saved' : 'Save this model'}
           >
             {bookmarked ? <BookmarkCheck className="h-4 w-4 mr-1.5" /> : <Bookmark className="h-4 w-4 mr-1.5" />}
             {bookmarked ? 'Saved' : 'Save'}
           </Button>
-          {!compareIds.includes(entry.id) && (
-            <Button variant="outline" size="sm" onClick={() => addCompare(entry.id)} aria-label="Add to comparison">
+          {!compareIds.includes(entry.id) ? (
+            <Button variant="outline" size="sm" onClick={() => addCompare(entry.id)} className="cursor-pointer" aria-label="Add to comparison">
               <GitCompare className="h-4 w-4 mr-1.5" /> Compare
+            </Button>
+          ) : (
+            <Button variant="outline" size="sm" onClick={() => removeCompare(entry.id)} className="border-blue-500/30 text-blue-500 bg-blue-500/5 cursor-pointer" aria-label="Remove comparison">
+              <X className="h-4 w-4 mr-1.5" /> Remove
             </Button>
           )}
         </div>
@@ -981,11 +1156,11 @@ function DetailView() {
       )}
 
       {/* Version Toggle + Language Toggle + Copy */}
-      <div className="flex items-center justify-between flex-wrap gap-3">
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-3">
-            <Label htmlFor="version-toggle" className="text-sm font-medium">
-              {showShortVersion ? 'Short Version' : 'Full Version'}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 bg-muted/30 rounded-xl border border-border/80 flex-wrap">
+        <div className="flex flex-row items-center gap-2 w-full sm:w-auto flex-wrap">
+          <div className="flex items-center justify-between sm:justify-start gap-2 bg-background/50 dark:bg-background/20 px-3 py-2 sm:p-0 rounded-lg border border-border/50 sm:border-0 flex-1 sm:flex-none">
+            <Label htmlFor="version-toggle" className="text-xs font-medium text-muted-foreground whitespace-nowrap">
+              {showShortVersion ? 'Short' : 'Full'}
             </Label>
             <Switch
               id="version-toggle"
@@ -994,9 +1169,9 @@ function DetailView() {
             />
           </div>
           {entry.ecosystem === 'chinese' && ['image', 'video', '3d'].includes(entry.category) && (
-            <div className="flex items-center gap-3">
-              <Label htmlFor="lang-toggle" className="text-sm font-medium">
-                {useChinesePrompt ? '中文' : 'English'}
+            <div className="flex items-center justify-between sm:justify-start gap-2 bg-background/50 dark:bg-background/20 px-3 py-2 sm:p-0 rounded-lg border border-border/50 sm:border-0 flex-1 sm:flex-none sm:border-l sm:border-border/60 sm:pl-3">
+              <Label htmlFor="lang-toggle" className="text-xs font-medium text-muted-foreground whitespace-nowrap">
+                {useChinesePrompt ? '中文' : 'EN'}
               </Label>
               <Switch
                 id="lang-toggle"
@@ -1006,7 +1181,7 @@ function DetailView() {
             </div>
           )}
         </div>
-        <CopyButton text={promptText} label={showShortVersion ? 'Copy Short' : 'Copy Full'} className="min-w-[120px]" />
+        <CopyButton text={promptText} label={showShortVersion ? 'Copy Short' : 'Copy Full'} className="w-full sm:w-auto min-w-[120px] shrink-0 cursor-pointer" />
       </div>
 
       {/* System Prompt */}
@@ -1024,9 +1199,34 @@ function DetailView() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <pre className="text-sm whitespace-pre-wrap font-mono leading-relaxed bg-muted/30 rounded-lg p-5 max-h-[600px] overflow-y-auto">
-            {promptText}
-          </pre>
+          <div className="relative border border-zinc-800 bg-zinc-950 rounded-xl overflow-hidden font-mono text-sm leading-relaxed shadow-2xl">
+            {/* Editor-like top bar */}
+            <div className="flex items-center justify-between px-4 py-2.5 bg-zinc-900 border-b border-zinc-800 text-xs text-zinc-400">
+              <div className="flex items-center gap-1.5 font-sans">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-500/30 border border-red-500/50" />
+                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/30 border border-yellow-500/50" />
+                <span className="w-2.5 h-2.5 rounded-full bg-green-500/30 border border-green-500/50" />
+                <span className="ml-2 font-medium tracking-wide text-[10px] text-zinc-500 uppercase">SYSTEM_INSTRUCTIONS.md</span>
+              </div>
+              <span className="text-[10px] text-zinc-500 font-sans">{promptLines.length} lines</span>
+            </div>
+            
+            {/* Code area with line numbers */}
+            <div className="flex max-h-[550px] overflow-y-auto custom-scrollbar bg-zinc-950/95 font-mono text-[11px] sm:text-xs py-4 leading-5">
+              <div className="w-full flex flex-col">
+                {promptLines.map((line, i) => (
+                  <div key={i} className="flex items-start hover:bg-zinc-800/30 transition-colors px-4 group">
+                    <span className="select-none text-right w-10 shrink-0 pr-4 text-zinc-650 text-xs mt-0.5 border-r border-zinc-800/50 mr-4 font-mono">
+                      {i + 1}
+                    </span>
+                    <span className="flex-1 whitespace-pre-wrap break-all text-zinc-300">
+                      {line === '' ? ' ' : line}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </CardContent>
       </Card>
 
@@ -1091,6 +1291,32 @@ function DetailView() {
         </CardContent>
       </Card>
 
+      {/* Floating Actions bar on Mobile */}
+      <div className="fixed bottom-4 left-4 right-4 z-40 md:hidden bg-background/85 backdrop-blur-lg border border-border shadow-2xl rounded-full p-2 flex items-center justify-between gap-2 animate-in fade-in slide-in-from-bottom-4 duration-300">
+        <div className="flex-1">
+          <CopyButton text={promptText} label={showShortVersion ? 'Copy Short' : 'Copy Full'} className="w-full h-10 rounded-full cursor-pointer" />
+        </div>
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={() => { if (bookmarked) { removeBookmark(entry.id); } else { addBookmark(entry.id, 'full'); } }}
+          className={cn('h-10 w-10 rounded-full shrink-0 cursor-pointer', bookmarked ? 'border-amber-500/50 text-amber-500 bg-amber-500/5' : '')}
+          aria-label={bookmarked ? 'Remove from saved' : 'Save model'}
+        >
+          {bookmarked ? <BookmarkCheck className="h-5 w-5" /> : <Bookmark className="h-5 w-5" />}
+        </Button>
+        {!compareIds.includes(entry.id) ? (
+          <Button variant="outline" size="icon" onClick={() => addCompare(entry.id)} className="h-10 w-10 rounded-full shrink-0 cursor-pointer" aria-label="Compare model">
+            <GitCompare className="h-5 w-5" />
+          </Button>
+        ) : (
+          <Button variant="outline" size="icon" onClick={() => removeCompare(entry.id)} className="h-10 w-10 rounded-full shrink-0 text-blue-500 border-blue-500/30 bg-blue-500/5 cursor-pointer" aria-label="Remove comparison">
+            <X className="h-5 w-5" />
+          </Button>
+        )}
+      </div>
+
+      <div className="h-16 md:hidden" />
     </div>
   );
 }
@@ -1187,7 +1413,7 @@ function CompareView() {
             style={{ display: 'grid', gridTemplateColumns: `140px repeat(${entries.length}, 1fr)` }}
           >
             {/* Header Row */}
-            <div className="px-4 py-2.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider bg-muted/30 border-b border-border">
+            <div className="px-4 py-2.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider bg-background border-b border-border sticky left-0 z-20 shadow-[4px_0_8px_-4px_rgba(0,0,0,0.1)] border-r">
               Attribute
             </div>
             {entries.map(e => (
@@ -1207,7 +1433,7 @@ function CompareView() {
             {comparisonRows.map(row => (
               <React.Fragment key={row.label}>
                 <div className={cn(
-                  'px-4 py-2.5 text-xs font-medium flex items-center gap-1.5 border-b border-border border-l-2',
+                  'px-4 py-2.5 text-xs font-medium flex items-center gap-1.5 border-b border-border border-l-2 sticky left-0 z-10 bg-background shadow-[4px_0_8px_-4px_rgba(0,0,0,0.1)] border-r',
                   row.differs
                     ? 'border-l-amber-500 bg-amber-500/[0.06] text-foreground'
                     : 'border-l-transparent text-muted-foreground'
