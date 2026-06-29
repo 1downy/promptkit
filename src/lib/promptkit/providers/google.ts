@@ -117,61 +117,6 @@ Generate the best Gemini 3.1 Flash-Lite prompt.` + SHORT_VERSION_ENDING,
   },
 
   {
-    id: 'sp-gemini-3-flash',
-    modelName: 'Gemini 3.5 Flash',
-    category: 'text',
-    ecosystem: 'western',
-    provider: 'Google',
-    description:
-      "Google's fastest agentic AI model for coding and autonomous AI agents. Announced at I/O 2026, it delivers four times the speed of comparable frontier models at less than half the cost. Default model in Gemini and Google Search's AI mode.[reference:36]",
-    systemPrompt: `You are an expert Gemini 3.5 Flash prompt engineer. Generate the best possible prompts for this fast agentic model.
-
-## Gemini 3.5 Flash Prompt Engineering Rules (from official Google documentation)
-
-### Core Capabilities
-- **Fastest Agentic AI Model**: Google's fastest model for coding and autonomous AI agents.[reference:37]
-- **Agentic Design**: Built to act, not just answer — designed to handle complex, multi-step workflows.[reference:38]
-- **Speed**: Four times the speed of comparable frontier models, often at less than half the cost.[reference:39]
-- **Coding Excellence**: Outperforms Gemini 3.1 Pro on coding and agentic benchmarks.[reference:40]
-- **Default Model**: Default model in Gemini and Google Search's AI mode globally.[reference:41]
-
-### Prompt Structure for Agentic Tasks
-1. **Task Definition**: What the agent should accomplish
-2. **Available Tools**: List tools and their purposes
-3. **Workflow Steps**: Sequence of operations
-4. **Constraints**: Rules and limitations
-5. **Output Format**: Expected final output
-
-### Best Practices
-- Define tasks clearly for autonomous execution
-- Use system instructions to set agent behavior
-- Specify success criteria for multi-step workflows
-- Be explicit about tool usage and constraints
-
-Generate ONLY the prompt text. No explanations.` + SYSTEM_PROMPT_ENDING,
-    shortVersion: `You are an expert Gemini 3.5 Flash prompt engineer. Rules:
-1. Designed for agentic workflows — coding agents, autonomous tasks
-2. Define task, tools, workflow steps, constraints, output format
-3. Fastest agentic AI model — 4x speed at half the cost
-4. Default model in Gemini and Google Search AI mode
-
-Generate the best Gemini 3.5 Flash prompt.` + SHORT_VERSION_ENDING,
-    sources: [
-      { title: 'Gemini 3.5 Flash Announcement', url: 'https://www.engadget.com/ai/google-says-gemini-35-flash-rivals-large-flagship-models-for-coding-and-agentic-tasks-190047246.html', type: 'news' },
-      { title: 'Google launches Gemini 3.5 Flash', url: 'https://thenextweb.com/news/google-launches-gemini-35-flash-fastest-agentic-ai-model-coding', type: 'news' },
-    ],
-    tips: [
-      'Gemini 3.5 Flash is Google\'s fastest agentic AI model, announced at I/O 2026.[reference:42]',
-      'Outperforms Gemini 3.1 Pro on coding and agentic benchmarks.[reference:43]',
-      'Four times the speed of comparable frontier models at less than half the cost.[reference:44]',
-      'Default model in Gemini and Google Search\'s AI mode.[reference:45]',
-      'Best for coding agents, autonomous workflows, and complex multi-step tasks.[reference:46]',
-    ],
-    lastVerified: '2026-06',
-    version: 'gemini-3.5-flash',
-  },
-
-  {
     id: 'sp-gemini-25-flash-image',
     modelName: 'Gemini 2.5 Flash Image (Nano Banana)',
     category: 'image',
