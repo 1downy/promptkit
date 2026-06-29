@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://promptkit.qzz.io/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -307,7 +307,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-wan-2.7-text-to-video</loc>
+    <loc>https://promptkit.qzz.io/model/sp-wan-27-text-to-video</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -319,7 +319,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-wan-27-image-pro</loc>
+    <loc>https://promptkit.qzz.io/model/sp-wan27-image-pro</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -338,12 +338,6 @@
   </url>
   <url>
     <loc>https://promptkit.qzz.io/model/sp-gemini-31-flash-lite</loc>
-    <lastmod>2026-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://promptkit.qzz.io/model/sp-gemini-3-flash</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1393,30 +1387,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-midjourney-v81</loc>
-    <lastmod>2026-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://promptkit.qzz.io/model/sp-midjourney-v7</loc>
-    <lastmod>2026-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://promptkit.qzz.io/model/sp-midjourney-v61</loc>
-    <lastmod>2026-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://promptkit.qzz.io/model/sp-midjourney-niji-7</loc>
-    <lastmod>2026-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://promptkit.qzz.io/model/sp-ideogram-4</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -1771,19 +1741,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-step-audio-25-realtime</loc>
+    <loc>https://promptkit.qzz.io/model/sp-stepaudio-25-realtime</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-step-audio-25-tts</loc>
+    <loc>https://promptkit.qzz.io/model/sp-stepaudio-25-tts</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-step-audio-25-asr</loc>
+    <loc>https://promptkit.qzz.io/model/sp-stepaudio-25-asr</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2042,12 +2012,6 @@
   </url>
   <url>
     <loc>https://promptkit.qzz.io/model/sp-ernie-40</loc>
-    <lastmod>2026-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://promptkit.qzz.io/model/sp-qianfan-agent</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
