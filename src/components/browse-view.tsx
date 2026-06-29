@@ -1,22 +1,12 @@
 'use client';
 
-import React, { use, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { FlatEntry, SortField, SortOrder } from '@/lib/promptkit/prompt-utils';
+import { getSourceQuality, sortEntries, searchEntries, highlightMatches, getDisplayPrompt } from '@/lib/promptkit/prompt-utils';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useAppStore } from '@/lib/promptkit/store';
-import type {
-  SystemPromptEntry,
-  ModelCategory,
-  SortField,
-  SortOrder,
-} from '@/lib/promptkit/system-prompts';
-
-// Dynamic import starts immediately when this module loads — separate chunk from UI code
-const dataPromise = import('@/lib/promptkit/system-prompts');
-
-function useSystemData() {
-  return use(dataPromise);
-}
+import type { SystemPromptEntry, ModelCategory } from '@/lib/promptkit/system-prompts';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -68,6 +58,22 @@ const ECOSYSTEMS: { value: string; label: string }[] = [
   { value: 'open-weight', label: 'Open Weight' },
 ];
 
+interface DataPayload {
+  entries: FlatEntry[];
+  byCategory: Record<string, FlatEntry[]>;
+  providers: string[];
+}
+
+function useData(): DataPayload | null {
+  const [data, setData] = useState<DataPayload | null>(null);
+  useEffect(() => {
+    fetch('/data.json')
+      .then(r => r.json())
+      .then(setData);
+  }, []);
+  return data;
+}
+
 function useHydrated() {
   const [hydrated, setHydrated] = useState(false);
   useEffect(() => setHydrated(true), []);
@@ -83,7 +89,7 @@ function useDebounce<T>(value: T, delay: number): T {
   return debouncedValue;
 }
 
-function entryRank(entry: SystemPromptEntry): number {
+function entryRank(entry: FlatEntry): number {
   const isVideo = entry.category === 'video';
   const isImage = entry.category === 'image' || entry.category === 'design';
   const isText = entry.category === 'text';
@@ -98,17 +104,28 @@ function entryRank(entry: SystemPromptEntry): number {
 }
 
 function BrowseView() {
-  const D = useSystemData();
-  const {
-    ALL_ENTRIES,
-    searchEntries,
-    ENTRIES_BY_CATEGORY,
-    UNIQUE_PROVIDERS,
-    getSourceQuality: getEntryQuality,
-    sortEntries,
-    highlightMatches,
-    getDisplayPrompt,
-  } = D;
+  const data = useData();
+  if (!data) {
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div key={i} className="rounded-lg border p-4 space-y-3">
+            <Skeleton className="h-5 w-3/4" />
+            <Skeleton className="h-3 w-1/2" />
+            <Skeleton className="h-16 w-full" />
+            <div className="flex gap-2">
+              <Skeleton className="h-5 w-16" />
+              <Skeleton className="h-5 w-20" />
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  }
+  return <BrowseViewInner data={data} />;
+}
+
+function BrowseViewInner({ data: { entries: ALL_ENTRIES, byCategory: ENTRIES_BY_CATEGORY, providers: UNIQUE_PROVIDERS } }: { data: DataPayload }) {
 
   const {
     categoryFilter, setCategoryFilter,
@@ -181,10 +198,10 @@ function BrowseView() {
       result = result.filter(e => e.provider === providerFilter);
     }
     if (sourceQualityFilter !== 'all') {
-      result = result.filter(e => getEntryQuality(e) === sourceQualityFilter);
+      result = result.filter(e => getSourceQuality(e) === sourceQualityFilter);
     }
     if (debouncedSearch) {
-      const searched = searchEntries(debouncedSearch);
+      const searched = searchEntries(debouncedSearch, ALL_ENTRIES);
       const searchedOrder = new Map(searched.map((e, i) => [e.id, i]));
       result = result.filter(e => searchedOrder.has(e.id));
       return result.sort((a, b) => (searchedOrder.get(a.id) ?? 0) - (searchedOrder.get(b.id) ?? 0));
@@ -556,7 +573,7 @@ function BrowseView() {
         <>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" role="list" aria-label="Model entries">
             {entries.slice(0, visibleCount).map((entry) => (
-              <EntryCard key={entry.id} entry={entry} query={debouncedSearch} />
+              <EntryCard key={entry.id} entry={entry} query={debouncedSearch} getEntryQuality={getSourceQuality} highlightMatches={highlightMatches} getDisplayPrompt={getDisplayPrompt} />
             ))}
           </div>
           <div
@@ -577,9 +594,12 @@ function BrowseView() {
   );
 }
 
-const EntryCard = React.memo(function EntryCard({ entry, query }: { entry: SystemPromptEntry; query?: string }) {
-  const D = useSystemData();
-  const { getSourceQuality: getEntryQuality, highlightMatches, getDisplayPrompt } = D;
+const EntryCard = React.memo(function EntryCard({ entry, query, getEntryQuality, highlightMatches, getDisplayPrompt }: {
+  entry: FlatEntry; query?: string;
+  getEntryQuality: (e: FlatEntry) => string;
+  highlightMatches: (text: string, query: string) => string;
+  getDisplayPrompt: (entry: { systemPrompt: string; shortVersion: string; ecosystem: string; category: string }, type: 'full' | 'short', useChinese: boolean) => string;
+}) {
   const setSelectedEntryId = useAppStore(s => s.setSelectedEntryId);
   const addCompare = useAppStore(s => s.addCompare);
   const removeCompare = useAppStore(s => s.removeCompare);
@@ -629,7 +649,7 @@ const EntryCard = React.memo(function EntryCard({ entry, query }: { entry: Syste
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2 mb-0.5">
                 <h3 className="font-semibold text-base truncate" dangerouslySetInnerHTML={{ __html: query ? highlight(entry.modelName) : entry.modelName }} />
-                <SourceQualityBadge entry={entry} />
+                <SourceQualityBadge entry={entry as SystemPromptEntry} />
               </div>
               <span
                 className="text-xs text-muted-foreground hover:text-amber-500 transition-colors"

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node scripts/dev.mjs",
-    "build": "npx tsx scripts/generate-sitemap.mjs && next build",
+    "build": "npx tsx scripts/generate-data.mjs && npx tsx scripts/generate-sitemap.mjs && next build",
     "start": "npx serve@latest out",
     "lint": "eslint ."
   },

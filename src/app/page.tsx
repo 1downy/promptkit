@@ -14,9 +14,8 @@ import {
   Zap, Sun, Moon, Search, Bookmark, GitCompare, Github, Keyboard,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { DetailView } from '@/components/detail-view';
-
 const BrowseView = dynamic(() => import('@/components/browse-view'), { ssr: false });
+const DetailView = dynamic(() => import('@/components/detail-view').then(m => m.DetailView), { ssr: false });
 const SearchDialog = dynamic(() => import('@/components/search-dialog'), { ssr: false });
 const CompareView = dynamic(() => import('@/components/compare-view'), { ssr: false });
 const BookmarksView = dynamic(() => import('@/components/bookmarks-view'), { ssr: false });

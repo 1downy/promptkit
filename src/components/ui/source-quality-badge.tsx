@@ -1,7 +1,7 @@
 'use client';
 
 import { Badge } from '@/components/ui/badge';
-import { getSourceQuality } from '@/lib/promptkit/system-prompts';
+import { getSourceQuality } from '@/lib/promptkit/prompt-utils';
 import type { SystemPromptEntry } from '@/lib/promptkit/system-prompts';
 import { ShieldCheck, ShieldAlert, ShieldQuestion } from 'lucide-react';
 import { cn } from '@/lib/utils';
