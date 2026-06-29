@@ -532,14 +532,14 @@ Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
 - **Audio Tags and Scene Descriptions**: Steer speech with audio tags and scene descriptions.
 - **Native Capabilities**: Part of the Gemini 3.1 Flash Audio model family[reference:73].
 - **Input**: Text up to 16K tokens[reference:74].
-- **Output**: Audio with 32K token output[reference:75].
+- **Output**: High-quality speech audio.
 
 #### Gemini 3.5 Live Translate
 - **Real-Time Translation**: Low-latency, real-time translation interactions[reference:76].
 - **Continuous Streaming**: Processes continuous streams of audio to deliver immediate, human-like spoken responses[reference:77].
 - **70+ Languages**: Automatically detects and translates more than 70 languages[reference:78].
 - **Input**: Audio with up to 128K token context window[reference:79].
-- **Output**: Audio and text, with up to 64K token output[reference:80].
+- **Output**: Translated text and corresponding speech audio.
 
 ### Prompt Structure for TTS
 1. **Audio Profiles**: Define character voices, pacing, and tone
