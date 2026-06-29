@@ -305,6 +305,29 @@ function BrowseView() {
   const [localSearch, setLocalSearch] = useState(searchQuery);
   const debouncedSearch = useDebounce(localSearch, 300);
 
+  const PAGE_SIZE = 30;
+  const [loadedCount, setLoadedCount] = useState(PAGE_SIZE);
+  const sentinelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setLoadedCount(PAGE_SIZE);
+  }, [debouncedSearch, categoryFilter, ecosystemFilter, providerFilter, sourceQualityFilter, sortBy, sortOrder]);
+
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setLoadedCount(prev => prev + PAGE_SIZE);
+        }
+      },
+      { rootMargin: '200px' }
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, []);
+
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -380,6 +403,8 @@ function BrowseView() {
 
   const hasActiveFilters = activeFilters.length > 0;
   const isSearching = !!debouncedSearch;
+  const visibleCount = Math.min(loadedCount, entries.length);
+  const hasMore = visibleCount < entries.length;
 
   return (
     <div className="space-y-6">
@@ -713,7 +738,7 @@ function BrowseView() {
           {isSearching ? (
             <>Found <span className="font-medium text-foreground">{entries.length}</span> result{entries.length !== 1 ? 's' : ''} for &ldquo;<span className="font-medium">{debouncedSearch}</span>&rdquo;</>
           ) : (
-            <>Showing <span className="font-medium text-foreground">{entries.length}</span> of {ALL_ENTRIES.length} models</>
+            <>Showing <span className="font-medium text-foreground">{visibleCount}</span> of {ALL_ENTRIES.length} models</>
           )}
         </p>
       </div>
@@ -728,11 +753,26 @@ function BrowseView() {
           </Button>
         </Card>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" role="list" aria-label="Model entries">
-          {entries.map((entry) => (
-            <EntryCard key={entry.id} entry={entry} query={debouncedSearch} />
-          ))}
-        </div>
+        <>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" role="list" aria-label="Model entries">
+            {entries.slice(0, visibleCount).map((entry) => (
+              <EntryCard key={entry.id} entry={entry} query={debouncedSearch} />
+            ))}
+          </div>
+          {/* Sentinel for infinite scroll */}
+          <div
+            ref={sentinelRef}
+            className={hasMore ? 'w-full py-8 flex items-center justify-center' : 'hidden'}
+          >
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <svg className="h-4 w-4 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+              </svg>
+              <span>Loading more models...</span>
+            </div>
+          </div>
+        </>
       )}
     </div>
   );
