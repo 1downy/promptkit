@@ -60,7 +60,6 @@ const ECOSYSTEMS: { value: string; label: string }[] = [
 
 interface DataPayload {
   entries: FlatEntry[];
-  byCategory: Record<string, FlatEntry[]>;
   providers: string[];
 }
 
@@ -125,7 +124,7 @@ function BrowseView() {
   return <BrowseViewInner data={data} />;
 }
 
-function BrowseViewInner({ data: { entries: ALL_ENTRIES, byCategory: ENTRIES_BY_CATEGORY, providers: UNIQUE_PROVIDERS } }: { data: DataPayload }) {
+function BrowseViewInner({ data: { entries: ALL_ENTRIES, providers: UNIQUE_PROVIDERS } }: { data: DataPayload }) {
 
   const {
     categoryFilter, setCategoryFilter,
@@ -181,7 +180,7 @@ function BrowseViewInner({ data: { entries: ALL_ENTRIES, byCategory: ENTRIES_BY_
   const providers = UNIQUE_PROVIDERS;
   const categoryCounts = useMemo(() => {
     const counts: Record<string, number> = { all: ALL_ENTRIES.length };
-    for (const cat of ALL_CATEGORIES) counts[cat] = ENTRIES_BY_CATEGORY[cat]?.length ?? 0;
+    for (const cat of ALL_CATEGORIES) counts[cat] = ALL_ENTRIES.filter(e => e.category === cat).length;
     return counts;
   }, []);
 

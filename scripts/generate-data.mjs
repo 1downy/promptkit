@@ -9,11 +9,10 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const mod = await import('../src/lib/promptkit/system-prompts.ts');
-const { ALL_ENTRIES, ENTRIES_BY_CATEGORY, UNIQUE_PROVIDERS } = mod;
+const { ALL_ENTRIES, UNIQUE_PROVIDERS } = mod;
 
 const payload = {
   entries: ALL_ENTRIES,
-  byCategory: ENTRIES_BY_CATEGORY,
   providers: UNIQUE_PROVIDERS,
 };
 
