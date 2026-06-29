@@ -216,7 +216,7 @@ export default function Home() {
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
 
-        <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 py-6" role="main">
+        <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 py-6 min-h-[calc(100vh-7rem)]" role="main">
           {/* Keep BrowseView mounted but hidden to avoid remounting 400+ EntryCards on navigation — freeze fix */}
           <div className={cn(activeView !== 'browse' && 'hidden')}>
             <Suspense fallback={<BrowseSkeleton />}>
