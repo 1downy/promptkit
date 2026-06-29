@@ -235,13 +235,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-qwen-35</loc>
+    <loc>https://promptkit.qzz.io/model/sp-qwen-36-flash</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-qwen-35-plus</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://promptkit.qzz.io/model/sp-qwen-35-flash</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-qwen-3-max</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -295,6 +307,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://promptkit.qzz.io/model/sp-wan27-image-pro</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://promptkit.qzz.io/model/sp-qwen-3-vl</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -319,13 +337,25 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://promptkit.qzz.io/model/sp-qwen-voice-design</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://promptkit.qzz.io/model/sp-wan27-image-pro</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-qwen-voice-design</loc>
+    <loc>https://promptkit.qzz.io/model/sp-wan-27-text-to-video</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-wan-26</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -625,6 +655,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://promptkit.qzz.io/model/sp-deepseek-v32-speciale</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-deepseek-v31</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://promptkit.qzz.io/model/sp-deepseek-r1-0528</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -787,7 +829,31 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://promptkit.qzz.io/model/sp-glm-46</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-glm-4-long</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://promptkit.qzz.io/model/sp-glm-45</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-glm-45-air</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-glm-45-airx</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -799,7 +865,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-glm-45-air</loc>
+    <loc>https://promptkit.qzz.io/model/sp-glm-4-flashx-250414</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -829,7 +895,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-cogvideox</loc>
+    <loc>https://promptkit.qzz.io/model/sp-cogvideox-flash</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -883,12 +949,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-seedance-25</loc>
-    <lastmod>2026-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://promptkit.qzz.io/model/sp-seedance-20</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -913,13 +973,43 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://promptkit.qzz.io/model/sp-seed-21-pro</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-seed-20</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-seed-18</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://promptkit.qzz.io/model/sp-hy-image-v30</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-hy-image-v30-instruct</loc>
+    <loc>https://promptkit.qzz.io/model/sp-hy-image-lite</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-hy-image-30-plus-4090-tob</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-hunyuan-image-30-instruct</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -937,7 +1027,37 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://promptkit.qzz.io/model/sp-yt-video-20</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-yt-video-humanactor</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-yt-video-fx</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://promptkit.qzz.io/model/sp-hy-world-15</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-hy-world-20</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-hunyuanworld-10</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -950,18 +1070,6 @@
   </url>
   <url>
     <loc>https://promptkit.qzz.io/model/sp-hunyuan-3d-30</loc>
-    <lastmod>2026-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://promptkit.qzz.io/model/sp-hy-world-15-3d</loc>
-    <lastmod>2026-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://promptkit.qzz.io/model/sp-hunyuanworld-10</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -991,19 +1099,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptkit.qzz.io/model/sp-hunyuan-t1</loc>
-    <lastmod>2026-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://promptkit.qzz.io/model/sp-hunyuan-turbo-s</loc>
-    <lastmod>2026-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://promptkit.qzz.io/model/sp-hunyuan-lite</loc>
+    <loc>https://promptkit.qzz.io/model/sp-hy-motion-10</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1015,7 +1111,49 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://promptkit.qzz.io/model/sp-hunyuan-lite</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://promptkit.qzz.io/model/sp-hunyuan-large</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-hunyuan-translation</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-hy-role</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-hy-role-latest</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-hy-mt2-pro</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-hy-mt2-plus</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-hy-mt2-lite</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1345,6 +1483,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://promptkit.qzz.io/model/sp-mimo-v25-pro-base</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://promptkit.qzz.io/model/sp-mimo-v25</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -1363,7 +1507,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://promptkit.qzz.io/model/sp-mimo-v2-omni-0327</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://promptkit.qzz.io/model/sp-mimo-v2-flash</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-mimo-v25-tts</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1382,6 +1538,18 @@
   </url>
   <url>
     <loc>https://promptkit.qzz.io/model/sp-mimo-vl-7b</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-mimo-audio-7b</loc>
+    <lastmod>2026-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptkit.qzz.io/model/sp-mimo-embodied-7b</loc>
     <lastmod>2026-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
