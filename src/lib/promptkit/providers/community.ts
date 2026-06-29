@@ -85,9 +85,9 @@ Generate BOTH positive and negative prompts.` + SHORT_VERSION_ENDING,
     sources: [
       { title: 'Pony Diffusion V6 XL on Civitai', url: 'https://civitai.com/models/257749/pony-diffusion-v6-xl', type: 'model-card' },
       { title: 'Pony Diffusion V6 XL on Hugging Face', url: 'https://huggingface.co/LyliaEngine/Pony_Diffusion_V6_XL', type: 'model-card' },
-      { title: 'Pony Diffusion V6 XL README', url: 'https://huggingface.co/LyliaEngine/Pony_Diffusion_V6_XL/blob/main/README.md', type: 'documentation' },
+      { title: 'Pony Diffusion V6 XL README', url: 'https://huggingface.co/LyliaEngine/Pony_Diffusion_V6_XL/blob/main/README.md', type: 'docs' },
       { title: 'Pony V7 base on Civitai', url: 'https://civitai.com/models/1901521/pony-v7-base', type: 'model-card' },
-      { title: 'Towards Pony Diffusion V7 announcement', url: 'https://civitai.com/articles/19986', type: 'announcement' },
+      { title: 'Towards Pony Diffusion V7 announcement', url: 'https://civitai.com/articles/19986', type: 'release-notes' },
     ],
     tips: [
       'Pony Diffusion V6 is the most widely used version; V7 is based on AuraFlow architecture[reference:52]',
