@@ -1,23 +1,23 @@
 'use client';
 
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { use, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useAppStore } from '@/lib/promptkit/store';
-import {
-  ALL_ENTRIES,
-  searchEntries,
-  ENTRIES_BY_CATEGORY,
-  UNIQUE_PROVIDERS,
-  getSourceQuality as getEntryQuality,
-  sortEntries,
-  highlightMatches,
-  getDisplayPrompt,
+import type {
   SystemPromptEntry,
   ModelCategory,
   SortField,
   SortOrder,
 } from '@/lib/promptkit/system-prompts';
+
+// Dynamic import starts immediately when this module loads — separate chunk from UI code
+const dataPromise = import('@/lib/promptkit/system-prompts');
+
+function useSystemData() {
+  return use(dataPromise);
+}
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -98,6 +98,18 @@ function entryRank(entry: SystemPromptEntry): number {
 }
 
 function BrowseView() {
+  const D = useSystemData();
+  const {
+    ALL_ENTRIES,
+    searchEntries,
+    ENTRIES_BY_CATEGORY,
+    UNIQUE_PROVIDERS,
+    getSourceQuality: getEntryQuality,
+    sortEntries,
+    highlightMatches,
+    getDisplayPrompt,
+  } = D;
+
   const {
     categoryFilter, setCategoryFilter,
     ecosystemFilter, setEcosystemFilter,
@@ -566,6 +578,8 @@ function BrowseView() {
 }
 
 const EntryCard = React.memo(function EntryCard({ entry, query }: { entry: SystemPromptEntry; query?: string }) {
+  const D = useSystemData();
+  const { getSourceQuality: getEntryQuality, highlightMatches, getDisplayPrompt } = D;
   const setSelectedEntryId = useAppStore(s => s.setSelectedEntryId);
   const addCompare = useAppStore(s => s.addCompare);
   const removeCompare = useAppStore(s => s.removeCompare);
