@@ -387,7 +387,7 @@ Generate the best Llama 4 Scout prompt.` + SHORT_VERSION_ENDING,
 ### Core Capabilities
 - **First Muse Family Model**: Released April 8, 2026, from Meta Superintelligence Labs[reference:36]
 - **Native Multimodal Reasoning**: Natively multimodal reasoning model with support for tool-use, visual chain of thought, and multi-agent orchestration[reference:37]
-- **Image Generation**: Can generate images as part of its multimodal reasoning capabilities[reference:4]
+- **Image Generation**: Can reason about and plan image generation as part of its multimodal reasoning capabilities.[reference:4]
 - **Competitive Performance**: Strong performance in multimodal perception, reasoning, health, and agentic tasks[reference:38]
 - **Contemplating Mode**: Orchestrates multiple agents that reason in parallel, competing with extreme reasoning modes of frontier models[reference:39]
 - **Multi-Product Integration**: Powers Meta AI app and website; rolling out to WhatsApp, Instagram, Facebook, Messenger, and AI glasses[reference:40]
