@@ -49,6 +49,7 @@ import { HVISION_NKU } from './hvision-nku';
 import { TRIPO } from './tripo';
 import { MESHY } from './meshy';
 import { YI } from './01-ai';
+import { LONG_CAT } from './longcatai';
 
 export const ALL_PROVIDER_ENTRIES: SystemPromptEntry[] = [
   ...OPENAI,
@@ -99,4 +100,5 @@ export const ALL_PROVIDER_ENTRIES: SystemPromptEntry[] = [
   ...TRIPO,
   ...MESHY,
   ...YI,
+  ...LONG_CAT,
 ];
