@@ -3,10 +3,6 @@ import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const DEEPSEEK: SystemPromptEntry[] = [
 
-  // ==========================================================================
-  // DEEPSEEK-V4-PRO — 旗舰 MoE 模型（2026-04-24 发布）
-  // 官方文档: https://api-docs.deepseek.com/news/news260424
-  // ==========================================================================
   {
     id: 'sp-deepseek-v4-pro',
     modelName: 'DeepSeek V4 Pro',
@@ -80,10 +76,6 @@ Generate the best DeepSeek V4 Pro prompt for the user's goal.` + SHORT_VERSION_E
     version: 'deepseek-v4-pro',
   },
 
-  // ==========================================================================
-  // DEEPSEEK-V4-FLASH — 高效经济 MoE 模型（2026-04-24 发布）
-  // 官方文档: https://api-docs.deepseek.com/news/news260424
-  // ==========================================================================
   {
     id: 'sp-deepseek-v4-flash',
     modelName: 'DeepSeek V4 Flash',
@@ -154,10 +146,6 @@ Generate the best DeepSeek V4 Flash prompt for the user's goal.` + SHORT_VERSION
     version: 'deepseek-v4-flash',
   },
 
-  // ==========================================================================
-  // DEEPSEEK-V3.2 — 思考融入工具调用（2025-12-01 发布）
-  // 官方文档: https://api-docs.deepseek.com/zh-cn/news/news251201
-  // ==========================================================================
   {
     id: 'sp-deepseek-v32',
     modelName: 'DeepSeek V3.2',
@@ -216,10 +204,6 @@ Generate the best DeepSeek V3.2 prompt.` + SHORT_VERSION_ENDING,
     version: 'deepseek-v3.2',
   },
 
-  // ==========================================================================
-  // DEEPSEEK-V3.2-SPECIALE — 深度推理专用变体（临时 API，2025-12-15 到期）
-  // 官方文档: https://api-docs.deepseek.com/updates
-  // ==========================================================================
   {
     id: 'sp-deepseek-v32-speciale',
     modelName: 'DeepSeek V3.2-Speciale',
@@ -281,10 +265,6 @@ Generate the best DeepSeek V3.2-Speciale prompt.` + SHORT_VERSION_ENDING,
     version: 'deepseek-v3.2-speciale',
   },
 
-  // ==========================================================================
-  // DEEPSEEK-V3.1 — 混合推理模型（2025-08-21 发布）
-  // 官方文档: https://api-docs.deepseek.com/news/news250821
-  // ==========================================================================
   {
     id: 'sp-deepseek-v31',
     modelName: 'DeepSeek V3.1',
@@ -337,10 +317,6 @@ Generate the best DeepSeek V3.1 prompt.` + SHORT_VERSION_ENDING,
     version: 'deepseek-v3.1',
   },
 
-  // ==========================================================================
-  // DEEPSEEK-R1-0528 — 推理模型升级版（2025-05-28 发布）
-  // 官方文档: https://api-docs.deepseek.com/news/news250528
-  // ==========================================================================
   {
     id: 'sp-deepseek-r1-0528',
     modelName: 'DeepSeek R1-0528',

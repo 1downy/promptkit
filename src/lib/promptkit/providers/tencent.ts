@@ -3,10 +3,6 @@ import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const TENCENT: SystemPromptEntry[] = [
 
-  // ==========================================================================
-  // IMAGE GENERATION MODELS
-  // ==========================================================================
-
   {
     id: 'sp-hy-image-v30',
     modelName: 'HY-Image-V3.0',
@@ -274,10 +270,6 @@ Generate the best HunyuanImage-3.0-Instruct-Distil prompt.` + SHORT_VERSION_ENDI
     version: 'hunyuan-image-30-instruct-distil',
   },
 
-  // ==========================================================================
-  // VIDEO GENERATION MODELS
-  // ==========================================================================
-
   {
     id: 'sp-hy-video-15',
     modelName: 'HY-Video-1.5',
@@ -513,10 +505,6 @@ Generate the best YT-Video-FX prompt.` + SHORT_VERSION_ENDING,
     version: 'yt-video-fx',
   },
 
-  // ==========================================================================
-  // WORLD / 3D SCENE GENERATION MODELS
-  // ==========================================================================
-
   {
     id: 'sp-hy-world-15',
     modelName: 'HY-World-1.5',
@@ -706,10 +694,6 @@ Generate the best HunyuanWorld-1.0 prompt.` + SHORT_VERSION_ENDING,
     lastVerified: '2026-06',
     version: 'hunyuanworld-10',
   },
-
-  // ==========================================================================
-  // 3D ASSET GENERATION MODELS
-  // ==========================================================================
 
   {
     id: 'sp-hunyuan-3d-31',
@@ -1135,10 +1119,6 @@ Generate the best HY-Motion-1.0 prompt.` + SHORT_VERSION_ENDING,
     version: 'hy-motion-10',
   },
 
-  // ==========================================================================
-  // TEXT GENERATION MODELS
-  // ==========================================================================
-
   {
     id: 'sp-hy3-preview',
     modelName: 'Hy3-preview',
@@ -1199,19 +1179,11 @@ Generate the best Hy3-preview prompt.` + SHORT_VERSION_ENDING,
     version: 'hy3-preview',
   },
 
-  // ==========================================================================
-  // DEPRECATED MODELS (Removed from active registry)
-  // ==========================================================================
-
   // NOTE: The following models have been deprecated and removed from the registry:
   // - Hunyuan-T1 (deprecated, to be discontinued June 26, 2026)[reference:95]
   // - Hunyuan-Turbo-S (deprecated, to be discontinued June 26, 2026)[reference:96]
   // - HY 2.0 Think (deprecated, discontinued June 22, 2026)[reference:97]
   // - HY 2.0 Instruct (deprecated, discontinued June 22, 2026)[reference:98]
-
-  // ==========================================================================
-  // OTHER TEXT MODELS
-  // ==========================================================================
 
   {
     id: 'sp-hunyuan-lite',

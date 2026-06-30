@@ -3,9 +3,6 @@ import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const ZHIPU_AI: SystemPromptEntry[] = [
 
-  // ============================================================
-  // GLM-5.2 — 旗舰长任务模型（2026年6月）
-  // ============================================================
   {
     id: 'sp-glm-52',
     modelName: 'GLM-5.2',
@@ -65,9 +62,6 @@ Generate the best GLM-5.2 prompt.` + SHORT_VERSION_ENDING,
     version: 'glm-5.2',
   },
 
-  // ============================================================
-  // GLM-5-Turbo — OpenClaw/Agent Optimized
-  // ============================================================
   {
     id: 'sp-glm-5-turbo',
     modelName: 'GLM-5-Turbo',
@@ -126,9 +120,6 @@ Generate the best GLM-5-Turbo prompt.` + SHORT_VERSION_ENDING,
     version: 'glm-5-turbo',
   },
 
-  // ============================================================
-  // GLM-5.1 — Agentic Engineering Model
-  // ============================================================
   {
     id: 'sp-glm-51',
     modelName: 'GLM-5.1',
@@ -186,9 +177,6 @@ Generate the best GLM-5.1 prompt.` + SHORT_VERSION_ENDING,
     version: 'glm-5.1',
   },
 
-  // ============================================================
-  // GLM-5 — Foundation Model
-  // ============================================================
   {
     id: 'sp-glm-5',
     modelName: 'GLM-5',
@@ -241,9 +229,6 @@ Generate the best GLM-5 prompt.` + SHORT_VERSION_ENDING,
     version: 'glm-5',
   },
 
-  // ============================================================
-  // GLM-4.7 — High-Intelligence Model
-  // ============================================================
   {
     id: 'sp-glm-47',
     modelName: 'GLM-4.7',
@@ -299,9 +284,6 @@ Generate the best GLM-4.7 prompt.` + SHORT_VERSION_ENDING,
     version: 'glm-4.7',
   },
 
-  // ============================================================
-  // GLM-4.7-Flash — Lightweight SOTA Model
-  // ============================================================
   {
     id: 'sp-glm-47-flash',
     modelName: 'GLM-4.7-Flash',
@@ -355,9 +337,6 @@ Generate the best GLM-4.7-Flash prompt.` + SHORT_VERSION_ENDING,
     version: 'glm-4.7-flash',
   },
 
-  // ============================================================
-  // GLM-4.7-FlashX — Ultra-Lightweight Model
-  // ============================================================
   {
     id: 'sp-glm-47-flashx',
     modelName: 'GLM-4.7-FlashX',
@@ -406,9 +385,6 @@ Generate the best GLM-4.7-FlashX prompt.` + SHORT_VERSION_ENDING,
     version: 'glm-4.7-flashx',
   },
 
-  // ============================================================
-  // GLM-4.6 — High-Intelligence Model
-  // ============================================================
   {
     id: 'sp-glm-46',
     modelName: 'GLM-4.6',
@@ -460,9 +436,6 @@ Generate the best GLM-4.6 prompt.` + SHORT_VERSION_ENDING,
     version: 'glm-4.6',
   },
 
-  // ============================================================
-  // GLM-4-Long — Ultra-Long Context Model
-  // ============================================================
   {
     id: 'sp-glm-4-long',
     modelName: 'GLM-4-Long',
@@ -516,9 +489,6 @@ Generate the best GLM-4-Long prompt.` + SHORT_VERSION_ENDING,
     version: 'glm-4-long',
   },
 
-  // ============================================================
-  // GLM-4.5 — Agent Foundation Model
-  // ============================================================
   {
     id: 'sp-glm-45',
     modelName: 'GLM-4.5',
@@ -581,9 +551,6 @@ Generate the best GLM-4.5 prompt.` + SHORT_VERSION_ENDING,
     version: 'glm-4.5',
   },
 
-  // ============================================================
-  // GLM-4.5-Air — Compact Agent Model
-  // ============================================================
   {
     id: 'sp-glm-45-air',
     modelName: 'GLM-4.5-Air',
@@ -636,9 +603,6 @@ Generate the best GLM-4.5-Air prompt.` + SHORT_VERSION_ENDING,
     version: 'glm-4.5-air',
   },
 
-  // ============================================================
-  // GLM-4.5-AirX — Compact Agent Model (High-Speed)
-  // ============================================================
   {
     id: 'sp-glm-45-airx',
     modelName: 'GLM-4.5-AirX',
@@ -686,9 +650,6 @@ Generate the best GLM-4.5-AirX prompt.` + SHORT_VERSION_ENDING,
     version: 'glm-4.5-airx',
   },
 
-  // ============================================================
-  // GLM-4.5-Flash — Free Fast Model (Deprecated)
-  // ============================================================
   {
     id: 'sp-glm-45-flash',
     modelName: 'GLM-4.5-Flash',
@@ -711,9 +672,6 @@ For new prompts, use the GLM-4.7-Flash system prompt.` + SYSTEM_PROMPT_ENDING,
     version: 'glm-4.5-flash',
   },
 
-  // ============================================================
-  // GLM-4-FlashX-250414 — Fast Model
-  // ============================================================
   {
     id: 'sp-glm-4-flashx-250414',
     modelName: 'GLM-4-FlashX-250414',
@@ -760,9 +718,6 @@ Generate the best GLM-4-FlashX-250414 prompt.` + SHORT_VERSION_ENDING,
     version: 'glm-4-flashx-250414',
   },
 
-  // ============================================================
-  // GLM-4V-Plus-0111 — Vision Understanding Model
-  // ============================================================
   {
     id: 'sp-glm-4v-plus',
     modelName: 'GLM-4V-Plus-0111',
@@ -818,9 +773,6 @@ Generate the best GLM-4V-Plus-0111 prompt.` + SHORT_VERSION_ENDING,
     version: 'glm-4v-plus-0111',
   },
 
-  // ============================================================
-  // GLM-4V-Flash — Fast Vision Model
-  // ============================================================
   {
     id: 'sp-glm-4v-flash',
     modelName: 'GLM-4V-Flash',
@@ -866,9 +818,6 @@ Generate the best GLM-4V-Flash prompt.` + SHORT_VERSION_ENDING,
     version: 'glm-4v-flash',
   },
 
-  // ============================================================
-  // GLM-4V-9B — Open-Source Vision Model
-  // ============================================================
   {
     id: 'sp-glm-4v-9b',
     modelName: 'GLM-4V-9B',
@@ -927,9 +876,6 @@ Generate the best GLM-4V-9B prompt.` + SHORT_VERSION_ENDING,
     version: 'glm-4v-9b',
   },
 
-  // ============================================================
-  // CogView4 — Text-to-Image Model
-  // ============================================================
   {
     id: 'sp-cogview4',
     modelName: 'CogView4',
@@ -996,9 +942,6 @@ Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     version: 'cogview4',
   },
 
-  // ============================================================
-  // CogVideoX-Flash — Free Video Generation Model
-  // ============================================================
   {
     id: 'sp-cogvideox-flash',
     modelName: 'CogVideoX-Flash',

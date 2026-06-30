@@ -3,12 +3,6 @@ import { SYSTEM_PROMPT_ENDING, SHORT_VERSION_ENDING } from '../prompt-endings';
 
 export const MINIMAX: SystemPromptEntry[] = [
 
-  // ============================================================
-  // MiniMax-M3 - 旗舰模型 (2026年6月)
-  // 来源: https://www.minimaxi.com/models/text/m3
-  //       https://platform.minimaxi.com/docs/guides/text-generation
-  //       https://www.minimax.io/models/text/m3
-  // ============================================================
   {
     id: 'sp-minimax-m3',
     modelName: 'MiniMax-M3',
@@ -67,11 +61,6 @@ Generate the best MiniMax-M3 prompt.` + SHORT_VERSION_ENDING,
     version: 'minimax-m3',
   },
 
-  // ============================================================
-  // MiniMax-M2.7 - 自我迭代旗舰 (2026年3月)
-  // 来源: https://platform.minimaxi.com/docs/guides/text-generation
-  //       https://platform.minimax.io/docs/guides/text-generation
-  // ============================================================
   {
     id: 'sp-minimax-m27',
     modelName: 'MiniMax-M2.7',
@@ -132,10 +121,6 @@ Generate the best MiniMax-M2.7 prompt.` + SHORT_VERSION_ENDING,
     version: 'minimax-m2.7',
   },
 
-  // ============================================================
-  // MiniMax-M2.7-highspeed - 高速版 (2026年3月)
-  // 来源: https://platform.minimaxi.com/docs/guides/text-generation
-  // ============================================================
   {
     id: 'sp-minimax-m27-highspeed',
     modelName: 'MiniMax-M2.7-highspeed',
@@ -184,11 +169,6 @@ Generate the best MiniMax-M2.7-highspeed prompt.` + SHORT_VERSION_ENDING,
     version: 'minimax-m2.7-highspeed',
   },
 
-  // ============================================================
-  // MiniMax-M2.5 - 性能与性价比 (2026年2月)
-  // 来源: https://platform.minimaxi.com/docs/guides/text-generation
-  //       https://www.minimax.io/models/text/m25
-  // ============================================================
   {
     id: 'sp-minimax-m25',
     modelName: 'MiniMax-M2.5',
@@ -239,10 +219,6 @@ Generate the best MiniMax-M2.5 prompt.` + SHORT_VERSION_ENDING,
     version: 'minimax-m2.5',
   },
 
-  // ============================================================
-  // MiniMax-M2.5-highspeed - 高速版 (2026年2月)
-  // 来源: https://platform.minimaxi.com/docs/guides/text-generation
-  // ============================================================
   {
     id: 'sp-minimax-m25-highspeed',
     modelName: 'MiniMax-M2.5-highspeed',
@@ -289,11 +265,6 @@ Generate the best MiniMax-M2.5-highspeed prompt.` + SHORT_VERSION_ENDING,
     version: 'minimax-m2.5-highspeed',
   },
 
-  // ============================================================
-  // MiniMax-M2.1 - 多语言编程 (2025年12月)
-  // 来源: https://www.minimaxi.com/news/minimax-m21
-  //       https://platform.minimaxi.com/docs/guides/text-generation
-  // ============================================================
   {
     id: 'sp-minimax-m21',
     modelName: 'MiniMax-M2.1',
@@ -351,10 +322,6 @@ Generate the best MiniMax-M2.1 prompt.` + SHORT_VERSION_ENDING,
     version: 'minimax-m2.1',
   },
 
-  // ============================================================
-  // MiniMax-M2.1-highspeed - 高速版 (2025年12月)
-  // 来源: https://platform.minimaxi.com/docs/guides/text-generation
-  // ============================================================
   {
     id: 'sp-minimax-m21-highspeed',
     modelName: 'MiniMax-M2.1-highspeed',
@@ -401,11 +368,6 @@ Generate the best MiniMax-M2.1-highspeed prompt.` + SHORT_VERSION_ENDING,
     version: 'minimax-m2.1-highspeed',
   },
 
-  // ============================================================
-  // MiniMax-M2 - 高效Agent模型 (2025年10月)
-  // 来源: https://www.minimaxi.com/blog/minimax-m2
-  //       https://platform.minimaxi.com/docs/guides/text-generation
-  // ============================================================
   {
     id: 'sp-minimax-m2',
     modelName: 'MiniMax-M2',
@@ -455,11 +417,6 @@ Generate the best MiniMax-M2 prompt.` + SHORT_VERSION_ENDING,
     version: 'minimax-m2',
   },
 
-  // ============================================================
-  // MiniMax-M2-her - 对话/角色扮演 (2026年1月)
-  // 来源: https://platform.minimaxi.com/docs/guides/text-chat
-  //       https://www.minimax.io/blog/minimax-m2-her
-  // ============================================================
   {
     id: 'sp-minimax-m2-her',
     modelName: 'MiniMax-M2-her',
@@ -515,11 +472,6 @@ Generate the best MiniMax-M2-her prompt.` + SHORT_VERSION_ENDING,
     version: 'minimax-m2-her',
   },
 
-  // ============================================================
-  // MiniMax Hailuo 2.3 - 视频生成 (2025年10月)
-  // 来源: https://www.minimaxi.com/news/minimax-hailuo-23
-  //       https://www.minimax.io/news/minimax-and-veed-hailuo-23
-  // ============================================================
   {
     id: 'sp-hailuo-23',
     modelName: 'MiniMax Hailuo 2.3',
@@ -588,11 +540,6 @@ Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     version: 'hailuo-23',
   },
 
-  // ============================================================
-  // MiniMax Hailuo 2.3 Fast - 视频生成快速版 (2025年10月)
-  // 来源: https://www.minimaxi.com/news/minimax-hailuo-23
-  //       https://www.minimax.io/news/minimax-and-veed-hailuo-23
-  // ============================================================
   {
     id: 'sp-hailuo-23-fast',
     modelName: 'MiniMax Hailuo 2.3 Fast',
@@ -647,11 +594,6 @@ Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     version: 'hailuo-23-fast',
   },
 
-  // ============================================================
-  // MiniMax Hailuo 02 - 视频生成 (2025年6月)
-  // 注意: 官方文档中 Hailuo 02 被列为"历史模型"
-  // 来源: https://platform.minimaxi.com/document/1
-  // ============================================================
   {
     id: 'sp-hailuo-02',
     modelName: 'MiniMax Hailuo 02',
@@ -700,11 +642,6 @@ Generate ONLY the video prompt text.` + SHORT_VERSION_ENDING,
     version: 'hailuo-02',
   },
 
-  // ============================================================
-  // MiniMax image-01 - 图像生成 (2025年2月)
-  // 来源: https://www.minimax.io/news/image-01
-  //       https://platform.minimaxi.com/docs/guides/models-intro
-  // ============================================================
   {
     id: 'sp-minimax-image',
     modelName: 'image-01',
@@ -761,11 +698,6 @@ Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     version: 'minimax-image',
   },
 
-  // ============================================================
-  // MiniMax Speech-2.8-HD - 语音合成 (2026年1月)
-  // 来源: https://www.minimaxi.com/news/minimax-speech-28
-  //       https://platform.minimaxi.com/docs/guides/speech-t2a-websocket
-  // ============================================================
   {
     id: 'sp-minimax-speech-28-hd',
     modelName: 'Speech-2.8-HD',
@@ -826,11 +758,6 @@ Generate ONLY the prompt text.` + SHORT_VERSION_ENDING,
     version: 'speech-28-hd',
   },
 
-  // ============================================================
-  // MiniMax Speech-2.8-Turbo - 语音合成快速版 (2026年1月)
-  // 来源: https://platform.minimaxi.com/docs/guides/speech-t2a-websocket
-  //       https://platform.minimax.io/docs/api-reference/api-overview
-  // ============================================================
   {
     id: 'sp-minimax-speech-28-turbo',
     modelName: 'Speech-2.8-Turbo',
